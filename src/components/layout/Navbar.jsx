@@ -10,7 +10,7 @@ const NavBarLink = ({ children, to }) => {
   }
   return (
     <li class="nav-item">
-      <Link className={`nav-link ${getActiveLink(to)}`} aria-current="page" href={to}>{children}</Link>
+      <Link className={`nav-link ${getActiveLink(to)} fs-5`} aria-current="page" href={to}>{children}</Link>
     </li>
   )
 }
@@ -21,9 +21,9 @@ function Navbar() {
   if (router.pathname == '/landing')
     return <></>
   return (
-    <nav class="navbar navbar-expand-lg bg-whtie shadow-sm">
-      <Container>
-        <a class="navbar-brand fw-semibold" href="/landing">Rakaya</a>
+    <nav class="navbar navbar-expand-lg bg-whtie shadow-sm py-3">
+      <Container className='col-lg-8 align-items-center'>
+        <a class="navbar-brand fw-semibold fs-3" href="/landing">Rakaya</a>
         <button class="btn fs-1 border-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" onClick={() => { setToggleNav(prev => !prev) }}>
           <i className={`${toggleNav ? "bi bi-x" : "bi bi-list"}`}></i>
         </button>
@@ -31,6 +31,8 @@ function Navbar() {
           <ul class="navbar-nav">
             <NavBarLink to={'/'}>Home</NavBarLink> 
             <NavBarLink to={'/about'}>About us</NavBarLink> 
+            <NavBarLink to={'/vision'}>Vision</NavBarLink> 
+            <NavBarLink to={'/services'}>Services</NavBarLink> 
           </ul>
         </div>
       </Container>
