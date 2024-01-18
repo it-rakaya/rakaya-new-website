@@ -1,12 +1,13 @@
 import Container from "@/components/Container";
+import LargeCard from "@/components/services/LargeCard";
 import SmallCard from "@/components/services/SmallCard";
 import React from "react";
 
 const index = () => {
   return (
-    <Container className="col-lg-10">
-      <h1>Services</h1>
-      <Container className="col-lg-12 d-lg-flex align-items-center">
+    <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
+      <h1 className="align-self-start">Services</h1>
+      <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
         <Container className="col-lg-5">
           <SmallCard
             title={"Hello World"}
@@ -42,6 +43,10 @@ const index = () => {
           />
         </Container>
       </Container>
+    <hr className="col-10 my-5" />
+    <Container className="d-lg-flex flex-wrap col-lg-12  mx-0">
+     <LargeCard title={'Hello World'} date={'19 Jan 2070'} description={'jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks'} imgUrl={'https://images.unsplash.com/photo-1504416285472-eccf03dd31eb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} source={'Okaz'}/>  <LargeCard title={'Hello World'} date={'19 Jan 2070'} description={'jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks'} imgUrl={'https://images.unsplash.com/photo-1504416285472-eccf03dd31eb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} source={'Okaz'}/> <LargeCard title={'Hello World'} date={'19 Jan 2070'} description={'jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks'} imgUrl={'https://images.unsplash.com/photo-1504416285472-eccf03dd31eb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} source={'Okaz'}/> 
+    </Container>
     </Container>
   );
 };
