@@ -1,12 +1,13 @@
-import React, { useRef, useState } from "react";
+import { routes } from "@/utils/routes";
+import { useState } from "react";
 import Container from "../Container";
 
 export const NavLink = ({ children, to }) => {
    return (
-      <Container className={"px-0 py-0 fw-semibold text-center"}>
-         <li className="nav-item" style={{ listStyle: "none" }}>
+      <Container className={"px-0 py-0 fw-semibold"}>
+         <li className="nav-item text-nowrap" style={{ listStyle: "none" }}>
             <a
-               href="/"
+               href={to}
                className="text-dark text-decoration-none text-center nav-link">
                {children}
             </a>
@@ -17,9 +18,9 @@ export const NavLink = ({ children, to }) => {
 
 const Navbar = () => {
    const [toggleNav, setToggleNav] = useState(false);
-   const [navStyle, setNavStyle] = useState("ddd");
+   const [navStyle, setNavStyle] = useState("");
    return (
-      <Container className="py-1">
+      <Container className="pb-3">
          <Container
             className={
                "d-flex d-lg-none justify-content-between align-items-center"
@@ -42,9 +43,9 @@ const Navbar = () => {
                toggleNav ? "d-flex" : "d-none"
             } flex-column flex-lg-row justify-content-lg-between align-items-center gap-5 gap-lg-0 ${navStyle}`}>
             <div className="d-flex flex-column flex-lg-row gap-5">
-            <NavLink>Hello</NavLink>
-            <NavLink>Hello</NavLink>
-            <NavLink>Hello</NavLink>
+            {routes.map((route, index)=>(
+               <NavLink to={route.route}>{route.name}</NavLink>
+            ))}
             </div>
             <div className="border border-2 border-dark rounded rounded-pill px-4 py-2">
                <NavLink>Go to website</NavLink>
