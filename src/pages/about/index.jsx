@@ -9,7 +9,7 @@ const Section = ({ title, children }) => (
 );
 
 const TeamMember = ({title, job})=>(
-  <div className="col-6 col-lg-3">
+  <div className="col-6 col-lg-3 d-flex d-lg-block flex-column align-items-center">
     <h5 className="fw-semibold fs-5 my-0">{title}</h5>
     <h5 className="text-body-tertiary fw-regular fs-6">{job}</h5>
   </div>

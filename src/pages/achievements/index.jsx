@@ -20,7 +20,7 @@ const index = () => {
       <Container className="col-lg-10">
         <h1 className="fw-bold">Our Achievements</h1>
         <div className="d-flex align-items-top gap-2">
-          <hr className="" style={{width:60}}/>
+          <hr className="" style={{width:20}}/>
           <p className="col-10 col-lg-9 py-1">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo voluptatibus iste magni sapiente quia? Minima reiciendis eius obcaecati nemo corporis incidunt, quam magnam aliquam id, delectus non suscipit, deserunt natus.
           </p>

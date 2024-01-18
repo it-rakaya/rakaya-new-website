@@ -3,5 +3,6 @@ export const routes = [
 {name:'About us', route:'/about'},
 {name:'Vision', route:'/vision'},
 {name:'Services', route:'/services'},
-{name:'Achievements', route:'/achievements'}
+{name:'Achievements', route:'/achievements'},
+{name:'Blog', route:'/blog'},
 ]
