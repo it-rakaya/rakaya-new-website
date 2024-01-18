@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../Container'
 import Marquee from 'react-fast-marquee'
-
+import styles from '@/styles/landing.module.css';
 
 /**
  * @param {{imgArray:string[]; reverse:boolean;}} 
@@ -10,7 +10,7 @@ const Bar = ({imgArray, reverse})=>{
     return(
         <Marquee className={`my-4`} speed={reverse ? 50 : 80} autoFill direction={reverse ? 'right':'left'}>
             {imgArray.map((img, index)=>{
-            return (<img src={img} className='rounded rounded-3 mx-4 img-fluid' style={{maxHeight:'300px'}} key={index}/> )
+            return (<img src={img} className={`rounded rounded-3 mx-4 img-fluid ${styles['img-card']}`} style={{maxHeight:'300px'}} key={index}/> )
             })}
         </Marquee>
     )

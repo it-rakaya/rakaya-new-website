@@ -1,0 +1,11 @@
+.img-card{
+    height: 40vh;
+}
+
+
+@media screen and (max-width:600px) {
+    .img-card{
+        height: 23vh;
+    }
+    
+}

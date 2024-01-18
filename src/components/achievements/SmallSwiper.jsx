@@ -14,13 +14,13 @@ import { Autoplay } from "swiper/modules";
 const SmallSwiper = ({ imgArray }) => {
   return (
     <Swiper
-      slidesPerView={1}
+      slidesPerView={2}
       spaceBetween={30}
       breakpoints={{
         600: {
           slidesPerView: 3,
         },
-        1200: {
+        980: {
           slidesPerView: 4,
         },
       }}

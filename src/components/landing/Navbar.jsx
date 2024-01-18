@@ -20,6 +20,7 @@ const Navbar = () => {
    const [toggleNav, setToggleNav] = useState(false);
    const [navStyle, setNavStyle] = useState("");
    return (
+      <nav>
       <Container className="pb-3">
          <Container
             className={
@@ -52,6 +53,7 @@ const Navbar = () => {
             </div>
          </Container>
       </Container>
+      </nav>
    );
 };
 
