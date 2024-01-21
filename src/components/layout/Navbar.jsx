@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Setting from "../Setting";
 
 function Navbar() {
+
   return (
-    <div>Navbar</div>
-  )
+    <div>
+      Navbar
+      <Setting/>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
