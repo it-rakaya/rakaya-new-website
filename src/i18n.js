@@ -15,7 +15,7 @@ i18n
     },
     detection: {
       order: ["localStorage", "htmlTag", "cookie", "path"],
-      caches: ["localStorage"], // cache user language on
+      caches: ["localStorage"],
     },
     resources: {
       ar: {

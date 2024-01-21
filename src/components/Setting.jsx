@@ -1,7 +1,6 @@
-import React from "react";
+import { useIsRTL } from "@/hooks/useIsRTL";
 import i18n from "@/i18n";
 import { setCookie } from "cookies-next";
-import { useIsRTL } from "@/hooks/useIsRTL";
 
 function Setting() {
   const isRTL = useIsRTL();
@@ -14,9 +13,20 @@ function Setting() {
     document.documentElement.lang = newLanguage;
     setCookie("i18next", newLanguage, { path: "/" });
   };
+  const handleLangItemClick = (lang) => {
+    i18n.changeLanguage(lang);
+  };
   return (
     <div>
-      <button onClick={handleLang}>{!isRTL ? "عربي" : "English"}</button>
+      <li
+        class="nav-item text-center pointer"
+        onClick={handleLang}
+      >
+        
+        <p className={`nav-link active  link-offset-3 active-link fs-5 m-0`}  style={{ cursor: "pointer" }}>
+          {!isRTL ? "عربي" : "English"}
+        </p>
+      </li>
     </div>
   );
 }
