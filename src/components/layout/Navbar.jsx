@@ -33,7 +33,7 @@ function Navbar() {
   return (
     <nav class="navbar navbar-expand-lg bg-whtie shadow-sm py-3">
       <Container className="col-lg-10 align-items-center">
-        <Link class="navbar-brand fw-semibold fs-3" href="/landing">
+        <Link class="navbar-brand fw-semibold fs-3 mx-3" href="/landing">
           Rakaya
         </Link>
         <button
@@ -58,15 +58,20 @@ function Navbar() {
             }`}
           ></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+        <div
+          class="collapse navbar-collapse justify-content-lg-between"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav mx-0 px-0">
             {routes.map((route, index) => (
               <NavBarLink to={route.route} key={index}>
                 {t(`common:${route.name}`)}
               </NavBarLink>
             ))}
-            <Setting/>
           </ul>
+          <div className="d-flex justify-content-center mt-2 mt-lg-0">
+            <Setting />
+          </div>
         </div>
       </Container>
     </nav>

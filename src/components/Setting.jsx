@@ -2,7 +2,10 @@ import { useIsRTL } from "@/hooks/useIsRTL";
 import i18n from "@/i18n";
 import { setCookie } from "cookies-next";
 
-function Setting() {
+/**
+ * @param {{text:string}}
+ */
+function Setting({ text }) {
   const isRTL = useIsRTL();
   const handleLang = async () => {
     const currentLanguage = i18n.language;
@@ -13,21 +16,21 @@ function Setting() {
     document.documentElement.lang = newLanguage;
     setCookie("i18next", newLanguage, { path: "/" });
   };
-  const handleLangItemClick = (lang) => {
-    i18n.changeLanguage(lang);
-  };
   return (
-    <div>
-      <li
-        class="nav-item text-center pointer"
-        onClick={handleLang}
-      >
-        
-        <p className={`nav-link active  link-offset-3 active-link fs-5 m-0`}  style={{ cursor: "pointer" }}>
+    <li
+      class="nav-item text-center pointer"
+      style={{ cursor: "pointer", listStyle: "none" }}
+      onClick={handleLang}
+    >
+        <p
+          className={`nav-link active  link-offset-3 active-link fs-5 m-0 d-flex d-lg-none bg-daner`}
+          style={{ cursor: "pointer" }}
+        >
           {!isRTL ? "عربي" : "English"}
         </p>
-      </li>
-    </div>
+      
+        <i class="bi bi-globe d-none d-lg-flex"></i>
+    </li>
   );
 }
 
