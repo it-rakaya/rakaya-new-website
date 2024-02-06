@@ -1,32 +1,64 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
 
-*{
-   font-family: 'IBM Plex Sans Arabic';
+* {
+   font-family: "IBM Plex Sans Arabic";
+}
+
+.text-primary {
+   color: #cab272 !important;
+}
+
+.bg-primary {
+   background-color: #c5b279 !important;
+}
+
+.nav-link {
+   transition: background-color 250ms ease-in-out;
+}
+
+.nav-link:hover {
+   background-color: rgba(202, 178, 114, 0.8);
 }
 
 
-.text-primary{
-    color: #cab272 !important;
+
+
+.img-container > img {
+   transition: transform 550ms ease;
 }
 
-.bg-primary{
-    background-color: #C5B279 !important;
+.img-container>img:hover{
+   transform: scale(1.03);
+}
+ 
+.list-item {
+   cursor: pointer;
+   transition: all 240ms;
+}
+
+.list-item:hover {
+   background-color: rgba(202, 178, 114, 0.8);
+   transform: scale(1.01);
+}
+
+.list-item-active {
+   background-color: rgba(202, 178, 114, 0.8);
+   transform: scale(1.01);
 }
 
 
-.nav-link{
-transition: color 250ms ease-in-out;
-}
+@media screen and (max-width: 600px){
+   .nav-link{
+      margin-top: 10px;
+   }
+   
+   .nav-link:hover{
+      background-color: transparent;
+   }
 
-.nav-link:hover{
-    color:#cab272
-}
-
-.active-link{
-    cursor: default;
-}
-
-.active-link:hover{
-    color:black;
+   .nav-link-active {
+      background-color: rgba(202, 178, 114, 0.8);
+      margin-top: 10px;
+   }
 }
