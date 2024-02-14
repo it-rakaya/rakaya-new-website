@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../Container'
 import Marquee from 'react-fast-marquee'
-import styles from '@/styles/landing.module.css';
+import styles from '@/styles/landing.module.scss';
 import i18n from '@/i18n';
 
 /**

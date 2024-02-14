@@ -1,15 +1,16 @@
+import Button from "../Button";
 import Container from "../Container";
 import Navbar, { NavLink } from "./Navbar";
 
 const Header = () => {
    return (
-      <Container className="w-100 bg-primary p-3">
-         <Navbar />
+      <Container className="w-100 bg-forth p-5">
+         {/* <Navbar /> */}
          <Container
             className={
                "d-flex flex-column align-items-center justify-content-center text-center w-100 gap-4 mb-3"
             }>
-            <h1 className="fs-2 d-none d-lg-block">Rakaya</h1>
+            <h1 className="fs-1 d-none d-lg-block">Rakaya</h1>
 
             <p
                className="fs-4 fw-semibold mw-50 text-center"
@@ -19,7 +20,10 @@ const Header = () => {
                Quod nihil impedit incidunt?
             </p>
          </Container>
-         <NavLink>Read More</NavLink>
+         
+         <Container className="d-flex justify-content-center">
+         <Button color="secondary">Read More</Button>
+         </Container>
       </Container>
    );
 };

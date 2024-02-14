@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Layout from "@/components/layout/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import { useLayoutEffect } from "react";

@@ -43,7 +43,7 @@ const Footer = () => {
           <i class="bi bi-linkedin"></i>
         </FooterLink>
       </Container>
-    <Container className="d-flex justify-content-center mt-3">
+    <Container className="d-flex justify-content-center mt-3 border-top pt-3">
       <p className="text-dark fw-regular">2024 © جميع الحقوق محفوظة لشركة ركايا</p>
     </Container>
     </footer>

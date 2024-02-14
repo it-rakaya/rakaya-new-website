@@ -6,7 +6,7 @@ import Stats from "@/components/landing/Stats"
 
 const index = () => {
   return (
-    <Container className='pt-lg-5 mx-0 px-0 px-lg-3'>
+    <Container className='pt-lg-5 mx-0 px-0'>
       <Header />
       <Stats />
       <Marquee/>

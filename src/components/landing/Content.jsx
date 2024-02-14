@@ -19,7 +19,7 @@ const ContentComponent = ({ children, title }) => {
 
 const Content = () => {
   return (
-    <Container>
+    <Container className='mx-0 px-0'>
       <h3 className='fw-bold text-center my-4'>
        Rakaya
       </h3>
@@ -29,7 +29,7 @@ const Content = () => {
       <ContentComponent title={'Our Vision'}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni omnis doloribus ducimus exercitationem laborum voluptatibus repudiandae nihil cum vitae dicta eum eligendi nulla dolorum sequi error, commodi eius harum perspiciatis. Minima dolore illum voluptate debitis ducimus, aliquam optio, iste veritatis dolor, cupiditate amet quisquam labore consectetur in dolores ab ratione.
       </ContentComponent> 
-      <Container className='my-2 text-center text-dark'>
+      <Container className='my-2 text-center text-dark bg-forth'>
         <h2 className='text-primary'>
           Header
         </h2>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { routes } from "@/utils/routes";
 import Setting from "../Setting";
 import { t } from "i18next";
+import styles from "@/styles/components/Navbar.module.scss";
 
 const NavBarLink = ({ children, to, onClick }) => {
    const router = useRouter();
@@ -18,8 +19,8 @@ const NavBarLink = ({ children, to, onClick }) => {
             onClick();
          }}>
          <Link
-            className={`nav-link fs-5 rounded mx-2 ${
-               getActiveLink(to) ? "nav-link-active" : ""
+            className={`${styles['nav-link']} fs-5 rounded mx-2 my-2 my-lg-0 ${
+               getActiveLink(to) ? styles['nav-link-active'] : ""
             }`}
             aria-current="page"
             href={to}>
@@ -33,9 +34,9 @@ function Navbar() {
    const [show, setShow] = useState(false);
    const buttonRef = useRef(null);
    const navBarRef = useRef(null);
-   if (router.pathname == "/landing") return <></>;
+   // if (router.pathname == "/landing") return <></>;
    return (
-      <nav class="navbar navbar-expand-lg bg-whtie shadow-sm py-3">
+      <nav class="navbar navbar-expand-lg bg-whtie py-3">
          <Container className="col-lg-10 align-items-center">
             <Link class="navbar-brand fw-semibold fs-3 mx-3" href="/landing">
                Rakaya
@@ -70,6 +71,7 @@ function Navbar() {
                         to={route.route}
                         key={index}
                         onClick={() => {
+                           if(document.body.offsetWidth < 600)
                            buttonRef.current.click();
                         }}>
                         {t(`common:${route.name}`)}
