@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../Container";
 import Link from "next/link";
+import Logo from "../Logo";
 const FooterLink = ({ children }) => {
   return (
     <Link href="" className="text-dark fw-semibold p-2 text-decoration-none">
@@ -14,7 +15,10 @@ const Footer = () => {
   return (
     <footer className="mt-5">
       <Container className="d-flex justify-content-center">
-        <h1>Rakaya</h1>
+        {/* <h1>Rakaya</h1> */}
+        <div className="col-lg-1 col-4">
+        <Logo/>
+        </div>
       </Container>
       <Container className={footerStyle}>
         <FooterLink>Hello World</FooterLink>

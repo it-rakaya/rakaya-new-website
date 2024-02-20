@@ -1,29 +1,76 @@
-import React from 'react'
-import Container from '../Container'
-import Link from 'next/link'
+import React, { useState } from "react";
+import Container from "../Container";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import index from "../../pages/services/index";
+import { motion } from "framer-motion";
 
-const ListItem = ({children, last=false})=>{
+const titleVariant = {
+};
 
-    return(
-      <div className="my-3" style={{cursor:'pointer'}}>
-       <h3 className='fs-5'>{children}</h3> 
-       {!last && <Separator/>}
-      </div> 
+const hrVariant = {
+   active: { width: "100%" },
+   inactive: { width: 0 },
+};
 
-    )
-}
+const ListItem = ({ children, last = false, active, onClick, href }) => {
+   return (
+      <motion.div
+      variants={titleVariant}
+      whileHover="active" 
+      animate={active ? "active" : "inactive"}
+      exit={"inactive"}
+      >
+         <Link href={href} onClick={onClick}>
+            <div className="my-3" style={{ cursor: "pointer" }}>
+               <div className="d-flex justify-content-center d-lg-block">
+                  <h3 className="fs-5">{children}</h3>
+               </div>
+               <Separator active={active} />
+            </div>
+         </Link>
+      </motion.div>
+   );
+};
 
-const Separator = () => (<hr className='bg-white-50'/>)
+const Separator = () => (
+   <div className="position-relative">
+      <hr className="separator bg-white-50" />
+      <motion.div
+         variants={hrVariant}
+         className="separator-fill position-absolute bg-primary top-0"
+         style={{ height: 2 }}
+      />
+   </div>
+);
+
+const paths = [
+   { title: "عن الشركة", href: "/vision" },
+   { title: "أركاننا", href: "/vision/pillars" },
+   { title: "خدماتنا", href: "/vision/services" },
+   { title: "منتجاتنا", href: "/vision/products" },
+   { title: "أثرهم فينا", href: "/vision/impact" },
+   { title: "برامج نستخدمها", href: "/vision/programs" },
+];
 const SideMenu = () => {
-  return (
-   <Container className='col-lg-3 text-center text-lg-start mx-3 mb-5 my-lg-0'>
-    <ListItem>Hello World</ListItem>
-    <ListItem>Hello World</ListItem>
-    <ListItem>Hello World</ListItem>
-    <ListItem>Hello World</ListItem>
-    <ListItem last>Hello World</ListItem>
-   </Container> 
-  )
-}
+   const { pathname } = useRouter();
+   const [activeRouteIndex, setActiveRouteIndex] = useState(
+      paths.indexOf(paths.find((path) => path.href == pathname))
+   );
+   return (
+      <Container className="col-lg-2 mx-3 mb-5 my-lg-0">
+         {paths.map((path, index) => (
+            <ListItem
+               key={index}
+               active={activeRouteIndex == index}
+               last={index == paths.length - 1}
+               onClick={() => setActiveRouteIndex(index)}
+               href={path.href}>
+               {path.title}
+            </ListItem>
+         ))}
+      </Container>
+   );
+};
 
-export default SideMenu
+export default SideMenu;

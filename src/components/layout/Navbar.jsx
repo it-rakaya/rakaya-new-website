@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "../Container";
 import Link from "next/link";
 import { routes } from "@/utils/routes";
 import Setting from "../Setting";
 import { t } from "i18next";
 import styles from "@/styles/components/Navbar.module.scss";
+import Logo from "../Logo";
 
 const NavBarLink = ({ children, to, onClick }) => {
    const router = useRouter();
    const getActiveLink = (link) => {
-      return router.pathname == link;
+      return `/${router.pathname.split("/")[1]}` == link;
    };
    return (
       <li
@@ -19,8 +20,8 @@ const NavBarLink = ({ children, to, onClick }) => {
             onClick();
          }}>
          <Link
-            className={`${styles['nav-link']} fs-5 rounded mx-2 my-2 my-lg-0 ${
-               getActiveLink(to) ? styles['nav-link-active'] : ""
+            className={`${styles["nav-link"]} fs-5 rounded mx-2 my-2 my-lg-0 ${
+               getActiveLink(to) ? styles["nav-link-active"] : ""
             }`}
             aria-current="page"
             href={to}>
@@ -29,6 +30,7 @@ const NavBarLink = ({ children, to, onClick }) => {
       </li>
    );
 };
+
 function Navbar() {
    const router = useRouter();
    const [show, setShow] = useState(false);
@@ -36,10 +38,12 @@ function Navbar() {
    const navBarRef = useRef(null);
    // if (router.pathname == "/landing") return <></>;
    return (
-      <nav class="navbar navbar-expand-lg bg-whtie py-3">
+      <nav class="navbar navbar-expand-lg bg-whtie py-2">
          <Container className="col-lg-10 align-items-center">
-            <Link class="navbar-brand fw-semibold fs-3 mx-3" href="/landing">
-               Rakaya
+            <Link class="navbar-brand fw-semibold col-lg-1 col-2 mx-3" href="/landing">
+                  <div className="col-lg-8 col-12">
+                  <Logo />
+                  </div>
             </Link>
             <button
                class="btn fs-1 border-0 d-lg-none"
@@ -71,8 +75,8 @@ function Navbar() {
                         to={route.route}
                         key={index}
                         onClick={() => {
-                           if(document.body.offsetWidth < 600)
-                           buttonRef.current.click();
+                           if (document.body.offsetWidth < 600)
+                              buttonRef.current.click();
                         }}>
                         {t(`common:${route.name}`)}
                      </NavBarLink>

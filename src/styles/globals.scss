@@ -64,6 +64,27 @@
    transform: scale(1.03);
 }
 
+body {
+   &::-webkit-scrollbar {
+      width: 5px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 5px;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: $primary;
+      border-radius: 10px;
+      // margin-bottom: 10px;
+      margin-top: 500px;
+      margin-right: 10px;
+   }
+}
+
 .list-item {
    cursor: pointer;
    transition: all 240ms;

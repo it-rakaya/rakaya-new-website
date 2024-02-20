@@ -1,5 +1,6 @@
 @import "../colors";
 
+$scaleAmnt: 0.95;
 .btn {
    $button-colors: (
       primary: $primary,
@@ -24,9 +25,15 @@
                background-color: $button-color;
                color: $third;
             }
+            &:active {
+               scale: $scaleAmnt;
+            }
          }
          &:hover {
             background-color: darken($button-color, 7%);
+         }
+         &:active{
+            scale: $scaleAmnt;
          }
       }
    }

@@ -1,18 +1,65 @@
-import Container from '@/components/Container'
-import SideMenu from '@/components/vision/SideMenu'
-import React from 'react'
-
+import Container from "@/components/Container";
+import Content from "@/components/vision/Content";
+import SideMenu from "@/components/vision/SideMenu";
+import VisionLayout from "@/components/vision/VisionLayout";
+import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 const index = () => {
-  return (
-  <Container className='d-flex flex-wrap col-12 col-lg-8 my-3 my-lg-5'>
-   <SideMenu/>
-   <Container className='col-lg-5 m-0'>
-   <h1 className='text-start'>Hello World</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius dignissimos suscipit cum saepe? Ipsa architecto, autem dolores minima, numquam libero odio nemo nihil excepturi cum cupiditate voluptas. Ipsa, nihil ipsum itaque illum quae tempore sunt officiis, accusantium ea iure possimus, ullam porro! Sed ipsum repellendus quidem ducimus aperiam perferendis, at consequuntur maxime sint, quam porro, odio natus error recusandae soluta. Iste minus consequatur nulla voluptate facilis alias, animi unde aut amet commodi cupiditate tempora. Obcaecati repudiandae illo molestiae delectus fugit veritatis, enim harum ad debitis, exercitationem voluptatem? Eveniet, debitis nesciunt magni nisi in molestiae sequi qui totam quibusdam. Corrupti incidunt quos illo, repudiandae necessitatibus nam impedit a. Alias laudantium accusamus explicabo reiciendis saepe inventore perferendis beatae aliquam, quos expedita cum nisi vitae quasi quisquam error asperiores voluptatum dolorum qui distinctio veniam obcaecati ut non molestiae est. Est aut adipisci dolores tempore odio rem animi velit voluptatibus, dignissimos, veniam nesciunt, consectetur sint quia ea sed architecto porro incidunt! Reiciendis, corporis velit molestiae alias, nihil ad, distinctio accusamus tenetur dicta sapiente minima illo deleniti! Repellat id excepturi enim, fuga possimus suscipit, beatae eligendi tempora dignissimos vel ipsum eaque minus nemo deleniti fugit ex tempore numquam delectus earum aperiam est laborum! Veritatis, minus!</p>
-    </Container> 
-  </Container>
-  )
-}
+   return (
+      <AnimatePresence mode="wait">
+         <VisionLayout title={"ركايا البديعة"}>
+            <Container className="me-0 w-75">
+               <p>
+                  تواجه كل شركة في طريقها لتحقيق أهدافها ونموها في السوق تحديّات
+                  كبيرة ، قد تكون إدارية من حيث تنظيمها وهيكلتها وإدارة المهام
+                  أو تسويقية برواجها أو عدم وضوح رؤيتها في مرحلتها القادمة  ،
+                  لذلك وجدت ركايا.. 
+               </p>
+               <p>
+                  تواجه كل شركة في طريقها لتحقيق أهدافها ونموها في السوق تحديّات
+                  كبيرة ، قد تكون إدارية من حيث تنظيمها وهيكلتها وإدارة المهام
+                  أو تسويقية برواجها أو عدم وضوح رؤيتها في مرحلتها القادمة  ،
+                  لذلك وجدت ركايا..
+               </p>
+               <p>
+                  حتّى نكون نقاط للحروف وأسطر للصفحة البيضاء ومفاتيح لأي قُفل
+                  بفريقنا المميز و مستشارينّا نقوم بدراسة مكمن العقدة لحلّها
+                  بوضع خطط استراتيجية تلائم الشركة وتطوّر من أوضاعها 
+               </p>
+               <p>
+                  ركايا البديعة هي أرض خصبة للأفكار الإبداعية والحلول
+                  اللامتناهية وأساليب العمل الإحترافية وقوّتنا أننا نرى بأن
+                  الشركة ليست عماد إداري فقط بل التقنية عامل مهم جدًا وأتمتة
+                  الأعمال جزء لاينفك عنها          
+               </p>
 
-export default index
+               <p>
+                  إتقان .. جوهرتنا التقنية تــكمن في أن مهندسي البرمجيات لدينا
+                  ليسوا مجرد مبرمجين بل هم خلّاقو الإبداع ، يتمتعون بملكة عالية
+                  في اهتمامهم لأدق التفاصيل ، وامتلاكهم لرؤية شاملة وقدرة
+                  استثنائية على تحويل الأفكار إلى حلول تقنية مبتكرة وفعّالة 
+               </p>
+               <p>
+                  ولأن التميّز في مجال مزدهر مثل الاستشارات أمر مهم ولاهتمامنا
+                  بالاستدامة والنمو الغذائي السليم ، نعتز في ركايا البديعة بوجود
+                  القطاع المختص بتقديم الاستشارات الغذائية مع نخبة من
+                  الاستشاريين المرخصين من الهيئة العامة للغذاء والدواء  
+               </p>
+               <p>
+                  جودة .. في جودة التشغيل الغذائي نتفرد بمستشارين غذائيين
+                  واختصاصيين وفريق عمل متمرّس بخبرات تتجاوز 20 سنة ، نعكس
+                  التزامنا بتقديم أعلى مستويات الخدمة والدعم لعملائنا مما يساهم
+                  في رفع جودة ووعي المنشآت والقطاعات الغذائية
+               </p>
+               <p>
+                  ركايا بقطاعاتها وأفرادها معك .. من البداية حتى النهاية داعمين
+                  و ممكنين
+               </p>
+            </Container>
+         </VisionLayout>
+      </AnimatePresence>
+   );
+};
+
+export default index;
