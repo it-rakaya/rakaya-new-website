@@ -1,14 +1,10 @@
 @import "./colors";
 
-.card {
-   width: 17rem;
-   height: 23rem;
-}
 
 @import "./colors";
 
 .card {
-   width: 17rem;
+   // width: 17rem;
    height: 23rem;
    &-scroll {
       overflow-y: scroll;

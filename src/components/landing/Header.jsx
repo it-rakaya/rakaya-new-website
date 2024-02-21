@@ -30,7 +30,7 @@ const Header = () => {
          </Container>
 
          <Container className="d-flex justify-content-center">
-            <Button color="secondary">Read More</Button>
+            <Button color="secondary">تعرف على ركايا البديعة</Button>
          </Container>
       </Container>
    );

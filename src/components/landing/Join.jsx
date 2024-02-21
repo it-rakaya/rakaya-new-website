@@ -7,18 +7,17 @@ const Join = () => {
       <Container className="py-5 bg-secondary d-flex justify-content-center flex-column">
          <Container className="py-3 text-center col-lg-5 ">
             <div className="mb-3">
-               <h3 className="text-white">Would you like to join</h3>
+               <h3 className="text-white">هل تريد الانضمام معنا؟</h3>
             </div>
             <div>
                <h4 className="text-white fw-light">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores fuga mollitia architecto nulla necessitatibus!
+                  It is a long established fact will be distracted.
                </h4>
             </div>
          </Container>
-         <Container className="w-25 d-flex justify-content-center mt-2">
+         <Container className="d-flex justify-content-center mt-2">
             <Button color="third" className="text-primary text-center">
-               Read More
+               التقديم
             </Button>
          </Container>
       </Container>

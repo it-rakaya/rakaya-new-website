@@ -25,7 +25,7 @@ const MyMarquee = () => {
         <Bar imgArray={images} reverse/>
         </Container >
         <Container className='text-center' dir={i18n.dir(i18n.language)}>
-            <h2 className='text-primary'>Best in the industry</h2>
+            <h2 className='text-gold'>Best in the industry</h2>
             <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem delectus facilis voluptatum obcaecati sapiente quidem tenetur modi mollitia amet, similique ab esse tempora nemo harum nam tempore? Rem amet dolores, quam quis recusandae asperiores ipsa, excepturi unde enim deleniti alias dicta. Dolore, minima excepturi! Qui, est vitae repellat cumque ullam ea! Dolorum est iste accusamus minus corporis optio harum et neque praesentium. Aperiam minus quis non dolor, consequuntur fugit. Sint sunt iure ratione corporis libero distinctio, quidem facilis reprehenderit ab.</p>
         </Container>
     </Container>

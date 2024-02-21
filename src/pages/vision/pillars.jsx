@@ -5,9 +5,7 @@ import React from "react";
 const PillarHeader = ({ title, icon }) => {
    return (
       <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">
-         <div className="">
-            <i className={`${icon} fs-5`}></i>
-         </div>
+         <i className={`${icon} fs-5`}></i>
          <h5 className="">{title}</h5>
       </div>
    );

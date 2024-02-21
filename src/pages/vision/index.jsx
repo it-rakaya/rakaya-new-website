@@ -9,7 +9,7 @@ const index = () => {
    return (
       <AnimatePresence mode="wait">
          <VisionLayout title={"ركايا البديعة"}>
-            <Container className="me-0 w-75">
+            <Container className="me-0 col-lg-8">
                <p>
                   تواجه كل شركة في طريقها لتحقيق أهدافها ونموها في السوق تحديّات
                   كبيرة ، قد تكون إدارية من حيث تنظيمها وهيكلتها وإدارة المهام
