@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Container from "../Container";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import index from "../../pages/services/index";
+import index from "../../pages/studio/index";
 import { motion } from "framer-motion";
 
 const titleVariant = {

@@ -1,5 +1,10 @@
 import Head from "next/head";
-
+import Container from "@/components/Container";
+import Content from "@/components/landing/Content";
+import Header from "@/components/landing/Header";
+import Join from "@/components/landing/Join";
+import Marquee from "@/components/landing/Marquee";
+import Stats from "@/components/landing/Stats";
 
 export default function Home() {
   return (
@@ -10,6 +15,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Container className="mx-0 px-0">
+        <Header />
+        <Stats />
+        <Marquee />
+        <Content />
+      </Container>
     </>
   );
 }

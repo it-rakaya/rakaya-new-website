@@ -1,10 +1,10 @@
 export const routes = [
-{name:'Home', route:'/'},
-{name:'About_us', route:'/about'},
-{name:'Vision', route:'/vision'},
-{name:'Services', route:'/services'},
-{name:'Achievements', route:'/achievements'},
-{name:'Jobs', route:'/jobs'},
-{name:'Blog', route:'/blog'},
-{name:'Contact', route:'/contact-us'},
-]
+    // { name: "Home", route: "/" },
+  { name: "Vision", route: "/vision" },
+  { name: "Studio", route: "/studio" },
+  { name: "Jobs", route: "/jobs" },
+  { name: "Your_way", route: "/way" },
+//   { name: "Achievements", route: "/achievements" },
+//   { name: "Blog", route: "/blog" },
+  { name: "Contact", route: "/contact-us" },
+];
