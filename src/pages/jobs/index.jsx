@@ -1,173 +1,44 @@
 import Container from "@/components/Container";
 import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import pattern from "assets/patterns/pattern1.svg";
+import Header from "@/components/jobs/Header";
+import Section from "@/components/jobs/Section";
 
 const Content = ({ title, children }) => {
    return (
       <Container className="p-0">
-         <h3>{title}</h3>
-         <p>{children}</p>
+         <h3 className="">{title}</h3>
+         {children}
       </Container>
    );
 };
 
-const Box = ()=>{
-   return(
-      <div style={{height:'100%', backgroundColor:'rgb(200,200,200)'}} className="d-flex flex-column align-items-center w-lg-25 w-100 p-3 rounded mt-3 m-lg-0">
-         <h1 className="text-white">Box</h1>
-         <button className="btn btn-primary bg-primary border-0">Apply Now</button>
-      </div>
-   )
-}
+const Pattern = ({ rotate = false }) => (
+   <motion.div
+      variants={{
+         visible: { x: 0, transition: { duration: 0.5 } },
+         hidden: { x: rotate ? "-100%" : "100%", transition: { duration: 0.5 } },
+      }}
+      initial="hidden"
+      animate="visible"
+      className={`px-0 mx-0 position-absolute d-flex ${rotate ? "start-0 top-0 justify-content-end align-items-end" : "end-0 bottom-0 align-items-start"}`}
+      style={{height: "100%", overflow: "hidden", maxWidth:"12rem"}}
+      >
+      <Image
+         src={pattern}
+         style={{ rotate: rotate ? "180deg" : "0deg" }}
+         className={`img-fluid col-4 col-lg-8 `}
+      />
+   </motion.div>
+);
+
 const index = () => {
    return (
-      <Container className="col-lg-8 mt-5">
-         <Container className="d-lg-flex">
-            <Container className="mb-3">
-               <h1>Lorem, ipsum dolor.</h1>
-            </Container>
-            <Container className="col-lg-8">
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-               <Content title={"Hello World"}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate iste doloribus magni, accusamus molestias totam
-                  reprehenderit maxime iusto cum sint asperiores voluptatem unde
-                  maiores quibusdam esse eum repudiandae, deserunt quidem
-                  consequatur molestiae laborum sed vero. Eius commodi minus
-                  maxime facere nulla obcaecati voluptatum quae exercitationem
-                  eveniet sapiente dignissimos enim neque quo laboriosam, iste
-                  ipsum adipisci rerum quasi expedita. Ipsa, excepturi ratione,
-                  autem blanditiis quisquam quasi ducimus cumque molestiae nemo
-                  commodi voluptatem incidunt explicabo fugiat nulla dolorum et
-                  tenetur dicta nisi eaque eius? Labore quas, a commodi,
-                  voluptate illo necessitatibus porro aspernatur doloremque
-                  natus eos quia deleniti ipsa aliquid culpa iure
-                  exercitationem! Culpa assumenda velit dolore facilis
-                  laudantium aperiam optio fugit, animi id obcaecati hic nihil,
-                  pariatur sapiente quas aspernatur quasi molestias, aliquam
-                  ipsum. Sed illum beatae blanditiis ad fuga officia veritatis
-                  dolor nulla magni, tempore eos asperiores labore ab harum
-                  minima molestiae quisquam repellat nobis praesentium libero
-                  cum aut vitae!
-               </Content>
-            </Container>
-         </Container>
-         <Container className="mt-3 d-lg-flex">
-            <Container className="">
-            <h2 >Apply Now !</h2>
-            </Container>
-            <Container className="col-lg-8">
-            <Box/>
-            </Container>
-         </Container>
+      <Container className="m-0 p-0 overflow-hidden">
+        <Header/>
+        <Section title="القسم الاول" subtitle="معلوماتي"/>
       </Container>
    );
 };

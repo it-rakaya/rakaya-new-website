@@ -1,77 +1,9 @@
 import Container from "@/components/Container";
 import VisionLayout from "@/components/vision/VisionLayout";
-import React, { useState } from "react";
-import styles from "@/styles/vision.module.scss";
-import { motion } from "framer-motion";
+import Card from "@/components/vision/services/Card";
 
-const transition = {
-   type: "spring",
-   stiffness: 120,
-   // damping: 10,
-};
 
-const containerVariant = {
-   visible: {
-      backgroundColor: "#C9B171",
-   },
-};
 
-const titleVariant = {
-   visible: {
-      y: "0%",
-      transition: { type: "spring", damping: 20, stiffness: 120 },
-   },
-   hidden: {
-      y: "-35%",
-      transition: { type: "spring", damping: 20, stiffness: 120 },
-   },
-};
-
-const descriptionVariant = {
-   visible: {
-      opacity: 0,
-      // y: "100%",
-      // overflow: "hidden",
-      transition: transition,
-   },
-   hidden: {
-      opacity: 1,
-      // y: "-100%",
-      overflow: "auto",
-      transition: { delay: 0.2 },
-   },
-};
-const Card = ({ title, children }) => {
-   const width = window.innerWidth;
-   //for small views only
-   const [animateCard, setAnimateCard] = useState(false);
-   return (
-      <motion.div
-         variants={containerVariant}
-         initial="visible"
-         whileHover="hidden"
-         // whileInView={document.body.offsetWidth < 600 ? "hidden" : "visible"}
-         // whileInView={"hidden"}
-         animate={animateCard ? "hidden" : "visible"}
-         onClick={()=>{
-            if(width <= 992){
-               setAnimateCard(!animateCard)
-            }
-         }}
-         className={`${styles['card']} col-lg-3 rounded-4 position-relative overflow-hidden`}>
-         <motion.div
-            variants={titleVariant}
-            className="d-flex justify-content-center align-items-center h-100 px-5 text-white position-absoulte">
-            <h4 className="text-center">{title}</h4>
-         </motion.div>
-         <motion.div
-            variants={descriptionVariant}
-            className={`d-flex flex-column text-center h-75 text-white bottom-0 px-2 gap-0 position-absolute ${styles["card-scroll"]}`}>
-            {children}
-         </motion.div>
-      </motion.div>
-   );
-};
 
 const services = () => {
    return (

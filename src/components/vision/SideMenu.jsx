@@ -18,7 +18,7 @@ const ListItem = ({ children, last = false, active, onClick, href }) => {
       <motion.div
       variants={titleVariant}
       whileHover="active" 
-      animate={active ? "active" : "inactive"}
+      initial={active ? "active" : "inactive"}
       exit={"inactive"}
       >
          <Link href={href} onClick={onClick}>
