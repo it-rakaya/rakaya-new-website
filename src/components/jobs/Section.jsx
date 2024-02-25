@@ -11,7 +11,7 @@ const Title = ({ title }) => (
 
 const Section = ({ title, subtitle, children }) => {
    return (
-      <Container className="col-8">
+      <Container className="col-6 my-5">
          <Title title={title} />
          <Container className="my-3">{subtitle && <p>{subtitle}</p>}</Container>
          <Container>{children}</Container>

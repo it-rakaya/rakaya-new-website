@@ -17,8 +17,8 @@ const ContentComponent = ({ children, title }) => {
 const Content = () => {
   return (
     <Container className="mx-0 px-0">
-      <h3 className="fw-bold text-center my-4">Rakaya</h3>
-      <ContentComponent title={"Our Achievements"}>
+      {/* <h3 className="fw-bold text-center my-4">Rakaya</h3> */}
+      {/* <ContentComponent title={"Our Achievements"}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni omnis
         doloribus ducimus exercitationem laborum voluptatibus repudiandae nihil
         cum vitae dicta eum eligendi nulla dolorum sequi error, commodi eius
@@ -44,7 +44,7 @@ const Content = () => {
           consectetur unde, in nulla a quibusdam sint voluptatibus ut ipsum,
           aliquid velit quasi itaque.
         </p>
-      </Container>
+      </Container> */}
 
       <Join />
     </Container>

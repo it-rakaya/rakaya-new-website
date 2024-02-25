@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CardApplication from "@/components/vision/CardApplication";
 import VisionLayout from "@/components/vision/VisionLayout";
 import React from "react";
 const Program = ({ title, description }) => (
@@ -22,6 +23,7 @@ const programs = () => {
         title="تريلو"
         description="شرح مختصر شرح مختصر شرح مختصر شرح مختصر شرح مختصر شرح مختصر "
       />
+      <CardApplication/>
     </VisionLayout>
   );
 };
