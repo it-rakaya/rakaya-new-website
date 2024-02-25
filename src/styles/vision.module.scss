@@ -4,6 +4,7 @@
 @import "./colors";
 
 .card {
+   min-width: 15rem;
    // width: 17rem;
    height: 23rem;
    &-scroll {

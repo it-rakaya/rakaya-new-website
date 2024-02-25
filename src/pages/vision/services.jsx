@@ -13,7 +13,7 @@ const services = () => {
             وترسّخ علاقتنا بعملائنا 
          </p>
          <Container className="col-12 d-flex flex-wrap justify-content-center justify-content-lg-start mx-0 gap-3">
-            <div className="row gap-3 justify-content-center justify-content-lg-start my-3 my-lg-0">
+            {/* <div className="row gap-3 justify-content-center justify-content-lg-start my-3 my-lg-0"> */}
                <Card title={"استشارات تنظيمية"}>
                   <p className="mb-1">
                      للحصول على نظرة شاملة وتحديد الخطط والإجراءات الضرورية
@@ -196,7 +196,7 @@ const services = () => {
                      - تطوير خارطة الطريق التشغيلي للاستراتيجيات والمبادرات
                   </p>
                </Card>
-            </div>
+            {/* </div> */}
          </Container>
       </VisionLayout>
    );
