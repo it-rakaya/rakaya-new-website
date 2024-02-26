@@ -16,7 +16,7 @@ const NavBarLink = ({ children, to, onClick }) => {
   };
   return (
     <li
-      class="nav-item text-center"
+      className="nav-item text-center"
       onClick={() => {
         onClick();
       }}
@@ -41,10 +41,10 @@ function Navbar() {
   const navBarRef = useRef(null);
   // if (router.pathname == "/landing") return <></>;
   return (
-    <nav class="navbar navbar-expand-lg bg-whtie py-2">
+    <nav className="navbar navbar-expand-lg bg-whtie py-2">
       <Container className="col-lg-10 align-items-center">
         <Link
-          class="navbar-brand fw-semibold col-lg-1 col-2 mx-3"
+          className="navbar-brand fw-semibold col-lg-1 col-2 mx-3"
           href="/"
         >
           <div className="col-lg-8 col-12">
@@ -52,7 +52,7 @@ function Navbar() {
           </div>
         </Link>
         <button
-          class="btn fs-1 border-0 d-lg-none"
+          className="btn fs-1 border-0 d-lg-none"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
@@ -74,11 +74,11 @@ function Navbar() {
           ></i>
         </button>
         <div
-          class="collapse navbar-collapse justify-content-lg-between"
+          className="collapse navbar-collapse justify-content-lg-between"
           id="navbarNavDropdown"
           ref={navBarRef}
         >
-          <ul class="navbar-nav mx-0 px-0">
+          <ul className="navbar-nav mx-0 px-0">
             {routes.map((route, index) => (
               <NavBarLink
                 to={route.route}

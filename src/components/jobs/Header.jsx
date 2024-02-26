@@ -3,8 +3,9 @@ import Container from "../Container";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import pattern from "assets/patterns/pattern1.svg";
+import PatternIcon from "../icons/PatternIcon";
 
-const Pattern = ({ rotate = false  } ) => (
+const Pattern = ({ rotate = false }) => (
   <motion.div
     variants={{
       visible: { x: 0, transition: { duration: 0.5 } },
@@ -22,15 +23,19 @@ const Pattern = ({ rotate = false  } ) => (
     }`}
     style={{ height: "100%", overflow: "hidden", maxWidth: "12rem" }}
   >
-    <Image
+    {/* <Image
       alt=""
       src={pattern}
       style={{ rotate: rotate ? "180deg" : "0deg" }}
       className={`img-fluid col-4 col-lg-8 `}
+    /> */}
+    <PatternIcon
+      className="img-fluid col-4 col-lg-8 "
+      style={{ rotate: rotate ? "180deg" : "0deg" }}
     />
   </motion.div>
 );
-const Header = ({text}) => {
+const Header = ({ text }) => {
   return (
     <Container className="m-0 p-0 overflow-hidden">
       <Container

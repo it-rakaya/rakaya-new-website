@@ -18,7 +18,7 @@ function Setting({ text }) {
   };
   return (
     <li
-      class="nav-item text-center pointer"
+      className="nav-item text-center pointer"
       style={{ cursor: "pointer", listStyle: "none" }}
       onClick={handleLang}
     >
@@ -29,7 +29,7 @@ function Setting({ text }) {
           {!isRTL ? "عربي" : "English"}
         </p>
       
-        <i class="bi bi-globe d-none d-lg-flex"></i>
+        <i className="bi bi-globe d-none d-lg-flex"></i>
     </li>
   );
 }

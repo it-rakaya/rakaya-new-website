@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import ImgContainer from "@/components/ImgContainer";
 import Header from "@/components/jobs/Header";
 import LargeCard from "@/components/services/LargeCard";
@@ -8,6 +9,8 @@ import React from "react";
 const index = () => {
   return (
     <>
+      <CustomHead title={"ركايا ستوديو"} description={"home page rakaya"} />
+
       <Header text={"ركايا ستوديو"} />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">

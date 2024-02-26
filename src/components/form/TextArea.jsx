@@ -12,7 +12,7 @@ function TextArea({ label, required, name , placeholder }) {
         <span className="">{required == "1" ? "*" : ""}</span>
       </Label>
       <textarea
-        class="form-control"
+        className="form-control"
         id="exampleFormControlTextarea1"
         rows="3"
         value={values[name]}

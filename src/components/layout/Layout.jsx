@@ -1,7 +1,9 @@
 import React from "react";
-import Footer from "./Footer";
 import dynamic from "next/dynamic";
 const NavBar = dynamic(() => import("./Navbar"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("./Footer"), {
   ssr: false,
 });
 function Layout({ children }) {

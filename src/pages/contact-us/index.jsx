@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import MainData from "@/components/contact-us/MainData";
 import Header from "@/components/jobs/Header";
 import React from "react";
@@ -11,9 +12,11 @@ const selectOptions = [
 const index = () => {
   return (
     <>
+      <CustomHead title={"تواصل معنا"} description={"home page rakaya"} />
+
       <Header text={"تواصل معنا"} />
 
-      <Container className="col-lg-5">
+      <Container className="col-lg-6">
         <MainData />
       </Container>
     </>

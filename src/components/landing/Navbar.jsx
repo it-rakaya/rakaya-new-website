@@ -30,7 +30,7 @@ const Navbar = () => {
             "d-flex d-lg-none justify-content-between align-items-center"
           }
         >
-          <a class="d-lg-none navbar-brand fs-1 fw-bold" href="#">
+          <a className="d-lg-none navbar-brand fs-1 fw-bold" href="#">
             Rakaya
           </a>
           <button

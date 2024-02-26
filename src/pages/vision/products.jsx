@@ -5,7 +5,7 @@ import Container from "../../components/Container";
 const Product = ({ title, description }) => (
    <Container>
       <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">
-         <i class="bi bi-grid-1x2 fs-4"></i>
+         <i className="bi bi-grid-1x2 fs-4"></i>
          <h4>{title}</h4>
       </div>
       <p>{description}</p>

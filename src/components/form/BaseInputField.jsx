@@ -16,7 +16,7 @@ function BaseInputField({ name, placeholder, label, required }) {
         onChange={() => {}}
         placeholder={placeholder}
         name={name}
-        class="form-control"
+        className="form-control"
       />
     </div>
   );

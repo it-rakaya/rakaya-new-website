@@ -13,6 +13,7 @@ const PillarHeader = ({ title, icon }) => {
 
 const pillars = () => {
    return (
+      <>
       <VisionLayout title={"قيم نعتز بها "}>
          <Container className="me-0 col-12 col-lg-6">
             <p className="">
@@ -51,6 +52,7 @@ const pillars = () => {
             </p>
          </Container>
       </VisionLayout>
+      </>
    );
 };
 

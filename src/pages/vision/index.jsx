@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import Team from "@/components/vision/Team";
 import VisionLayout from "@/components/vision/VisionLayout";
@@ -62,25 +63,25 @@ const index = () => {
               <h2>أعضاء ركايا</h2>
             </div>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
-              <div class=" ">
+              <div className=" ">
                 <Team />
               </div>
             </div>

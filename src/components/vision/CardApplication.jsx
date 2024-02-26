@@ -9,7 +9,7 @@ import Image from "next/image";
 function CardApplication() {
   const images = [img1, img2, img3, img4, img4, img4];
   return (
-    <div className="row row-cols-3 mx-3 gap-5 - align-items-between mb-5 over_margin">
+    <div className="row row-cols-3 mx-3 gap-5 - align-items-between mb-5 over_margin justify-content-center">
       {images?.map((item, index) => (
         <div
           className="teamShadow rounded-4 d-flex align-items-center carApp justify-content-center"

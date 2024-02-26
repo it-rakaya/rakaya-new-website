@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import React from "react";
 
@@ -19,6 +20,8 @@ const TeamMember = ({ title, job }) => (
 function index() {
   return (
     <>
+      <CustomHead title={"طريقك معنا"} description={"home page rakaya"} />
+
       <Header text={"طريقك معنا"} />
 
       <Container className="col-lg-6 mt-5">
@@ -32,7 +35,10 @@ function index() {
           والتوصيات ووضع الخطط التحسينية وآلية واضحة لمتابعة التطبيق وتقييم
           النتائج.. 
         </p>
-        <p className="m-0 p-0"> تقديم الحلول والتوصيات ووضع الخطط التحسينية وآلية واضحة لمتابعة التطبيق وتقييم النتائج.. </p>
+        <p className="m-0 p-0">
+           تقديم الحلول والتوصيات ووضع الخطط التحسينية وآلية واضحة لمتابعة
+          التطبيق وتقييم النتائج.. 
+        </p>
       </Container>
     </>
   );

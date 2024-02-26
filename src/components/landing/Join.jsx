@@ -9,7 +9,7 @@ const Join = () => {
         <div className="mb-3">
           <h3 className="text-white">هل تريد الانضمام معنا؟</h3>
         </div>
-        <div>
+        <div className="w-75 m-auto">
           <h4 className="text-white fw-light">
             It is a long established fact will be distracted.
           </h4>

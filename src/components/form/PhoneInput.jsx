@@ -10,7 +10,7 @@ function PhoneInput({ label, required }) {
       </Label>
       <div className="d-flex gap-2 ">
         <div className="w-75">
-          <input type="text" class="form-control " placeholder="** *** ****"  dir="ltr"/>
+          <input type="text" className="form-control " placeholder="** *** ****"  dir="ltr"/>
         </div>
         <div className="border w-25 d-flex align-items-center justify-content-center rounded-2">
           <span className="text-gray">+966</span>

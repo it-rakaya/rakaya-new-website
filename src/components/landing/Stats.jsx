@@ -22,7 +22,7 @@ const Stat = ({ count, text }) => {
 const Stats = () => {
   return (
     <div className={"bg-forth "}>
-      <div className={"row d-flex justify-content-center py-5 my-5"}>
+      <div className={"row d-flex justify-content-center py-5 my-5 w-100"}>
         <Stat count={"+95"} text={"Subscribers"} />
         <Stat count={"+50"} text={"Subscribers"} />
         <Stat count={"+50"} text={"Subscribers"} />

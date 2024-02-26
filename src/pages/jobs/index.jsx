@@ -12,6 +12,7 @@ import Line from "@/components/Line";
 import MainFormStepTow from "@/components/jobs/MainFormStepTow";
 import MainFormStepThree from "@/components/jobs/MainFormStepThree";
 import Button from "@/components/Button";
+import CustomHead from "@/components/CustomHead";
 
 const Content = ({ title, children }) => {
   return (
@@ -50,6 +51,9 @@ const Pattern = ({ rotate = false }) => (
 
 const index = () => {
   return (
+    <>
+      <CustomHead title={"الوظائف"} description={"home page rakaya"} />
+
     <Container className="m-0 p-0 overflow-hidden">
       <Header text={"التقديم"} />
       <Formik initialValues={""} onSubmit={() => {}}>
@@ -71,6 +75,7 @@ const index = () => {
         </Form>
       </Formik>
     </Container>
+    </>
   );
 };
 

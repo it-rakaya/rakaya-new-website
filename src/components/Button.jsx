@@ -15,7 +15,7 @@ const Button = ({
       <button
          className={`${
             styles["btn-" + color]
-         } py-2 px-5 rounded shadow-lg fw-bold`}
+         } py-2 px-5 rounded  fw-bold`}
          type="button"
          onClick={onClick}>
          <div className={className}>{children}</div>
