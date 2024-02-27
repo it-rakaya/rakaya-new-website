@@ -32,7 +32,7 @@ const ImgSwiper = ({ imgArray }) => {
       {imgArray.map((img, index) => {
         return (
           <SwiperSlide key={index}>
-            <Image alt="image" src={img} className={`img-fluid ${styles["img-card"]} rounded`}  width={''} height={''}/>
+            <Image alt="image" src={img} className={`img-fluid ${styles["img-card"]} rounded`}  width={100} height={100}/>
             <p className="text-white fs-4">Lorem ipsum dolor sit amet.</p>
           </SwiperSlide>
         );

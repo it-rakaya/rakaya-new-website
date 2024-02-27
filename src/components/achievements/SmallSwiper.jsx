@@ -27,7 +27,6 @@ const SmallSwiper = ({ imgArray }) => {
       }}
       autoplay={{
         delay: 2000,
-        
       }}
       loop={true}
       modules={[Autoplay]}
@@ -36,7 +35,13 @@ const SmallSwiper = ({ imgArray }) => {
       {imgArray.map((img, index) => {
         return (
           <SwiperSlide key={index}>
-            <Image alt="image" src={img} className={`img-fluid ${styles["img-small-card"]} rounded`}  width={''} height={''}/>
+            <Image
+              alt="image"
+              src={img}
+              className={`img-fluid ${styles["img-small-card"]} rounded`}
+              width={null}
+              height={null}
+            />
           </SwiperSlide>
         );
       })}

@@ -49,8 +49,8 @@ const Pattern = ({ rotate = false }) => (
   >
     <Image
       alt="image"
-      width={""}
-      height={""}
+      width={null}
+      height={null}
       src={pattern}
       style={{ rotate: rotate ? "180deg" : "0deg", zIndex: 10000 }}
       className="img-fluid col-2"
