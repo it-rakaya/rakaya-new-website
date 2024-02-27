@@ -16,7 +16,6 @@ export default function Home() {
         <Stats />
         <Marquee />
         <Content />
-        <div className="bg-danger"></div>
       </Container>
     </>
   );
