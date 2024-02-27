@@ -11,6 +11,7 @@ const Button = ({
   color = "primary",
   className,
   type = "button",
+  isLoading = false,
 }) => {
   return (
     <button
@@ -18,7 +19,18 @@ const Button = ({
       type={type}
       onClick={onClick}
     >
-      <div className={className}>{children}</div>
+      {isLoading ? (
+        <div
+          class="spinner-grow text-white "
+          role="status"
+          style={{ width: "10px", height: "10px" }}
+        >
+            <span class="visually-hidden">Loading...</span>
+
+        </div>
+      ) : (
+        <div className={className}>{children}</div>
+      )}
     </button>
   );
 };

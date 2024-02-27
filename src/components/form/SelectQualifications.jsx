@@ -6,27 +6,32 @@ import { useFormikContext } from "formik";
 import { t } from "i18next";
 
 function SelectQualifications({ label, required }) {
-  const { setFieldValue } = useFormikContext();
+  const { values, setFieldValue, errors, touched, handleBlur } =
+    useFormikContext(); 
   const selectOptions = [
-    { value: "High_school", label: t("High School") },
-    { value: "bachelor", label: t("bachelor") },
-    { value: "Master", label: t("Master") },
-    { value: "Ph.D", label: t("Ph.D") },
+    { value: "High_school", label: t("common:HighSchool") },
+    { value: "bachelor", label: t("common:bachelor") },
+    { value: "Master", label: t("common:Master") },
+    { value: "Ph.D", label: t("common:Ph.D") },
   ];
   return (
     <div>
       <Label>
         {label}
-        <span className="">{required == "1" ? "*" : ""}</span>
+        <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
       </Label>
       <Select
         options={selectOptions}
+        onBlur={handleBlur}
         // menuIsOpen
         placeholder="اختر المؤهل"
         styles={{
           control: (base) => ({
             ...base,
-            border: "1px solid #ced4da",
+            border:
+              errors.qualification && touched.qualification
+                ? "1px solid red"
+                : "1px solid #ced4da",
             boxShadow: "0 !important",
             "&:hover": {},
           }),
@@ -36,6 +41,9 @@ function SelectQualifications({ label, required }) {
             transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : null,
           }),
         }}
+        className={` ${
+          errors.qualification && touched.qualification ? "is-invalid" : ""
+        }`}
         components={{
           Option: ({ data, selectOption, theme, isSelected }) => {
             return (
@@ -50,6 +58,9 @@ function SelectQualifications({ label, required }) {
         }}
         onChange={(option) => setFieldValue("qualification", option.value)}
       />
+      {touched.qualification && errors.qualification && (
+        <div className="invalid-feedback">{errors.qualification}</div>
+      )}
     </div>
   );
 }

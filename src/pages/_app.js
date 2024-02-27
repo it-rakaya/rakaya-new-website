@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         ></script>
         <Component {...pageProps} />
+        
       </Layout>
     </I18nextProvider>
   );

@@ -1,14 +1,40 @@
 import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
 import Team from "@/components/vision/Team";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { AnimatePresence } from "framer-motion";
 
 const index = () => {
+  const TeamData = [
+    { name: "المستشار نبيل عابد", position: "رئيس مجلس الإدارة" },
+    { name: "م. حاتم باناصر", position: "الرئيس التنفيذي" },
+    { name: "لميس الثقفي", position: "مستشارة تطوير أعمال" },
+    { name: "أحمد الغريب", position: "مدير المكتب التنفيذي" },
+    { name: "م. عمر خان", position: "مدير إدارة تقنية المعلومات" },
+    {
+      name: "د. مريم العمودي",
+      position: "مديرة البحث والتطوير بصحة وسلامة الغذاء",
+    },
+    { name: "إبتهال دحلان", position: "مساند إداري" },
+    { name: "الاء دحلان", position: "مساند إداري" },
+    { name: "حسين الغشيري", position: "مساند إداري" },
+    { name: "م. غيداء مغربي", position: "مهندسة برمجيات" },
+    { name: "م. أسامة عبدالغني", position: "مهندس برمجيات" },
+    { name: "ربى بوقس", position: "مصمم واجهات وتجربة المستخدم" },
+    { name: "شوق خياط", position: "محاسبة مالية" },
+    { name: "لمى بوقس", position: "مهندسة برمجيات" },
+    { name: "غدير العريني", position: "أخصائي قانوني" },
+    { name: "محمد الأحمر", position: "مهندس برمجيات" },
+    { name: "عبدالرحمن الشيخ", position: "مهندس برمجيات" },
+    { name: "دانة درار", position: "مشرفة قسم إسعاد العملاء" },
+    { name: "تسنيم فطاني", position: "مشرفة قسم التسويق" },
+    { name: "إنصاف السبحي", position: "أخصائية تقنية معلومات" },
+    { name: "ريم العتمي", position: "مهندسة برمجيات" },
+    { name: "رحيمة جعفر", position: "مساند إداري" },
+    { name: "جواد الغريبي", position: "مهندس برمجيات" },
+  ];
+
   return (
     <>
-
       <AnimatePresence mode="wait">
         <VisionLayout title={"ركايا البديعة"}>
           <Container className="me-0 col-lg-10">
@@ -63,27 +89,11 @@ const index = () => {
               <h2>أعضاء ركايا</h2>
             </div>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
-              <div className=" ">
-                <Team />
-              </div>
+              {TeamData?.map((item, index) => (
+                <div className=" " key={index}>
+                  <Team name={item?.name} position={item?.position} />
+                </div>
+              ))}
             </div>
           </Container>
         </VisionLayout>

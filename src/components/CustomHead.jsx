@@ -29,22 +29,22 @@ export default function CustomHead({
       <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="Content-Language" content="ar" />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="اسم موقعك أو تطبيقك" />{" "}
+      <meta property="og:site_name" content="Rakaya" />{" "}
       {/* اجعل هذا ثابتًا إذا كان اسم الموقع لا يتغير */}
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={url} />
-      <script type="application/ld+json">
-        {JSON.stringify(schemaOrgJSONLD)}
-      </script>
       {/* fonts */}
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet"
-      /> */}
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgJSONLD)}
+      </script>
     </Head>
   );
 }

@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
+import TOTop from "@/components/TOTop";
 import Content from "@/components/landing/Content";
 import Header from "@/components/landing/Header";
 import Marquee from "@/components/landing/Marquee";
@@ -15,6 +16,7 @@ export default function Home() {
         <Stats />
         <Marquee />
         <Content />
+        <div className="bg-danger"></div>
       </Container>
     </>
   );

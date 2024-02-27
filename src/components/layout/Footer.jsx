@@ -4,6 +4,7 @@ import React from "react";
 import Container from "../Container";
 import Logo from "../Logo";
 import FooterLink from "./FooterLink";
+import Heart from "../icons/Heart";
 
 const Footer = () => {
   const footerStyle = "d-flex flex-wrap justify-content-center col-12 col-lg-3";
@@ -41,6 +42,10 @@ const Footer = () => {
       </Container>
       <Container className="d-flex justify-content-center pt-3">
         <p className="text-dark fw-bold">جميع الحقوق محفوظة لشركة ركايا</p>
+        <p className="mx-1">
+          <Heart />
+        </p>
+        <span className="">{new Date().getFullYear()}</span>
       </Container>
     </footer>
   );

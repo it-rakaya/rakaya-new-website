@@ -8,7 +8,6 @@ function UploadDoc({ name, label, isRequired }) {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    console.log("🚀 ~ handleFileChange ~ file:", file);
     if (file) {
       // Check if the file is a PDF
       if (file.type == "application/pdf") {
@@ -31,7 +30,7 @@ function UploadDoc({ name, label, isRequired }) {
     <div className="w-full">
       <Label className={`text-center  `}>
         الرجاء رفع سيرتك الذاتية هنا
-        {isRequired && <span className="mx-1 text-red-500">*</span>}
+        {isRequired && <span className="mx-1 text-danger">*</span>}
       </Label>
       <div className="h-[100px]   border  rounded-3  position-relative cursor-pointer">
         <input

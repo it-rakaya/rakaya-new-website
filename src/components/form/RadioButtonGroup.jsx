@@ -1,6 +1,9 @@
+import { useFormikContext } from "formik";
 import React from "react";
 
-function RadioButtonGroup({options , name , defaultValue}) {
+function RadioButtonGroup({ options, name, defaultValue, onChange }) {
+  const { errors, touched, handleBlur } = useFormikContext(); // Destructure useFormikContext
+
   return (
     <div>
       {options.map((option, index) => (
@@ -12,6 +15,7 @@ function RadioButtonGroup({options , name , defaultValue}) {
             id={`${name}${index}`}
             value={option.value}
             defaultChecked={defaultValue === option.value}
+            onChange={onChange}
           />
           <label className="form-check-label" htmlFor={`${name}${index}`}>
             {option.label}

@@ -4,7 +4,7 @@ import UploadDoc from "../form/UploadDoc";
 function MainFormStepThree() {
   return (
     <div>
-      <UploadDoc name="resume_file" />
+      <UploadDoc name="resume_file" isRequired />
     </div>
   );
 }

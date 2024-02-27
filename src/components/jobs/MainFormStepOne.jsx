@@ -9,18 +9,20 @@ function MainFormStepOne() {
   return (
     <div className="my-">
       <BaseInputField
-        name={"name"}
+        name="full_name"
         label={"اسمك الكامل"}
         placeholder={"الاسم الرباعي"}
+        required
       />
       <BaseInputField
         name={"email"}
         label={"البريد الإلكتروني"}
         placeholder={"example@example.com"}
+        required
       />
-      <PhoneInput label={"رقم الجوال"} />
+      <PhoneInput label={"رقم الجوال"}  required/>
 
-      <SelectQualifications label={"المؤهل"} />
+      <SelectQualifications label={"المؤهل"}  required/>
     </div>
   );
 }

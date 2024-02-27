@@ -1,8 +1,12 @@
 import React from 'react'
+import TOTop from './TOTop'
 
-const Container = ({children, className="", style, dir}) => {
+const Container = ({children, className="", style, dir , id}) => {
   return (
-    <div className={`container-fluid ${className}`} dir={dir} style={style}>{children}</div>
+    <>
+    <div id={id} className={`container-fluid ${className}`} dir={dir} style={style}>{children}</div>
+    {/* <TOTop/> */}
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import TOTop from "../TOTop";
 const NavBar = dynamic(() => import("./Navbar"), {
   ssr: false,
 });
@@ -11,6 +12,7 @@ function Layout({ children }) {
     <div className="">
       <NavBar />
       {children}
+      <TOTop />
       <Footer />
     </div>
   );
