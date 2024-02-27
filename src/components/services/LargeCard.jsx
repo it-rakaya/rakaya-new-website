@@ -1,13 +1,14 @@
 import React from "react";
 import Container from "../Container";
 import ImgContainer from "../ImgContainer";
+import Image from "next/image";
 
 const LargeCard = ({ date, title, description, source, imgUrl }) => {
    return (
       <Container className="col-lg-5 my-3">
          <Container className="overflow-hidden rounded p-0 m-0 mb-2">
             <ImgContainer>
-               <img src={imgUrl} alt="" className="img-fluid rounded" />
+               <Image  src={imgUrl} alt="" className="img-fluid rounded" />
             </ImgContainer>
          </Container>
          <p className="text-black-50 mb-0">{date}</p>

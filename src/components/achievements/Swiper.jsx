@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 /**
  * @param {{imgArray:string[]}}
  */
@@ -31,7 +32,7 @@ const ImgSwiper = ({ imgArray }) => {
       {imgArray.map((img, index) => {
         return (
           <SwiperSlide key={index}>
-            <img src={img} className={`img-fluid ${styles["img-card"]} rounded`} />
+            <Image alt="" src={img} className={`img-fluid ${styles["img-card"]} rounded`} />
             <p className="text-white fs-4">Lorem ipsum dolor sit amet.</p>
           </SwiperSlide>
         );
