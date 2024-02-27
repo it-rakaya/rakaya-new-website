@@ -28,11 +28,11 @@ const pillars = () => {
             خلال تقديم أفضل الحلول بمعايير عالمية متطورة مع فهم فريد للسوق
             المحلي
           </p>
-          <PillarHeader title="الشفافية" icon="bi bi-list-nested" />
+          <PillarHeader title={"الشفافية" }icon="bi bi-list-nested" />
           <p>
             التواصل الواضح مع العميل وتقديم الإستشارة بعد دراستها من كل الجوانب
           </p>
-          <PillarHeader title="المسؤولية" icon="bi bi-bar-chart" />
+          <PillarHeader title={"المسؤولية"} icon="bi bi-bar-chart" />
           <p>
             الالتزام بأداء العمل على أكمل وجه وإضافة قيمة نوعية تساهم بتحقيق
             النجاح
