@@ -8,7 +8,7 @@ const LargeCard = ({ date, title, description, source, imgUrl }) => {
       <Container className="col-lg-5 my-3">
          <Container className="overflow-hidden rounded p-0 m-0 mb-2">
             <ImgContainer>
-               <Image  src={imgUrl} alt="" className="img-fluid rounded" />
+               <Image  src={imgUrl} alt="" className="img-fluid rounded" width={''} height={''} />
             </ImgContainer>
          </Container>
          <p className="text-black-50 mb-0">{date}</p>

@@ -22,7 +22,7 @@ const Bar = ({ imgArray, reverse }) => {
             <Image
               width={0}
               height={0}
-              alt=""
+              alt="image"
               src={img}
               className={`rounded w-auto rounded-2 mx-4 img-fluid ${styles["img-card"]}`}
               style={{ maxHeight: "300px" , padding:"5px" }}

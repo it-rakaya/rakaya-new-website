@@ -16,7 +16,7 @@ function CardApplication() {
           key={index}
         >
           <div className="">
-            <Image alt="" src={item} width={0} height={0} className="w-auto" />
+            <Image alt="image" src={item} width={0} height={0} className="w-auto"  />
           </div>
         </div>
       ))}

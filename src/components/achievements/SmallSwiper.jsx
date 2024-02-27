@@ -36,7 +36,7 @@ const SmallSwiper = ({ imgArray }) => {
       {imgArray.map((img, index) => {
         return (
           <SwiperSlide key={index}>
-            <Image alt="" src={img} className={`img-fluid ${styles["img-small-card"]} rounded`} />
+            <Image alt="image" src={img} className={`img-fluid ${styles["img-small-card"]} rounded`}  width={''} height={''}/>
           </SwiperSlide>
         );
       })}
