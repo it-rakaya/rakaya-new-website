@@ -1,49 +1,52 @@
 import VisionLayout from "@/components/vision/VisionLayout";
-import Image from "next/image";
 import React from "react";
-import defaultImage from "../../../assets/defaultImage.png";
-import CustomHead from "@/components/CustomHead";
 const impact = () => {
+  const blogs = [
+    {
+      blog: `"وجود ركايا أمر جوهري ونتمنى أن نزيد من تعاوننا"`,
+      author: "د. أحمد سندي رئيس مجلس إدارة مجموعة أثراء القابضة",
+    },
+    {
+      blog: `"ركايا من أهم أسباب نجاحنا والشريك الذي نعتمد عليه" `,
+      author: " أ. فواز دانش رئيس مجلس إدارة شركة ضيوف البيت",
+    },
+    {
+      blog: ` "توفّقنا في اختيار شركة ركايا كشريك قوي أمين"  `,
+      author: " أ. أسامة دانش العضو المنتدب لشركة حجاج جنوب آسيا",
+    },
+    {
+      blog: `"سعدنا بشراكتنا مع شركة ركايا ونتشرّف أن تكون شراكة استراتيجية للمدى البعيد `,
+      author: " أ. أسامة أبو العلا الرئيس التنفيذي لشركة ضيوف البيت",
+    },
+    {
+      blog: `"إحدى الشركات المحترمة والمرموقة ومزيدًا من التوفيق والنجاح إن شاء الله" `,
+      author: " أ. عبدالرحمن شركة خاصة  ",
+    },
+    {
+      blog: `"شركة لها اسم قوي في السوق وتقدم كثير من الخدمات الإدارية" `,
+      author: "   أ. لؤي شركة صناع النظم  ",
+    },
+    {
+      blog: `"شركة تمتاز بالنظام والاحترام صدرهم يسمع لك قبل أن يتكلم ، من أفضل الشركات التي تم الاجتماع معها مسئول محترم ومتفاهم و خلوق" `,
+      author: "   أ. مصطفى شركة خاصة  ",
+    },
+    {
+      blog: `"ركايا معروفة في السوق بإسمها القوي ونجاحها المتقدم"`,
+      author: " أ. محمد شركة خاصة ",
+    },
+  ];
   return (
     <>
-
       <VisionLayout>
-        <div className="row align-items-end">
-          <div className=" col-12 col-md-3 text-center">
-            <Image
-              alt=""
-              src={defaultImage}
-              width={"200"}
-              height={"200"}
-              className="rounded-3 w-fit"
-            />
-          </div>
-          <div className="col-12 col-md-9 mt-2">
-            <div className="d-flex align-items-center gap-2  justify-content-center justify-content-md-start">
-              <h3>الاسم:</h3>
-              <p
-                className="m-0
-            "
-              >
-                عبد الرحمن الشيخ
-              </p>
+        <h1>قَبس</h1>
+        <h5>اِقتباسات نعُدها شعلة مضيئة تزيد من توهّجنا</h5>
+        <div className="mainBoxBLog my-5">
+          {blogs.map((item, index) => (
+            <div className="blogBox mt-5" key={index}>
+              <h5>{item?.blog}</h5>
+              <p className="text-start mt-3 mb-0">{item?.author} </p>
             </div>
-            <div className="d-flex align-items-center gap-2 mt-md-4  justify-content-center justify-content-md-start">
-              <h3>البوزشن:</h3>
-              <p className="m-0">مطور واجهات امامية</p>
-            </div>
-          </div>
-          <div className="mt-5 col-12 col-md-11 justify-content-center">
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Sagittis eget in nunc
-              tincidunt. Maecenas sit eu gravida in vitae euismod dictum. Turpis
-              molestie sagittis cursus amet neque cras tempus lacus facilisis.
-              Morbi vitae euismod dictum. Turpis molestie sagittis cursus amet
-              neque cras tempus lacus facilisis. Morbi volutpat neque maecenas
-              est euismod egestas habitaneuismod egestas habitant mauris
-              feugiat.
-            </p>
-          </div>
+          ))}
         </div>
       </VisionLayout>
     </>

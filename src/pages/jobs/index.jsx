@@ -1,18 +1,17 @@
-import Container from "@/components/Container";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import pattern from "assets/patterns/pattern1.svg";
-import Header from "@/components/jobs/Header";
-import Section from "@/components/jobs/Section";
-import MainForm from "@/components/jobs/MainFormStepOne";
-import { Form, Formik } from "formik";
-import MainFormStepOne from "@/components/jobs/MainFormStepOne";
-import Line from "@/components/Line";
-import MainFormStepTow from "@/components/jobs/MainFormStepTow";
-import MainFormStepThree from "@/components/jobs/MainFormStepThree";
 import Button from "@/components/Button";
+import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
+import Line from "@/components/Line";
+import Header from "@/components/jobs/Header";
+import MainFormStepOne from "@/components/jobs/MainFormStepOne";
+import MainFormStepThree from "@/components/jobs/MainFormStepThree";
+import MainFormStepTow from "@/components/jobs/MainFormStepTow";
+import Section from "@/components/jobs/Section";
+import pattern from "assets/patterns/pattern1.svg";
+import { Form, Formik } from "formik";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React from "react";
 
 const Content = ({ title, children }) => {
   return (
@@ -50,31 +49,48 @@ const Pattern = ({ rotate = false }) => (
 );
 
 const index = () => {
+  const initialValues = {
+    name:"",
+    email:"",
+    phone:"",
+    phone_code:"",
+    qualification:"",
+    department_id:"",
+    self_description:"",
+    resident_status:"",
+    salary_expectation:"",
+    availability_to_start:"",
+    resume_file: null,
+    department_id: "",
+  };
   return (
     <>
       <CustomHead title={"الوظائف"} description={"home page rakaya"} />
 
-    <Container className="m-0 p-0 overflow-hidden">
-      <Header text={"التقديم"} />
-      <Formik initialValues={""} onSubmit={() => {}}>
-        <Form>
-          <Section title="القسم الاول" subtitle="معلوماتي">
-            <MainFormStepOne />
-          </Section>
-          <Line />
-          <Section title=" القسم الثاني" subtitle="الأسئلة">
-            <MainFormStepTow />
-          </Section>
-          <Line />
-          <Section title="القسم الثالث" subtitle="السيرة الذاتية">
-            <MainFormStepThree />
-            <div className="my-4">
-              <Button color="secondary"> إرسال</Button>
-            </div>
-          </Section>
-        </Form>
-      </Formik>
-    </Container>
+      <Container className="m-0 p-0 overflow-hidden">
+        <Header text={"التقديم"} />
+        <Formik
+          initialValues={initialValues}
+          onSubmit={(values) => console.log("🚀 ~ index ~ values:", values)}
+        >
+          <Form>
+            <Section title="القسم الاول" subtitle="معلوماتي">
+              <MainFormStepOne />
+            </Section>
+            <Line />
+            <Section title=" القسم الثاني" subtitle="الأسئلة">
+              <MainFormStepTow />
+            </Section>
+            <Line />
+            <Section title="القسم الثالث" subtitle="السيرة الذاتية">
+              <MainFormStepThree />
+              <div className="my-4">
+                <Button color="secondary" type="submit" > إرسال</Button>
+              </div>
+            </Section>
+          </Form>
+        </Formik>
+      </Container>
     </>
   );
 };

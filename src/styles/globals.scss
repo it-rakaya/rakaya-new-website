@@ -17,26 +17,30 @@
       gray:#666666
    );
 
-   @each $name, $color in $text-colors {
-      &-#{$name} {
-         color: $color !important;
-      }
+@each $name, $color in $text-colors {
+   &-#{$name} {
+      color: $color !important;
    }
+}
 }
 
 .fs {
    &-1 {
       font-size: 3.812rem;
    }
+
    &-2 {
       font-size: 3.062rem;
    }
+
    &-3 {
       font-size: 2.438rem;
    }
+
    &-4 {
       font-size: 1.938rem;
    }
+
    &-5 {
       font-size: 1.563rem;
    }
@@ -46,22 +50,25 @@
    &-primary {
       background-color: $primary !important;
    }
+
    &-secondary {
       background-color: $secondary !important;
    }
+
    &-third {
       background-color: $third !important;
    }
+
    &-forth {
       background-color: $forth !important;
    }
 }
 
-.img-container > img {
+.img-container>img {
    transition: transform 550ms ease;
 }
 
-.img-container > img:hover {
+.img-container>img:hover {
    transform: scale(1.03);
 }
 
@@ -73,7 +80,7 @@ body {
    }
 
    &::-webkit-scrollbar-track {
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, 0.3);
       border-radius: 5px;
    }
 
@@ -101,32 +108,61 @@ body {
    transform: scale(1.01);
 }
 
-.teamShadow{
+.teamShadow {
    box-shadow: 0px 4px 24px -1px #0000001A;
 }
-.carApp{
-width: 197px;
-height: 172px;
+
+.carApp {
+   width: 197px;
+   height: 172px;
 }
-.over_margin{
-margin-top: 200px;
+
+.over_margin {
+   margin-top: 200px;
 }
-.form-control:focus{
+
+.form-control:focus {
    background: transparent;
-    box-shadow: 0 0 0;
-    border: 1px solid #dee2e6;
+   box-shadow: 0 0 0;
+   border: 1px solid #dee2e6;
 }
+
 .cursor-pointer {
    cursor: pointer;
- }
- .patternLanding{
+}
+
+.patternLanding {
    position: absolute;
    left: 0;
    top: 50px;
 
- }
- .patternLandingRight{
+}
+
+.patternLandingRight {
    position: absolute;
    right: 0;
    bottom: 100px;
- }
+}
+
+.mainBoxBLog {
+   width: 88%;
+}
+
+.blogBox {
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+   padding: 30px;
+   border-radius: 10px;
+
+}
+.mainShadow {
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+
+}
+@media (max-width:770px) {
+   .mainBoxBLog {
+      width: 100%;
+   }
+   .blogBox {
+      padding: 10px;
+   }
+}

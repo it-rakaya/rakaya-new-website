@@ -11,7 +11,7 @@ const SelectItem = ({ data, selectOption, isSelected }) => {
         isSelected ? "list-item-active" : ""
       }`}
     >
-      <h4 className="m-0">{data?.label}</h4>
+      <h4 className="m-0 fs-6">{data?.label}</h4>
     </div>
   );
 };

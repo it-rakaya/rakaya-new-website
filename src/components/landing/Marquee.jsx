@@ -18,32 +18,36 @@ const Bar = ({ imgArray, reverse }) => {
     >
       {imgArray.map((img, index) => {
         return (
-          <Image
-            width={300}
-            height={300}
-            alt=""
-            src={img}
-            className={`rounded rounded-3 mx-4 img-fluid ${styles["img-card"]}`}
-            style={{ maxHeight: "300px" }}
-            key={index}
-          />
+          <div key={index} className="border m-1 rounded-2 mainShadow ">
+            <Image
+              width={0}
+              height={0}
+              alt=""
+              src={img}
+              className={`rounded w-auto rounded-2 mx-4 img-fluid ${styles["img-card"]}`}
+              style={{ maxHeight: "300px" , padding:"5px" }}
+            />
+          </div>
         );
       })}
     </Marquee>
   );
 };
 const images = [
-  "https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2050&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "/rakaya/5chefs.png",
+  "/rakaya/ektimal.png",
+  "/rakaya/ektimal.png",
+  "/rakaya/Etqan.png",
+  "/rakaya/qfsco.png",
+  "/rakaya/speed-rent.png",
+  "/rakaya/taqniyah.png",
 ];
 const MyMarquee = () => {
   return (
     <div className="overflow-hidden">
-      <h2 className="text-center mb-5">شركاء النجاح</h2>
+      <h2 className="text-center my-3">شركاء النجاح</h2>
 
-      <Container className="bg-black py-3 px-0 overflow-hidden" dir={"ltr"}>
+      <Container className=" py-3 px-0 overflow-hidden" dir={"ltr"}>
         <Container className="mb-2">
           <Bar imgArray={images} />
           <Bar imgArray={images} reverse />

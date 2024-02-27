@@ -2,13 +2,12 @@ import React from "react";
 import Select from "react-select";
 import SelectItem from "../SelectItem";
 import Label from "./Label";
+import { useFormikContext } from "formik";
 
-function SelectSections({ label, required }) {
-  const selectOptions = [
-    { value: "1", label: "Hello World" },
-    { value: "2", label: "Hello Solar System" },
-    { value: "3", label: "Hello Universe" },
-  ];
+function SelectDepartment({ label, required }) {
+  const { setFieldValue } = useFormikContext();
+
+  const selectOptions = [{ value: "1", label: "test" }];
   return (
     <div>
       <Label>
@@ -44,9 +43,10 @@ function SelectSections({ label, required }) {
           },
           MenuList: ({ children }) => <div className="m-0 p-0">{children}</div>,
         }}
+        onChange={(option) => setFieldValue("department_id", option.value)}
       />
     </div>
   );
 }
 
-export default SelectSections;
+export default SelectDepartment;

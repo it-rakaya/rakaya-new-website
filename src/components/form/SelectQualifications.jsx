@@ -2,12 +2,16 @@ import React from "react";
 import Select from "react-select";
 import SelectItem from "../SelectItem";
 import Label from "./Label";
+import { useFormikContext } from "formik";
+import { t } from "i18next";
 
 function SelectQualifications({ label, required }) {
+  const { setFieldValue } = useFormikContext();
   const selectOptions = [
-    { value: "1", label: "Hello World" },
-    { value: "2", label: "Hello Solar System" },
-    { value: "3", label: "Hello Universe" },
+    { value: "High_school", label: t("High School") },
+    { value: "bachelor", label: t("bachelor") },
+    { value: "Master", label: t("Master") },
+    { value: "Ph.D", label: t("Ph.D") },
   ];
   return (
     <div>
@@ -44,6 +48,7 @@ function SelectQualifications({ label, required }) {
           },
           MenuList: ({ children }) => <div className="m-0 p-0">{children}</div>,
         }}
+        onChange={(option) => setFieldValue("qualification", option.value)}
       />
     </div>
   );

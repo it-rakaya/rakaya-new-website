@@ -19,11 +19,8 @@ function MainFormStepOne() {
         placeholder={"example@example.com"}
       />
       <PhoneInput label={"رقم الجوال"} />
-      {/* <div className="my-4">
-          <Button color="secondary"> إرسال</Button>
-        </div> */}
-      <SelectQualifications label={"المؤهل"} />
 
+      <SelectQualifications label={"المؤهل"} />
     </div>
   );
 }

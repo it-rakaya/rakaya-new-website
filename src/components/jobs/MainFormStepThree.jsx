@@ -1,12 +1,12 @@
-import React from 'react'
-import UploadDoc from '../form/UploadDoc'
+import React from "react";
+import UploadDoc from "../form/UploadDoc";
 
 function MainFormStepThree() {
   return (
     <div>
-        <UploadDoc name={"dd"}/>
+      <UploadDoc name="resume_file" />
     </div>
-  )
+  );
 }
 
-export default MainFormStepThree
+export default MainFormStepThree;

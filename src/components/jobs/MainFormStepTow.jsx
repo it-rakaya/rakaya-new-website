@@ -4,38 +4,44 @@ import SelectQualifications from "../form/SelectQualifications";
 import TextArea from "../form/TextArea";
 import Label from "../form/Label";
 import RadioButtonGroup from "../form/RadioButtonGroup";
-import SelectSections from "../form/SelectSections";
+import SelectSections from "../form/SelectDepartment";
+import SelectDepartment from "../form/SelectDepartment";
 
 function MainFormStepTwo() {
   const residencyStatusOptions = [
-    { label: "مواطن", value: "option1" },
-    { label: "مقيم", value: "option2" },
-    { label: "زائر", value: "option3" },
-    { label: "أخرى", value: "option4" },
+    { label: "مواطن", value: "citizen" },
+    { label: "مقيم", value: "resident" },
+    { label: "زائر", value: "visitor" },
+    { label: "أخرى", value: "other" },
   ];
 
   const availabilityOptions = [
-    { label: "جاهز حالًا", value: "option1" },
-    { label: "من أسبوعين إلى أربعة أسابيع", value: "option2" },
-    { label: "من أربعة أسابيع إلى ثمانية أسابيع", value: "option3" },
-    { label: "أكثر من ثمانية أسابيع", value: "option4" },
+    { label: "جاهز حالًا", value: "now" },
+    { label: "من أسبوعين إلى أربعة أسابيع", value: "two_to_four_weeks " },
+    { label: "من أربعة أسابيع إلى ثمانية أسابيع", value: "four_to_eight_weeks " },
+    { label: "أكثر من ثمانية أسابيع", value: "more_than_eight_weeks" },
   ];
 
   return (
     <div className="my-">
-      <SelectSections label="اختر القسم الذي ترغب بالإنضمام إليه" pl />
-      <TextArea label="أخبرنا عن نفسك؟" placeholder="اكتب هنا" />
+      <SelectDepartment label="اختر القسم الذي ترغب بالإنضمام إليه" />
+      <TextArea
+        label="أخبرنا عن نفسك؟"
+        placeholder="اكتب هنا"
+        name={"self_description"}
+      />
+
       <Label>
         حالة إقامتك في السعودية
         <span>{"*"}</span>
       </Label>
       <RadioButtonGroup
         options={residencyStatusOptions}
-        name="residencyStatus"
+        name="resident_status"
         defaultValue="option1"
       />
       <BaseInputField
-        name="name"
+        name="salary_expectation"
         label="الراتب الشهري المتوقع"
         placeholder="4000"
       />
@@ -45,7 +51,7 @@ function MainFormStepTwo() {
       </Label>
       <RadioButtonGroup
         options={availabilityOptions}
-        name="availability"
+        name="availability_to_start"
         defaultValue="option1"
       />
     </div>
