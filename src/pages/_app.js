@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Layout from "@/components/layout/Layout";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useIsRTL } from "@/hooks/useIsRTL";
 import "@/styles/globals.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useLayoutEffect } from "react";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
-import { useLayoutEffect } from "react";
-import { useIsRTL } from "@/hooks/useIsRTL";
-import { AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
   const isRTL = useIsRTL();
