@@ -48,7 +48,7 @@ const Header = ({ text, subTitle, image, location }) => {
             : "#522222",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "cover",   
         }}
       >
         <Pattern />

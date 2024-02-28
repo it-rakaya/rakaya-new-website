@@ -95,7 +95,7 @@ function Navbar() {
           <div className="d-flex justify-content-center mt-4 mt-lg-0">
             {/* <button className="Button_btn-secondary__VRip_ py-2 px-5 rounded shadow-lg fw-bold">
             </button> */}
-            <Button color="secondary"> الذهاب لموقع ركايا</Button>
+            <Button color="secondary">كن شريك معنا</Button>
             {/* <Setting/> */}
           </div>
         </div>

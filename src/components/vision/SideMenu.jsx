@@ -46,10 +46,13 @@ const Separator = () => (
 const paths = [
   { title: "عن الشركة", href: "/vision" },
   { title: "أركاننا", href: "/vision/pillars" },
+  { title: "عمل ركايا", href: "/vision/work" },
   { title: "خدماتنا", href: "/vision/services" },
   { title: "منتجاتنا", href: "/vision/products" },
   { title: "قَبس عن ركايا", href: "/vision/impact" },
   { title: "برامج نستخدمها", href: "/vision/programs" },
+  { title: "أُسس", href: "/vision/base" },
+  { title: "جلسات", href: "/vision/meetings" },
 ];
 const SideMenu = () => {
   const { pathname } = useRouter();
