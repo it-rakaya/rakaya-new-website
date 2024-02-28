@@ -38,7 +38,7 @@ const impact = () => {
   ];
   return (
     <>
-      <Header text={"قالو عن ركايا"} />
+      <Header text={"قَبس عن ركايا"} />
 
       <VisionLayout>
         <h1>قَبس</h1>
