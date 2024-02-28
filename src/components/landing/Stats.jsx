@@ -23,10 +23,10 @@ const Stats = () => {
   return (
     <div className={"bg-forth "}>
       <div className={"row d-flex justify-content-center py-5 my-5 w-100"}>
-        <Stat count={"+95"} text={"Subscribers"} />
-        <Stat count={"+50"} text={"Subscribers"} />
-        <Stat count={"+50"} text={"Subscribers"} />
-        <Stat count={"+50"} text={"Subscribers"} />
+        <Stat count={"+3,000,000"} text={"وجبة"} />
+        <Stat count={"+800"} text={"مهتم"} />
+        <Stat count={"+10"} text={"شريك نجاح"} />
+        <Stat count={"+32"} text={"موظف"} />
       </div>
     </div>
   );
