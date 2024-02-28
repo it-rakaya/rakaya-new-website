@@ -1,6 +1,7 @@
 import React from "react";
 import VisionLayout from "../../components/vision/VisionLayout";
 import Container from "../../components/Container";
+import Header from "@/components/jobs/Header";
 
 const Product = ({ title, description }) => (
    <Container>
@@ -14,6 +15,9 @@ const Product = ({ title, description }) => (
 
 const Products = () => {
    return (
+      <>
+      <Header text={"منتجاتنا"} />
+
       <VisionLayout title="">
          <Container className="col-lg-8 col-md-10 me-0">
          <Product
@@ -27,6 +31,7 @@ const Products = () => {
          />
          </Container>
       </VisionLayout>
+      </>
    );
 };
 

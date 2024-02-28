@@ -18,7 +18,7 @@ const Footer = () => {
       </Container>
       <Container className={footerStyle}>
         {routes?.map((item, index) => (
-          <FooterLink key={index} link={item?.route}>
+          <FooterLink key={index} href={item?.route}>
             {t(`common:${item?.name}`)}
           </FooterLink>
         ))}

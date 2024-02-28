@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import Header from "@/components/jobs/Header";
 import Team from "@/components/vision/Team";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { AnimatePresence } from "framer-motion";
@@ -36,7 +37,8 @@ const index = () => {
   return (
     <>
       <AnimatePresence mode="wait">
-        <VisionLayout title={"ركايا البديعة"}>
+        <Header text={"ركايا البديعة"} />
+        <VisionLayout title={"عن الشركة"}>
           <Container className="me-0 col-lg-10">
             <p>
               تواجه كل شركة في طريقها لتحقيق أهدافها ونموها في السوق تحديّات

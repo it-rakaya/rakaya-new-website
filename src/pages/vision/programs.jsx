@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import Header from "@/components/jobs/Header";
 import CardApplication from "@/components/vision/CardApplication";
 import VisionLayout from "@/components/vision/VisionLayout";
 import React from "react";
@@ -14,6 +15,9 @@ const Program = ({ title, description }) => (
 
 const programs = () => {
   return (
+    <>
+      <Header text={"برامج نستخدمها"} />
+
     <VisionLayout>
       <Program
         title="جسر"
@@ -25,6 +29,7 @@ const programs = () => {
       />
       <CardApplication/>
     </VisionLayout>
+    </>
   );
 };
 

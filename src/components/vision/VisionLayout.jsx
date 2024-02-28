@@ -11,7 +11,7 @@ const VisionLayout = ({ title, children }) => {
     <>
       <CustomHead title={"ركايا البديعة"} description={"home page rakaya"} />
 
-      <Header text={"ركايا البديعة"} />
+     
 
       <Container className="d-flex flex-wrap col-12 col-lg-10 my-3 my-lg-5 ms-5">
         <SideMenu />

@@ -1,3 +1,4 @@
+import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import React from "react";
 const impact = () => {
@@ -37,6 +38,8 @@ const impact = () => {
   ];
   return (
     <>
+      <Header text={"قالو عن ركايا"} />
+
       <VisionLayout>
         <h1>قَبس</h1>
         <h5>اِقتباسات نعُدها شعلة مضيئة تزيد من توهّجنا</h5>
