@@ -1,9 +1,8 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Container from "../Container";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import pattern from "assets/patterns/pattern1.svg";
 import PatternIcon from "../icons/PatternIcon";
+import Map from "../icons/Map";
 
 const Pattern = ({ rotate = false }) => (
   <motion.div
@@ -35,16 +34,48 @@ const Pattern = ({ rotate = false }) => (
     />
   </motion.div>
 );
-const Header = ({ text }) => {
+const Header = ({ text, subTitle, image , location }) => {
   return (
     <Container className="m-0 p-0 overflow-hidden">
       <Container
-        className="bg-secondary mx-0 px-0 w-100 position-relative align-items-center d-flex justify-content-between"
-        style={{ height: "15rem" }}
+        className=" mx-0 px-0 w-100 position-relative align-items-center d-flex justify-content-between"
+        style={{
+          height: "15rem",
+          background: image
+            ? image
+              ? `url('${image}')`
+              : `url('/maka.jpg')`
+            : "#522222",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
       >
         <Pattern />
-        <div className="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end mx-5">
-          <h1 className="text-white ">{text}</h1>
+        <div
+          className="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-start    h-100"
+          style={{ background: image ? "#522222de" : "#522222" }}
+        >
+          <div
+            className="d-flex flex-column justify-content-center "
+            style={{ margin: "0 155px" }}
+          >
+            <h1 className="text-white ">{text}</h1>
+            <div className="d-flex gap-2 mt-3 ">
+              <p
+                className="text-white m-0 p-0 text-center px-2 rounded-1"
+                style={{ backgroundColor: "#cab27282" }}
+              >
+                {subTitle}
+              </p>
+              {location && (
+                <span className="d-flex text-white align-items-center">
+                  <Map />
+                  مكة المكرمة , السعوية
+                </span>
+              )}
+            </div>
+          </div>
         </div>
         <Pattern rotate />
       </Container>

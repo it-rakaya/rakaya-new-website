@@ -1,11 +1,9 @@
-import React from "react";
-import BaseInputField from "../form/BaseInputField";
 import { Form, Formik } from "formik";
-import Label from "../form/Label";
-import PhoneInput from "../form/PhoneInput";
-import TextArea from "../form/TextArea";
+import React from "react";
 import Button from "../Button";
+import BaseInputField from "../form/BaseInputField";
 import SelectHelp from "../form/SelectHelp";
+import TextArea from "../form/TextArea";
 
 function MainData() {
   return (
@@ -35,7 +33,7 @@ function MainData() {
             <BaseInputField
               name={"name"}
               label={"قد يكون اسمك الشخصي، أو اسم الجهة أو الشركة التي تمثّلها"}
-              placeholder={"الاسم الرباعي"}
+              placeholder={"الاسم الأول والأخير"}
             />
           </div>
           <div>
