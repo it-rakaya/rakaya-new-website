@@ -11,7 +11,13 @@ const index = () => {
     <>
       <CustomHead title={"قُمرة ركايا"} description={"home page rakaya"} />
 
-      <Header text={"قُمرة ركايا"} />
+      {/* <Header text={"قُمرة ركايا"} /> */}
+      <Header
+          text={"قُمرة ركايا"}
+          subTitle={"هنا جميع أحداث ركايا"}
+          image={'/studio/headers-bg/4.jpg'}
+          // location
+        />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
         <h1 className="align-self-start">{"احتفالات يوم التأسيس"}</h1>
