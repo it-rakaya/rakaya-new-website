@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../Container";
 import Button from "../Button";
+import Link from "next/link";
 
 const Join = () => {
   return (
@@ -16,9 +17,11 @@ const Join = () => {
         </div>
       </Container>
       <Container className="d-flex justify-content-center mt-2">
+        <Link href={'/jobs'}>
         <Button color="third" className="text-primary text-center">
           التقديم
         </Button>
+        </Link>
       </Container>
     </Container>
   );

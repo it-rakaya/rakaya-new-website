@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../Button";
 import Container from "../Container";
 import Logo from "../Logo";
@@ -46,7 +47,9 @@ const Header = () => {
       </div>
 
       <Container className="d-flex justify-content-center">
-        <Button color="secondary">تعرف على ركايا البديعة</Button>
+        <Link href={"/vision"}>
+          <Button color="secondary">تعرف على ركايا البديعة</Button>
+        </Link>
       </Container>
     </Container>
   );

@@ -50,6 +50,7 @@ function MainFormStepTwo() {
         name="salary_expectation"
         label="الراتب الشهري المتوقع"
         placeholder="4000"
+        type='num'
         required
         
       />
