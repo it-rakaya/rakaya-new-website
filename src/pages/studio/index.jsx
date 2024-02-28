@@ -9,44 +9,39 @@ import React from "react";
 const index = () => {
   return (
     <>
-      <CustomHead title={"ركايا ستوديو"} description={"home page rakaya"} />
+      <CustomHead title={"قُمرة ركايا"} description={"home page rakaya"} />
 
-      <Header text={"ركايا ستوديو"} />
+      <Header text={"قُمرة ركايا"} />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
-        <h1 className="align-self-start">Services</h1>
+        <h1 className="align-self-start">{"احتفالات يوم التأسيس"}</h1>
         <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
           <Container className="col-lg-5">
             <SmallCard
-              title={"Hello World"}
-              description={"ajwdkawjkldklakldjkaldjklawkjldkjlawjkldakjl"}
+              title={"المستشار نبيل عابد"}
+              description={"مشاركة المستشار نبيل عابد حفلة يوم التأسيس مع فريق ركايا"}
               footer={"2024 Jan 14"}
-              imgUrl={"/studio/image1.avif"}
+              imgUrl={"/studio/studio/foundation-day/2.png"}
             />
             <SmallCard
-              title={"Hello World"}
-              description={"ajwdkawjkldklakldjkaldjklawkjldkjlawjkldakjl"}
+              title={"ركايا"}
+              description={"هدية تذكارية من المهندس حاتم باناصر إلى الاستاذ.أحمد الغريب"}
               footer={"2024 Jan 14"}
-            imgUrl={
-                "https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              imgUrl={"/studio/studio/foundation-day/3.jpeg"}
             />
             <SmallCard
-              title={"Hello World"}
-              description={
-                "ajwdkawjkldklakldjkaldjklawkjldkjlawjkldakjlajkjhwajhfsjhjhksfjhksjwhajkdjwaadjwajh"
-              }
+              title={"الاستاذ مازن درار"}
+              description={"مشاركة الاستاذ مازن درار حفلة يوم التأسيس مع فريق ركايا"}
               footer={"2024 Jan 14"}
-              imgUrl={
-                "https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              imgUrl={"/studio/studio/foundation-day/4.png"}
+
             />
           </Container>
           <Container className="col-lg-5">
             <ImgContainer className="rounded">
               <img
                 className="img-fluid rounded"
-                src="https://images.unsplash.com/photo-1560851691-ebb64b584d3d?q=80&w=2099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/studio/studio/foundation-day/1.jpeg"
                 alt=""
                 srcset=""
               />
@@ -54,40 +49,39 @@ const index = () => {
           </Container>
         </Container>
         <hr className="col-10 my-5" />
-        <Container className="d-lg-flex flex-wrap col-lg-12  mx-0">
-          <LargeCard
-            title={"Hello World"}
-            date={"19 Jan 2070"}
-            description={
-              "jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks"
-            }
-            imgUrl={
-              "https://images.unsplash.com/photo-1504416285472-eccf03dd31eb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            source={"Okaz"}
-          />
-          <LargeCard
-            title={"Hello World"}
-            date={"19 Jan 2070"}
-            description={
-              "jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks"
-            }
-            imgUrl={
-              "https://images.unsplash.com/photo-1533050487297-09b450131914?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            source={"Okaz"}
-          />
-          <LargeCard
-            title={"Hello World"}
-            date={"19 Jan 2070"}
-            description={
-              "jasjfhksjkhfhjksdfhshjfjsheajajgjgnhsjngsjngjnksejngsjnegjnksejngnjksengjksnejkgnjksegnjkesnjkgsnjks"
-            }
-            imgUrl={
-              "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            source={"Okaz"}
-          />
+        <h1 className="align-self-start">{"اتقان الرقمية"}</h1>
+        <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
+          <Container className="col-lg-5">
+            <SmallCard
+              title={"بوست سين"}
+              description={"ليش دايمًا نتجنب نسأل ؟وليش البعض يعتبر السؤال مؤشر على الضعف و عدم المعرفة ؟"}
+              footer={"2024 Jan 14"}
+              imgUrl={"/studio/studio/etqan/2.png"}
+            />
+            <SmallCard
+              title={"بوست جيم"}
+              description={"الاجابة مهارة مهمة في تواصلنا تتطلب مننا نفهم ونسمع كويس عشان نقدر نوّصل المعلومة بوضوح ، وقدرتنا على توصيل الإجابة تعكس مهارتنا في فن الاجابة"}
+              footer={"2024 Jan 14"}
+              imgUrl={"/studio/studio/etqan/3.png"}
+            />
+            <SmallCard
+              title={"بوست الاحتراق الوظيفي"}
+              description={"‏‎اذا كنت بتعاني من وظيفتك انتبه توصل للـ#الاحتراق_الوظيفي 🚫              "}
+              footer={"2024 Jan 14"}
+              imgUrl={"/studio/studio/etqan/4.jpg"}
+
+            />
+          </Container>
+          <Container className="col-lg-5">
+            <ImgContainer className="rounded">
+              <img
+                className="img-fluid rounded"
+                src="/studio/studio/etqan/1.png"
+                alt=""
+                srcset=""
+              />
+            </ImgContainer>
+          </Container>
         </Container>
       </Container>
     </>

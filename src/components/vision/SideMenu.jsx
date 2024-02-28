@@ -48,7 +48,7 @@ const paths = [
   { title: "أركاننا", href: "/vision/pillars" },
   { title: "خدماتنا", href: "/vision/services" },
   { title: "منتجاتنا", href: "/vision/products" },
-  { title: "قالو عن ركايا", href: "/vision/impact" },
+  { title: "قَبس عن ركايا", href: "/vision/impact" },
   { title: "برامج نستخدمها", href: "/vision/programs" },
 ];
 const SideMenu = () => {
