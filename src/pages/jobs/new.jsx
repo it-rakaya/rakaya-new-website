@@ -30,6 +30,8 @@ function New() {
     availability_to_start: "",
     resume_file: null,
     department_id: "",
+    jobsOptions:"",
+    maritalStatus:""
   };
   const validationSchema = Yup.object({
     full_name: Yup.string().required("الاسم الكامل مطلوب"),
@@ -73,6 +75,7 @@ function New() {
               </Section>
               <Line />
               <Section title=" القسم الثاني" subtitle="الأسئلة">
+                <p className="fw-bold">يا ليت تجاوب على الأسئلة الإضافية</p>
                 <MainFormStepTow />
               </Section>
               <Line />

@@ -53,7 +53,10 @@ function Menu() {
   );
 
   return (
-    <Container className="col-lg-2 mx-3 mb-5 my-lg-0 d-flex gap-4">
+    <Container
+      className="col-lg-2  mb-5 my-lg-0 d-flex gap-4"
+      style={{ margin: "0 143px" }}
+    >
       {paths.map((path, index) => (
         <ListItem
           key={index}

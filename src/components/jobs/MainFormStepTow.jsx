@@ -1,5 +1,5 @@
 import { useFormikContext } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import BaseInputField from "../form/BaseInputField";
 import Label from "../form/Label";
 import RadioButtonGroup from "../form/RadioButtonGroup";
@@ -7,7 +7,7 @@ import SelectDepartment from "../form/SelectDepartment";
 import TextArea from "../form/TextArea";
 
 function MainFormStepTwo() {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext();
   const residencyStatusOptions = [
     { label: "مواطن", value: "citizen" },
     { label: "مقيم", value: "resident" },
@@ -24,9 +24,32 @@ function MainFormStepTwo() {
     },
     { label: "أكثر من ثمانية أسابيع", value: "more_than_eight_weeks" },
   ];
+  const jobsOptions = [
+    {
+      label: "دوام كامل",
+      value: "All",
+    },
+    {
+      label: "دوام جزي",
+      value: "؛Part",
+    },
+    {
+      label: "تدريب تاعوني",
+      value: "trining",
+    },
+  ];
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
   };
+  useEffect(() => {
+    if (values.jobsOptions === "trining") {
+      setFieldValue("salary_expectation", "0");
+      setFieldValue("availability_to_start", "now");
+    } else {
+      setFieldValue("salary_expectation", "");
+      setFieldValue("availability_to_start", "");
+    }
+  }, [values.jobsOptions, setFieldValue]);
 
   return (
     <div className="my-">
@@ -50,25 +73,42 @@ function MainFormStepTwo() {
           handleRadioButtonChange("resident_status", e.target.value)
         }
       />
-      <BaseInputField
-        name="salary_expectation"
-        label="الراتب الشهري المتوقع"
-        placeholder="4000"
-        type="num"
-        required
-      />
+
       <Label>
-        إذا رشحت لهذا الشاغر، فمتى تستطيع أن تباشر معنا
+        نوع الوظيفة
         <span className="text-danger mx-1">{"*"}</span>
       </Label>
       <RadioButtonGroup
-        options={availabilityOptions}
-        name="availability_to_start"
+        options={jobsOptions}
+        name="jobsOptions"
         defaultValue=""
-        onChange={(e) =>
-          handleRadioButtonChange("availability_to_start", e.target.value)
-        }
+        onChange={(e) => handleRadioButtonChange("jobsOptions", e.target.value)}
       />
+      {values?.jobsOptions == "trining" ? (
+        ""
+      ) : (
+        <>
+          <BaseInputField
+            name="salary_expectation"
+            label="الراتب الشهري المتوقع"
+            placeholder="4000"
+            type="num"
+            required
+          />
+          <Label>
+            إذا رشحت لهذا الشاغر، فمتى تستطيع أن تباشر معنا
+            <span className="text-danger mx-1">{"*"}</span>
+          </Label>
+          <RadioButtonGroup
+            options={availabilityOptions}
+            name="availability_to_start"
+            defaultValue=""
+            onChange={(e) =>
+              handleRadioButtonChange("availability_to_start", e.target.value)
+            }
+          />
+        </>
+      )}
     </div>
   );
 }

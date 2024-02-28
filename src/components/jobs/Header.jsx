@@ -34,7 +34,7 @@ const Pattern = ({ rotate = false }) => (
     />
   </motion.div>
 );
-const Header = ({ text, subTitle, image , location }) => {
+const Header = ({ text, subTitle, image, location }) => {
   return (
     <Container className="m-0 p-0 overflow-hidden">
       <Container

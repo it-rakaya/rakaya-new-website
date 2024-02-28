@@ -48,7 +48,7 @@ function UploadDoc({ name, label, isRequired }) {
     <div className="flex w-full">
       <div className="w-1/2">
         <Label className="text-center">
-          الرجاء رفع سيرتك الذاتية هنا
+          {label}
           {isRequired && <span className="mx-1 text-danger">*</span>}
         </Label>
         <div className=" border rounded-3 position-relative cursor-pointer" style={{ height:isFileLoaded  ?  "130px" :"120px" }}>

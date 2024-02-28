@@ -19,7 +19,7 @@ function JobsLayout({ children }) {
           location
         />
         <Menu />
-        <div>{children}</div>
+        <div style={{ margin: "0 90px" }}>{children}</div>
       </Container>
     </div>
   );

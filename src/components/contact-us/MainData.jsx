@@ -14,7 +14,10 @@ function MainData() {
             <h1 style={{ fontSize: "18px", fontWeight: "bold" }}>
               بماذا نستطيع مساعدتك؟
             </h1>
-            <SelectHelp label={"تحديده بدقّة يساعدنا في فهم طلبك بشكل أفضل"}  labelClassName="fw-normal"/>
+            <SelectHelp
+              label={"تحديده بدقّة يساعدنا في فهم طلبك بشكل أفضل"}
+              labelClassName="fw-normal"
+            />
           </div>
           <div className="my-4">
             <h1 style={{ fontSize: "18px", fontWeight: "bold" }}>
@@ -36,7 +39,7 @@ function MainData() {
               placeholder={"الاسم الأول والأخير"}
             />
           </div>
-          <div>
+          <div className="mt-3">
             <h1 style={{ fontSize: "18px", fontWeight: "bold" }}>
               البريد الإلكتروني
             </h1>
