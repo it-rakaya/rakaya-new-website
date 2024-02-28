@@ -18,7 +18,7 @@ export default function CustomHead({
 
   return (
     <Head>
-      <title>{title}</title>
+      <title>{`ركايا - ${title}`}</title>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

@@ -15,14 +15,7 @@ export default function PreviewImageLink({ url }) {
         }}
       >
         <a data-fancybox="gallery" href={url} className="">
-          <div className="flex flex-col items-center justify-center w-full ">
-            <div className="w-full rounded-xl">
-              <div className="flex items-center w-full p-2 rounded-md cursor-pointer ">
-                <ViewICon className="" />
-                {/* <p className="text-dark">{url?.name}</p> */}
-              </div>
-            </div>
-          </div>
+          <ViewICon className="" />
         </a>
       </Fancybox>
     </div>

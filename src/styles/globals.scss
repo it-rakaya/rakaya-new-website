@@ -194,9 +194,9 @@ body {
 
 .custom-pulse {
    animation: pulse-animation 2s infinite;
-   color: $primary;
+   color: $secondary;
    padding: 10px;
-   border:1px solid $primary
+   border:1px solid $secondary
 }
 
 .z-index-high {
@@ -211,14 +211,14 @@ body {
 /* Custom animation keyframes */
 @keyframes pulse-animation {
    0% {
-      box-shadow: 0 0 0 0 $primary;
+      box-shadow: 0 0 0 0 $secondary;
    }
 
    70% {
-      box-shadow: 0 0px 0 10px $primary;
+      box-shadow: 0 0px 0 10px $secondary;
    }
 
    100% {
-      box-shadow: 0 0 0 0 $primary;
+      box-shadow: 0 0 0 0 $secondary;
    }
 }

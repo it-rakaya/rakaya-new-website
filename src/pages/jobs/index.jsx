@@ -65,9 +65,9 @@ const Jobs = () => {
     qualification: "",
     department_id: "",
     self_description: "",
-    resident_status: "citizen",
+    resident_status: "",
     salary_expectation: "",
-    availability_to_start: "now",
+    availability_to_start: "",
     resume_file: null,
     department_id: "",
   };

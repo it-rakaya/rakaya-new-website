@@ -2,13 +2,16 @@ import { useFormikContext } from "formik";
 import { useState } from "react";
 import Label from "./Label";
 import PreviewImageLink from "../PreviewImageLink";
+import Button from "../Button";
+import ViewICon from "../icons/ViewICon";
+import PreviewPdf from "../PreviewPdf";
 
 function UploadDoc({ name, label, isRequired }) {
   const { setFieldValue } = useFormikContext();
   const [preview, setPreview] = useState(null);
   const [isFileLoaded, setIsFileLoaded] = useState(false);
   const [fileType, setFileType] = useState("");
-  const [fileName, setFileName] = useState(""); // حالة جديدة لتخزين اسم الملف
+  const [fileName, setFileName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleFileChange = (event) => {
@@ -56,13 +59,25 @@ function UploadDoc({ name, label, isRequired }) {
             className="position-absolute w-100 h-100 opacity-0 cursor-pointer z-[9]"
             onChange={handleFileChange}
           />
-          <div className="text-center p-4 d-flex flex-column align-items-center justify-content-center  " style={{height:"120px"}}>
+          <div
+            className="text-center p-4 d-flex flex-column align-items-center   "
+            style={{ height: "120px" }}
+          >
             {errorMessage ? (
               <p className="text-danger">{errorMessage}</p>
             ) : isFileLoaded ? (
               <>
                 <p className="p-0 m-0 fw-bolder">تم تحميل الملف بنجاح</p>
-                <p className="p-0 m-0">{fileName}</p> {/* عرض اسم الملف هنا */}
+                <p className="p-0 m-0">{fileName.length > 50   ? `${fileName.slice(0,50)}...` : fileName}</p>
+                <div className="position-absolute bottom-0 mb-2">
+                  <Button color="secondary" className="z-5">
+                    {preview && fileType === "application/pdf" ? (
+                      <PreviewPdf href={preview} />
+                    ) : (
+                      <PreviewImageLink url={preview} />
+                    )}
+                  </Button>
+                </div>
               </>
             ) : (
               <>
@@ -76,7 +91,7 @@ function UploadDoc({ name, label, isRequired }) {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center">
+      {/* <div className="w-1/2 flex justify-center items-center">
         {preview && fileType === "application/pdf" ? (
           <embed
             src={preview}
@@ -91,7 +106,7 @@ function UploadDoc({ name, label, isRequired }) {
             messageInfo={"عرض المعاينة"}
           />
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 }

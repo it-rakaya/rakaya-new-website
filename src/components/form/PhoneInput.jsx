@@ -37,7 +37,7 @@ function PhoneInput({ label, required }) {
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
         >
-          <span className="text-gray">+966</span>
+          <span className="text-gray">966+</span>
         </div>
       </div>
       {touched.phone && errors.phone && (

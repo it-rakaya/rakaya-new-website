@@ -5,6 +5,7 @@ import Container from "../Container";
 import Logo from "../Logo";
 import FooterLink from "./FooterLink";
 import Heart from "../icons/Heart";
+import LinkedIn from "../icons/LinkedIn";
 
 const Footer = () => {
   const footerStyle = "d-flex flex-wrap justify-content-center col-12 col-lg-3";
@@ -37,7 +38,8 @@ const Footer = () => {
           <i className="bi bi-whatsapp"></i>
         </FooterLink>
         <FooterLink>
-          <i className="bi bi-linkedin"></i>
+          {/* <i className="bi bi-linkedin"></i> */}
+          <LinkedIn/>
         </FooterLink>
       </Container>
       <Container className="d-flex justify-content-center pt-3">
