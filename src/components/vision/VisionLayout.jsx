@@ -10,9 +10,6 @@ const VisionLayout = ({ title, children }) => {
   return (
     <>
       <CustomHead title={"ركايا البديعة"} description={"home page rakaya"} />
-
-     
-
       <Container className="d-flex flex-wrap col-12 col-lg-10 my-3 my-lg-5 ms-5">
         <SideMenu />
         <Content title={title} id={'content'}>{children}</Content>

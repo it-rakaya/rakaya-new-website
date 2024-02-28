@@ -11,7 +11,7 @@ const Title = ({ title }) => (
 
 const Section = ({ title, subtitle, children }) => {
    return (
-      <Container className="col-md-6 my-5">
+      <Container className="col-md-6 my-5" style={{margin:"120px"}} >
          <Title title={title} />
          <Container className="my-3">{subtitle && <p>{subtitle}</p>}</Container>
          <Container>{children}</Container>

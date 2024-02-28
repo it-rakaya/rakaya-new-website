@@ -11,7 +11,7 @@ function MainFormStepOne() {
       <BaseInputField
         name="full_name"
         label={"اسمك الكامل"}
-        placeholder={"الاسم الرباعي"}
+        placeholder={"الاسم الأول والأخير"}
         required
       />
       <BaseInputField

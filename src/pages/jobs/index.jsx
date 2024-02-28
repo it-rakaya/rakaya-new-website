@@ -1,138 +1,90 @@
 import Button from "@/components/Button";
 import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Line from "@/components/Line";
-import LoadingOverlay from "@/components/LoadingOverlay";
-import Header from "@/components/jobs/Header";
-import MainFormStepOne from "@/components/jobs/MainFormStepOne";
-import MainFormStepThree from "@/components/jobs/MainFormStepThree";
-import MainFormStepTow from "@/components/jobs/MainFormStepTow";
-import ReceivingOrder from "@/components/jobs/ReceivingOrder";
-import Section from "@/components/jobs/Section";
-import { usePostData } from "@/hooks/usePostData";
-import { isEmail } from "@/utils/Helpers";
-import pattern from "assets/patterns/pattern1.svg";
-import { Form, Formik } from "formik";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import JobsLayout from "@/components/jobs/JobsLayout";
+import Link from "next/link";
 import React from "react";
-import * as Yup from "yup";
-
-// const Content = ({ title, children }) => {
-//   return (
-//     <>
-//       <Container className="p-0">
-//         <h3 className="">{title}</h3>
-//         {children}
-//       </Container>
-//     </>
-//   );
-// };
-
-// const Pattern = ({ rotate = false }) => (
-//   <motion.div
-//     variants={{
-//       visible: { x: 0, transition: { duration: 0.5 } },
-//       hidden: { x: rotate ? "-100%" : "100%", transition: { duration: 0.5 } },
-//     }}
-//     initial="hidden"
-//     animate="visible"
-//     className={`px-0 mx-0 position-absolute d-flex ${
-//       rotate
-//         ? "start-0 top-0 justify-content-end align-items-end"
-//         : "end-0 bottom-0 align-items-start"
-//     }`}
-//     style={{ height: "100%", overflow: "hidden", maxWidth: "12rem" }}
-//   >
-//     <Image
-//       alt="image"
-//       height={null}
-//       width={null}
-//       src={pattern}
-//       style={{ rotate: rotate ? "180deg" : "0deg" }}
-//       className={`img-fluid col-4 col-lg-8 `}
-//     />
-//   </motion.div>
-// );
 
 const Jobs = () => {
-  const { postData, isLoading, isSuccess } = usePostData("/candidate");
-
-  const initialValues = {
-    full_name: "",
-    email: "",
-    phone: "",
-    phone_code: "",
-    qualification: "",
-    department_id: "",
-    self_description: "",
-    resident_status: "",
-    salary_expectation: "",
-    availability_to_start: "",
-    resume_file: null,
-    department_id: "",
-  };
-  const validationSchema = Yup.object({
-    full_name: Yup.string().required("الاسم الكامل مطلوب"),
-    // email: Yup.string().email('يجب أن يكون بريدًا إلكترونيًا صالحًا').required('البريد الإلكتروني مطلوب'),
-    email: Yup.string()
-      .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
-      .required("البريد الإلكتروني مطلوب"),
-    phone: Yup.string().required("رقم الهاتف مطلوب"),
-    qualification: Yup.string().required("المؤهل العلمي مطلوب"),
-    department_id: Yup.string().required("اختيار القسم مطلوب"),
-    self_description: Yup.string().required("وصف نفسك مطلوب"),
-    resident_status: Yup.string().required("حالة الإقامة مطلوبة"),
-    salary_expectation: Yup.string().required("الراتب المتوقع مطلوب"),
-    availability_to_start: Yup.string().required("متى تستطيع البدء مطلوب"),
-    resume_file: Yup.mixed().required("السيرة الذاتية مطلوبة"),
-  });
-  const receivingOrderVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-  if(isLoading) return <LoadingOverlay/>
   return (
     <>
-      <CustomHead title={"الوظائف"} description={"home page rakaya"} />
+      <JobsLayout>
+        <div className="mx-5">
+          <Container className="m-5 col-9">
+            <h2>عن العمل في ركايا</h2>
+            <div className="my-4">
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                هل فكرت يومًا بالسفر حول العالم؟ ولكن تمنعك الوظيفة المكتبية؟
+              </p>
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                ركايا مهتمة بالإنتاج الصحفي: المرئي والمكتوب والمسموع. ويهمّنا
+                في ركايا الإنتاجية، والتوازن بين الحياة الاجتماعية والعمل.
+              </p>
+            </div>
+            <div className="my-4">
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                ركايا تعدك بتوفير المزايا الوظيفية التي تمكنك من العمل من أي
+                مكان وزمان.
+              </p>
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                لا نلزمك بالعمل من مكتب ركايا (في الرياض) أو في وقت معين، ونُقدم
+                مزايا مُنافسة حتى نخلق بيئة عمل مُحفزة. يمكنك الاطّلاع على
+                المزايا وتفاصيلها الكاملة في الدستور.
+              </p>
+            </div>
+          </Container>
+          <Container className="m-5 col-9">
+            <h2>متطلبات العمل</h2>
 
-      <Container className="m-0 p-0 overflow-hidden">
-        <Header text={"الوظائف"} />
-        {isSuccess ? (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={receivingOrderVariants}
-          >
-            <ReceivingOrder />
-          </motion.div>
-        ) : (
-          <Formik
-            initialValues={initialValues}
-            onSubmit={(values) => postData(values)}
-            validationSchema={validationSchema}
-          >
-            <Form>
-              <Section title="القسم الاول" subtitle="معلوماتي">
-                <MainFormStepOne />
-              </Section>
-              <Line />
-              <Section title=" القسم الثاني" subtitle="الأسئلة">
-                <MainFormStepTow />
-              </Section>
-              <Line />
-              <Section title="القسم الثالث" subtitle="السيرة الذاتية">
-                <MainFormStepThree />
-                <div className="my-4">
-                  <Button color="secondary" type="submit" isLoading={isLoading}>
-                    إرسال
-                  </Button>
-                </div>
-              </Section>
-            </Form>
-          </Formik>
-        )}
-      </Container>
+            <div className="my-4">
+              <p
+                className="p-0 m-0"
+                style={{ fontSize: "20px", fontWeight: "bold" }}
+              >
+                في ركايا لا نُفرّق بين جنسية أو جنس أو عُمُر.
+              </p>
+              <p
+                className="p-0 m-0"
+                style={{ fontSize: "20px", fontWeight: "bold" }}
+              >
+                ولا نشترط الشهادة، ولا الخبرة الطويلة، ولا وجودك داخل السعودية.
+              </p>
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                هذا لا يلغي أهميّتها، لكنّ أبرز موظفينا وأعمدة الشركة بدؤوا معنا
+                وهم «لسه طازه» من الجامعة (أو قبل الجامعة).
+              </p>
+              <p className="p-0 m-0 my-4" style={{ fontWeight: "500" }}>
+                يهمّنا أولاً فيمن نبحث عنه أن يتحرك من تلقاء نفسه. أن ينجز
+                المهمّات ويبحث عن الجديد ويؤدي واجباته دون حاجة إلى المتابعة
+                المستمرة. كن مسؤولاً، كن فضوليًا.
+              </p>
+              <p className="p-0 m-0 my-4" style={{ fontWeight: "500" }}>
+                يهمّنا كثيرًا الاختلاف في الثقافات والخلفيات، وإن كان ذلك
+                «روسمًا» تتغنى به الشركات في أرجاء العالم اليوم فإنّه أمرٌ مهم
+                لنا في ركايا. حتى إنّنا نستطيع القول إنّه دافعٌ لمصلحة الشركة في
+                الدرجة الأولى؛ فالتنوع والاختلاف بين أفراد ركايا يفتح لنا آفاق
+                فهم القضايا والموضوعات التي نكتب عنها ونصنع عنها الأفلام على نحو
+                لم نكن نراه من قبل. ويفتح هذا لنا نافذة جديدة لننظر إلى القضايا
+                من زوايا لم نكن لنستطيع فهمها لولا اختلافنا. ويقلّل احتمالات
+                الخطأ في طرحنا الموضوعات المجتمعية والثقافية
+              </p>
+              <p className="p-0 m-0 mt-4" style={{ fontWeight: "500" }}>
+                نبحث عن أشخاص يشاركونا ذات الرؤية واللغة للعمل معنا في شركة تسعى
+                لتغيير ثقافة الصحافة العربية.
+              </p>
+              <p className="p-0 m-0" style={{ fontWeight: "500" }}>
+                إن كانت لك الرغبة في مرافقتنا في مسيرة إثراء المحتوى العربي
+                ولديك الرغبة للعمل ضمن فريق ركايا، كرمًا تفضّل بتعبئة النموذج
+                الآتي.
+              </p>
+            </div>
+          </Container>
+          <Container className="m-5 col-9 text-center">
+            <Link href={"/jobs/new"}>
+            <Button className="px-5 py-2">التقديم</Button>
+            </Link>
+          </Container>
+        </div>
+      </JobsLayout>
     </>
   );
 };

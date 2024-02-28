@@ -43,8 +43,8 @@ const Header = ({ text }) => {
         style={{ height: "15rem" }}
       >
         <Pattern />
-        <div className="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end">
-          <h1 className="text-white">{text}</h1>
+        <div className="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end mx-5">
+          <h1 className="text-white ">{text}</h1>
         </div>
         <Pattern rotate />
       </Container>

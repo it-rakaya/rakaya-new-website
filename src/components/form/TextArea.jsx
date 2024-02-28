@@ -2,7 +2,7 @@ import React from "react";
 import Label from "./Label";
 import { useFormikContext } from "formik";
 
-function TextArea({ label, required, name, placeholder }) {
+function TextArea({ label, required, name, placeholder , rows }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
   return (
@@ -16,7 +16,7 @@ function TextArea({ label, required, name, placeholder }) {
           errors[name] && touched[name] ? "border-danger" : ""
         }`}
         id="exampleFormControlTextarea1"
-        rows="3"
+        rows={rows || "3"}
         value={values[name]}
         onChange={(e) => setFieldValue(name, e.target.value)}
         onBlur={handleBlur}
