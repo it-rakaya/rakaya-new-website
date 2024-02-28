@@ -7,9 +7,13 @@ function PhoneInput({ label, required }) {
     useFormikContext();
 
   const handlePhoneChange = (e) => {
-    const filteredValue = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+    let  filteredValue = e.target.value.replace(/[^0-9]/g, "").slice(0, 9);
+    if (filteredValue.startsWith("0")) {
+      filteredValue = filteredValue.substring(1);
+    }
     setFieldValue("phone", filteredValue);
-    setFieldValue("phone_code", "966"); // تحديد قيمة رمز الدولة إذا كان ثابتًا
+    
+    setFieldValue("phone_code", "966"); 
   };
   return (
     <div>

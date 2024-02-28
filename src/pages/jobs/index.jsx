@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
 import Line from "@/components/Line";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import Header from "@/components/jobs/Header";
 import MainFormStepOne from "@/components/jobs/MainFormStepOne";
 import MainFormStepThree from "@/components/jobs/MainFormStepThree";
@@ -90,6 +91,7 @@ const Jobs = () => {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+  if(isLoading) return <LoadingOverlay/>
   return (
     <>
       <CustomHead title={"الوظائف"} description={"home page rakaya"} />

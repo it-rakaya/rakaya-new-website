@@ -41,9 +41,7 @@ function SelectQualifications({ label, required }) {
             transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : null,
           }),
         }}
-        className={` ${
-          errors.qualification && touched.qualification ? "is-invalid" : ""
-        }`}
+   
         components={{
           Option: ({ data, selectOption, theme, isSelected }) => {
             return (
@@ -59,7 +57,7 @@ function SelectQualifications({ label, required }) {
         onChange={(option) => setFieldValue("qualification", option.value)}
       />
       {touched.qualification && errors.qualification && (
-        <div className="invalid-feedback">{errors.qualification}</div>
+        <div className="text-danger " style={{fontSize:"12px"}}>{errors.qualification}</div>
       )}
     </div>
   );

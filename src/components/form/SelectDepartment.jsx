@@ -64,9 +64,7 @@ function SelectDepartment({ label, required }) {
             // overflowY: 'hidden',
           }),
         }}
-        className={` ${
-          errors.department_id && touched.department_id ? "is-invalid" : ""
-        }`}
+
         components={{
           Option: ({ data, selectOption, theme, isSelected }) => {
             return (
@@ -82,7 +80,7 @@ function SelectDepartment({ label, required }) {
         onChange={(option) => setFieldValue("department_id", option.value)}
       />
       {touched.department_id && errors.department_id && (
-        <div className="invalid-feedback">{errors.department_id}</div>
+        <div className="text-danger " style={{fontSize:"12px"}}>{errors.department_id}</div>
       )}
     </div>
   );
