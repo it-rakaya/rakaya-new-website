@@ -51,7 +51,7 @@ function UploadDoc({ name, label, isRequired }) {
           الرجاء رفع سيرتك الذاتية هنا
           {isRequired && <span className="mx-1 text-danger">*</span>}
         </Label>
-        <div className="h-[100px] border rounded-3 position-relative cursor-pointer">
+        <div className=" border rounded-3 position-relative cursor-pointer" style={{ height:isFileLoaded  ?  "130px" :"120px" }}>
           <input
             type="file"
             accept="application/pdf,image/jpeg,image/png"
@@ -61,22 +61,26 @@ function UploadDoc({ name, label, isRequired }) {
           />
           <div
             className="text-center p-4 d-flex flex-column align-items-center   "
-            style={{ height: "120px" }}
+            
           >
             {errorMessage ? (
               <p className="text-danger">{errorMessage}</p>
             ) : isFileLoaded ? (
               <>
                 <p className="p-0 m-0 fw-bolder">تم تحميل الملف بنجاح</p>
-                <p className="p-0 m-0">{fileName.length > 50   ? `${fileName.slice(0,50)}...` : fileName}</p>
-                <div className="position-absolute bottom-0 mb-2">
-                  <Button color="secondary" className="z-5">
+                <p className="p-0 m-0 ">
+                  {fileName.length > 50
+                    ? `${fileName.slice(0, 50)}...`
+                    : fileName}
+                </p>
+                <div className="position-absolute bottom-0 my-2 ">
+                  {/* <Button color="secondary" className="z-5"> */}
                     {preview && fileType === "application/pdf" ? (
                       <PreviewPdf href={preview} />
                     ) : (
                       <PreviewImageLink url={preview} />
                     )}
-                  </Button>
+                  {/* </Button> */}
                 </div>
               </>
             ) : (

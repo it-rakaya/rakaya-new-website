@@ -11,7 +11,9 @@ function PreviewPdf({ href }) {
         target="_blank"
         rel="noreferrer"
       >
-        <ViewICon className="" />
+        <div className="bg-secondary px-5 py-2 rounded-3">
+          <ViewICon className="" />
+        </div>
       </a>
     </div>
   );
