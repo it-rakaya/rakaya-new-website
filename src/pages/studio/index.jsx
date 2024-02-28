@@ -21,9 +21,7 @@ const index = () => {
               title={"Hello World"}
               description={"ajwdkawjkldklakldjkaldjklawkjldkjlawjkldakjl"}
               footer={"2024 Jan 14"}
-              imgUrl={
-                "https://images.unsplash.com/photo-1576675466684-456bcdeccfbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              imgUrl={"/studio/image1.avif"}
             />
             <SmallCard
               title={"Hello World"}
