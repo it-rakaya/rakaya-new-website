@@ -54,7 +54,7 @@ const index = () => {
           text={"ركايا البديعة"}
           subTitle={"داعمين وممكنين لك..."}
           image={'/studio/headers-bg/7.jpg'}
-          // location
+          location
         />
         <VisionLayout title={"عن ركايا البديعة"}>
           <Container className="me-0 col-lg-10">
