@@ -1,13 +1,12 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
-import Container from "../Container";
-import Link from "next/link";
-import { routes } from "@/utils/routes";
-import Setting from "../Setting";
-import { t } from "i18next";
 import styles from "@/styles/components/Navbar.module.scss";
-import Logo from "../Logo";
+import { routes } from "@/utils/routes";
+import { t } from "i18next";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
 import Button from "../Button";
+import Container from "../Container";
+import Logo from "../Logo";
 
 const NavBarLink = ({ children, to, onClick }) => {
   const router = useRouter();

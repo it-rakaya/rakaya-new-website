@@ -39,7 +39,7 @@ const Footer = () => {
         </FooterLink>
         <FooterLink>
           {/* <i className="bi bi-linkedin"></i> */}
-          <LinkedIn/>
+          <LinkedIn />
         </FooterLink>
       </Container>
       <Container className="d-flex justify-content-center pt-3">
