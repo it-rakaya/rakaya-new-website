@@ -47,7 +47,7 @@ const Footer = () => {
         <p className="mx-1">
           <Heart />
         </p>
-        <span className="">{new Date().getFullYear()}</span>
+        <p className="text-dark fw-bold">{new Date().getFullYear()}</p>
       </Container>
     </footer>
   );

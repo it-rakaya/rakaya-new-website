@@ -15,9 +15,10 @@ const SmallCard = ({ title, description, footer, imgUrl }) => {
           srcset=""
           height={0}
           width={0}
+          // style={{w}}
         />
       </ImgContainer>
-      <Container className="col-lg-4 mx-lg-3 p-0 position-relative">
+      <Container className="col-lg-6 text-justify mx-lg-3 p-0 position-relative">
         <h4>{title}</h4>
         <p className="text-break">{description}</p>
         {/* <p className='position-absolute bottom-0 p-0 m-0'>{footer}</p> */}

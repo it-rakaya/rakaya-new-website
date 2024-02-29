@@ -5,11 +5,11 @@ import Header from "@/components/jobs/Header";
 
 const Product = ({ title, description }) => (
    <Container>
-      <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">
+      <div className="d-flex align-items-baseline mb-1 gap-3 text-gold ">
          <i className="bi bi-grid-1x2 fs-4"></i>
          <h4>{title}</h4>
       </div>
-      <p>{description}</p>
+      <p className="text-justify">{description}</p>
    </Container>
 );
 
@@ -19,7 +19,7 @@ const Products = () => {
       <Header text={"منتجاتنا"} />
 
       <VisionLayout title="">
-         <Container className="col-lg-8 col-md-10 me-0">
+         <Container className="col-lg-10 col-md-10 me-0">
          <Product
             title="منصة رفادة لجودة التشغيل"
             description="منصة إلكترونية بنظام متكامل تهدف إلى التقييم  التفاعلي للخطط التشغيلية والمتابعة المحكمة للارتقاء بخدمات قطاع الإعاشة والتغذية والضيافة خلال موسمي الحج والعمرة.

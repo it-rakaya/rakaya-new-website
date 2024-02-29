@@ -11,7 +11,6 @@ function MainFormStepThree() {
       />
       <UploadDoc
         name="resume_file"
-        isRequired
         label={"ارفع ملف لأهم أعمالك «إن وجد»"}
       />
     </div>

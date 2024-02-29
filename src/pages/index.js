@@ -10,7 +10,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <CustomHead title={"الصفحه الرئيسية"} description={"home page rakaya"} />
+      <CustomHead title={"الصفحة الرئيسية"} description={"home page rakaya"} />
       <Container className="mx-0 px-0">
         <Header />
         <Stats />

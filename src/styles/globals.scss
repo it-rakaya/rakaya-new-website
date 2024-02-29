@@ -166,7 +166,12 @@ body {
    }
 
    .blogBox {
-      padding: 10px;
+      padding: 15px 15px;
+      text-align: center;
+      // line-height: 2.;
+   }
+   .blogBox h5 {
+      line-height: 1.5;
    }
 }
 
@@ -196,7 +201,7 @@ body {
    animation: pulse-animation 2s infinite;
    color: $secondary;
    padding: 10px;
-   border:1px solid $secondary
+   border: 1px solid $secondary
 }
 
 .z-index-high {
@@ -221,4 +226,43 @@ body {
    100% {
       box-shadow: 0 0 0 0 $secondary;
    }
+}
+
+.headerPages {
+   margin: 0 155px
+}
+
+
+.newJob {
+   margin: 0 90px
+}
+
+.menu_jobs {
+   margin: 0 143px
+}
+
+@media (max-width:770px) {
+   .headerPages {
+      margin: 0 28px
+   }
+
+   .newJob {
+      margin: 0 20px
+   }
+
+   .menu_jobs {
+      margin: 0 20px;
+   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+}
+
+.text-justify {
+   text-align: justify;
 }

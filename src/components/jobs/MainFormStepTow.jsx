@@ -30,11 +30,11 @@ function MainFormStepTwo() {
       value: "All",
     },
     {
-      label: "دوام جزي",
+      label: "دوام جزئي",
       value: "؛Part",
     },
     {
-      label: "تدريب تاعوني",
+      label: "تدريب تعاوني",
       value: "trining",
     },
   ];

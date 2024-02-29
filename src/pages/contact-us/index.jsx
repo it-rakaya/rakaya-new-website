@@ -16,7 +16,7 @@ const index = () => {
 
       <Header text={"تواصل معنا"} />
 
-      <Container className="col-lg-6 my-5">
+      <Container className="px-3 px-md-0  col-lg-6 my-5">
         {/* <h1 className="my-5">اتصل بنا</h1> */}
         <p style={{ lineHeight: "2.2", fontWeight: "500" }}>
           أهلًا، في حال كانت لديك أي اقتراحات تخص ما تنتجه ركايا، أو أي مصادر أو

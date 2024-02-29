@@ -45,7 +45,10 @@ function New() {
     resident_status: Yup.string().required("حالة الإقامة مطلوبة"),
     salary_expectation: Yup.string().required("الراتب المتوقع مطلوب"),
     availability_to_start: Yup.string().required("متى تستطيع البدء مطلوب"),
+    maritalStatus: Yup.string().required("الحالة الاجتماعية مطلوبة"),
     resume_file: Yup.mixed().required("السيرة الذاتية مطلوبة"),
+    jobsOptions: Yup.mixed().required("نوع الوظيفة مطلوب"),
+
   });
   const receivingOrderVariants = {
     hidden: { opacity: 0, y: 50 },

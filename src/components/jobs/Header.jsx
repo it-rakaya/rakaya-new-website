@@ -57,8 +57,8 @@ const Header = ({ text, subTitle, image, location }) => {
           style={{ background: image ? "#522222de" : "#522222" }}
         >
           <div
-            className="d-flex flex-column justify-content-center "
-            style={{ margin: "0 155px" }}
+            className="d-flex flex-column justify-content-center headerPages"
+            // style={{ margin: "0 155px" }}
           >
             <h1 className="text-white ">{text}</h1>
             <div className="d-flex gap-2 mt-3 ">
