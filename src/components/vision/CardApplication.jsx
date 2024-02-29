@@ -3,22 +3,50 @@ import img1 from "../../../assets/Applications/figma.png";
 import img2 from "../../../assets/Applications/jisr.png";
 import img3 from "../../../assets/Applications/metting.png";
 import img4 from "../../../assets/Applications/trello.png";
-
 import Image from "next/image";
+import Link from "next/link";
 
 function CardApplication() {
-  const images = [img1, img2, img3, img4, img4, img4];
+  // const images = [img1, img2, img3, img4];
+  const images = [
+    {
+      image: img1,
+      link: "https://www.figma.com/",
+    },
+    {
+      image: img2,
+      link: "https://www.jisr.net/ar/about-jisr",
+    },
+    {
+      image: img3,
+      link: "https://meet.google.com/",
+    },
+    {
+      image: img4,
+      link: "https://trello.com/",
+    },
+  ];
+
   return (
-    <div className="row row-cols-3 mx-3 gap-5 - align-items-between mb-5 over_margin justify-content-center">
+    <div className="row row-cols-3 mx-3 gap-5 - align-items-between mb-5 over_margin">
       {images?.map((item, index) => (
-        <div
-          className="teamShadow rounded-4 d-flex align-items-center carApp justify-content-center"
+        <Link
+          href={`${item?.link}`}
           key={index}
+          className="teamShadow rounded-4 d-flex align-items-center carApp justify-content-center"
         >
-          <div className="">
-            <Image alt="image" src={item} width={0} height={0} className="w-auto"  />
+          <div>
+            <div className="">
+              <Image
+                alt="image"
+                src={item?.image}
+                width={0}
+                height={0}
+                className="w-auto"
+              />
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

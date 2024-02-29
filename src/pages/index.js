@@ -8,9 +8,15 @@ import Stats from "@/components/landing/Stats";
 import Head from "next/head";
 
 export default function Home() {
+  const description =
+    "ركايا تبتكر حلولاً استراتيجية مخصصة لمواجهة التحديات الإدارية والتسويقية، مما يساعد الشركات على تحقيق نمو مستدام وتوضيح رؤيتها المستقبلية. فريقنا المميز يعمل جنباً إلى جنب معك لتحديد وحل العقبات الرئيسية بخطط مبتكرة تتوافق مع أهداف شركتك";
   return (
     <>
-      <CustomHead title={"الصفحة الرئيسية"} description={"home page rakaya"} />
+      <CustomHead
+        title={"الصفحة الرئيسية"}
+        description={description}
+        imageUrl={"/favicon.ico"}
+      />
       <Container className="mx-0 px-0">
         <Header />
         <Stats />

@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
+import { pillarsData } from "@/data";
 import React from "react";
 
 const PillarHeader = ({ title, icon }) => (
@@ -9,38 +10,6 @@ const PillarHeader = ({ title, icon }) => (
     <h5>{title}</h5>
   </div>
 );
-
-const pillarsData = [
-  {
-    title: "الشفافية",
-    icon: "bi bi-list-nested",
-    description:
-      "التواصل الواضح مع العميل وتقديم الإستشارة بعد دراستها من كل الجوانب",
-  },
-  {
-    title: "المسؤولية",
-    icon: "bi bi-bar-chart",
-    description:
-      "الالتزام بأداء العمل على أكمل وجه وإضافة قيمة نوعية تساهم بتحقيق النجاح",
-  },
-  {
-    title: "الاستدامة",
-    icon: "bi bi-grid-1x2",
-    description: "الحرص على خلق علاقة شراكة ناجحة مستدامة على المدى الطويل",
-  },
-  {
-    title: "التمكين",
-    icon: "bi bi-asterisk",
-    description:
-      "العمل على الوصول لأكبر قدرة إنتاجية وزيادة الكفاءة بخطط وأهداف منظمة",
-  },
-  {
-    title: "الجدارة",
-    icon: "bi bi-star",
-    description:
-      "إنجاز العمل بطريقة صحيحة وفي توقيت مثالي بواسطة استشاريين متخصصين",
-  },
-];
 
 const Pillars = () => (
   <>

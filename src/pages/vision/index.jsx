@@ -4,171 +4,71 @@ import ImgContainer from "@/components/ImgContainer";
 import Header from "@/components/jobs/Header";
 import Team from "@/components/vision/Team";
 import VisionLayout from "@/components/vision/VisionLayout";
+import { TeamData, contentData } from "@/data";
 import { AnimatePresence } from "framer-motion";
+import React from "react";
 
-const index = () => {
-  const TeamData = [
-    { name: "المستشار نبيل عابد", position: "رئيس مجلس الإدارة" },
-    { name: "م. حاتم باناصر", position: "الرئيس التنفيذي" },
-    { name: "لميس الثقفي", position: "مستشارة تطوير أعمال" },
-    { name: "أحمد الغريب", position: "مدير المكتب التنفيذي" },
-    { name: "عمر خان", position: "مدير إدارة تقنية المعلومات" },
-    {
-      name: "مريم العمودي",
-      position: "مديرة البحث والتطوير بصحة وسلامة الغذاء",
-    },
-    { name: "إبتهال دحلان", position: "مساند إداري" },
-    { name: "الاء دحلان", position: "مساند إداري" },
-    { name: "حسين الغشيري", position: "مساند إداري" },
-    { name: "غيداء مغربي", position: "مهندسة برمجيات" },
-    { name: "أسامة عبدالغني", position: "مهندس برمجيات" },
-    { name: "ربى بوقس", position: "مصمم واجهات وتجربة المستخدم" },
-    { name: "شوق خياط", position: "محاسبة مالية" },
-    { name: "لمى بوقس", position: "مهندسة برمجيات" },
-    { name: "غدير العريني", position: "أخصائي قانوني" },
-    { name: "مازن صلاح الدين", position: "باريستا" },
-    { name: "عدنان صلاح الدين", position: "باريستا" },
-    { name: "محمد الأحمر", position: "مهندس برمجيات" },
-    { name: "عبدالرحمن الشيخ", position: "مهندس برمجيات" },
-    { name: "دانة درار", position: "مشرفة قسم إسعاد العملاء" },
-    { name: "تسنيم فطاني", position: "مشرفة قسم التسويق" },
-    { name: "إنصاف السبحي", position: "أخصائية تقنية معلومات" },
-    { name: "ريم العتمي", position: "مهندسة برمجيات" },
-    { name: "رحيمة جعفر", position: "مساند إداري" },
-    { name: "جواد الغريبي", position: "مهندس برمجيات" },
-    { name: "سعيد المطري", position: "مصمم جرافيكي" },
-    { name: "نادر حسن", position: "مستشار إداري واقتصادي" },
-    { name: "بشرى المطري", position: "أخصائي جودة" },
-    { name: "علوي حلواني", position: "مراقب جودة" },
-    { name: "رياض برناوي", position: "مراقب جودة" },
-    { name: "بدر الوذيناني", position: "مراقب جودة" },
-    { name: "أحمد خياط", position: "مراقب جودة" },
-    { name: "عبدالله باجابر", position: "مهندس برمجيات" },
-    { name: "مؤيد الصبحي", position: "مهندس برمجيات" },
-  ];
-
+const Index = () => {
   return (
     <>
       <AnimatePresence mode="wait">
-        {/* <Header text={"ركايا البديعة"} /> */}
         <Header
-          text={"ركايا البديعة"}
-          subTitle={"داعمين وممكنين لك..."}
-          image={'/studio/headers-bg/7.jpg'}
+          text="ركايا البديعة"
+          subTitle="داعمين وممكنين لك..."
+          image="/studio/headers-bg/7.jpg"
           location
         />
-        <VisionLayout title={"عن ركايا البديعة"}>
-          <Container className="me-0 col-lg-10">
-            <div className="row">
-              <div className="col-lg-8">
-                <p className="text-justify">
-                  تواجه كل شركة في طريقها لتحقيق أهدافها ونموها في السوق تحديّات
-                  كبيرة ، قد تكون إدارية من حيث تنظيمها وهيكلتها وإدارة المهام
-                  أو تسويقية برواجها أو عدم وضوح رؤيتها في مرحلتها القادمة  ،
-                  لذلك وجدت ركايا..
-                  <br />
-                  <br />
-                  حتّى نكون نقاط للحروف وأسطر للصفحة البيضاء ومفاتيح لأي قُفل
-                  بفريقنا المميز و مستشارينّا نقوم بدراسة مكمن العقدة لحلّها
-                  بوضع خطط استراتيجية تلائم الشركة وتطوّر من أوضاعها
-                </p>
-              </div>
-              <Container className="col-lg-4">
-                <ImgContainer
-                  className="rounded  d-flex align-items-center p-3"
-                  style={{ height: "120px" }}
-                >
-                  <img
-                    className="img-fluid rounded"
-                    src="/studio/companies/rakaya.png"
-                    alt=""
-                    srcset=""
-                  />
-                </ImgContainer>
-              </Container>
-            </div>
-            <hr />
-            <div className="row">
-              <div className="col-lg-8">
-                <p className="text-justify">
-                  ركايا البديعة هي أرض خصبة للأفكار الإبداعية والحلول
-                  اللامتناهية وأساليب العمل الإحترافية وقوّتنا أننا نرى بأن
-                  الشركة ليست عماد إداري فقط بل التقنية عامل مهم جدًا وأتمتة
-                  الأعمال جزء لاينفك عنها
-                </p>
-
-                <p className="text-justify">
-                  إتقان .. جوهرتنا التقنية تــكمن في أن مهندسي البرمجيات لدينا
-                  ليسوا مجرد مبرمجين بل هم خلّاقو الإبداع ، يتمتعون بملكة عالية
-                  في اهتمامهم لأدق التفاصيل ، وامتلاكهم لرؤية شاملة وقدرة
-                  استثنائية على تحويل الأفكار إلى حلول تقنية مبتكرة وفعّالة
-                </p>
-              </div>
-              <Container className="col-lg-4">
-                <ImgContainer
-                  className="rounded  d-flex align-items-center p-3"
-                  style={{ height: "120px" }}
-                >
-                  <img
-                    className="img-fluid rounded"
-                    src="/studio/companies/etqan.png"
-                    alt=""
-                    srcset=""
-                  />
-                </ImgContainer>
-              </Container>
-            </div>
-            <hr />
-            <div className="row">
-              <div className="col-lg-8">
-                <p className="text-justify">
-                  ولأن التميّز في مجال مزدهر مثل الاستشارات أمر مهم ولاهتمامنا
-                  بالاستدامة والنمو الغذائي السليم ، نعتز في ركايا البديعة بوجود
-                  القطاع المختص بتقديم الاستشارات الغذائية مع نخبة من
-                  الاستشاريين المرخصين من الهيئة العامة للغذاء والدواء
-                </p>
-                <p className="text-justify">
-                  جودة .. في جودة التشغيل الغذائي نتفرد بمستشارين غذائيين
-                  واختصاصيين وفريق عمل متمرّس بخبرات تتجاوز 20 سنة ، نعكس
-                  التزامنا بتقديم أعلى مستويات الخدمة والدعم لعملائنا مما يساهم
-                  في رفع جودة ووعي المنشآت والقطاعات الغذائية
-                </p>
-              </div>
-              <Container className="col-lg-4">
-                <ImgContainer
-                  className="rounded  d-flex align-items-center p-3"
-                  style={{ height: "120px" }}
-                >
-                  <img
-                    className="img-fluid rounded"
-                    src="/studio/companies/etqan.png"
-                    alt=""
-                    srcset=""
-                  />
-                </ImgContainer>
-              </Container>
-            </div>
-            <hr />
-
-            <p className="text-justify mt-4">
-              ركايا بقطاعاتها وأفرادها معك .. من البداية حتى النهاية داعمين و
-              ممكنين
-            </p>
-            <div className="col-12 mt-5 mb-2">
-              <h2>أعضاء ركايا</h2>
-            </div>
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-              {TeamData?.map((item, index) => (
-                <div className=" " key={index}>
-                  <Team name={item?.name} position={item?.position} />
-                </div>
-              ))}
-            </div>
-          </Container>
+        <VisionLayout title="عن ركايا البديعة">
+          <ContentSection />
+          <TeamSection />
         </VisionLayout>
       </AnimatePresence>
     </>
   );
 };
-
-export default index;
+const ContentSection = () => (
+  <Container className="me-0 col-lg-10">
+    {contentData.map((section, index) => (
+      <React.Fragment key={index}>
+        <TextImageSection
+          textContent={section.textContent}
+          imgSrc={section.imgSrc}
+          subtitle={section?.subtitle}
+        />
+        <hr />
+      </React.Fragment>
+    ))}
+    <p className="text-justify mt-4">
+      ركايا بقطاعاتها وأفرادها معك .. من البداية حتى النهاية داعمين و ممكنين
+    </p>
+  </Container>
+);
+const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
+  <div className="row">
+    <div className="col-lg-8">
+      <p className="text-justify">{textContent}</p>
+      <p className="text-justify">{subtitle}</p>
+    </div>
+    <Container className="col-lg-4">
+      <ImgContainer
+        className="rounded d-flex align-items-center p-3"
+        style={{ height: "120px" }}
+      >
+        <img className="img-fluid rounded" src={imgSrc} alt="" />
+      </ImgContainer>
+    </Container>
+  </div>
+);
+const TeamSection = () => (
+  <div className="col-10 mt-5 mb-2">
+    <h2>أعضاء ركايا</h2>
+    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+      {TeamData.map((item, index) => (
+        <div className=" " key={index}>
+          <Team name={item.name} position={item.position} />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+export default Index;
