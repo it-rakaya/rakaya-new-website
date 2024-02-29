@@ -18,7 +18,7 @@ function New() {
   const { postData, isLoading, isSuccess } = usePostData("/candidate");
 
   const initialValues = {
-    full_name: "",
+    name: "",
     email: "",
     phone: "",
     phone_code: "",
@@ -34,7 +34,7 @@ function New() {
     maritalStatus:""
   };
   const validationSchema = Yup.object({
-    full_name: Yup.string().required("الاسم الكامل مطلوب"),
+    name: Yup.string().required("الاسم الكامل مطلوب"),
     email: Yup.string()
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),

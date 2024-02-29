@@ -10,7 +10,7 @@ const Jobs = () => {
     <>
       <JobsLayout>
         <div className="">
-          <Container className="m-md-5 col-md-9">
+          <Container className="m-auto  col-md-7 ">
             <h2>عن العمل في ركايا</h2>
 
             <div className="my-4">
@@ -24,7 +24,7 @@ const Jobs = () => {
               </p>
             </div>
           </Container>
-          <Container className="m-md-5 col-md-9">
+          <Container className=" col-md-7 m-auto">
             <h2>متطلبات العمل</h2>
 
             <div className="my-4">
@@ -72,7 +72,7 @@ const Jobs = () => {
               </p>
             </div>
           </Container>
-          <Container className="m-md-5 col-12 text-center">
+          <Container className=" col-12 text-center">
             <Link href={"/jobs/new"}>
               <Button className="px-5 py-2">التقديم</Button>
             </Link>

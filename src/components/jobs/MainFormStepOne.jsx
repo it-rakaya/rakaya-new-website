@@ -8,7 +8,7 @@ import RadioButtonGroup from "../form/RadioButtonGroup";
 import { useFormikContext } from "formik";
 
 function MainFormStepOne() {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue , values } = useFormikContext();
 
   const maritalStatus = [
     { value: "single", label: "أعزب/عزباء" },
@@ -21,11 +21,17 @@ function MainFormStepOne() {
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
   };
+  const residencyStatusOptions = [
+    { label: "مواطن", value: "citizen" },
+    { label: "مقيم", value: "resident" },
+    { label: "زائر", value: "visitor" },
+    { label: "أخرى", value: "other" },
+  ];
 
   return (
     <div className="my-">
       <BaseInputField
-        name="full_name"
+        name="name"
         label={"اسمك الكامل"}
         placeholder={"الاسم الأول والأخير"}
         required
@@ -36,9 +42,24 @@ function MainFormStepOne() {
         placeholder={"example@example.com"}
         required
       />
+      {
+        values?.resident_status == "other"  ? "" :
       <PhoneInput label={"رقم الجوال"} required />
+      }
 
       <SelectQualifications label={"المؤهل"} required />
+      <Label>
+        حالة إقامتك في السعودية
+        <span className="text-danger mx-1">{"*"}</span>
+      </Label>
+      <RadioButtonGroup
+        options={residencyStatusOptions}
+        name="resident_status"
+        defaultValue=""
+        onChange={(e) =>
+          handleRadioButtonChange("resident_status", e.target.value)
+        }
+      />
       <Label>
         الحالة الاجتماعية
         <span className="text-danger mx-1">{"*"}</span>

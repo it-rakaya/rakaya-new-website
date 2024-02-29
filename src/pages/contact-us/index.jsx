@@ -5,11 +5,7 @@ import Header from "@/components/jobs/Header";
 import { usePostData } from "@/hooks/usePostData";
 import React from "react";
 
-const selectOptions = [
-  { value: "1", label: "Hello World" },
-  { value: "2", label: "Hello Solar System" },
-  { value: "3", label: "Hello Universe" },
-];
+
 const index = () => {
   return (
     <>

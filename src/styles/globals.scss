@@ -113,12 +113,12 @@ body {
 }
 
 .carApp {
-   width: 197px;
-   height: 172px;
+   width: 170px;
+   height: 150px;
 }
 
 .over_margin {
-   margin-top: 200px;
+   margin-top: 100px;
 }
 
 .form-control:focus {
@@ -265,4 +265,15 @@ input:-webkit-autofill:active {
 
 .text-justify {
    text-align: justify;
+}
+@media (max-width:1200px) {
+   .imgVision{
+      height: 100%;
+      margin: auto;
+
+   }
+   .headingNumber{
+      font-size: 2rem !important;
+
+   }
 }

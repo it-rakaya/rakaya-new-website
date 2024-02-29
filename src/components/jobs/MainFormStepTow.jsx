@@ -8,12 +8,7 @@ import TextArea from "../form/TextArea";
 
 function MainFormStepTwo() {
   const { setFieldValue, values } = useFormikContext();
-  const residencyStatusOptions = [
-    { label: "مواطن", value: "citizen" },
-    { label: "مقيم", value: "resident" },
-    { label: "زائر", value: "visitor" },
-    { label: "أخرى", value: "other" },
-  ];
+
 
   const availabilityOptions = [
     { label: "جاهز حالًا", value: "now" },
@@ -61,18 +56,7 @@ function MainFormStepTwo() {
         required
       />
 
-      <Label>
-        حالة إقامتك في السعودية
-        <span className="text-danger mx-1">{"*"}</span>
-      </Label>
-      <RadioButtonGroup
-        options={residencyStatusOptions}
-        name="resident_status"
-        defaultValue=""
-        onChange={(e) =>
-          handleRadioButtonChange("resident_status", e.target.value)
-        }
-      />
+  
 
       <Label>
         نوع الوظيفة

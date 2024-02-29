@@ -31,14 +31,11 @@ function SelectHelp({ label, required, labelClassName }) {
   //   fetchDepartments();
   // }, []);
   const options = [
-    {label:"سؤال" , value:"question"},
-    {label:"خدمة" , value:"service"},
-    {label:"قضية التكنولوجيا" , value:"issue_tech "},
-    {label:"اخرى" , value:"other"},
-
-
-
-  ]
+    { label: "سؤال", value: "question" },
+    { label: "خدمة", value: "service" },
+    { label: "قضية التكنولوجيا", value: "issue_tech " },
+    { label: "اخرى", value: "other" },
+  ];
   return (
     <div>
       <Label className={labelClassName}>
