@@ -6,6 +6,7 @@ import Marquee from "@/components/landing/Marquee";
 import Stats from "@/components/landing/Stats";
 
 export default function Home() {
+  
   const description =
     "ركايا تبتكر حلولاً استراتيجية مخصصة لمواجهة التحديات الإدارية والتسويقية، مما يساعد الشركات على تحقيق نمو مستدام وتوضيح رؤيتها المستقبلية. فريقنا المميز يعمل جنباً إلى جنب معك لتحديد وحل العقبات الرئيسية بخطط مبتكرة تتوافق مع أهداف شركتك";
   return (
