@@ -27,7 +27,7 @@ const Index = () => {
   );
 };
 const ContentSection = () => (
-  <Container className="me-0 col-lg-10">
+  <Container className="me-0 col-lg-12">
     {contentData.map((section, index) => (
       <React.Fragment key={index}>
         <TextImageSection
@@ -60,7 +60,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
   </div>
 );
 const TeamSection = () => (
-  <div className="col-10 mt-5 m-auto m-md-0 mb-2">
+  <div className="col-12 mt-5 m-auto m-md-0 mb-2">
     <h2>أعضاء ركايا</h2>
     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
       {TeamData.map((item, index) => (

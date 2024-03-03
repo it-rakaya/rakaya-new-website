@@ -44,7 +44,7 @@ function SelectHelp({ label, required, labelClassName }) {
           control: (base) => ({
             ...base,
             border:
-              errors.department_id && touched.department_id
+              errors.subject_id && touched.subject_id
                 ? "1px solid red"
                 : "1px solid #ced4da",
             boxShadow: "0 !important",
@@ -79,9 +79,9 @@ function SelectHelp({ label, required, labelClassName }) {
         }}
         onChange={(option) => setFieldValue("subject_id", option.value)}
       />
-      {touched.department_id && errors.department_id && (
+      {touched.subject_id && errors.subject_id && (
         <div className="text-danger " style={{ fontSize: "12px" }}>
-          {errors.department_id}
+          {errors.subject_id}
         </div>
       )}
     </div>

@@ -6,21 +6,35 @@ import Image from "next/image";
 function Team({ name, position }) {
   return (
     <div
-      className="my-2 d-flex align-items- p-1 teamShadow  rounded-2"
-      style={{ height: "120px" }}
+      className="my-2 align-items- px-1 py-4 teamShadow "
+      style={{ height: "180px", borderRadius: "20px" }}
     >
-      <Image
-        alt=""
-        src={
-          "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
-        }
-        width={50}
-        height={50}
-        className="rounded-5"
-      />
-      <div className="  p-2  ">
-        <h6 className="text-gold">{name}</h6>
-        <p className="p-0 mb-1">{position} </p>
+      <div className=" d-flex">
+        <Image
+          alt=""
+          src={"https://cdn-icons-png.freepik.com/512/5556/5556468.png"}
+          width={50}
+          height={50}
+          className="rounded-5 p-1"
+          style={{border:"1px solid #C9B171"}}
+        />
+        <div className="p-1">
+          <h6 className="" style={{ fontSize: "14px" }}>
+            {name}
+          </h6>
+
+          <p
+            style={{ fontSize: "11px" , border:"1px solid #C9B171" , width:"fit-content" }}
+            className="p-0 mb-1 text-gold  px-1 w-fit "
+          >
+            {position}{" "}
+          </p>
+          <p style={{ fontSize: "11px" }}>
+            إدارة ومتابعة الفريق لتحقيق أهداف ورؤية الشركة، وتوجيه الفريق
+            للابتكار التقني وضمان تنفيذ أحدث التقنيات لضمان نجاح الشركة في عصر
+            التحول الرقمي{" "}
+          </p>
+        </div>
       </div>
     </div>
   );

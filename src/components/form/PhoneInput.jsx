@@ -7,14 +7,18 @@ function PhoneInput({ label, required }) {
     useFormikContext();
 
   const handlePhoneChange = (e) => {
-    let  filteredValue = e.target.value.replace(/[^0-9]/g, "").slice(0, 9);
-    if (filteredValue.startsWith("0")) {
-      filteredValue = filteredValue.substring(1);
+    let inputValue = e.target.value.replace(/[^0-9]/g, "");
+    let filteredValue = "";
+    if (inputValue.startsWith("5")) {
+      filteredValue = inputValue.slice(0, 9);
+    } else if (inputValue.length > 0) {
+      return;
     }
+
     setFieldValue("phone", filteredValue);
-    
-    setFieldValue("phone_code", "966"); 
+    setFieldValue("phone_code", "966");
   };
+
   return (
     <div>
       <Label>

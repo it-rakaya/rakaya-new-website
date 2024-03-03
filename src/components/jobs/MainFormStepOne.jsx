@@ -8,13 +8,13 @@ import RadioButtonGroup from "../form/RadioButtonGroup";
 import { useFormikContext } from "formik";
 
 function MainFormStepOne() {
-  const { setFieldValue , values  } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext();
 
   const maritalStatus = [
-    { value: "single", label: "أعزب/عزباء" },
-    { value: "married", label: "متزوج/ة" },
-    { value: "divorced", label: "مطلق/ة" },
-    { value: "widowed", label: "أرمل/ة" },
+    { value: "single", label: "أعزب / عزباء" },
+    { value: "married", label: "متزوج / ة" },
+    { value: "divorced", label: "مطلق / ة" },
+    { value: "widowed", label: "أرمل / ة" },
     { value: "other ", label: "اخرى" },
   ];
   const residencyStatusOptions = [
@@ -32,19 +32,20 @@ function MainFormStepOne() {
       <BaseInputField
         name="name"
         label={"اسمك الكامل"}
-        placeholder={"الاسم الأول والأخير"}
+        placeholder={"الاسم الكامل"}
         required
       />
       <BaseInputField
         name={"email"}
         label={"البريد الإلكتروني"}
-        placeholder={"example@example.com"}
+        placeholder={"email@rakaya.sa"}
         required
       />
-      {
-        values?.resident_status == "other"  ? "" :
-      <PhoneInput label={"رقم الجوال"} required />
-      }
+      {values?.resident_status == "other" ? (
+        ""
+      ) : (
+        <PhoneInput label={"رقم الجوال"} required />
+      )}
 
       <SelectQualifications label={"المؤهل"} required />
       <Label>

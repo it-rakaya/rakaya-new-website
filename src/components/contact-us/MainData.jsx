@@ -8,9 +8,10 @@ import PhoneInput from "../form/PhoneInput";
 import { usePostData } from "@/hooks/usePostData";
 import LoadingOverlay from "../LoadingOverlay";
 import { motion, AnimatePresence } from "framer-motion";
+import * as Yup from "yup";
+import { isEmail } from "@/utils/Helpers";
 
-function MainData() {
-  const { isLoading, postData } = usePostData("/contact-us");
+function MainData({isLoading , postData}) {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = async (values) => {
@@ -30,6 +31,17 @@ function MainData() {
     phone_code: "",
     subject_id: "",
   };
+  const validationSchema = Yup.object({
+    name: Yup.string().required("الاسم الكامل مطلوب"),
+    message: Yup.string().required(" هذا الحقل مطلوبة"),
+    email: Yup.string()
+      .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
+      .required("البريد الإلكتروني مطلوب"),
+    phone: Yup.string()
+      .matches(/^[0-9]{9}$/, "رقم الجوال مطلوب")
+      .required("رقم الجوال مطلوب"),
+    subject_id: Yup.string().required("هذا الحقل مطلوب"),
+  });
   useEffect(() => {
     if (showPopup) {
       document.body.style.overflow = "hidden";
@@ -106,6 +118,7 @@ function MainData() {
       </AnimatePresence>
       <Formik
         initialValues={initialFormValues}
+        validationSchema={validationSchema}
         onSubmit={(values) => handleSubmit(values)}
       >
         {() => (
@@ -136,7 +149,7 @@ function MainData() {
             <BaseInputField
               name="email"
               label="سيكون استخدامنا له للتواصل معك بشأن رسالتك. ولن نستخدمه أبدًا خارج نطاق الرسالة"
-              placeholder="example@example.com"
+              placeholder="email@rakaya.sa"
             />
             <div className="mt-3">
               <Button color="secondary" className="" type="submit">

@@ -42,8 +42,8 @@ function New() {
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),
     phone: Yup.string()
-      .matches(/^[0-9]{9}$/, "رقم الهاتف مطلوب")
-      .required("رقم الهاتف مطلوب"),
+      .matches(/^[0-9]{9}$/, "رقم الجوال مطلوب")
+      .required("رقم الجوال مطلوب"),
     qualification: Yup.string().required("المؤهل العلمي مطلوب"),
     department_id: Yup.string().required("اختيار القسم مطلوب"),
     self_description: Yup.string().required("وصف نفسك مطلوب"),
