@@ -3,7 +3,7 @@ import React from "react";
 import LinkedIn from "../icons/LinkedIn";
 import Image from "next/image";
 
-function Team({ name, position }) {
+function Team({ name, position , image }) {
   return (
     <div
       className="my-2 align-items- px-1 py-4 teamShadow "
@@ -12,7 +12,7 @@ function Team({ name, position }) {
       <div className=" d-flex">
         <Image
           alt=""
-          src={"https://cdn-icons-png.freepik.com/512/5556/5556468.png"}
+          src={image || "https://cdn-icons-png.freepik.com/512/5556/5556468.png"}
           width={50}
           height={50}
           className="rounded-5 p-1"
