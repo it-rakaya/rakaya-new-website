@@ -24,9 +24,9 @@ function index() {
 
       <Header text={"طريقك معنا"} />
 
-      <Container className="col-lg-6 mt-5">
+      <Container className="col-lg-6 mt-5 p-3 p-md-0">
         <p
-          className="m-0 p-0  "
+          className="m-0 p-0"
           style={{ textAlign: "justify", fontWeight: "500" }}
         >
           تأكيدًا لالتزامنا بتقديم الخدمة الممتازة، في ركايا نعدك كشريك لنا
