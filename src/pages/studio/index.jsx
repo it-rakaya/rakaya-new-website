@@ -14,7 +14,7 @@ const index = () => {
       <Header
         text={"قُمرة ركايا"}
         subTitle={"هنا جميع أحداث ركايا"}
-        image={"/studio/headers-bg/4.jpg"}
+        image={"/studio/headers-bg/4.png"}
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
