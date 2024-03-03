@@ -16,7 +16,7 @@ const Index = () => {
       <Header text={"تواصل معنا"} />
 
       <Container className="px-3 px-md-0  col-lg-6 my-5">
-        {!isSuccess ? (
+        {isSuccess ? (
           <FinalSubmit />
         ) : (
           <>
