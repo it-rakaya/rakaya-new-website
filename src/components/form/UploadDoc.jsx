@@ -87,10 +87,10 @@ function UploadDoc({ name, label, isRequired }) {
             ) : (
               <>
                 <p className="p-0 m-0 fw-bolder">اختر ملف أو قم بإسقاطه هنا</p>
-                <p className="p-0 m-0">
+                <p className="p-0 m-0 uploadDocPar" >
                   يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG
                 </p>
-                <p className="p-0 m-0">مساحة الملف: أقل من 50MB</p>
+                <p className="p-0 m-0 uploadDocPar">مساحة الملف: أقل من 50MB</p>
               </>
             )}
           </div>

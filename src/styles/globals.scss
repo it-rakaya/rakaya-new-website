@@ -286,12 +286,19 @@ input:-webkit-autofill:active {
    }
 
    .uploadDoc {
-      height: 140px !important;
+      // height: 140px !important;
    }
 
    .coverImageStudio {
       width: 100% !important;
       height: 200px !important;
 
+   }
+   .parMobile{
+      font-size: 25px !important;
+
+   }
+   .uploadDocPar{
+      font-size: 13px;
    }
 }
