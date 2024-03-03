@@ -1,6 +1,6 @@
 "/vision";
 export const TeamData = [
-  { name: "المستشار نبيل عابد", position: "رئيس مجلس الإدارة" , image:"" },
+  { name: "المستشار نبيل عابد", position: "رئيس مجلس الإدارة" , image:""  , desc:"" },
   { name: "م. حاتم باناصر", position: "الرئيس التنفيذي" },
   { name: "لميس الثقفي", position: "مستشارة تطوير أعمال" },
   { name: "أحمد الغريب", position: "مدير المكتب التنفيذي" },

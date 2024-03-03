@@ -3,7 +3,7 @@ import React from "react";
 import LinkedIn from "../icons/LinkedIn";
 import Image from "next/image";
 
-function Team({ name, position , image }) {
+function Team({ name, position , image , desc }) {
   return (
     <div
       className="my-2 align-items- px-1 py-4 teamShadow "
@@ -30,9 +30,7 @@ function Team({ name, position , image }) {
             {position}{" "}
           </p>
           <p style={{ fontSize: "11px" }}>
-            إدارة ومتابعة الفريق لتحقيق أهداف ورؤية الشركة، وتوجيه الفريق
-            للابتكار التقني وضمان تنفيذ أحدث التقنيات لضمان نجاح الشركة في عصر
-            التحول الرقمي{" "}
+            {desc}
           </p>
         </div>
       </div>
