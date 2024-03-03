@@ -37,8 +37,12 @@ function Navbar() {
   const router = useRouter();
   const [show, setShow] = useState(false);
   const buttonRef = useRef(null);
+  console.log("🚀 ~ Navbar ~ buttonRef:", buttonRef.current?.classList)
   const navBarRef = useRef(null);
   // if (router.pathname == "/landing") return <></>;
+  const toggleNavbar = () => {
+    setShow(!show);
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-whtie py-2">
       <Container className="col-lg-10 align-items-center">
@@ -63,14 +67,7 @@ function Navbar() {
             setShow(!show);
           }}
         >
-          <i
-            className={`${
-              buttonRef.current &&
-              !buttonRef.current?.classList.contains("collapsed")
-                ? "bi bi-x"
-                : "bi bi-list"
-            }`}
-          ></i>
+         <i className={`${show ? "bi bi-x" : "bi bi-list"}`}></i>
         </button>
         <div
           className="collapse navbar-collapse justify-content-lg-between"
