@@ -28,7 +28,7 @@ function CardApplication() {
   ];
 
   return (
-    <div className="row row-cols-4 mx-1  gap-2 - align-items-between mb-5 over_margin">
+    <div className="row row-cols-2 row-cols-md-4 mx-md-1  gap-2 justify-content-center justify-content-md-start  align-items-between mb-5 over_margin">
       {images?.map((item, index) => (
         <Link
           href={`${item?.link}`}
