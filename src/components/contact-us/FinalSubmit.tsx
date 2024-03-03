@@ -9,7 +9,9 @@ function FinalSubmit() {
         <p className="p-0 m-0 fw-bold"> شكرا لك </p>
       </div>
       <div className="text-center">
-        <p className="fw-bold p-0 m-0">تم استلام طلبك بنجاح! </p>
+        <p className="fw-bold p-0 m-0">
+          تم استلام طلبك بنجاح! ويسعدنا أن نتواصل معك في أقرب وقت ممكن
+        </p>
       </div>
       <div>
         <Link href={"/"}>
