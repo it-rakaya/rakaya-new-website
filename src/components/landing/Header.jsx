@@ -8,7 +8,7 @@ import Navbar, { NavLink } from "./Navbar";
 
 const Header = () => {
   return (
-    <Container className="w-100  p-5 position-relative">
+    <Container className="w-100  p-md-5 position-relative">
       {/* <Navbar /> */}
       <Container
         className={

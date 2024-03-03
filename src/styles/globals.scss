@@ -170,6 +170,7 @@ body {
       text-align: center;
       // line-height: 2.;
    }
+
    .blogBox h5 {
       line-height: 1.5;
    }
@@ -266,14 +267,31 @@ input:-webkit-autofill:active {
 .text-justify {
    text-align: justify;
 }
+
 @media (max-width:1200px) {
-   .imgVision{
+   .imgVision {
       height: 100%;
       margin: auto;
 
    }
-   .headingNumber{
+
+   .headingNumber {
       font-size: 2rem !important;
+
+   }
+
+   .headingVision {
+      font-size: 16px;
+
+   }
+
+   .uploadDoc {
+      height: 140px !important;
+   }
+
+   .coverImageStudio {
+      width: 100% !important;
+      height: 200px !important;
 
    }
 }

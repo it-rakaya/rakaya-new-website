@@ -2,7 +2,6 @@ import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
 import MainData from "@/components/contact-us/MainData";
 import Header from "@/components/jobs/Header";
-import { usePostData } from "@/hooks/usePostData";
 import React from "react";
 
 

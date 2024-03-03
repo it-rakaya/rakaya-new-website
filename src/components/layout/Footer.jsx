@@ -25,19 +25,17 @@ const Footer = () => {
         ))}
       </Container>
       <Container className={`${footerStyle} gap-3`}>
-        <FooterLink>
+        <FooterLink href={"https://twitter.com/rakayaco/"}>
           <i className="bi bi-twitter-x"></i>
         </FooterLink>
-        <FooterLink>
+        <FooterLink href={"https://www.instagram.com/rakayaco/"}>
           <i className="bi bi-instagram"></i>
         </FooterLink>
-        <FooterLink>
-          <i className="bi bi-snapchat"></i>
-        </FooterLink>
-        <FooterLink>
+
+        <FooterLink href={"https://wa.me/966570044066"}>
           <i className="bi bi-whatsapp"></i>
         </FooterLink>
-        <FooterLink>
+        <FooterLink href={"https://www.linkedin.com/company/rakaya/"}>
           {/* <i className="bi bi-linkedin"></i> */}
           <LinkedIn />
         </FooterLink>

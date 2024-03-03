@@ -51,18 +51,18 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
     </div>
     <Container className="col-lg-4">
       <ImgContainer
-        className="rounded d-flex align-items-center p-3"
+        className="rounded d-flex align-items-center p-3 my-4 my-md-0"
         style={{ height: "120px" }}
       >
-        <img className="img-fluid rounded imgVision" src={imgSrc} alt="" />
+        <img className="img-fluid rounded imgVision" src={imgSrc} alt=""  style={{width:"240px"}}/>
       </ImgContainer>
     </Container>
   </div>
 );
 const TeamSection = () => (
-  <div className="col-10 mt-5 m-aut m-md-0 mb-2">
+  <div className="col-10 mt-5 m-auto m-md-0 mb-2">
     <h2>أعضاء ركايا</h2>
-    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 o">
+    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
       {TeamData.map((item, index) => (
         <div className=" " key={index}>
           <Team name={item.name} position={item.position} />

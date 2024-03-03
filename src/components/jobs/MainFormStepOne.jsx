@@ -8,25 +8,24 @@ import RadioButtonGroup from "../form/RadioButtonGroup";
 import { useFormikContext } from "formik";
 
 function MainFormStepOne() {
-  const { setFieldValue , values } = useFormikContext();
+  const { setFieldValue , values  } = useFormikContext();
 
   const maritalStatus = [
     { value: "single", label: "أعزب/عزباء" },
     { value: "married", label: "متزوج/ة" },
     { value: "divorced", label: "مطلق/ة" },
     { value: "widowed", label: "أرمل/ة" },
-    { value: "separated", label: "منفصل/ة" },
-    { value: "engaged", label: "مخطوب/ة" },
+    { value: "other ", label: "اخرى" },
   ];
-  const handleRadioButtonChange = (name, value) => {
-    setFieldValue(name, value);
-  };
   const residencyStatusOptions = [
     { label: "مواطن", value: "citizen" },
     { label: "مقيم", value: "resident" },
     { label: "زائر", value: "visitor" },
     { label: "أخرى", value: "other" },
   ];
+  const handleRadioButtonChange = (name, value) => {
+    setFieldValue(name, value);
+  };
 
   return (
     <div className="my-">
@@ -66,10 +65,10 @@ function MainFormStepOne() {
       </Label>
       <RadioButtonGroup
         options={maritalStatus}
-        name="maritalStatus"
+        name="marital_status"
         defaultValue=""
         onChange={(e) =>
-          handleRadioButtonChange("maritalStatus", e.target.value)
+          handleRadioButtonChange("marital_status", e.target.value)
         }
       />
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import Button from "../Button";
 import BaseInputField from "../form/BaseInputField";
@@ -7,28 +7,107 @@ import TextArea from "../form/TextArea";
 import PhoneInput from "../form/PhoneInput";
 import { usePostData } from "@/hooks/usePostData";
 import LoadingOverlay from "../LoadingOverlay";
+import { motion, AnimatePresence } from "framer-motion";
 
 function MainData() {
-  const { isLoading, isSuccess, postData } = usePostData("/contact-us");
+  const { isLoading, postData } = usePostData("/contact-us");
+  const [showPopup, setShowPopup] = useState(false);
 
-  const handleSubmit = (values) => {
-    // Placeholder for actual submission logic
-    console.log(values);
-    postData(values);
+  const handleSubmit = async (values) => {
+    try {
+      const response = await postData(values);
+      setShowPopup(true);
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
   };
+
   const initialFormValues = {
     name: "",
     message: "",
     email: "",
     phone: "",
     phone_code: "",
-    subject_category: "",
+    subject_id: "",
   };
-  if (isLoading) return <LoadingOverlay />;
-
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showPopup]);
   return (
     <div className="my-5">
-      <Formik initialValues={initialFormValues} onSubmit={(values)=>handleSubmit(values)}>
+      {isLoading && <LoadingOverlay />}{" "}
+      <AnimatePresence>
+        {showPopup && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              style={{
+                position: "fixed",
+                top: 0,
+                transform: "none",
+                left: 0,
+                overflow: "hidden",
+                width: "100%",
+                height: "100vh",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                zIndex: 50, // تأكد من أنه أقل من zIndex للبوب آب
+              }}
+            />
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.5,
+                translateX: "-50%",
+                translateY: "-50%",
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                translateX: "-50%",
+                translateY: "-50%",
+              }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.5 }}
+              className="popup"
+              style={{
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: showPopup ? "translate(-50%, -50%)" : "none",
+                background: "white",
+                padding: "20px",
+                zIndex: 100,
+                borderRadius: "10px",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div className="text-center d-flex flex-column gap-4">
+                <p className="p-0 m-0">شكرا لك</p>
+                <p className="p-0 m-0">
+                  سوف نحاول التواصل معك في أقرب وقت ممكن.
+                </p>
+                <Button color="primary" onClick={() => setShowPopup(false)}>
+                  إغلاق
+                </Button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+      <Formik
+        initialValues={initialFormValues}
+        onSubmit={(values) => handleSubmit(values)}
+      >
         {() => (
           <Form>
             <SectionTitle text="بماذا نستطيع مساعدتك؟" />
@@ -60,7 +139,7 @@ function MainData() {
               placeholder="example@example.com"
             />
             <div className="mt-3">
-              <Button color="secondary" className="" type='submit'>
+              <Button color="secondary" className="" type="submit">
                 إرسال
               </Button>
             </div>

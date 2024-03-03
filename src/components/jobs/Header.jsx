@@ -71,7 +71,7 @@ const Header = ({ text, subTitle, image, location }) => {
               {location && (
                 <span className="d-flex text-white align-items-center">
                   <Map />
-                  مكة المكرمة , السعوية
+                  مكة المكرمة , السعودية
                 </span>
               )}
             </div>

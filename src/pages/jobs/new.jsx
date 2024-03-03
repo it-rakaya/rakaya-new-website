@@ -15,7 +15,8 @@ import React from "react";
 import * as Yup from "yup";
 
 function New() {
-  const { postData, isLoading, isSuccess } = usePostData("/candidate");
+  const { postData, isLoading, isSuccess, responseData } =
+    usePostData("/candidate");
 
   const initialValues = {
     name: "",
@@ -28,33 +29,37 @@ function New() {
     resident_status: "",
     salary_expectation: "",
     availability_to_start: "",
-    resume_file: null,
+    candidate_cv: null,
+    candidate_portfolio: null,
+
     department_id: "",
-    jobsOptions:"",
-    maritalStatus:""
+    job_category: "",
+    marital_status: "",
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("الاسم الكامل مطلوب"),
     email: Yup.string()
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),
-    phone: Yup.string().required("رقم الهاتف مطلوب"),
+    phone: Yup.string()
+      .matches(/^[0-9]{9}$/, "رقم الهاتف مطلوب")
+      .required("رقم الهاتف مطلوب"),
     qualification: Yup.string().required("المؤهل العلمي مطلوب"),
     department_id: Yup.string().required("اختيار القسم مطلوب"),
     self_description: Yup.string().required("وصف نفسك مطلوب"),
     resident_status: Yup.string().required("حالة الإقامة مطلوبة"),
     salary_expectation: Yup.string().required("الراتب المتوقع مطلوب"),
     availability_to_start: Yup.string().required("متى تستطيع البدء مطلوب"),
-    maritalStatus: Yup.string().required("الحالة الاجتماعية مطلوبة"),
-    resume_file: Yup.mixed().required("السيرة الذاتية مطلوبة"),
-    jobsOptions: Yup.mixed().required("نوع الوظيفة مطلوب"),
-
+    marital_status: Yup.string().required("الحالة الاجتماعية مطلوبة"),
+    job_category: Yup.string().required("نوع الوظيفة مطلوب"),
+    candidate_cv: Yup.mixed().required("السيرة الذاتية مطلوبة"),
+    // candidate_portfolio: Yup.mixed().required(" ملف الأعمال مطلوب"),
   });
   const receivingOrderVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-  if (isLoading) return <LoadingOverlay />;
+
   return (
     <JobsLayout>
       <div>
@@ -64,34 +69,41 @@ function New() {
             animate="visible"
             variants={receivingOrderVariants}
           >
-            <ReceivingOrder />
+            <ReceivingOrder code={responseData?.code} />
           </motion.div>
         ) : (
-          <Formik
-            initialValues={initialValues}
-            onSubmit={(values) => postData(values)}
-            validationSchema={validationSchema}
-          >
-            <Form>
-              <Section title="القسم الاول" subtitle="معلوماتي الشخصية">
-                <MainFormStepOne />
-              </Section>
-              <Line />
-              <Section title=" القسم الثاني" subtitle="الأسئلة">
-                <p className="fw-bold">يا ليت تجاوب على الأسئلة الإضافية</p>
-                <MainFormStepTow />
-              </Section>
-              <Line />
-              <Section title="القسم الثالث" subtitle="السيرة الذاتية">
-                <MainFormStepThree />
-                <div className="my-4">
-                  <Button color="secondary" type="submit" isLoading={isLoading}>
-                    إرسال
-                  </Button>
-                </div>
-              </Section>
-            </Form>
-          </Formik>
+          <>
+            {isLoading && !isSuccess && <LoadingOverlay />}
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values) => postData(values)}
+              validationSchema={validationSchema}
+            >
+              <Form>
+                <Section title="القسم الأول" subtitle="معلوماتي الشخصية">
+                  <MainFormStepOne />
+                </Section>
+                <Line />
+                <Section title=" القسم الثاني" subtitle="الأسئلة">
+                  <p className="fw-bold">يا ليت تجاوب على الأسئلة الإضافية</p>
+                  <MainFormStepTow />
+                </Section>
+                <Line />
+                <Section title="القسم الثالث" subtitle="السيرة الذاتية">
+                  <MainFormStepThree />
+                  <div className="my-4">
+                    <Button
+                      color="secondary"
+                      type="submit"
+                      isLoading={isLoading}
+                    >
+                      إرسال
+                    </Button>
+                  </div>
+                </Section>
+              </Form>
+            </Formik>
+          </>
         )}
       </div>
     </JobsLayout>

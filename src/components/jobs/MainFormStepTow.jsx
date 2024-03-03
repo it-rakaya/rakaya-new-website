@@ -8,11 +8,9 @@ import TextArea from "../form/TextArea";
 
 function MainFormStepTwo() {
   const { setFieldValue, values } = useFormikContext();
-
-
   const availabilityOptions = [
     { label: "جاهز حالًا", value: "now" },
-    { label: "من أسبوعين إلى أربعة أسابيع", value: "two_to_four_weeks " },
+    { label: "من أسبوعين إلى أربعة أسابيع", value: "two_to_four_weeks" },
     {
       label: "من أربعة أسابيع إلى ثمانية أسابيع",
       value: "four_to_eight_weeks ",
@@ -22,29 +20,38 @@ function MainFormStepTwo() {
   const jobsOptions = [
     {
       label: "دوام كامل",
-      value: "All",
+      value: "full_time",
     },
     {
       label: "دوام جزئي",
-      value: "؛Part",
+      value: "part_time",
     },
     {
-      label: "تدريب تعاوني",
-      value: "trining",
+      label: "عن بعد",
+      value: "remotely",
+    },
+    {
+      label: "دوام مرن",
+      value: "hybrid",
+    },
+    {
+      label: "تدريب تعاوني /  تدريب صيفي",
+      value: "training",
     },
   ];
+
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
   };
   useEffect(() => {
-    if (values.jobsOptions === "trining") {
-      setFieldValue("salary_expectation", "0");
+    if (values.job_category == "training") {
+      setFieldValue("salary_expectation", 0);
       setFieldValue("availability_to_start", "now");
     } else {
       setFieldValue("salary_expectation", "");
       setFieldValue("availability_to_start", "");
     }
-  }, [values.jobsOptions, setFieldValue]);
+  }, [values.job_category, setFieldValue]);
 
   return (
     <div className="my-">
@@ -56,19 +63,19 @@ function MainFormStepTwo() {
         required
       />
 
-  
-
       <Label>
         نوع الوظيفة
         <span className="text-danger mx-1">{"*"}</span>
       </Label>
       <RadioButtonGroup
         options={jobsOptions}
-        name="jobsOptions"
+        name="job_category"
         defaultValue=""
-        onChange={(e) => handleRadioButtonChange("jobsOptions", e.target.value)}
+        onChange={(e) =>
+          handleRadioButtonChange("job_category", e.target.value)
+        }
       />
-      {values?.jobsOptions == "trining" ? (
+      {values?.job_category == "training" ? (
         ""
       ) : (
         <>

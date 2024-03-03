@@ -7,7 +7,7 @@ import ViewICon from "../icons/ViewICon";
 import PreviewPdf from "../PreviewPdf";
 
 function UploadDoc({ name, label, isRequired }) {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue, errors, touched, handleBlur } = useFormikContext();
   const [preview, setPreview] = useState(null);
   const [isFileLoaded, setIsFileLoaded] = useState(false);
   const [fileType, setFileType] = useState("");
@@ -51,18 +51,19 @@ function UploadDoc({ name, label, isRequired }) {
           {label}
           {isRequired && <span className="mx-1 text-danger">*</span>}
         </Label>
-        <div className=" border rounded-3 position-relative cursor-pointer" style={{ height:isFileLoaded  ?  "130px" :"120px" }}>
+        <div
+          className=" border rounded-3 position-relative cursor-pointer uploadDoc"
+          style={{ height: isFileLoaded ? "130px" : "120px" }}
+        >
           <input
             type="file"
             accept="application/pdf,image/jpeg,image/png"
             name={name}
+            onBlur={handleBlur}
             className="position-absolute w-100 h-100 opacity-0 cursor-pointer z-[9]"
             onChange={handleFileChange}
           />
-          <div
-            className="text-center p-4 d-flex flex-column align-items-center   "
-            
-          >
+          <div className="text-center p-4 d-flex flex-column align-items-center   ">
             {errorMessage ? (
               <p className="text-danger">{errorMessage}</p>
             ) : isFileLoaded ? (
@@ -75,11 +76,11 @@ function UploadDoc({ name, label, isRequired }) {
                 </p>
                 <div className="position-absolute bottom-0 my-2 ">
                   {/* <Button color="secondary" className="z-5"> */}
-                    {preview && fileType === "application/pdf" ? (
-                      <PreviewPdf href={preview} />
-                    ) : (
-                      <PreviewImageLink url={preview} />
-                    )}
+                  {preview && fileType === "application/pdf" ? (
+                    <PreviewPdf href={preview} />
+                  ) : (
+                    <PreviewImageLink url={preview} />
+                  )}
                   {/* </Button> */}
                 </div>
               </>
@@ -95,22 +96,11 @@ function UploadDoc({ name, label, isRequired }) {
           </div>
         </div>
       </div>
-      {/* <div className="w-1/2 flex justify-center items-center">
-        {preview && fileType === "application/pdf" ? (
-          <embed
-            src={preview}
-            type="application/pdf"
-            width="100%"
-            height="100%"
-          />
-        ) : preview ? (
-          <PreviewImageLink
-            url={preview}
-            info={true}
-            messageInfo={"عرض المعاينة"}
-          />
-        ) : null}
-      </div> */}
+      {touched[name] && errors[name] && (
+        <div className="text-danger" style={{ fontSize: "12px" }}>
+          {errors[name]}
+        </div>
+      )}
     </div>
   );
 }
