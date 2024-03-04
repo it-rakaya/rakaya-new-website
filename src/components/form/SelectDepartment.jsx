@@ -11,7 +11,9 @@ function SelectDepartment({ label, required }) {
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
-        const response = await fetch("https://front-api.rmcc.sa/api/all-departments"); 
+        const response = await fetch(
+          "https://front-api.rmcc.sa/api/all-departments"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -55,16 +57,15 @@ function SelectDepartment({ label, required }) {
           }),
           menu: (provided) => ({
             ...provided,
-            maxHeight: '200px', 
-             overflowY: 'scroll',
-            
+            maxHeight: "200px",
+            overflowY: "scroll",
           }),
           menuList: (provided) => ({
             ...provided,
             // overflowY: 'hidden',
           }),
         }}
-
+        autoFocus={true}
         components={{
           Option: ({ data, selectOption, theme, isSelected }) => {
             return (
@@ -80,7 +81,9 @@ function SelectDepartment({ label, required }) {
         onChange={(option) => setFieldValue("department_id", option.value)}
       />
       {touched.department_id && errors.department_id && (
-        <div className="text-danger " style={{fontSize:"12px"}}>{errors.department_id}</div>
+        <div className="text-danger " style={{ fontSize: "12px" }}>
+          {errors.department_id}
+        </div>
       )}
     </div>
   );

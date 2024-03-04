@@ -24,6 +24,7 @@ function BaseInputField({ name, placeholder, label, required, type }) {
         onChange={(e) => setFieldValue(name, e.target.value)}
         placeholder={placeholder}
         name={name}
+        autoFocus={true}
         onBlur={handleBlur}
         onKeyPress={handleNumericInput} 
         className={`form-control ${

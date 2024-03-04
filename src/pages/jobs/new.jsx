@@ -9,6 +9,7 @@ import ReceivingOrder from "@/components/jobs/ReceivingOrder";
 import Section from "@/components/jobs/Section";
 import { usePostData } from "@/hooks/usePostData";
 import { isEmail } from "@/utils/Helpers";
+import { ConnectedFocusError } from "focus-formik-error";
 import { Form, Formik } from "formik";
 import { motion } from "framer-motion";
 import React from "react";
@@ -59,6 +60,7 @@ function New() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+  
 
   return (
     <JobsLayout>
@@ -80,6 +82,7 @@ function New() {
               validationSchema={validationSchema}
             >
               <Form>
+              <ConnectedFocusError />
                 <Section title="القسم الأول" subtitle="معلوماتي الشخصية">
                   <MainFormStepOne />
                 </Section>

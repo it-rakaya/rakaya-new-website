@@ -23,6 +23,7 @@ function SelectQualifications({ label, required }) {
       <Select
         options={selectOptions}
         onBlur={handleBlur}
+        autoFocus={true}
         // menuIsOpen
         placeholder="اختر المؤهل"
         styles={{
