@@ -51,10 +51,17 @@ export default function CustomHead({
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"
-      ></script>
+      {/* Google tag (gtag.js) */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-WK6D3JZL9S');
+        `}
+      </script>
     </Head>
   );
 }
