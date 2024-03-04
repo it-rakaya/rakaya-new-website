@@ -65,7 +65,7 @@ function SelectDepartment({ label, required }) {
             // overflowY: 'hidden',
           }),
         }}
-        autoFocus={true}
+        // autoFocus={true}
         components={{
           Option: ({ data, selectOption, theme, isSelected }) => {
             return (
