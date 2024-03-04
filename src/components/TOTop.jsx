@@ -27,7 +27,7 @@ function TOTop() {
         <div className="position-fixed bottom-0 mb-3 z-index-high" style={{ left: "16px" }}>
           <button
             type="button"
-            className="rounded-circle custom-bg-color custom-pulse"
+            className="rounded-circle bg-transparent custom-pulse"
             onClick={goToTop}
           >
             {/* SVG remains unchanged */}

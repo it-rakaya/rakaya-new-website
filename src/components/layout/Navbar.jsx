@@ -34,22 +34,14 @@ const NavBarLink = ({ children, to, onClick }) => {
 };
 
 function Navbar() {
-  const router = useRouter();
   const [show, setShow] = useState(false);
   const buttonRef = useRef(null);
-  console.log("🚀 ~ Navbar ~ buttonRef:", buttonRef.current?.classList)
   const navBarRef = useRef(null);
-  // if (router.pathname == "/landing") return <></>;
-  const toggleNavbar = () => {
-    setShow(!show);
-  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-whtie py-2">
       <Container className="col-lg-10 align-items-center">
-        <Link
-          className="navbar-brand fw-semibold col-lg-1 col-2 mx-3"
-          href="/"
-        >
+        <Link className="navbar-brand fw-semibold col-lg-1 col-2 mx-3" href="/">
           <div className="col-lg-8 col-12">
             <Logo />
           </div>
@@ -67,7 +59,7 @@ function Navbar() {
             setShow(!show);
           }}
         >
-         <i className={`${show ? "bi bi-x" : "bi bi-list"}`}></i>
+          <i className={`${show ? "bi bi-x" : "bi bi-list"}`}></i>
         </button>
         <div
           className="collapse navbar-collapse justify-content-lg-between"

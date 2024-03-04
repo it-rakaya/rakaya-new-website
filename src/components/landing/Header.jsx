@@ -43,7 +43,7 @@ const Header = () => {
         <PatternIconTwo className="img-fluid col-4 col-lg-10 " />
       </div>
       <div className="patternLandingRight text-end">
-        <PatternIconTwo className="img-fluid col-4 col-lg-10 " style={{transform:"scale(-1)"}} />
+        <PatternIconTwo className="img-fluid col-4 col-lg-10 " style={{transform:"scaleY(-1)"}} />
       </div>
 
       <Container className="d-flex justify-content-center">

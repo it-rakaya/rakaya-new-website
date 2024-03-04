@@ -34,6 +34,7 @@ function PhoneInput({ label, required }) {
             value={values.phone}
             onChange={handlePhoneChange}
             onBlur={handleBlur}
+            inputMode="numeric"
             name="phone"
             className={`form-control ${
               errors.phone && touched.phone ? "border-danger" : ""
