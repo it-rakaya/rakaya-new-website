@@ -8,10 +8,10 @@ import React from "react";
 
 const Index = () => {
   const { isLoading, postData, isSuccess } = usePostData("/contact-us");
-
+  const description = "يمكنك الوصول لنا سريعًا عبر التواصل معنا على بريد أهلًا";
   return (
     <>
-      <CustomHead title={"تواصل معنا"} description={"home page rakaya"} />
+      <CustomHead title={"تواصل معنا"} description={description} />
 
       <Header text={"تواصل معنا"} />
 

@@ -8,6 +8,7 @@ import React from "react";
 const Jobs = () => {
   return (
     <>
+    
       <JobsLayout>
         <div className="">
           <Container className="m-auto  col-md-7 ">

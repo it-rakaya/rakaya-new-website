@@ -17,10 +17,13 @@ const TeamMember = ({ title, job }) => (
   </div>
 );
 
-function index() {
+function Index() {
+  const description =
+    "تأكيدًا لالتزامنا بتقديم الخدمة الممتازة، في ركايا نعدك كشريك لنا ونبدأ معك بخطة زمنية واضحة لضمان تحقيق أهدافك بكفاءة وفعالية. يمكنك التواصل معنا إبتداءً من البريد الإلكتروني أو أي طريقة تواصل أخرى متوفرة على موقعنا.";
+
   return (
     <>
-      <CustomHead title={"طريقك معنا"} description={"home page rakaya"} />
+      <CustomHead title={"طريقك معنا"} description={description} />
 
       <Header text={"طريقك معنا"} />
 
@@ -57,4 +60,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

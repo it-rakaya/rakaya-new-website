@@ -8,14 +8,16 @@ import Image from "next/image";
 import React from "react";
 
 const index = () => {
+  const description = "جميع أحداث ركايا في مكان واحد"
   return (
     <>
-      <CustomHead title={"قُمرة ركايا"} description={"home page rakaya"} />
+      <CustomHead title={"قُمرة ركايا"} description={description} />
       <Header
         text={"قُمرة ركايا"}
         subTitle={"هنا جميع أحداث ركايا"}
         image={"/studio/headers-bg/4.png"}
       />
+
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
         {postsStudio.map((item, index) => (
@@ -54,7 +56,7 @@ const index = () => {
                 </ImgContainer>
               </Container>
             </Container>
-            <hr className="col-10 my-5" />
+            {index !== postsStudio.length - 1 && <hr className="col-10 my-5" />}
           </>
         ))}
       </Container>

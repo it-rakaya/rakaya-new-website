@@ -7,14 +7,10 @@ import Stats from "@/components/landing/Stats";
 
 export default function Home() {
   const description =
-    "ركايا تبتكر حلولاً استراتيجية مخصصة لمواجهة التحديات الإدارية والتسويقية، مما يساعد الشركات على تحقيق نمو مستدام وتوضيح رؤيتها المستقبلية. فريقنا المميز يعمل جنباً إلى جنب معك لتحديد وحل العقبات الرئيسية بخطط مبتكرة تتوافق مع أهداف شركتك";
+    "في زمن الوصول السريع ، للأشخاص والأماكن والمعلومة ، ركايا تحمل معنيين  الأول هو البئر الذي لا نفاذ له كذلك أفكارنا ، إبداعنا ، شغفنا ، عطائنا  الثاني الاعتمادية فنحن نملك مستشارين يُرتكى عليهم";
   return (
     <>
-      <CustomHead
-        title={"الصفحة الرئيسية"}
-        description={description}
-        imageUrl={"/rakaya.png"}
-      />
+      <CustomHead title={"الصفحة الرئيسية"} description={description} />
       <Container className="mx-0 px-0">
         <Header />
         <Stats />

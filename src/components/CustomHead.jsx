@@ -13,7 +13,7 @@ export default function CustomHead({
     url: url,
     name: title,
     alternateName: "اسم بديل للموقع إن وجد",
-    image: imageUrl,
+    image: '/rakaya.png',
   };
 
   return (
@@ -22,7 +22,7 @@ export default function CustomHead({
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image" content={"/rakaya.png"} />
       <meta property="og:url" content={url} />
       {/* الخصائص الثابتة */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
