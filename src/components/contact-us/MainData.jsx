@@ -1,17 +1,17 @@
+import { isEmail } from "@/utils/Helpers";
+import { ConnectedFocusError } from "focus-formik-error";
+import { Form, Formik } from "formik";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Formik, Form } from "formik";
+import * as Yup from "yup";
 import Button from "../Button";
+import LoadingOverlay from "../LoadingOverlay";
 import BaseInputField from "../form/BaseInputField";
+import PhoneInput from "../form/PhoneInput";
 import SelectHelp from "../form/SelectHelp";
 import TextArea from "../form/TextArea";
-import PhoneInput from "../form/PhoneInput";
-import { usePostData } from "@/hooks/usePostData";
-import LoadingOverlay from "../LoadingOverlay";
-import { motion, AnimatePresence } from "framer-motion";
-import * as Yup from "yup";
-import { isEmail } from "@/utils/Helpers";
 
-function MainData({isLoading , postData}) {
+function MainData({ isLoading, postData }) {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = async (values) => {
@@ -123,6 +123,7 @@ function MainData({isLoading , postData}) {
       >
         {() => (
           <Form>
+            <ConnectedFocusError />
             <SectionTitle text="بماذا نستطيع مساعدتك؟" />
             <SelectHelp
               label="تحديده بدقّة يساعدنا في فهم طلبك بشكل أفضل"
