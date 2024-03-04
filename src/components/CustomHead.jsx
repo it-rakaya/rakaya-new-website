@@ -6,7 +6,7 @@ export default function CustomHead({
   description,
   url,
   imageUrl,
-  keywords = "ركايا, شركة ركايا, ركايا البديعة, وظائف ركايا, ركايا استوديو, ركايا",
+  keywords = "اتقان الرقمية, جودة التشغيل, عمر خان, ركايا للاستشارات الادارية, شركة ركايا, ركايا البديعة, وظائف ركايا, ركايا استوديو",
 }) {
   const schemaOrgJSONLD = {
     "@context": "http://schema.org",
@@ -30,13 +30,13 @@ export default function CustomHead({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={"/rakaya.png"} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="Content-Language" content="ar" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Rakaya" />{" "}
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <meta name="keywords" content={keywords} />
+      <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href={"https://www.rakaya.sa/"} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,6 +51,10 @@ export default function CustomHead({
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"
+      ></script>
     </Head>
   );
 }
