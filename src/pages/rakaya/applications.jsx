@@ -32,6 +32,10 @@ const programs = () => {
       <Header text={"برامج نستخدمها"} />
 
       <VisionLayout>
+        <p>
+        هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل
+
+        </p>
         {program?.map((item, index) => (
           <Program
             key={index}
