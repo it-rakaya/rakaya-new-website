@@ -7,19 +7,20 @@ function Team({ name, position, image, desc }) {
   return (
     <div
       className="my-2 align-items- px-1 py-4 teamShadow "
-      style={{ height: "200px", borderRadius: "20px" }}
+      style={{ height: "170px", borderRadius: "20px" }}
     >
       <div className=" d-flex">
-        <div className="" >
-        <Image
-          alt=""
-          src={image || "https://cdn-icons-png.freepik.com/512/5556/5556468.png"}
-          width={50}
-          height={50}
-          className="rounded-5 p-1"
-          style={{ border: "1px solid #C9B171", objectFit: 'cover' }}
-        />
-
+        <div className="">
+          <Image
+            alt=""
+            src={
+              image || "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
+            }
+            width={50}
+            height={50}
+            className="rounded-5 p-1"
+            style={{ border: "1px solid #C9B171", objectFit: "cover" }}
+          />
         </div>
         <div className="p-1">
           <h6 className="" style={{ fontSize: "14px" }}>
@@ -27,14 +28,17 @@ function Team({ name, position, image, desc }) {
           </h6>
 
           <p
-            style={{ fontSize: "11px", border: "1px solid #C9B171", width: "fit-content" }}
-            className="p-0 mb-1 text-gold  px-1 w-fit "
+            style={{
+              fontSize: "10px",
+              border: "1px solid #C9B171",
+              width: "fit-content",
+              borderRadius: "2px",
+            }}
+            className="p-0 mb-1 text-gold  px-1 w-fit  "
           >
             {position}{" "}
           </p>
-          <p style={{ fontSize: "11px" }}>
-            {desc}
-          </p>
+          <p style={{ fontSize: "10px", textAlign: "justify" }}>{desc}</p>
         </div>
       </div>
     </div>
