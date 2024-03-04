@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.rakaya.sa/
+
+# Sitemaps
+Sitemap: https://www.rakaya.sa/sitemap.xml
