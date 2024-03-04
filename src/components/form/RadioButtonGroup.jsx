@@ -5,6 +5,7 @@ function RadioButtonGroup({ options, name, defaultValue, onChange , className })
   const { errors, touched, handleBlur } = useFormikContext(); // Destructure useFormikContext
 
   return (
+    <>
     <div className={className}>
       {options.map((option, index) => (
         <>
@@ -24,12 +25,13 @@ function RadioButtonGroup({ options, name, defaultValue, onChange , className })
           </div>
         </>
       ))}
+    </div>
       {touched[name] && errors[name] && (
         <div className="text-danger" style={{ fontSize: "12px" }}>
           {errors[name]}
         </div>
       )}
-    </div>
+    </>
   );
 }
 
