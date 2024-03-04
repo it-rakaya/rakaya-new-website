@@ -6,6 +6,7 @@ const FooterLink = ({ href, children, ariaLabel }) => (
     href={`${href}`}
     className="text-dark fw-semibold p-2 text-decoration-none"
     aria-label={ariaLabel}
+    target="_blank"
     
   >
     {children}

@@ -364,7 +364,7 @@ export const program = [
   {
     title: "تطبيقات قوقل",
     description: "",
-    href: "https://meet.google.com/",
+    href: "https://google.com",
 
     items: [
       {
