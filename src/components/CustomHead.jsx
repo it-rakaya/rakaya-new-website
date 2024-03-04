@@ -13,8 +13,8 @@ export default function CustomHead({
     "@type": "WebSite",
     url: url,
     name: title,
-    alternateName: "اسم بديل للموقع إن وجد",
-    image: '/rakaya.png',
+    alternateName: "Rakaya",
+    image: "/rakaya.png",
   };
 
   return (
@@ -25,6 +25,10 @@ export default function CustomHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={"/rakaya.png"} />
       <meta property="og:url" content={url} />
+      <meta name="twitter:card" content="/favicon.ico" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={"/rakaya.png"} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
       <meta httpEquiv="Content-Language" content="ar" />
@@ -33,14 +37,17 @@ export default function CustomHead({
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={'https://www.rakaya.sa/'} />
+      <link rel="canonical" href={"https://www.rakaya.sa/"} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      />
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
