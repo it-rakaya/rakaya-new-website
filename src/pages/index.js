@@ -14,7 +14,7 @@ export default function Home() {
       <CustomHead
         title={"الصفحة الرئيسية"}
         description={description}
-        imageUrl={"/favicon.ico"}
+        imageUrl={"/rakaya.png"}
       />
       <Container className="mx-0 px-0">
         <Header />
