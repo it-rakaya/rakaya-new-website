@@ -1,4 +1,4 @@
-"/vision";
+"/rakaya";
 export const TeamData = [
   {
     name: "المستشار نبيل عابد",
@@ -205,7 +205,7 @@ export const TeamData = [
     desc: "بناء وتطوير المواقع وبرمجة الواجهات الأمامية والخلفية بأحدث التقنيات لإخراج المنتج بشكل رائع وقابل للاستخدام بسهولة من قبل المستخدم، وتصميم قاعدة البيانات",
   },
 ];
-("/vision");
+("/rakaya");
 export const contentData = [
   {
     textContent:
@@ -230,7 +230,7 @@ export const contentData = [
   },
   ,
 ];
-("/vision/pillars");
+("/rakaya/pillars");
 export const pillarsData = [
   {
     title: "الشفافية",
@@ -262,7 +262,7 @@ export const pillarsData = [
       "إنجاز العمل بطريقة صحيحة وفي توقيت مثالي بواسطة استشاريين متخصصين",
   },
 ];
-("/vision/impact");
+("/rakaya/impact");
 export const blogs = [
   {
     blog: `"وجود ركايا أمر جوهري ونتمنى أن نزيد من تعاوننا"`,
@@ -298,7 +298,7 @@ export const blogs = [
     author: "   أ. مصطفى شركة خاصة  ",
   },
 ];
-("vision/products");
+("rakaya/products");
 export const products = [
   {
     title: "منصة رفادة لجودة التشغيل",
@@ -347,7 +347,7 @@ export const products = [
       "تتضمن الصفحة أيضًا ملخصًا واضحًا عن خدماتها ومنتجاتها، مع التركيز على كيفية تحسين تجربة المستخدم وتلبية احتياجاتهم. كما تتضمن الصفحة استدعاءً للعمل واضحًا يدعو الزوار إلى التفاعل واتخاذ الخطوة التالية، سواء كان ذلك بتجربة المنتج أو التواصل معنا للمزيد من المعلومات.",
   },
 ];
-("/vision/programs");
+("/rakaya/programs");
 export const program = [
   {
     title: "منصة جسر",
@@ -387,7 +387,7 @@ export const program = [
     subTitle: "",
   },
 ];
-("/vision/services");
+("/rakaya/services");
 export const services = [
   {
     title: "استشارات إستراتيجية",
@@ -467,7 +467,7 @@ export const services = [
   },
 ];
 
-("vision/work");
+("rakaya/work");
 export const works = [
   {
     title: "الرئيس التنفيذي",

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import Container from "../Container";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import index from "../../pages/studio/index";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import Container from "../Container";
 
 const titleVariant = {};
 
@@ -44,15 +43,15 @@ const Separator = () => (
 );
 
 const paths = [
-  { title: "عن الشركة", href: "/vision" },
-  { title: "أركاننا", href: "/vision/pillars" },
-  { title: "عمل ركايا", href: "/vision/work" },
-  { title: "خدماتنا", href: "/vision/services" },
-  { title: "منتجاتنا", href: "/vision/products" },
-  { title: "قَبس عن ركايا", href: "/vision/impact" },
-  { title: "برامج نستخدمها", href: "/vision/programs" },
-  { title: "أُسس", href: "/vision/base" },
-  { title: "جلسات", href: "/vision/meetings" },
+  { title: "عن الشركة", href: "/rakaya" },
+  { title: "أركاننا", href: "/rakaya/our-pillars" },
+  { title: "عمل ركايا", href: "/rakaya/Our-work" },
+  { title: "خدماتنا", href: "/rakaya/our-services" },
+  { title: "منتجاتنا", href: "/rakaya/our-products" },
+  { title: "قَبس عن ركايا", href: "/rakaya/feedbacks" },
+  { title: "برامج نستخدمها", href: "/rakaya/applications" },
+  { title: "أُسس", href: "/rakaya/foundations" },
+  { title: "جلسات", href: "/rakaya/sessions" },
 ];
 const SideMenu = () => {
   const { pathname } = useRouter();

@@ -21,7 +21,7 @@ const Jobs = () => {
                 مقرنا الرئيسي في مكة المكرمة أو التقيد بجدول زمني صارم، بل نركز
                 على تقديم مزايا تنافسية لضمان توفير بيئة عمل محفزة ومرنة. للمزيد
                 من المعلومات حول هذه المزايا وكيفية الاستفادة منها، يرجى الرجوع
-                إلى <Link href="/vision" className="text-secondary"> ركايا البديعة </Link>."
+                إلى <Link href="/rakaya" className="text-secondary"> ركايا البديعة </Link>."
               </p>
             </div>
           </Container>
@@ -74,7 +74,7 @@ const Jobs = () => {
             </div>
           </Container>
           <Container className=" col-12 text-center">
-            <Link href={"/jobs/new"}>
+            <Link href={"/jobs/job-application"}>
               <Button className="px-5 py-2">التقديم</Button>
             </Link>
           </Container>

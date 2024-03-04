@@ -45,7 +45,7 @@ function Menu() {
 
   const paths = [
     { title: "تفاصيل العمل", href: "/jobs" },
-    { title: "التقديم", href: "/jobs/new" },
+    { title: "التقديم", href: "/jobs/job-application" },
   ];
   const { pathname } = useRouter();
   const [activeRouteIndex, setActiveRouteIndex] = useState(

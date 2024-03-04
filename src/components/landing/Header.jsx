@@ -47,7 +47,7 @@ const Header = () => {
       </div>
 
       <Container className="d-flex justify-content-center">
-        <Link href={"/vision"}>
+        <Link href={"/rakaya"}>
           <Button color="secondary">تعرف على ركايا البديعة</Button>
         </Link>
       </Container>
