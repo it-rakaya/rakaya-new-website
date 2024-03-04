@@ -27,7 +27,7 @@ function Index() {
 
       <Header text={"طريقك معنا"} />
 
-      <Container className="col-lg-6 mt-5 p-3 p-md-0">
+      <Container className="col-lg-6  p-3 p-md-0 over_margin">
         <p
           className="m-0 p-0"
           style={{ textAlign: "justify", fontWeight: "500" }}
