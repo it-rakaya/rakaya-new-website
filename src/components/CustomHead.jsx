@@ -33,8 +33,7 @@ export default function CustomHead({
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={url} />
-      {/* fonts */}
+      <link rel="canonical" href={'https://www.rakaya.sa/'} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -48,3 +47,5 @@ export default function CustomHead({
     </Head>
   );
 }
+
+// sitemap.xml
