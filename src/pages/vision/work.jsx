@@ -1,11 +1,16 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { works } from "@/data";
 import React from "react";
 
+const description =
+  "في كل شركة، توجد هيكلة تنظيمية مصممة لتسهيل الحوكمة. هنا نقدم شرحًا للتركيب التنظيمي المتبع في شركة ركايا، وذلك بهدف توضيح دور ومسؤوليات كل موظف بشكل يسهل فهمه.";
 const Work = () => (
   <>
+    <CustomHead title={"عمل ركايا"} description={description} />
+
     <Header text={"كيف تعمل ركايا"} />
 
     <VisionLayout title={"كيف تعمل ركايا"}>

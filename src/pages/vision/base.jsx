@@ -1,12 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import Card from "@/components/vision/services/Card";
 
 const Base = () => {
+  const description =
+    "الأسس هي تلك العناصر الجوهرية التي يجب أن نوليها اهتمامًا خاصًا في حياتنا وعملنا. نحافظ على هذه الأسس في مقدمة تفكيرنا، حتى لو تحولت ركايا إلى شركة بعيدة عن اهتماماتها";
   return (
     <>
+      <CustomHead title={"أسس"} description={description} />
+
       <Header text={"أُسس"} />
 
       <VisionLayout title="أسس">

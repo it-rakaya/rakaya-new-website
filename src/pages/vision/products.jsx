@@ -3,6 +3,7 @@ import VisionLayout from "../../components/vision/VisionLayout";
 import Container from "../../components/Container";
 import Header from "@/components/jobs/Header";
 import { products } from "@/data";
+import CustomHead from "@/components/CustomHead";
 
 const Product = ({ title, description, subTitle }) => (
   <Container>
@@ -16,8 +17,11 @@ const Product = ({ title, description, subTitle }) => (
 );
 
 const Products = () => {
+  const description = "منتجات نفخر بها "
   return (
     <>
+      <CustomHead title={"منتجاتنا"} description={description} />
+
       <Header text={"منتجاتنا"} />
 
       <VisionLayout title="">

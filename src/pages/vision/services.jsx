@@ -1,12 +1,16 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import Card from "@/components/vision/services/Card";
 import { services } from "@/data";
 
 const Services = () => {
+  const description = "نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها وترسّخ علاقتنا بعملائنا "
   return (
     <>
+      <CustomHead title={"خدماتنا"} description={description} />
+
       <Header text={"خدماتنا"} />
 
       <VisionLayout title="خدماتنا">

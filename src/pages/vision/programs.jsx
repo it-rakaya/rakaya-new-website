@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import CardApplication from "@/components/vision/CardApplication";
 import VisionLayout from "@/components/vision/VisionLayout";
@@ -23,8 +24,11 @@ const Program = ({ title, description, items, href }) => (
 );
 
 const programs = () => {
+  const description = "هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل"
   return (
     <>
+      <CustomHead title={"برامج نستخدمها"}description={description} />
+
       <Header text={"برامج نستخدمها"} />
 
       <VisionLayout>

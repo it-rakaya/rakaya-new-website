@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import ImgContainer from "@/components/ImgContainer";
 import Header from "@/components/jobs/Header";
 import Team from "@/components/vision/Team";
@@ -9,8 +10,11 @@ import { AnimatePresence } from "framer-motion";
 import React from "react";
 
 const Index = () => {
+  const description ="ركايا هي أرض خصبة للأفكار الإبداعية والحلول اللامتناهية وأساليب العمل الإحترافية"
   return (
     <>
+      <CustomHead title={"ركايا البديعة"} description={description} />
+
       <AnimatePresence mode="wait">
         <Header
           text="ركايا البديعة"

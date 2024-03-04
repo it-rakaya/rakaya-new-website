@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { pillarsData } from "@/data";
@@ -11,8 +12,11 @@ const PillarHeader = ({ title, icon }) => (
   </div>
 );
 
+const description ="قيم نعتز بها.. نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها وترسّخ علاقتنا بعملائنا"
 const Pillars = () => (
   <>
+      <CustomHead title={"أركاننا"} description={description} />
+
     <Header text={"أركاننا"} />
 
     <VisionLayout title="قيم نعتز بها">

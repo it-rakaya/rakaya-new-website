@@ -1,11 +1,14 @@
+import CustomHead from "@/components/CustomHead";
 import Header from "@/components/jobs/Header";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { blogs } from "@/data";
 import React from "react";
 const impact = () => {
-
+  const description = "قَبس .. اقتباسات نعُدها شعلة مضيئة تزيد من توهجنا"
   return (
     <>
+      <CustomHead title={"قَبس عن ركايا"} description={description} />
+
       <Header text={"قَبس عن ركايا"} />
 
       <VisionLayout>
