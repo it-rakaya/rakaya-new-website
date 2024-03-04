@@ -20,7 +20,7 @@ const Join = () => {
       <Container className="d-flex justify-content-center mt-2">
         <Link href={"/jobs"}>
           <Button color="third" className="text-primary text-center">
-            التقديم
+            اضغط للمزيد
           </Button>
         </Link>
       </Container>
