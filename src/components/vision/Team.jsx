@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import LinkedIn from "../icons/LinkedIn";
 import Image from "next/image";
+import PatternIconTwo from "../icons/PatternIconTwo";
 
 function Team({ name, position, image, desc }) {
   return (
@@ -9,7 +10,7 @@ function Team({ name, position, image, desc }) {
       className="my-2 align-items- px-1 py-4 teamShadow "
       style={{ height: "170px", borderRadius: "20px" }}
     >
-      <div className=" d-flex">
+      <div className=" d-flex position-relative">
         <div className="">
           <Image
             alt=""
@@ -39,6 +40,13 @@ function Team({ name, position, image, desc }) {
             {position}{" "}
           </p>
           <p style={{ fontSize: "10px", textAlign: "justify" }}>{desc}</p>
+        </div>
+        <div className="position-absolute patternTeam">
+          <div>
+          <PatternIconTwo className={"img-fluid"} style={{}}/>
+
+          </div>
+
         </div>
       </div>
     </div>

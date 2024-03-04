@@ -33,7 +33,7 @@ function MainData({isLoading , postData}) {
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("الاسم الكامل مطلوب"),
-    message: Yup.string().required(" هذا الحقل مطلوبة"),
+    message: Yup.string().required(" هذا الحقل مطلوب"),
     email: Yup.string()
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),
