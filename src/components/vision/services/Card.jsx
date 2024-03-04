@@ -52,9 +52,10 @@ const Pattern = ({ rotate = false }) => (
       width={null}
       height={null}
       src={pattern}
-      style={{ rotate: rotate ? "180deg" : "0deg", zIndex: 10000 }}
+      style={{ rotate: rotate ? "180deg " : "0deg", zIndex: 10000 , transform:"scaleX(-1)" }}
       className="img-fluid col-2"
     />
+    
   </motion.div>
 );
 

@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../../../assets/Applications/figma.png";
 import img2 from "../../../assets/Applications/jisr.png";
-import img3 from "../../../assets/Applications/metting.png";
+import img3 from "../../../assets/Applications/googel.png";
 import img4 from "../../../assets/Applications/trello.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +19,8 @@ function CardApplication() {
     },
     {
       image: img3,
-      link: "https://meet.google.com/",
+      link: "https://www.google.com/",
+      width: "45",
     },
     {
       image: img4,
@@ -33,6 +34,7 @@ function CardApplication() {
         <Link
           href={`${item?.link}`}
           key={index}
+          target="_blank"
           className="teamShadow rounded-4 d-flex align-items-center carApp justify-content-center"
         >
           <div>
@@ -40,7 +42,7 @@ function CardApplication() {
               <Image
                 alt="image"
                 src={item?.image}
-                width={0}
+                width={item?.width || 0}
                 height={0}
                 className="w-auto"
               />

@@ -3,12 +3,15 @@ import Header from "@/components/jobs/Header";
 import CardApplication from "@/components/vision/CardApplication";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { program } from "@/data";
+import Link from "next/link";
 import React from "react";
-const Program = ({ title, description, items }) => (
+const Program = ({ title, description, items, href }) => (
   <Container>
     <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">
       <i className="bi bi-grid-1x2 fs-4"></i>
-      <h4>{title}</h4>
+      <Link href={`${href}`} target="_blank">
+        <h4>{title}</h4>
+      </Link>
     </div>
     <p>{description}</p>
     <ul className="mx-3">
@@ -31,6 +34,7 @@ const programs = () => {
             title={item?.title}
             description={item?.description}
             items={item?.items}
+            href={item?.href}
           />
         ))}
 

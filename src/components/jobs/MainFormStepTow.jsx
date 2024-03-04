@@ -82,7 +82,7 @@ function MainFormStepTwo() {
           <BaseInputField
             name="salary_expectation"
             label="الراتب الشهري المتوقع"
-            placeholder="4000"
+            placeholder="4000 SAR"
             type="num"
             required
           />
