@@ -1,11 +1,11 @@
 import { useFormikContext } from "formik";
 import React from "react";
 
-function RadioButtonGroup({ options, name, defaultValue, onChange }) {
+function RadioButtonGroup({ options, name, defaultValue, onChange , className }) {
   const { errors, touched, handleBlur } = useFormikContext(); // Destructure useFormikContext
 
   return (
-    <div>
+    <div className={className}>
       {options.map((option, index) => (
         <>
           <div className="form-check form-check-reverse" key={index}>

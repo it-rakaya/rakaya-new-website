@@ -23,6 +23,10 @@ function MainFormStepOne() {
     { label: "زائر", value: "visitor" },
     { label: "أخرى", value: "other" },
   ];
+  const genderOption = [
+    { label: "ذكر", value: "male" },
+    { label: "أنثى", value: "female" },
+  ];
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
   };
@@ -60,6 +64,18 @@ function MainFormStepOne() {
           handleRadioButtonChange("resident_status", e.target.value)
         }
       />
+      <Label>
+        الجنس
+        <span className="text-danger mx-1">{"*"}</span>
+      </Label>
+      <RadioButtonGroup
+        options={genderOption}
+        className="d-flex gap-4"
+        name="gender"
+        defaultValue=""
+        onChange={(e) => handleRadioButtonChange("gender", e.target.value)}
+      />
+
       <Label>
         الحالة الاجتماعية
         <span className="text-danger mx-1">{"*"}</span>

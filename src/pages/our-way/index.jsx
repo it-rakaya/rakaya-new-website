@@ -27,10 +27,10 @@ function Index() {
 
       <Header text={"طريقك معنا"} />
 
-      <Container className="col-lg-6  p-3 p-md-0 over_margin">
+      <Container className="col-lg-6  p-3 p-md-0  mt-5">
         <p
           className="m-0 p-0"
-          style={{ textAlign: "justify", fontWeight: "500" }}
+          style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2" }}
         >
           تأكيدًا لالتزامنا بتقديم الخدمة الممتازة، في ركايا نعدك كشريك لنا
           ونبدأ معك بخطة زمنية واضحة لضمان تحقيق أهدافك بكفاءة وفعالية. يمكنك
@@ -38,8 +38,8 @@ function Index() {
           متوفرة على موقعنا.
         </p>
         <p
-          className="m-0 p-0"
-          style={{ textAlign: "justify", fontWeight: "500" }}
+          className="m-0 p-0 my-3"
+          style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2"  }}
         >
           فريقنا يقوم بترتيب اجتماع عن بُعد معك للاستماع إلى متطلباتك وتحديد
           احتياجاتك، ومن ثم يقوم بتلخيص أهم النقاط وتحديد الأولويات. بعد ذلك،
@@ -48,7 +48,7 @@ function Index() {
         </p>
         <p
           className="m-0 p-0"
-          style={{ textAlign: "justify", fontWeight: "500" }}
+          style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2"  }}
         >
           نحن نلتزم بتقديم الحلول والتوصيات الملائمة لاحتياجاتك، مع وضع خطط
           تحسينية وآليات واضحة لمتابعة تنفيذها وتقييم النتائج. نحن نعمل جنبًا

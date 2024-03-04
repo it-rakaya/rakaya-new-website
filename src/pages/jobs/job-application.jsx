@@ -32,7 +32,7 @@ function New() {
     availability_to_start: "",
     candidate_cv: null,
     candidate_portfolio: null,
-
+    gender:"",
     department_id: "",
     job_category: "",
     marital_status: "",
@@ -52,6 +52,7 @@ function New() {
     salary_expectation: Yup.string().required("الراتب المتوقع مطلوب"),
     availability_to_start: Yup.string().required("متى تستطيع البدء مطلوب"),
     marital_status: Yup.string().required("الحالة الاجتماعية مطلوبة"),
+    gender: Yup.string().required("النوع مطلوب"),
     job_category: Yup.string().required("نوع الوظيفة مطلوب"),
     candidate_cv: Yup.mixed().required("السيرة الذاتية مطلوبة"),
     // candidate_portfolio: Yup.mixed().required(" ملف الأعمال مطلوب"),

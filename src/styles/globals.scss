@@ -268,7 +268,12 @@ input:-webkit-autofill:active {
 .text-justify {
    text-align: justify;
 }
-
+.patternTeam{
+   width: 14%;
+   right: 9px;
+   bottom: 25px;
+   transform: scale(-1);
+}
 @media (max-width:1200px) {
    .imgVision {
       height: 100%;
@@ -302,11 +307,9 @@ input:-webkit-autofill:active {
    .uploadDocPar{
       font-size: 13px;
    }
+   .patternTeam{
+      width: 10%;
+
+   }
 }
 
-.patternTeam{
-   width: 14%;
-   right: 9px;
-   bottom: 25px;
-   transform: scale(-1);
-}

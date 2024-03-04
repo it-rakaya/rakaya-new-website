@@ -7,10 +7,10 @@ import PatternIconTwo from "../icons/PatternIconTwo";
 function Team({ name, position, image, desc }) {
   return (
     <div
-      className="my-2 align-items- px-1 py-4 teamShadow "
+      className="my-2 align-items- px-1 py-4 teamShadow position-relative "
       style={{ height: "170px", borderRadius: "20px" }}
     >
-      <div className=" d-flex position-relative">
+      <div className=" d-flex ">
         <div className="">
           <Image
             alt=""
