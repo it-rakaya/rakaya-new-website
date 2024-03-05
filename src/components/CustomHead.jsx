@@ -52,7 +52,10 @@ export default function CustomHead({
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
       {/* Google tag (gtag.js) */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"></script>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"
+      ></script>
       <script>
         {`
           window.dataLayer = window.dataLayer || [];

@@ -45,7 +45,7 @@ const Separator = () => (
 const paths = [
   { title: "عن الشركة", href: "/rakaya" },
   { title: "أركاننا", href: "/rakaya/our-pillars" },
-  { title: "عمل ركايا", href: "/rakaya/Our-work" },
+  { title: "عمل ركايا", href: "/rakaya/our-work" },
   { title: "خدماتنا", href: "/rakaya/our-services" },
   { title: "منتجاتنا", href: "/rakaya/our-products" },
   { title: "قَبس عن ركايا", href: "/rakaya/feedbacks" },
