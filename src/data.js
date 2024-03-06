@@ -489,7 +489,8 @@ export const works = [
 export const postsStudio = [
   {
     headTitle: "احتفالات يوم التأسيس",
-    coverPost: "/studio/studio/foundation-day/1.jpeg", // على سبيل المثال
+    coverPost: "/studio/studio/foundation-day/1.jpeg",
+    showPattern:true,
     posts: [
       {
         image: "/studio/studio/foundation-day/2.png",
@@ -501,16 +502,13 @@ export const postsStudio = [
         title: "ركايا",
         desc: "هدية تذكارية من المهندس حاتم باناصر إلى الاستاذ.أحمد الغريب",
       },
-      {
-        image: "/studio/studio/foundation-day/4.jpeg",
-        title: "ا. احمد الغريب و ا.حسين الغشيري",
-        desc: "من جانب احتفالات الفريق بيوم التأسيس ومشاركة فرحة الوطن",
-      },
+     
     ],
   },
   {
     headTitle: "اكسبو حج ١٤٤٥ هـ",
-    coverPost: "/studio/studio/haj-expo/1.JPG", // على سبيل المثال
+    coverPost: "/studio/studio/haj-expo/1.JPG",
+    showPattern:true,
     posts: [
       {
         image: "/studio/studio/haj-expo/2.JPG",

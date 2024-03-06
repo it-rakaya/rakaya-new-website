@@ -31,10 +31,14 @@ const Footer = () => {
         <FooterLink href={"https://www.instagram.com/rakayaco/"}>
           <i className="bi bi-instagram"></i>
         </FooterLink>
-
+        <FooterLink href={"mailto:admin@rakaya.co"}>
+          <i class="bi bi-envelope-open"></i>
+        </FooterLink>
+    
         <FooterLink href={"https://wa.me/966570044066"}>
           <i className="bi bi-whatsapp"></i>
         </FooterLink>
+      
         <FooterLink href={"https://www.linkedin.com/company/rakaya/"}>
           {/* <i className="bi bi-linkedin"></i> */}
           <LinkedIn />

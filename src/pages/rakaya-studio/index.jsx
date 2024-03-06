@@ -1,6 +1,8 @@
 import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
 import ImgContainer from "@/components/ImgContainer";
+import PatternIconTwo from "@/components/icons/PatternIconTwo";
+import PatternImage from "@/components/icons/PatternImage";
 import Header from "@/components/jobs/Header";
 import SmallCard from "@/components/services/SmallCard";
 import { postsStudio } from "@/data";
@@ -8,7 +10,7 @@ import Image from "next/image";
 import React from "react";
 
 const index = () => {
-  const description = "جميع أحداث ركايا في مكان واحد"
+  const description = "جميع أحداث ركايا في مكان واحد";
   return (
     <>
       <CustomHead title={"قُمرة ركايا"} description={description} />
@@ -17,7 +19,6 @@ const index = () => {
         subTitle={"هنا جميع أحداث ركايا"}
         image={"/studio/headers-bg/4.png"}
       />
-
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
         {postsStudio.map((item, index) => (
@@ -35,9 +36,9 @@ const index = () => {
                   />
                 ))}
               </Container>
-              <Container className="col-lg-5">
+              <Container className="col-lg-5 position-relative ">
                 <ImgContainer
-                  className="rounded coverImageStudio"
+                  className="rounded coverImageStudio "
                   style={{ width: "450px", height: "300px" }}
                 >
                   <Image
@@ -54,6 +55,13 @@ const index = () => {
                     }}
                   />
                 </ImgContainer>
+                {item?.showPattern && (
+                  <div
+                    className="position-absolute patternImage"
+                  >
+                    <PatternImage className={"w-100 h-100"} />
+                  </div>
+                )}
               </Container>
             </Container>
             {index !== postsStudio.length - 1 && <hr className="col-10 my-5" />}

@@ -268,12 +268,26 @@ input:-webkit-autofill:active {
 .text-justify {
    text-align: justify;
 }
-.patternTeam{
+
+.patternTeam {
    width: 14%;
    right: 9px;
    bottom: 25px;
    transform: scale(-1);
 }
+
+.contentJoin {
+   width: 75%;
+
+}
+
+.patternImage {
+   top: 15px !important;
+   left: 0px !important;
+   width: 8%;
+   
+}
+
 @media (max-width:1200px) {
    .imgVision {
       height: 100%;
@@ -300,16 +314,28 @@ input:-webkit-autofill:active {
       height: 200px !important;
 
    }
-   .parMobile{
+
+   .parMobile {
       font-size: 25px !important;
 
    }
-   .uploadDocPar{
+
+   .uploadDocPar {
       font-size: 13px;
    }
-   .patternTeam{
+
+   .patternTeam {
       width: 10%;
 
    }
-}
 
+   .contentJoin {
+      width: 100%;
+
+   }
+   .patternImage{
+      top: 6px !important;
+      left: 18px !important;
+
+   }
+}

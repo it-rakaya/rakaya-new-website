@@ -32,7 +32,7 @@ function MainData({ isLoading, postData }) {
     subject_id: "",
   };
   const validationSchema = Yup.object({
-    name: Yup.string().required("الاسم الكامل مطلوب"),
+    name: Yup.string().required("الاسم مطلوب"),
     message: Yup.string().required(" هذا الحقل مطلوب"),
     email: Yup.string()
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
@@ -137,19 +137,19 @@ function MainData({ isLoading, postData }) {
               rows={6}
             />
 
-            <SectionTitle text="الاسم" />
+            {/* <SectionTitle text="الاسم" /> */}
             <BaseInputField
               name="name"
-              label="قد يكون اسمك الشخصي، أو اسم الجهة أو الشركة التي تمثّلها"
-              placeholder="الاسم الأول والأخير"
+              label="الاسم"
+              placeholder=" الاسم الأول والأخير - او الجهة التي تنتمي إليها" 
             />
 
             <PhoneInput label="رقم الجوال" />
 
-            <SectionTitle text="البريد الإلكتروني" />
+            {/* <SectionTitle text="البريد الإلكتروني" /> */}
             <BaseInputField
               name="email"
-              label="سيكون استخدامنا له للتواصل معك بشأن رسالتك. ولن نستخدمه أبدًا خارج نطاق الرسالة"
+              label="البريد الإلكتروني" 
               placeholder="email@rakaya.sa"
             />
             <div className="mt-3">

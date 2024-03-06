@@ -14,7 +14,6 @@ function PhoneInput({ label, required }) {
     } else if (inputValue.length > 0) {
       return;
     }
-
     setFieldValue("phone", filteredValue);
     setFieldValue("phone_code", "966");
   };

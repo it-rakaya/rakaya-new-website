@@ -89,7 +89,7 @@ function New() {
                 </Section>
                 <Line />
                 <Section title=" القسم الثاني" subtitle="الأسئلة">
-                  <p className="fw-bold">يا ليت تجاوب على الأسئلة الإضافية</p>
+                  <p className="fw-bold">عرفنا عن نفسك أكثر</p>
                   <MainFormStepTow />
                 </Section>
                 <Line />

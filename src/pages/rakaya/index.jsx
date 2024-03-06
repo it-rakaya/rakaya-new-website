@@ -51,7 +51,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
   <div className="row ">
     <div className="col-lg-8">
       <p className="text-justify p-0 m-0">{textContent}</p>
-      <p className="text-justify m-0 p-0">{subtitle}</p>
+      <p className="text-justify m-0 p-0 mt-2">{subtitle}</p>
     </div>
     <Container className="col-lg-4">
       <ImgContainer

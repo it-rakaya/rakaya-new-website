@@ -27,7 +27,7 @@ function BaseInputField({ name, placeholder, label, required, type }) {
         // autoFocus={true}
         onBlur={handleBlur}
         onKeyPress={handleNumericInput} 
-        className={`form-control ${
+        className={`form-control p-2 ${
           errors[name] && touched[name] ? "border-danger" : ""
         }`}
         pattern={type === "num" ? "\\d*" : undefined}
