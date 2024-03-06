@@ -168,7 +168,6 @@ body {
    .blogBox {
       padding: 15px 15px;
       text-align: center;
-      // line-height: 2.;
    }
 
    .blogBox h5 {
@@ -195,19 +194,16 @@ body {
 
 .custom-bg-color {
    background-color: #fafafa;
-   /* Light background */
 }
 
 .custom-pulse {
    animation: pulse-animation 2s infinite;
    color: $secondary;
    padding: 10px;
-   // border: 1px solid $secondary
 }
 
 .z-index-high {
    z-index: 1050;
-   /* Ensuring it's above most elements */
 }
 
 .rounded-circle {
@@ -215,20 +211,6 @@ body {
    padding: 0;
 }
 
-/* Custom animation keyframes */
-// @keyframes pulse-animation {
-//    0% {
-//       box-shadow: 0 0 0 0 $secondary;
-//    }
-
-//    70% {
-//       box-shadow: 0 0px 0 5px $secondary;
-//    }
-
-//    100% {
-//       box-shadow: 0 0 0 0 $secondary;
-//    }
-// }
 
 .headerPages {
    margin: 0 155px
@@ -305,9 +287,6 @@ input:-webkit-autofill:active {
 
    }
 
-   .uploadDoc {
-      // height: 140px !important;
-   }
 
    .coverImageStudio {
       width: 100% !important;
