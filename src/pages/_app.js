@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import Script from "next/script";
+import { ToastContainer } from "react-toastify";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();
@@ -26,6 +27,8 @@ export default function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
         <Component {...pageProps} />
+        <ToastContainer />
+
       </Layout>
     </I18nextProvider>
   );
