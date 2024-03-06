@@ -81,14 +81,26 @@ function New() {
             {isLoading && !isSuccess && <LoadingOverlay />}
             <Formik
               initialValues={initialValues}
-              onSubmit={(values) =>
-                postData({
-                  ...values,
-                  "attachments[31]": values.candidate_cv,
-                  "attachments[32]": values.candidate_portfolio,
-                  "attachments[33]": values.candidate_personal_picture,
-                })
-              }
+              onSubmit={async (values) => {
+                try {
+                  let submissionValues = {
+                    ...values,
+                    "attachments[31]": values.candidate_cv,
+                    "attachments[32]": values.candidate_portfolio,
+                    "attachments[33]": values.candidate_personal_picture,
+                  };
+            
+                  delete submissionValues.candidate_cv;
+                  delete submissionValues.candidate_portfolio; 
+                  delete submissionValues.candidate_personal_picture;
+          
+                  await postData(submissionValues);
+                  
+                  
+                } catch (error) {
+                  console.error("حدث خطأ أثناء إرسال البيانات: ", error);
+                }
+              }}
               validationSchema={validationSchema}
             >
               <Form>
