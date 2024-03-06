@@ -33,11 +33,11 @@ const Header = () => {
             إِذَا اسْتَقَتِ البِحَارُ مِن الرَّكَايَا
           </p>
         </div>
-        <h5 className="  col-lg-5 ">
+        <p className="fs-5  col-lg-5 ">
           في زمن الوصول السريع ، للأشخاص والأماكن والمعلومة ، ركايا تحمل معنيين 
           الأول هو البئر الذي لا نفاذ له كذلك أفكارنا ، إبداعنا ، شغفنا ،
           عطائنا  الثاني الاعتمادية فنحن نملك مستشارين يُرتكى عليهم
-        </h5>
+        </p>
       </Container>
       <div className="patternLanding text-start">
         <PatternIconTwo className="img-fluid col-4 col-lg-10 " />

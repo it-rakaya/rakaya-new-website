@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
 import Container from "../Container";
-import CustomHead from "../CustomHead";
-import Header from "../jobs/Header";
 import Content from "./Content";
 import SideMenu from "./SideMenu";
 const VisionLayout = ({ title, children }) => {
