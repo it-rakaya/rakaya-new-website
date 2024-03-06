@@ -10,6 +10,13 @@ function MainFormStepThree() {
         label={" الرجاء رفع سيرتك الذاتية هنا"}
       />
       <UploadDoc
+        name="candidate_personal_picture"
+        label={"ارفع الصورة الشخصية»"}
+        textAccept={"JPG/PNG"}
+        isRequired
+        accept={"application/image/jpeg,image/png"}
+      />
+      <UploadDoc
         name="candidate_portfolio"
         label={"ارفع ملف لأهم أعمالك «إن وجد»"}
       />

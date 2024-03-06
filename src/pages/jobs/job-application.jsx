@@ -32,7 +32,8 @@ function New() {
     availability_to_start: "",
     candidate_cv: null,
     candidate_portfolio: null,
-    gender:"",
+    candidate_personal_picture: null,
+    gender: "",
     department_id: "",
     job_category: "",
     marital_status: "",
@@ -55,13 +56,14 @@ function New() {
     gender: Yup.string().required("النوع مطلوب"),
     job_category: Yup.string().required("نوع الوظيفة مطلوب"),
     candidate_cv: Yup.mixed().required("السيرة الذاتية مطلوبة"),
+    candidate_personal_picture: Yup.mixed().required(" الصورة الشخصية مطلوبة"),
+
     // candidate_portfolio: Yup.mixed().required(" ملف الأعمال مطلوب"),
   });
   const receivingOrderVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-  
 
   return (
     <JobsLayout>
@@ -79,11 +81,18 @@ function New() {
             {isLoading && !isSuccess && <LoadingOverlay />}
             <Formik
               initialValues={initialValues}
-              onSubmit={(values) => postData(values)}
+              onSubmit={(values) =>
+                postData({
+                  ...values,
+                  "attachments[31]": values.candidate_cv,
+                  "attachments[32]": values.candidate_portfolio,
+                  "attachments[33]": values.candidate_personal_picture,
+                })
+              }
               validationSchema={validationSchema}
             >
               <Form>
-              <ConnectedFocusError />
+                <ConnectedFocusError />
                 <Section title="القسم الأول" subtitle="معلوماتي الشخصية">
                   <MainFormStepOne />
                 </Section>

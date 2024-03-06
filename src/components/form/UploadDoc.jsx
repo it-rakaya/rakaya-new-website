@@ -6,7 +6,7 @@ import Button from "../Button";
 import ViewICon from "../icons/ViewICon";
 import PreviewPdf from "../PreviewPdf";
 
-function UploadDoc({ name, label, isRequired }) {
+function UploadDoc({ name, label, isRequired , accept , textAccept }) {
   const { setFieldValue, errors, touched, handleBlur } = useFormikContext();
   const [preview, setPreview] = useState(null);
   const [isFileLoaded, setIsFileLoaded] = useState(false);
@@ -57,7 +57,7 @@ function UploadDoc({ name, label, isRequired }) {
         >
           <input
             type="file"
-            accept="application/pdf,image/jpeg,image/png"
+            accept={accept || "application/pdf,image/jpeg,image/png"}
             name={name}
             onBlur={handleBlur}
             className="position-absolute w-100 h-100 opacity-0 cursor-pointer z-[9]"
@@ -88,7 +88,7 @@ function UploadDoc({ name, label, isRequired }) {
               <>
                 <p className="p-0 m-0 fw-bolder">اختر ملف أو قم بإسقاطه هنا</p>
                 <p className="p-0 m-0 uploadDocPar" >
-                  يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG
+                  {textAccept ? textAccept :"يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG"}
                 </p>
                 <p className="p-0 m-0 uploadDocPar">مساحة الملف: أقل من 50MB</p>
               </>
