@@ -36,9 +36,9 @@ const index = () => {
                   />
                 ))}
               </Container>
-              <Container className="col-lg-5 position-relative ">
+              <Container className="col-lg-5  ">
                 <ImgContainer
-                  className="rounded coverImageStudio "
+                  className="rounded coverImageStudio position-relative "
                   style={{ width: "450px", height: "300px" }}
                 >
                   <Image
@@ -54,7 +54,6 @@ const index = () => {
                       objectFit: "cover",
                     }}
                   />
-                </ImgContainer>
                 {item?.showPattern && (
                   <div
                     className="position-absolute patternImage"
@@ -62,6 +61,7 @@ const index = () => {
                     <PatternImage className={"w-100 h-100"} />
                   </div>
                 )}
+                </ImgContainer>
               </Container>
             </Container>
             {index !== postsStudio.length - 1 && <hr className="col-10 my-5" />}
