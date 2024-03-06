@@ -18,6 +18,15 @@ const nextConfig = {
     defaultLocale: "en", // Set your default locale
     locales: ["en", "ar"], // Add other supported languages here
   },
+  async rewrites() {
+    return [
+      {
+        source: "/robots.txt",
+        destination: "/api/robots",
+      },
+      // You can add more rewrite rules here
+    ];
+  },
 };
 
 module.exports = withPWA(nextConfig);
