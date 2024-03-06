@@ -10,7 +10,7 @@ const Map = () => {
           className="w-100 rounded"
           height="300"
           // style="border:0;"
-          allowfullscreen=""
+          // allowfullscreen=""
           title="location rakaya"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
