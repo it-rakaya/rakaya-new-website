@@ -1,13 +1,14 @@
 import styles from "@/styles/components/Navbar.module.scss";
 import { routes } from "@/utils/routes";
+import dynamic from "next/dynamic";
 import { t } from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
-import Button from "../Button";
-import Container from "../Container";
-import Logo from "../Logo";
 
+const Button = dynamic(() => import("../Button"), { ssr: false });
+const Container = dynamic(() => import("../Container"), { ssr: true });
+const Logo = dynamic(() => import("../Logo"), { ssr: true });
 const NavBarLink = ({ children, to, onClick }) => {
   const router = useRouter();
   const getActiveLink = (link) => {
@@ -81,8 +82,6 @@ function Navbar() {
             ))}
           </ul>
           <div className="d-flex justify-content-center mt-4 mt-lg-0">
-            {/* <button className="Button_btn-secondary__VRip_ py-2 px-5 rounded shadow-lg fw-bold">
-            </button> */}
             <Button color="secondary">كن شريك معنا</Button>
             {/* <Setting/> */}
           </div>
