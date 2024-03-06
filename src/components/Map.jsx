@@ -11,6 +11,7 @@ const Map = () => {
           height="300"
           // style="border:0;"
           allowfullscreen=""
+          title="location rakaya"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>

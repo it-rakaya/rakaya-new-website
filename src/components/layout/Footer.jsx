@@ -25,21 +25,21 @@ const Footer = () => {
         ))}
       </Container>
       <Container className={`${footerStyle} gap-3`}>
-        <FooterLink href={"https://twitter.com/rakayaco/"}>
+        <FooterLink href={"https://twitter.com/rakayaco/"} ariaLabel='facebook'>
           <i className="bi bi-twitter-x"></i>
         </FooterLink>
-        <FooterLink href={"https://www.instagram.com/rakayaco/"}>
+        <FooterLink href={"https://www.instagram.com/rakayaco/"} ariaLabel='instagram'>
           <i className="bi bi-instagram"></i>
         </FooterLink>
-        <FooterLink href={"mailto:admin@rakaya.co"}>
+        <FooterLink href={"mailto:admin@rakaya.co"} ariaLabel='mail'>
           <i class="bi bi-envelope-open"></i>
         </FooterLink>
     
-        <FooterLink href={"https://wa.me/966570044066"}>
+        <FooterLink href={"https://wa.me/966570044066"} ariaLabel='whatsapp'>
           <i className="bi bi-whatsapp"></i>
         </FooterLink>
       
-        <FooterLink href={"https://www.linkedin.com/company/rakaya/"}>
+        <FooterLink href={"https://www.linkedin.com/company/rakaya/"} ariaLabel='linkedin'> 
           {/* <i className="bi bi-linkedin"></i> */}
           <LinkedIn />
         </FooterLink>

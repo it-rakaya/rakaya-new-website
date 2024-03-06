@@ -489,16 +489,16 @@ export const works = [
 export const postsStudio = [
   {
     headTitle: "احتفالات يوم التأسيس",
-    coverPost: "/studio/studio/foundation-day/1.jpeg",
+    coverPost: "/studio/studio/foundation-day/1.webp",
     showPattern:true,
     posts: [
       {
-        image: "/studio/studio/foundation-day/2.png",
+        image: "/studio/studio/foundation-day/2.webp",
         title: "المستشار نبيل عابد",
         desc: "مشاركة المستشار نبيل عابد حفلة يوم التأسيس مع فريق ركايا",
       },
       {
-        image: "/studio/studio/foundation-day/3.jpeg",
+        image: "/studio/studio/foundation-day/3.webp",
         title: "ركايا",
         desc: "هدية تذكارية من المهندس حاتم باناصر إلى الاستاذ.أحمد الغريب",
       },
@@ -507,21 +507,21 @@ export const postsStudio = [
   },
   {
     headTitle: "اكسبو حج ١٤٤٥ هـ",
-    coverPost: "/studio/studio/haj-expo/1.JPG",
+    coverPost: "/studio/studio/haj-expo/1.webp",
     showPattern:true,
     posts: [
       {
-        image: "/studio/studio/haj-expo/2.JPG",
+        image: "/studio/studio/haj-expo/2.webp",
         title: "اكسبو #١",
         desc: "بناء جسور التواصل مع المهتمين في جناح ركايا",
       },
       {
-        image: "/studio/studio/haj-expo/3.jpg",
+        image: "/studio/studio/haj-expo/3.webp",
         title: "اكسبو #٢",
         desc: "لحظات تحفظ في الذاكرة وتحمل الإلهام",
       },
       {
-        image: "/studio/studio/haj-expo/4.jpg",
+        image: "/studio/studio/haj-expo/4.webp",
         title: "اكسبو #٣",
         desc: "أفكار رائعة ومبدعة في كل زاوية",
       },
@@ -529,20 +529,20 @@ export const postsStudio = [
   },
   {
     headTitle: "اتقان الرقمية",
-    coverPost: "/studio/studio/etqan/1.png", // على سبيل المثال
+    coverPost: "/studio/studio/etqan/1.webp", // على سبيل المثال
     posts: [
       {
-        image: "/studio/studio/etqan/2.png",
+        image: "/studio/studio/etqan/2.webp",
         title: "بوست سين",
         desc: "ليش دايمًا نتجنب نسأل ؟وليش البعض يعتبر السؤال مؤشر على الضعف و عدم المعرفة ؟",
       },
       {
-        image: "/studio/studio/etqan/3.png",
+        image: "/studio/studio/etqan/3.webp",
         title: "بوست جيم",
         desc: "الاجابة مهارة مهمة في تواصلنا تتطلب مننا نفهم ونسمع كويس عشان نقدر نوّصل المعلومة بوضوح ، وقدرتنا على توصيل الإجابة تعكس مهارتنا في فن الاجابة",
       },
       {
-        image: "/studio/studio/etqan/4.jpg",
+        image: "/studio/studio/etqan/4.webp",
         title: "بوست الاحتراق الوظيفي",
         desc: "‏‎اذا كنت بتعاني من وظيفتك انتبه توصل للـ#الاحتراق_الوظيفي 🚫",
       },

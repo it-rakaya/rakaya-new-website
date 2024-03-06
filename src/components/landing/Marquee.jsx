@@ -1,9 +1,8 @@
-import React from "react";
-import Container from "../Container";
-import Marquee from "react-fast-marquee";
 import styles from "@/styles/landing.module.scss";
-import i18n from "@/i18n";
 import Image from "next/image";
+import React from "react";
+import Marquee from "react-fast-marquee";
+import Container from "../Container";
 
 /**
  * @param {{imgArray:string[]; reverse:boolean;}}
@@ -34,13 +33,13 @@ const Bar = ({ imgArray, reverse }) => {
   );
 };
 const images = [
-  "/rakaya/5chefs.png",
-  "/rakaya/ektimal.png",
-  "/rakaya/ektimal.png",
-  "/rakaya/Etqan.png",
-  "/rakaya/qfsco.png",
-  "/rakaya/speed-rent.png",
-  "/rakaya/taqniyah.png",
+  "/rakaya/5chefs.webp",
+  "/rakaya/ektimal.webp",
+  "/rakaya/ektimal.webp",
+  "/rakaya/Etqan.webp",
+  "/rakaya/qfsco.webp",
+  "/rakaya/speed-rent.webp",
+  "/rakaya/taqniyah.webp",
 ];
 const MyMarquee = () => {
   return (
