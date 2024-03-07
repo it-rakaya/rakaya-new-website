@@ -91,7 +91,6 @@ function New() {
                     "attachments[32]": values.candidate_portfolio,
                     "attachments[33]": values.candidate_personal_picture,
                   };
-            
                   delete submissionValues.candidate_cv;
                   delete submissionValues.candidate_portfolio; 
                   delete submissionValues.candidate_personal_picture;
@@ -100,7 +99,7 @@ function New() {
                   
                   
                 } catch (error) {
-                  console.error("حدث خطأ أثناء إرسال البيانات: ", error);
+                  // console.error("حدث خطأ أثناء إرسال البيانات: ", error);
                   toast.error("هناك خطأٌ ما! الرجاء المحاولة لاحقا", {
                     position: "top-right",
                     autoClose: 2000,

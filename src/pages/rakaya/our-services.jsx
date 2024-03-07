@@ -21,9 +21,9 @@ const Services = () => {
         <Container className="col-12 d-flex flex-wrap justify-content-center justify-content-lg-start mx-0 gap-3">
           {services?.map((item, index) => (
             <Card title={item?.title} key={index}>
-              <p className="mb-1">{item?.subTitle}</p>
+              <p className="mb-1 text-justify">{item?.subTitle}</p>
               {item?.items.map((point, index) => (
-                <p className="my-1" key={index}>
+                <p className="my-1 text-justify" key={index}>
                   - {point?.item}
                 </p>
               ))}
