@@ -21,6 +21,16 @@ const index = () => {
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
+        <iframe
+          // width="560"
+          height="315"
+          src="https://www.youtube.com/embed/cO1QxpxQn-Q?si=mDmncDvXMfp5OSxa"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          className="w-100 rounded my-3 mb-4"
+        ></iframe>
         {postsStudio.map((item, index) => (
           <>
             <h1 className="align-self-start">{item?.headTitle}</h1>
@@ -54,13 +64,11 @@ const index = () => {
                       objectFit: "cover",
                     }}
                   />
-                {item?.showPattern && (
-                  <div
-                    className="position-absolute patternImage"
-                  >
-                    <PatternImage className={"w-100 h-100"} />
-                  </div>
-                )}
+                  {item?.showPattern && (
+                    <div className="position-absolute patternImage">
+                      <PatternImage className={"w-100 h-100"} />
+                    </div>
+                  )}
                 </ImgContainer>
               </Container>
             </Container>

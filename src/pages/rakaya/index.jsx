@@ -56,7 +56,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
     <Container className="col-lg-4">
       <ImgContainer
         className="rounded d-flex align-items-center p-3 my-4 my-md-0 justify-content-center"
-        style={{ height: "120px" }}
+        // style={{ height: "120px" }}
       >
         <img className="img-fluid rounded imgVision" src={imgSrc} alt="" />
       </ImgContainer>
