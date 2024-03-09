@@ -35,9 +35,8 @@ const Bar = ({ imgArray, reverse }) => {
 const images = [
   "/rakaya/5chefs.webp",
   "/rakaya/ektimal.webp",
-  "/rakaya/ektimal.webp",
-  "/rakaya/Etqan.webp",
-  "/rakaya/qfsco.webp",
+  "/rakaya/Etqan.png",
+  "/rakaya/qfsco.png",
   "/rakaya/speed-rent.webp",
   "/rakaya/taqniyah.webp",
 ];

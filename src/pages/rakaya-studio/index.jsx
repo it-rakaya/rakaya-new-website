@@ -21,16 +21,19 @@ const index = () => {
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
-        <iframe
-          // width="560"
-          height="315"
-          src="https://www.youtube.com/embed/cO1QxpxQn-Q?si=mDmncDvXMfp5OSxa"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          className="w-100 rounded my-3 mb-4"
-        ></iframe>
+        <h1 className="align-self-start">أبطال ركايا في موسم الحج 1444</h1>
+        <Container className="col-lg-11 px-4">
+          <iframe
+            // width="560"
+            height="315"
+            src="https://www.youtube.com/embed/cO1QxpxQn-Q?si=mDmncDvXMfp5OSxa"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            className="w-100 rounded my-3 mb-4"
+          ></iframe>
+        </Container>
         {postsStudio.map((item, index) => (
           <>
             <h1 className="align-self-start">{item?.headTitle}</h1>
@@ -49,7 +52,7 @@ const index = () => {
               <Container className="col-lg-5  ">
                 <ImgContainer
                   className="rounded coverImageStudio position-relative "
-                  style={{ width: "450px", height: "300px" }}
+                  style={{  height: "300px" }}
                 >
                   <Image
                     className="img-fluid rounded"
