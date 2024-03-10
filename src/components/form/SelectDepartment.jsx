@@ -8,11 +8,13 @@ function SelectDepartment({ label, required }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
   const [selectOptions, setSelectOptions] = useState([]);
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;;
+
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
         const response = await fetch(
-          "https://front-api.rmcc.sa/api/all-departments"
+          `${baseUrl}/all-departments`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

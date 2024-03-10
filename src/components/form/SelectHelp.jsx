@@ -7,11 +7,13 @@ import { useFormikContext } from "formik";
 function SelectHelp({ label, required, labelClassName }) {
   const { setFieldValue, errors, touched, handleBlur } = useFormikContext();
   const [selectOptions, setSelectOptions] = useState([]);
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;;
+
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
         const response = await fetch(
-          "https://front-api.rmcc.sa/api/all-subjects"
+          `${baseUrl}/all-subjects`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

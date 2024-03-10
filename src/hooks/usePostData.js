@@ -10,7 +10,9 @@ export function usePostData(endpoint) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState(null);
   const [responseData, setResponseData] = useState(null);
-  const baseUrl = "https://front-api.rmcc.sa/api";
+  // const baseUrl = "https://front-api.rmcc.sa/api";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;;
+
 
   const postData = async (formData) => {
     setIsLoading(true);
