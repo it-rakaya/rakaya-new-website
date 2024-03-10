@@ -494,8 +494,8 @@ export const postsStudio = [
     posts: [
       {
         image: "/studio/studio/foundation-day/2.webp",
-        title: "المستشار نبيل عابد",
-        desc: "مشاركة المستشار نبيل عابد حفلة يوم التأسيس مع فريق ركايا",
+        title: "المستشار والرئيس التنفيذي",
+        desc: "مشاركة المستشار نبيل عابد والرئيس التنفيذي المهندس حاتم سالم باناصر حفلة يوم التأسيس مع فريق ركايا",
       },
       {
         image: "/studio/studio/foundation-day/3.webp",
