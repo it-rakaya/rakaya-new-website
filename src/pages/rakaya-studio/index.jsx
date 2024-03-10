@@ -1,7 +1,6 @@
 import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
 import ImgContainer from "@/components/ImgContainer";
-import PatternIconTwo from "@/components/icons/PatternIconTwo";
 import PatternImage from "@/components/icons/PatternImage";
 import Header from "@/components/jobs/Header";
 import SmallCard from "@/components/services/SmallCard";
@@ -20,7 +19,7 @@ const index = () => {
         image={"/studio/headers-bg/4.png"}
       />
 
-      <Container className="col-lg-10 d-flex flex-column align-items-center py-4 ">
+      <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio" >
         <h1 className="align-self-start">أبطال ركايا في موسم الحج 1444</h1>
         <Container className="col-lg-11 px-4">
           <iframe

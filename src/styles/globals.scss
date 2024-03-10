@@ -269,7 +269,9 @@ input:-webkit-autofill:active {
    width: 8%;
    
 }
-
+.rakayaStudio{
+   padding:0 39px
+}
 @media (max-width:1200px) {
    .imgVision {
       height: 100%;
@@ -315,6 +317,10 @@ input:-webkit-autofill:active {
    .patternImage{
       top: 4px !important;
       left: 12px !important;
+
+   }
+   .rakayaStudio{
+      padding: 0 20px;
 
    }
 }
