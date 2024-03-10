@@ -8,7 +8,10 @@ import Navbar, { NavLink } from "./Navbar";
 
 const Header = () => {
   return (
-    <Container className="w-100  p-md-5 position-relative">
+    <Container className="w-100  p-md-5 position-relative"
+    style={{ height: "calc(100vh - 7rem)" }}
+    
+    >
       {/* <Navbar /> */}
       <Container
         className={
@@ -43,7 +46,10 @@ const Header = () => {
         <PatternIconTwo className="img-fluid col-4 col-lg-10 " />
       </div>
       <div className="patternLandingRight text-end">
-        <PatternIconTwo className="img-fluid col-4 col-lg-10 " style={{transform:"scale(-1)"}} />
+        <PatternIconTwo
+          className="img-fluid col-4 col-lg-10 "
+          style={{ transform: "scale(-1)" }}
+        />
       </div>
 
       <Container className="d-flex justify-content-center">
