@@ -9,10 +9,10 @@ function SelectQualifications({ label, required }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext(); 
   const selectOptions = [
-    { value: "High_school", label: t("common:HighSchool") },
+    { value: "high_school", label: t("common:HighSchool") },
     { value: "bachelor", label: t("common:bachelor") },
-    { value: "Master", label: t("common:Master") },
-    { value: "Ph.D", label: t("common:Ph.D") },
+    { value: "master", label: t("common:Master") },
+    { value: "phd", label: t("common:Ph.D") },
   ];
   return (
     <div>

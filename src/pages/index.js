@@ -10,7 +10,7 @@ export default function Home() {
     "في زمن الوصول السريع ، للأشخاص والأماكن والمعلومة ، ركايا تحمل معنيين  الأول هو البئر الذي لا نفاذ له كذلك أفكارنا ، إبداعنا ، شغفنا ، عطائنا  الثاني الاعتمادية فنحن نملك مستشارين يُرتكى عليهم";
   return (
     <>
-      <CustomHead title={"الصفحة الرئيسية"} description={description} />
+      <CustomHead customTitle={"ركايا البديعة"} description={description} />
       <Container className="mx-0 px-0">
         <Header />
         <Stats />

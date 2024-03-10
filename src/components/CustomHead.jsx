@@ -9,12 +9,13 @@ const GTAG_SRC = "https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S";
 
 export default function CustomHead({
   title,
+ customTitle , 
   description,
   url,
   imageUrl = "/rakaya.png",
   keywords = "اتقان الرقمية, جودة التشغيل, عمر خان, ركايا للاستشارات الادارية, شركة ركايا, ركايا البديعة, وظائف ركايا, ركايا استوديو",
 }) {
-  const fullTitle = `ركايا - ${title}`;
+  const fullTitle = customTitle ||`ركايا  ${title ? `-${title}` : ""}`;
   const canonicalUrl = "https://www.rakaya.sa/";
 
   // Schema.org JSON-LD structure for SEO
