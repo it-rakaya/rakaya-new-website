@@ -8,7 +8,7 @@ function Team({ name, position, image, desc }) {
   return (
     <div
       className="my-2 align-items- px-1 py-4 teamShadow position-relative "
-      style={{ height: "170px", borderRadius: "20px" }}
+      style={{ height: "185px", borderRadius: "20px" }}
     >
       <div className=" d-flex ">
         <div className="">

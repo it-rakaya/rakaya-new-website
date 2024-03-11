@@ -2,15 +2,13 @@ import Link from "next/link";
 import Button from "../Button";
 import Container from "../Container";
 import Logo from "../Logo";
-import PatternIcon from "../icons/PatternIcon";
 import PatternIconTwo from "../icons/PatternIconTwo";
-import Navbar, { NavLink } from "./Navbar";
 
 const Header = () => {
   return (
-    <Container className="w-100  p-md-5 position-relative"
-    style={{ height: "calc(100vh - 7rem)" }}
-    
+    <Container
+      className="w-100  p-md-5 position-relative d-flex flex-column align-content-center justify-content-center"
+      style={{ height: "calc(100vh - 7rem)" }}
     >
       {/* <Navbar /> */}
       <Container

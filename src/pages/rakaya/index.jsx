@@ -66,7 +66,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
 const TeamSection = () => (
   <div className="col-12 mt-5 m-auto m-md-0 mb-2">
     <h2>أعضاء ركايا</h2>
-    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+    <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
       {TeamData.map((item, index) => (
         <div className=" " key={index}>
           <Team
