@@ -52,6 +52,7 @@ const Header = ({ text, subTitle, image, location }) => {
         }}
       >
         <Pattern />
+        
         <div
           className="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-start    h-100"
           style={{ background: image ? "#522222de" : "#522222" }}
