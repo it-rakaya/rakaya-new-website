@@ -19,7 +19,7 @@ const Index = () => {
         <Header
           text="ركايا البديعة"
           subTitle="داعمين وممكنين لك..."
-          image="/studio/headers-bg/7.jpg"
+          image="/studio/headers-bg/10.jpeg"
           location
         />
         <VisionLayout title="عن ركايا البديعة">
