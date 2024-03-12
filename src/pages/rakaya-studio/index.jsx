@@ -16,7 +16,7 @@ const index = () => {
       <Header
         text={"قُمرة ركايا"}
         subTitle={"هنا جميع أحداث ركايا"}
-        image={"/studio/headers-bg/4.png"}
+        image={"/studio/headers-bg/4.webp"}
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio" >

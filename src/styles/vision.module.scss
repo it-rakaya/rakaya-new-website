@@ -4,7 +4,7 @@
 @import "./colors";
 
 .card {
-   min-width: 15rem;
+   // min-width: 15rem;
    // width: 17rem;
    height: 23rem;
    &-scroll {
@@ -26,5 +26,10 @@
          border-radius: 10px;
          margin-bottom: 10px;
       }
+   }
+}
+@media (max-width:1300px) {
+   .card {
+      // min-width: 14rem;
    }
 }

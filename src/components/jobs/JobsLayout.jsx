@@ -16,7 +16,7 @@ function JobsLayout({ children }) {
         <Header
           text={"الوظائف"}
           subTitle={"ركايا  تبحث عنك"}
-          image={"/studio/headers-bg/6.jpg"}
+          image={"/studio/headers-bg/6.webp"}
           location
         />
         <Menu />

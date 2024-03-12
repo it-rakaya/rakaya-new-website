@@ -18,7 +18,7 @@ const Services = () => {
           نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها
           وترسّخ علاقتنا بعملائنا 
         </p>
-        <Container className="col-12 d-flex flex-wrap justify-content-center justify-content-lg-start mx-0 gap-3">
+        <Container className="row ">
           {services?.map((item, index) => (
             <Card title={item?.title} key={index}>
               <p className="mb-1 my-2 text-justify">{item?.subTitle}</p>

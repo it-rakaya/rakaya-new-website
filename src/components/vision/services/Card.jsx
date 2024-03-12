@@ -52,39 +52,44 @@ const Pattern = ({ rotate = false }) => (
       width={null}
       height={null}
       src={pattern}
-      style={{ rotate: rotate ? "180deg " : "0deg", zIndex: 10000 , transform:"scaleX(-1)" }}
+      style={{
+        rotate: rotate ? "180deg " : "0deg",
+        zIndex: 10000,
+        transform: "scaleX(-1)",
+      }}
       className="img-fluid col-2"
     />
-    
   </motion.div>
 );
 
 const Card = ({ title, children }) => {
   const [animateCard, setAnimateCard] = useState(false);
   return (
-    <motion.div
-      variants={containerVariant}
-      initial="visible"
-      whileHover="hidden"
-      animate={animateCard ? "hidden" : "visible"}
-      onTap={() => setAnimateCard(!animateCard)}
-      className={`${styles["card"]} col-lg-3 rounded-4 position-relative d-flex flex-column justify-content-center overflow-hidden px-0`}
-    >
-      <Pattern rotate={false} />
-      <Pattern rotate />
+    <div className="col-md-4 my-3">
       <motion.div
-        variants={titleVariant}
-        className="d-flex justify-content-center align-items-center h-100 px-5 text-white position-absoulte"
+        variants={containerVariant}
+        initial="visible"
+        whileHover="hidden"
+        animate={animateCard ? "hidden" : "visible"}
+        onTap={() => setAnimateCard(!animateCard)}
+        className={`${styles["card"]}  rounded-4 position-relative d-flex flex-column justify-content-center overflow-hidden px-0`}
       >
-        <h4 className="text-center">{title}</h4>
+        <Pattern rotate={false} />
+        <Pattern rotate />
+        <motion.div
+          variants={titleVariant}
+          className="d-flex justify-content-center align-items-center h-100 px-5 text-white position-absoulte"
+        >
+          <h4 className="text-center">{title}</h4>
+        </motion.div>
+        <motion.div
+          variants={descriptionVariant}
+          className={`d-flex flex-column text-center h-75 text-white bottom-0 px-2 gap-0 position-absolute ${styles["card-scroll"]}`}
+        >
+          {children}
+        </motion.div>
       </motion.div>
-      <motion.div
-        variants={descriptionVariant}
-        className={`d-flex flex-column text-center h-75 text-white bottom-0 px-2 gap-0 position-absolute ${styles["card-scroll"]}`}
-      >
-        {children}
-      </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

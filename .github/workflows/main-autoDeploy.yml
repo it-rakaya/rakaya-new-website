@@ -26,6 +26,7 @@ jobs:
         port: 22
         script: |
           cd /var/www/html/nextjs/nextjs.rakaya.sa/rakaya-new-website
+          git restore .
           git pull
           sudo yarn install
           sudo yarn build

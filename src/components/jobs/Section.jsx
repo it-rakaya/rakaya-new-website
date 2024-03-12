@@ -5,7 +5,7 @@ import styles from "@/styles/jobs.module.scss"
 
 const Title = ({ title }) => (
    <Container className="position-relative mx-0 px-0">
-      <h3 className={`${styles['section-title']} col-5 col-md-3 `}>{title}</h3>
+      <h3 className={`${styles['section-title']} col-5 col-md-5 col-lg-4 col-xl-3 `}>{title}</h3>
    </Container>
 );
 
