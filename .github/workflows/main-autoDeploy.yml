@@ -27,6 +27,6 @@ jobs:
         script: |
           cd /var/www/html/nextjs/nextjs.rakaya.sa/rakaya-new-website
           git pull
-          yarn install
-          yarn build
+          sudo yarn install
+          sudo yarn build
           pm2 restart rakaya.sa
