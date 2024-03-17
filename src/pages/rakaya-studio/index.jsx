@@ -20,7 +20,7 @@ const index = () => {
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio" >
-        <h1 className="align-self-start">أبطال ركايا في موسم الحج 1444</h1>
+        <h1 className="align-self-start">أبطال ركايا في موسم حج ١٤٤٤ هـ</h1>
         <Container className="col-lg-11 px-4">
           <iframe
             // width="560"

@@ -488,9 +488,49 @@ export const works = [
 ("/studio");
 export const postsStudio = [
   {
+    headTitle: "مأدبة فطور رمضان ١٤٤٥ هـ  لفريق ركايا",
+    coverPost: "/studio/studio/ramadan-1445/1.webp",
+    showPattern: true,
+    posts: [
+      {
+        image: "/studio/studio/ramadan-1445/2.webp",
+        title: "مأدبة الإفطار لفريق شركة ركايا",
+        desc: "في اجواء رمضانية اجتمع منسوبي شركة ركايا على مأدبة الإفطار في قلب مركاز البلد الأمين",
+      },
+      {
+        image: "/studio/studio/ramadan-1445/3.webp",
+        title: "فريق ركايا",
+        desc: "لقطة تجتمع فيها أفراد شركة ركايا بعد إفطار شهي تملؤه روح الأخوة والألفة",
+      }
+
+    ],
+  },
+  {
+    headTitle: "ركايا الراعي الذهبي لمركاز البلد الأمين",
+    coverPost: "/studio/studio/abamco/1.webp",
+    showPattern: true,
+    posts: [
+      {
+        image: "/studio/studio/abamco/2.webp",
+        title: "مقر مركاز البلد الأمين",
+        desc: "من قلب مركاز البلد، يبرز الرمز الأمين الذي يدل على كونه المكان الذي يجتمع فيه كبار أهالي المنطقة لمناقشة القضايا الاجتماعية التي تهدف إلى تعزيز التواصل الفعال من أجل النمو الاقتصادي المستدام، حيث كانت ركايا الراعي الذهبي.",
+      },
+      {
+        image: "/studio/studio/abamco/3.webp",
+        title: "هدية مركاز البلد الأمين",
+        desc: "في إطار الاحتفالات، تم توزيع هدايا تذكارية على الضيوف.",
+      },
+      {
+        image: "/studio/studio/abamco/4.webp",
+        title: "مسرح مركاز البلد الأمين",
+        desc: "مركاز البلد هو مسرح مميز بطابعه الاحترافي والرفاهية، ويتميز بالتميز والأصالة، وزينه فريق شركة ركايا.",
+      },
+    ],
+  },
+  {
     headTitle: "احتفالات يوم التأسيس",
     coverPost: "/studio/studio/foundation-day/1.webp",
-    showPattern:true,
+    showPattern: true,
     posts: [
       {
         image: "/studio/studio/foundation-day/2.webp",
@@ -502,13 +542,13 @@ export const postsStudio = [
         title: "ركايا",
         desc: "هدية تذكارية من المهندس حاتم باناصر إلى الاستاذ.أحمد الغريب",
       },
-     
+
     ],
   },
   {
     headTitle: "اكسبو حج ١٤٤٥ هـ",
     coverPost: "/studio/studio/haj-expo/1.webp",
-    showPattern:true,
+    showPattern: true,
     posts: [
       {
         image: "/studio/studio/haj-expo/2.webp",
