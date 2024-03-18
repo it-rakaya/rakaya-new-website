@@ -529,7 +529,7 @@ export const postsStudio = [
   },
   {
     headTitle: "احتفالات يوم التأسيس",
-    coverPost: "/studio/studio/foundation-day/1.webp",
+    coverPost: "/studio/studio/foundation-day/1.png",
     showPattern: true,
     posts: [
       {
