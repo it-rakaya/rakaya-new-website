@@ -11,7 +11,7 @@ const Join = () => {
         <div>
           <Container className="py-3 text-end col-lg-12 ">
             <div className="mb-3">
-              <h3 className="text-white">هل تريد الانضمام معنا؟</h3>
+              <h3 className="text-white">هل ترغب أن تصبح فرد من عائلة ركايا؟</h3>
             </div>
             <div className="w-100 m-auto">
               <h4 className="text-white fw-light contentJoin text-justify " style={{lineHeight:"1.7"}}>
