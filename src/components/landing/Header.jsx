@@ -25,13 +25,13 @@ const Header = () => {
             className="fs-1 fw-semibold mw-50 text-center col-lg-5 mb-0 w-100 parMobile"
             style={{ maxWidth: "100%" }}
           >
-            وثُلّةٍ كانوا ونعم الثلة
+            مَتَى تَصِلُ العِطَاشُ إِلى ارْتِوَاءٍ
           </p>
           <p
             className="fs-1 fw-semibold mw-50 text-center col-lg-5 mt-0 pt-0 w-100 parMobile"
             style={{ maxWidth: "100%" }}
           >
-            قد أتقنوا دق العمل وجُلّه
+            إِذَا اسْتَقَتِ البِحَارُ مِن الرَّكَايَا
           </p>
         </div>
         <p className="fs-5  col-lg-5 ">
