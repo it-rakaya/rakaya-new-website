@@ -16,7 +16,7 @@ const SmallCard = ({ title, description, footer, imgUrl }) => {
             className="img-fluid rounded w-100 h-100"
             src={imgUrl}
             alt="image"
-            srcset=""
+            srcSet=""
             height={0}
             width={0}
             style={{ objectFit: "cover" }}

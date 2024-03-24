@@ -27,14 +27,14 @@ const index = () => {
             height="315"
             src="https://www.youtube.com/embed/cO1QxpxQn-Q?si=mDmncDvXMfp5OSxa"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="w-100 rounded my-3 mb-4"
           ></iframe>
         </Container>
         {postsStudio.map((item, index) => (
-          <>
+          <div key={index}>
             <h1 className="align-self-start">{item?.headTitle}</h1>
             <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
               <Container className="col-lg-5">
@@ -57,7 +57,7 @@ const index = () => {
                     className="img-fluid rounded"
                     src={item?.coverPost}
                     alt=""
-                    srcset=""
+                    srcSet=""
                     width={0}
                     height={0}
                     style={{
@@ -75,7 +75,7 @@ const index = () => {
               </Container>
             </Container>
             {index !== postsStudio.length - 1 && <hr className="col-10 my-5" />}
-          </>
+          </div>
         ))}
       </Container>
     </>

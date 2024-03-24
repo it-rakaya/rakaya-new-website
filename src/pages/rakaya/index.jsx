@@ -10,7 +10,8 @@ import { AnimatePresence } from "framer-motion";
 import React from "react";
 
 const Index = () => {
-  const description ="ركايا هي أرض خصبة للأفكار الإبداعية والحلول اللامتناهية وأساليب العمل الإحترافية"
+  const description =
+    "ركايا هي أرض خصبة للأفكار الإبداعية والحلول اللامتناهية وأساليب العمل الإحترافية";
   return (
     <>
       <CustomHead title={"ركايا البديعة"} description={description} />
@@ -68,7 +69,7 @@ const TeamSection = () => (
     <h2>أعضاء ركايا</h2>
     <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
       {TeamData.map((item, index) => (
-        <div className=" " key={index * 2 }>
+        <div className=" " key={`team-member-${index}`}>
           <Team
             name={item.name}
             position={item.position}
