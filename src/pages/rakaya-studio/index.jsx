@@ -29,7 +29,7 @@ const index = () => {
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
             className="w-100 rounded my-3 mb-4"
           ></iframe>
         </Container>

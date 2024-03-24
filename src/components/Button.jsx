@@ -21,11 +21,11 @@ const Button = ({
     >
       {isLoading ? (
         <div
-          class="spinner-grow text-white "
+          className="spinner-grow text-white "
           role="status"
           style={{ width: "10px", height: "10px" }}
         >
-            <span class="visually-hidden">Loading...</span>
+            <span className="visually-hidden">Loading...</span>
 
         </div>
       ) : (

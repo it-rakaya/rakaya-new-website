@@ -13,7 +13,7 @@ const Map = () => {
           // allowfullscreen=""
           title="location rakaya"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       {/* End google-map */}
