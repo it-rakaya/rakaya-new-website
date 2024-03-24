@@ -21,10 +21,22 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        strategy="afterInteractive" 
+        strategy="afterInteractive"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossOrigin="anonymous"
       />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-WK6D3JZL9S"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WK6D3JZL9S');
+      `}
+      </Script>
       <Component {...pageProps} />
       <ToastContainer />
     </>
@@ -35,9 +47,7 @@ export default function MyApp({ Component, pageProps }) {
       {Component.noLayout ? (
         renderComponent()
       ) : (
-        <Layout>
-          {renderComponent()}
-        </Layout>
+        <Layout>{renderComponent()}</Layout>
       )}
     </I18nextProvider>
   );

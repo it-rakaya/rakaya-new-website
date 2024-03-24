@@ -60,7 +60,7 @@ export default function CustomHead({
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
-      <script async src={GTAG_SRC}></script>
+      {/* <script async src={GTAG_SRC}></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -71,7 +71,7 @@ export default function CustomHead({
           gtag('config', 'G-WK6D3JZL9S');
         `,
         }}
-      />
+      /> */}
     </Head>
   );
 }

@@ -37,7 +37,7 @@ function TOTop() {
             </svg> */}
             <div style={{width:"24px" , height:"24px"}} className="d-flex align-items-center justify-content-center">
 
-            <i style={{fontSize:"1.7rem"}} class="bi bi-caret-up-square-fill"></i>
+            <i style={{fontSize:"1.7rem"}} className="bi bi-caret-up-square-fill"></i>
             </div>
           </button>
         </div>

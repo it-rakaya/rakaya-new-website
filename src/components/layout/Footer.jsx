@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="mt-5">
       <Container className="d-flex justify-content-center">
         <div className="col-lg-1 col-4">
-          <Logo />
+          {/* <Logo /> */}
         </div>
       </Container>
       <Container className={footerStyle}>
@@ -58,10 +58,11 @@ const Footer = () => {
         </FooterLink>
       </Container>
       <Container className="d-flex justify-content-center pt-3">
+
         <p className="text-dark fw-bold">جميع الحقوق محفوظة لشركة ركايا</p>
-        <p className="mx-1">
+        <div className="mx-1">
           <Heart />
-        </p>
+        </div>
         <p className="text-dark fw-bold">{new Date().getFullYear()}</p>
       </Container>
     </footer>

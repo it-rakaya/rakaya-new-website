@@ -13,7 +13,7 @@ function Team({ name, position, image, desc }) {
       <div className=" d-flex ">
         <div className="">
           <Image
-            alt=""
+            alt={name+" - "+position}
             src={
               image || "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
             }

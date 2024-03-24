@@ -68,7 +68,7 @@ const TeamSection = () => (
     <h2>أعضاء ركايا</h2>
     <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
       {TeamData.map((item, index) => (
-        <div className=" " key={index}>
+        <div className=" " key={index * 2 }>
           <Team
             name={item.name}
             position={item.position}
