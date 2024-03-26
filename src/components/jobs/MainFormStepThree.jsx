@@ -12,9 +12,9 @@ function MainFormStepThree() {
       <UploadDoc
         name="candidate_personal_picture"
         label={"ارفع صورة شخصية لك"}
-        textAccept={"JPG/PNG"}
+        textAccept={"JPG/PNG/JPEG"}
         isRequired
-        accept={"application/image/jpeg,image/png"}
+        accept={"image/jpeg,image/png,image/jpg"}
       />
       <UploadDoc
         name="candidate_portfolio"

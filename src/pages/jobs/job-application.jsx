@@ -99,7 +99,6 @@ function New() {
                   
                   
                 } catch (error) {
-                  // console.error("حدث خطأ أثناء إرسال البيانات: ", error);
                   toast.error("هناك خطأٌ ما! الرجاء المحاولة لاحقا", {
                     position: "top-right",
                     autoClose: 2000,

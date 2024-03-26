@@ -1,10 +1,8 @@
 import { useFormikContext } from "formik";
 import { useState } from "react";
-import Label from "./Label";
 import PreviewImageLink from "../PreviewImageLink";
-import Button from "../Button";
-import ViewICon from "../icons/ViewICon";
 import PreviewPdf from "../PreviewPdf";
+import Label from "./Label";
 
 function UploadDoc({ name, label, isRequired , accept , textAccept }) {
   const { setFieldValue, errors, touched, handleBlur } = useFormikContext();
