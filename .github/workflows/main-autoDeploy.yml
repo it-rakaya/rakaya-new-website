@@ -28,6 +28,7 @@ jobs:
           cd /var/www/html/nextjs/nextjs.rakaya.sa/rakaya-new-website
           git restore .
           git pull
+          sudo yarn cache clean
           sudo yarn install
           sudo yarn build
           pm2 restart rakaya.sa
