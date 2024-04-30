@@ -5,6 +5,7 @@ import Label from "../form/Label";
 import RadioButtonGroup from "../form/RadioButtonGroup";
 import SelectDepartment from "../form/SelectDepartment";
 import TextArea from "../form/TextArea";
+import SelectExperienceYears from "../form/SelectExperienceYears";
 
 function MainFormStepTwo() {
   const { setFieldValue, values } = useFormikContext();
@@ -35,6 +36,10 @@ function MainFormStepTwo() {
       value: "hybrid",
     },
     {
+      label: "موسمي",
+      value: "seasonal",
+    },
+    {
       label: "تدريب تعاوني /  تدريب صيفي",
       value: "training",
     },
@@ -47,9 +52,11 @@ function MainFormStepTwo() {
     if (values.job_category == "training") {
       setFieldValue("salary_expectation", 0);
       setFieldValue("availability_to_start", "now");
+      setFieldValue("years_of_experience", "0");
     } else {
       setFieldValue("salary_expectation", "");
       setFieldValue("availability_to_start", "");
+      setFieldValue("years_of_experience", "");
     }
   }, [values.job_category, setFieldValue]);
 
@@ -85,7 +92,9 @@ function MainFormStepTwo() {
             placeholder="4000 SAR"
             type="num"
             required
+            maxDigits={6}
           />
+          <SelectExperienceYears label={"عدد سنوات الخبرة"} required />
           <Label>
             إذا رشحت لهذا الشاغر، فمتى تستطيع أن تباشر معنا
             <span className="text-danger mx-1">{"*"}</span>

@@ -15,7 +15,7 @@ export default function CustomHead({
   imageUrl = "/rakaya.png",
   keywords = "اتقان الرقمية, جودة التشغيل, عمر خان, ركايا للاستشارات الادارية, شركة ركايا, ركايا البديعة, وظائف ركايا, ركايا استوديو",
 }) {
-  const fullTitle = customTitle ||`ركايا  ${title ? `-${title}` : ""}`;
+  const fullTitle = customTitle ||`ركايا  ${title ? `- ${title}` : ""}`;
   const canonicalUrl = "https://www.rakaya.sa/";
 
   // Schema.org JSON-LD structure for SEO

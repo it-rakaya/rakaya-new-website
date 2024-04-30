@@ -19,7 +19,7 @@ const index = () => {
         image={"/studio/headers-bg/4.webp"}
       />
 
-      <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio" >
+      <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio">
         <h1 className="align-self-start">أبطال ركايا في موسم حج ١٤٤٤ هـ</h1>
         <Container className="col-lg-11 px-4">
           <iframe
@@ -34,7 +34,7 @@ const index = () => {
           ></iframe>
         </Container>
         {postsStudio.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="col-lg-12 ">
             <h1 className="align-self-start">{item?.headTitle}</h1>
             <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
               <Container className="col-lg-5">
@@ -51,7 +51,7 @@ const index = () => {
               <Container className="col-lg-5  ">
                 <ImgContainer
                   className="rounded coverImageStudio position-relative "
-                  style={{  height: "300px" }}
+                  style={{ height: "300px" }}
                 >
                   <Image
                     className="img-fluid rounded"
@@ -74,7 +74,7 @@ const index = () => {
                 </ImgContainer>
               </Container>
             </Container>
-            {index !== postsStudio.length - 1 && <hr className="col-10 my-5" />}
+            {index !== postsStudio.length - 1 && <hr className="col-12 my-5" />}
           </div>
         ))}
       </Container>

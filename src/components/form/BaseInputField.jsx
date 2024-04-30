@@ -2,13 +2,34 @@ import { useFormikContext } from "formik";
 import React from "react";
 import Label from "./Label";
 
-function BaseInputField({ name, placeholder, label, required, type }) {
-  const { values, setFieldValue, errors, touched, handleBlur } = useFormikContext();
+function BaseInputField({
+  name,
+  placeholder,
+  label,
+  required,
+  type,
+  maxDigits,
+}) {
+  const { values, setFieldValue, errors, touched, handleBlur } =
+    useFormikContext();
+  const handleChange = (e) => {
+    let value = e.target.value;
+    if (type === "num") {
+      value = value.replace(/[^0-9]/g, "").slice(0, maxDigits);
+    }
+    setFieldValue(name, value);
+  };
 
-  // Function to prevent non-numeric input when type is 'num'
-  const handleNumericInput = (e) => {
-    if (type === "num" && !/[0-9]/.test(e.key)) {
-      e.preventDefault();
+  const handleKeyPress = (e) => {
+    if (type === "num") {
+      const isNumber = /^\d$/.test(e.key);
+      if (
+        !isNumber ||
+        (values[name].length >= maxDigits &&
+          e.target.selectionStart === e.target.selectionEnd)
+      ) {
+        e.preventDefault();
+      }
     }
   };
 
@@ -19,14 +40,13 @@ function BaseInputField({ name, placeholder, label, required, type }) {
         <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
       </Label>
       <input
-        type={type === "num" ? "text" : type || "text"} 
+        type={type === "num" ? "text" : type || "text"}
         value={values[name]}
-        onChange={(e) => setFieldValue(name, e.target.value)}
+        onChange={handleChange}
         placeholder={placeholder}
         name={name}
-        // autoFocus={true}
         onBlur={handleBlur}
-        onKeyPress={handleNumericInput} 
+        onKeyPress={handleKeyPress}
         className={`form-control p-2 ${
           errors[name] && touched[name] ? "border-danger" : ""
         }`}

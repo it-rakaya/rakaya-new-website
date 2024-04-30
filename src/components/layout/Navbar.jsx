@@ -22,7 +22,7 @@ const NavBarLink = ({ children, to, onClick }) => {
       }}
     >
       <Link
-        className={`${styles["nav-link"]} fs-5 rounded mx-2 my-2 my-lg-0 ${
+        className={`${styles["nav-link"]} fs-5 rounded mx-3 my-2 my-lg-0 ${
           getActiveLink(to) ? styles["nav-link-active"] : ""
         }`}
         aria-current="page"
