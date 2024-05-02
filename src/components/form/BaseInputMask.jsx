@@ -24,7 +24,7 @@ const BaseInputMask = forwardRef(({ name }, ref) => {
     return value;
   };
 
-  const [inputValue, setInputValue] = useState(formatIban(values[name] || "")); // Initialize with formatted value
+  const [inputValue, setInputValue] = useState(formatIban(values[name]?.slice(2) || "")); // Initialize with formatted value
   const [isFocused, setIsFocused] = useState(false);
 
   const handleInputChange = (event) => {
