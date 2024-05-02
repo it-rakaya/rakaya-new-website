@@ -267,11 +267,13 @@ input:-webkit-autofill:active {
    top: 15px !important;
    left: 6px !important;
    width: 8%;
-   
+
 }
-.rakayaStudio{
-   padding:0 39px
+
+.rakayaStudio {
+   padding: 0 39px
 }
+
 @media (max-width:1200px) {
    .imgVision {
       height: 100%;
@@ -314,13 +316,42 @@ input:-webkit-autofill:active {
       width: 100%;
 
    }
-   .patternImage{
+
+   .patternImage {
       top: 4px !important;
       left: 12px !important;
 
    }
-   .rakayaStudio{
+
+   .rakayaStudio {
       padding: 0 20px;
 
    }
+}
+
+.form-control:disabled {
+   background-color: rgba(146, 146, 146, 0.467)
+}
+
+.date_picker_day {
+   margin: 0 1px;
+   font-size: 10px;
+}
+
+.react-datepicker__day-names {
+   display: none;
+}
+
+.react-datepicker__header {
+   background-color: transparent !important
+}
+
+.react-datepicker-wrapper {
+   width: 100%;
+
+}
+
+.submit_button:disabled {
+   background: #a99898 !important;
+   cursor: not-allowed;
 }

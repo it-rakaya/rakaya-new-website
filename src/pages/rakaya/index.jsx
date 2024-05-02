@@ -34,7 +34,8 @@ const Index = () => {
 const ContentSection = () => (
   <Container className="me-0 col-lg-12">
     {contentData.map((section, index) => (
-      <React.Fragment key={index}>
+      <React.Fragment key={index
+      }>
         <TextImageSection
           textContent={section.textContent}
           imgSrc={section.imgSrc}

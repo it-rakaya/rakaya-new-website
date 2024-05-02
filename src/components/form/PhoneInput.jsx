@@ -2,11 +2,12 @@ import { useFormikContext } from "formik";
 import Label from "./Label";
 
 function PhoneInput({ label, required }) {
-  const { values, setFieldValue, errors, touched, handleBlur } = useFormikContext();
+  const { values, setFieldValue, errors, touched, handleBlur } =
+    useFormikContext();
 
   const formatPhoneNumber = (inputValue) => {
     inputValue = inputValue.replace(/[^0-9]/g, "");
-    if (inputValue.startsWith('5')) {
+    if (inputValue.startsWith("5")) {
       inputValue = inputValue.slice(0, 9);
     } else {
       return "";
@@ -32,7 +33,6 @@ function PhoneInput({ label, required }) {
     e.target.value = formatted;
     setFieldValue("phone", formatted.replace(/\s+/g, ""));
     setFieldValue("phone_code", "966");
-
   };
 
   return (
@@ -45,7 +45,7 @@ function PhoneInput({ label, required }) {
         <div className="w-75">
           <input
             type="text"
-            placeholder="** *** ****"
+            placeholder="xx xxx xxxx"
             dir="ltr"
             value={values.phone ? formatPhoneNumber(values.phone) : ""}
             onChange={handlePhoneChange}

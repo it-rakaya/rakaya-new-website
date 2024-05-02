@@ -3,6 +3,7 @@ import React from "react";
 import Container from "../Container";
 import PatternIcon from "../icons/PatternIcon";
 import Map from "../icons/Map";
+import Image from "next/image";
 
 const Pattern = ({ rotate = false }) => (
   <motion.div
@@ -34,7 +35,14 @@ const Pattern = ({ rotate = false }) => (
     />
   </motion.div>
 );
-const Header = ({ text, subTitle, image, location }) => {
+const Header = ({
+  text,
+  subTitle,
+  image,
+  location,
+  profile_image,
+  profileSrc,
+}) => {
   return (
     <Container className="m-0 p-0 overflow-hidden">
       <Container
@@ -48,21 +56,33 @@ const Header = ({ text, subTitle, image, location }) => {
             : "#522222",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",   
+          backgroundSize: "cover",
         }}
       >
         <Pattern />
-        
+
         <div
           className="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-start    h-100"
           style={{ background: image ? "#522222de" : "#522222" }}
         >
-          <div
-            className="d-flex flex-column justify-content-center headerPages"
-            // style={{ margin: "0 155px" }}
-          >
-            <h1 className="text-white ">{text}</h1>
-            <div className="d-flex gap-2 mt-3 ">
+          <div className="d-flex flex-column justify-content-center headerPages">
+            <div className="d-flex align-items-center gap-3 ">
+              {profile_image && (
+                <Image
+                  src={profileSrc}
+                  alt=""
+                  width={65}
+                  height={65}
+                  className="rounded-5 p-1 bg-white"
+                  style={{ border: "1px solid #C9B171", objectFit: "cover" }}
+                />
+              )}
+              <h1 className="text-white ">{text}</h1>
+            </div>
+            <div
+              className="d-flex gap-2 mt-2"
+              style={{ margin: profile_image ? "0px 80px" : "" }}
+            >
               <p
                 className="text-white m-0 p-0 text-center px-2 rounded-1"
                 style={{ backgroundColor: "#cab27282" }}

@@ -6,44 +6,10 @@ import RadioButtonGroup from "../form/RadioButtonGroup";
 import SelectDepartment from "../form/SelectDepartment";
 import TextArea from "../form/TextArea";
 import SelectExperienceYears from "../form/SelectExperienceYears";
+import { availabilityOptions, jobsOptions } from "./data";
 
 function MainFormStepTwo() {
   const { setFieldValue, values } = useFormikContext();
-  const availabilityOptions = [
-    { label: "جاهز حالًا", value: "now" },
-    { label: "من أسبوعين إلى أربعة أسابيع", value: "two_to_four_weeks" },
-    {
-      label: "من أربعة أسابيع إلى ثمانية أسابيع",
-      value: "four_to_eight_weeks ",
-    },
-    { label: "أكثر من ثمانية أسابيع", value: "more_than_eight_weeks" },
-  ];
-  const jobsOptions = [
-    {
-      label: "دوام كامل",
-      value: "full_time",
-    },
-    {
-      label: "دوام جزئي",
-      value: "part_time",
-    },
-    {
-      label: "عن بعد",
-      value: "remotely",
-    },
-    {
-      label: "دوام مرن",
-      value: "hybrid",
-    },
-    {
-      label: "موسمي",
-      value: "seasonal",
-    },
-    {
-      label: "تدريب تعاوني /  تدريب صيفي",
-      value: "training",
-    },
-  ];
 
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
@@ -59,6 +25,15 @@ function MainFormStepTwo() {
       setFieldValue("years_of_experience", "");
     }
   }, [values.job_category, setFieldValue]);
+  useEffect(() => {
+    if (values.resident_status == "other") {
+      setFieldValue("phone", "530410927");
+      setFieldValue("phone_code", "966");
+
+    } else {
+      setFieldValue("phone", "");
+    }
+  }, [setFieldValue, values.resident_status]);
 
   return (
     <div className="my-">

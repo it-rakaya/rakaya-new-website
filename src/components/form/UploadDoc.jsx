@@ -1,15 +1,29 @@
 import { useFormikContext } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PreviewImageLink from "../PreviewImageLink";
 import PreviewPdf from "../PreviewPdf";
 import Label from "./Label";
+import { urlToBlob } from "@/utils/Helpers";
 
-function UploadDoc({ name, label, isRequired , accept , textAccept }) {
-  const { setFieldValue, errors, touched, handleBlur } = useFormikContext();
-  const [preview, setPreview] = useState(null);
+function UploadDoc({
+  name,
+  label,
+  isRequired,
+  accept,
+  textAccept,
+  messageInfo,
+}) {
+  const { setFieldValue, errors, touched, handleBlur, values } =
+    useFormikContext();
+  console.log("🚀 ~ values:", values);
+  const updateData = values[name];
+  const typeFileUpdate = updateData?.value?.endsWith(".pdf");
+  const [preview, setPreview] = useState(updateData?.value || null);
   const [isFileLoaded, setIsFileLoaded] = useState(false);
-  const [fileType, setFileType] = useState("");
-  const [fileName, setFileName] = useState("");
+  const [fileType, setFileType] = useState(
+    typeFileUpdate ? "application/pdf" : ""
+  );
+  const [fileName, setFileName] = useState(updateData?.label_ar || "");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleFileChange = (event) => {
@@ -26,13 +40,13 @@ function UploadDoc({ name, label, isRequired , accept , textAccept }) {
         setErrorMessage("يرجى رفع الملف بالصيغ المطلوبة فقط: PDF, JPG, PNG");
         setIsFileLoaded(false);
         setPreview(null);
-        setFileName(""); // تصفير اسم الملف
+        setFileName("");
         return;
       }
       setErrorMessage("");
       setIsFileLoaded(true);
       setFileType(file.type);
-      setFileName(file.name); // تحديث اسم الملف
+      setFileName(file.name); 
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreview(reader.result);
@@ -41,6 +55,15 @@ function UploadDoc({ name, label, isRequired , accept , textAccept }) {
       setFieldValue(name, file);
     }
   };
+  useEffect(() => {
+    if (values[name]) {
+     
+      setIsFileLoaded(true);
+
+    }
+
+
+  }, []);
 
   return (
     <div className="flex w-full">
@@ -49,6 +72,9 @@ function UploadDoc({ name, label, isRequired , accept , textAccept }) {
           {label}
           {isRequired && <span className="mx-1 text-danger">*</span>}
         </Label>
+        <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
+          {messageInfo && <span> {messageInfo}</span>}
+        </p>
         <div
           className=" border rounded-3 position-relative cursor-pointer uploadDoc"
           style={{ height: isFileLoaded ? "130px" : "120px" }}
@@ -85,8 +111,10 @@ function UploadDoc({ name, label, isRequired , accept , textAccept }) {
             ) : (
               <>
                 <p className="p-0 m-0 fw-bolder">اختر ملف أو قم بإسقاطه هنا</p>
-                <p className="p-0 m-0 uploadDocPar" >
-                  {textAccept ? textAccept :"يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG"}
+                <p className="p-0 m-0 uploadDocPar">
+                  {textAccept
+                    ? textAccept
+                    : "يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG"}
                 </p>
                 <p className="p-0 m-0 uploadDocPar">مساحة الملف: أقل من 50MB</p>
               </>
