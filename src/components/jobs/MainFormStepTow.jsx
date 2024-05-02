@@ -25,15 +25,6 @@ function MainFormStepTwo() {
       setFieldValue("years_of_experience", "");
     }
   }, [values.job_category, setFieldValue]);
-  useEffect(() => {
-    if (values.resident_status == "other") {
-      setFieldValue("phone", "530410927");
-      setFieldValue("phone_code", "966");
-
-    } else {
-      setFieldValue("phone", "");
-    }
-  }, [setFieldValue, values.resident_status]);
 
   return (
     <div className="my-">
