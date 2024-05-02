@@ -3,7 +3,7 @@ export const maritalStatus = [
   { value: "married", label: "متزوج / ة" },
   { value: "divorced", label: "مطلق / ة" },
   { value: "widowed", label: "أرمل / ة" },
-  { value: "other ", label: "اخرى" },
+  { value: "other", label: "اخرى" },
 ];
 export const residencyStatusOptions = [
   { label: "مواطن", value: "citizen" },
@@ -28,7 +28,7 @@ export const availabilityOptions = [
   { label: "من أسبوعين إلى أربعة أسابيع", value: "two_to_four_weeks" },
   {
     label: "من أربعة أسابيع إلى ثمانية أسابيع",
-    value: "four_to_eight_weeks ",
+    value: "four_to_eight_weeks",
   },
   { label: "أكثر من ثمانية أسابيع", value: "more_than_eight_weeks" },
 ];

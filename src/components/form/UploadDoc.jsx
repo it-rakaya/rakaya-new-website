@@ -15,7 +15,6 @@ function UploadDoc({
 }) {
   const { setFieldValue, errors, touched, handleBlur, values } =
     useFormikContext();
-  console.log("🚀 ~ values:", values);
   const updateData = values[name];
   const typeFileUpdate = updateData?.value?.endsWith(".pdf");
   const [preview, setPreview] = useState(updateData?.value || null);

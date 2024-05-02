@@ -10,7 +10,6 @@ import { availabilityOptions, jobsOptions } from "./data";
 
 function MainFormStepTwo() {
   const { setFieldValue, values } = useFormikContext();
-
   const handleRadioButtonChange = (name, value) => {
     setFieldValue(name, value);
   };
@@ -20,9 +19,9 @@ function MainFormStepTwo() {
       setFieldValue("availability_to_start", "now");
       setFieldValue("years_of_experience", "0");
     } else {
-      setFieldValue("salary_expectation", "");
-      setFieldValue("availability_to_start", "");
-      setFieldValue("years_of_experience", "");
+      // setFieldValue("salary_expectation", "");
+      // setFieldValue("availability_to_start", "");
+      // setFieldValue("years_of_experience", "");
     }
   }, [values.job_category, setFieldValue]);
 
