@@ -20,7 +20,6 @@ function SelectHelp({ label, required, labelClassName }) {
         name={"subject_id"}
         options={options}
         required={required}
-        selectedValue={selectedValue}
       />
     </div>
   );
