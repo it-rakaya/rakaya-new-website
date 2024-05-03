@@ -44,10 +44,11 @@ function Main({ dataCandidate, loadingData, updateData }) {
       ...(candidate_portfolio?.type
         ? { "attachments[33]": candidate_portfolio }
         : {}),
-      ...(candidate_iban?.type ? { "attachments[46]": candidate_iban } : {}),
       ...(candidate_national_id?.type
-        ? { "attachments[45]": candidate_national_id }
+        ? { "attachments[46]": candidate_national_id }
         : {}),
+
+      ...(candidate_iban?.type ? { "attachments[45]": candidate_iban } : {}),
     };
     updateData(submissionValues);
 

@@ -8,6 +8,7 @@ function AttachmentsMainData({ check, setCheck }) {
         name="candidate_portfolio"
         label={"صورة شخصية مناسبة لبطاقة العمل"}
         messageInfo={"يرجى رفع صورة شخصية مناسبة لبطاقة العمل"}
+        accept={"image/jpeg,image/png,image/jpg"}
       />
       <UploadDoc
         name="candidate_national_id"

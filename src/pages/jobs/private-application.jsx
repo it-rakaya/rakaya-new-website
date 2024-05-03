@@ -20,8 +20,8 @@ import {
   validationSchema,
 } from "@/components/jobs/initialValue&Validation";
 
-function NewJobForm() {
-  const stopJob = true;
+function PrivateJobApplication() {
+  const stopJob = false;
   const { postData, isLoading, isSuccess, responseData } =
     usePostData("/candidate");
   const receivingOrderVariants = {
@@ -58,7 +58,7 @@ function NewJobForm() {
   };
 
   return (
-    <JobsLayout>
+    <JobsLayout hiddenMenu>
       <div>
         {isSuccess ? (
           <motion.div
@@ -122,4 +122,4 @@ function NewJobForm() {
   );
 }
 
-export default NewJobForm;
+export default PrivateJobApplication;
