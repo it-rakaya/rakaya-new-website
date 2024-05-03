@@ -28,11 +28,11 @@ function UploadDoc({
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      if (file.size > 50 * 1024 * 1024) {
-        setErrorMessage("حجم الملف يجب أن يكون أقل من 50MB");
+      if (file.size > 5 * 1024 * 1024) {
+        setErrorMessage("حجم الملف يجب أن يكون أقل من 5MB");
         setIsFileLoaded(false);
         setPreview(null);
-        setFileName(""); // تصفير اسم الملف
+        setFileName(""); 
         return;
       }
       if (!["application/pdf", "image/jpeg", "image/png"].includes(file.type)) {
@@ -115,7 +115,7 @@ function UploadDoc({
                     ? textAccept
                     : "يرجى رفع الملف بهذه الصيغة: PDF / JPG / PNG"}
                 </p>
-                <p className="p-0 m-0 uploadDocPar">مساحة الملف: أقل من 50MB</p>
+                <p className="p-0 m-0 uploadDocPar">مساحة الملف: أقل من 5MB</p>
               </>
             )}
           </div>
