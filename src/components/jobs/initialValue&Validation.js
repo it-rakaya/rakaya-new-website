@@ -26,8 +26,8 @@ export const initialValues = {
 };
 export const validationSchema = Yup.object({
   name: Yup.string()
-  .matches(/^[\u0600-\u06FF\s]+$/, "يجب أن يكون الاسم باللغة العربية فقط")  // This regex checks for Arabic characters and spaces
-  .required("الاسم الكامل مطلوب"),
+    .matches(/^[^\s][\u0600-\u06FF\s]*$/, "يجب أن يبدأ الاسم بحرف عربي وأن يكون الاسم باللغة العربية فقط")  // Regex checks that the string starts with a non-space character, and only contains Arabic characters and spaces
+    .required("الاسم الكامل مطلوب"),
   email: Yup.string()
     .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
     .required("البريد الإلكتروني مطلوب"),

@@ -20,14 +20,13 @@ function BaseInputField({
     let value = e.target.value;
     if (type === "num") {
       value = value.replace(/[^0-9]/g, "").slice(0, maxDigits);
-    }else if (onlyArabic) {  // Condition to handle Arabic-only input
-      value = value.replace(/[^\u0600-\u06FF\s]/g, "");  // Regex for Arabic characters and whitespace
+    }else if (onlyArabic) {  
+      value = value.replace(/[^\u0600-\u06FF\s]/g, "");  
     }
     setFieldValue(name, value);
   };
   const handleKeyPress = (e) => {
     if (onlyArabic) {
-      // Include check for Arabic characters and space
       const isArabicOrSpace = /[\u0600-\u06FF\s]/.test(e.key);
       if (!isArabicOrSpace) {
         e.preventDefault();
