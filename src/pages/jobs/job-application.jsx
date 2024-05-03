@@ -21,7 +21,7 @@ import {
 } from "@/components/jobs/initialValue&Validation";
 
 function NewJobForm() {
-  const stopJob = false;
+  const stopJob = true;
   const { postData, isLoading, isSuccess, responseData } =
     usePostData("/candidate");
   const receivingOrderVariants = {
@@ -77,10 +77,10 @@ function NewJobForm() {
                   <TermsConditionIcon />
                 </p>
                 <p className="" style={{ fontWeight: "500" }}>
-                  عذرا
+                  نعتذر منك 
                 </p>
                 <p className="" style={{ fontWeight: "500" }}>
-                  تم ايقاف التقديم مؤقتا
+                  تم ايقاف التقديم على الوظائف 
                 </p>
               </div>
             ) : (
