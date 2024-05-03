@@ -32,7 +32,7 @@ function UploadDoc({
         setErrorMessage("حجم الملف يجب أن يكون أقل من 5MB");
         setIsFileLoaded(false);
         setPreview(null);
-        setFileName(""); 
+        setFileName("");
         return;
       }
       if (!["application/pdf", "image/jpeg", "image/png"].includes(file.type)) {
@@ -45,7 +45,7 @@ function UploadDoc({
       setErrorMessage("");
       setIsFileLoaded(true);
       setFileType(file.type);
-      setFileName(file.name); 
+      setFileName(file.name);
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreview(reader.result);
@@ -56,13 +56,14 @@ function UploadDoc({
   };
   useEffect(() => {
     if (values[name]) {
-     
       setIsFileLoaded(true);
-
     }
-
-
   }, []);
+  useEffect(() => {
+    if (errorMessage) {
+      setFieldValue(name, null);
+    }
+  }, [errorMessage, name, setFieldValue]);
 
   return (
     <div className="flex w-full">
