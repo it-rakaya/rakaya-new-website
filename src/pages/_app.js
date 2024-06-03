@@ -52,7 +52,9 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <I18nextProvider i18n={i18n}>
       {Component.noLayout ? (
-        renderComponent()
+        <QueryClientProvider client={queryClient}>
+          {renderComponent()}
+        </QueryClientProvider>
       ) : (
         <QueryClientProvider client={queryClient}>
           <Layout>{renderComponent()}</Layout>

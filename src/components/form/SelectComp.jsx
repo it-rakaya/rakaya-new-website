@@ -13,19 +13,23 @@ function SelectComp({
   selectedValue,
   name,
   disabled,
+  isClearable,
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
 
   return (
     <div>
-      <Label className={labelClassName}>
-        {label}
-        <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
-      </Label>
+      {label && (
+        <Label className={labelClassName}>
+          {label}
+          <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
+        </Label>
+      )}
       <Select
         isDisabled={disabled}
         options={options}
         placeholder={placeholder ? placeholder : "اختر"}
+        isClearable={isClearable}
         styles={{
           control: (base) => ({
             ...base,
@@ -63,7 +67,8 @@ function SelectComp({
           },
           MenuList: ({ children }) => <div className="m-0 p-0">{children}</div>,
         }}
-        onChange={(option) => setFieldValue(name, option.value)}
+        onChange={(option) => setFieldValue(name, option?.value)}
+        noOptionsMessage={() => "لايوجد بيانات"}
       />
       {touched[name] && errors[name] && (
         <div className="text-danger " style={{ fontSize: "12px" }}>

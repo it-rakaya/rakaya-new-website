@@ -12,7 +12,8 @@ const Button = ({
   className,
   type = "button",
   isLoading = false,
-  disabled
+  disabled,
+  style
 }) => {
   return (
     <button
@@ -20,6 +21,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
+      style={style}
     >
       {isLoading ? (
         <div
