@@ -11,22 +11,23 @@ import ReceivingOrder from "@/components/jobs/ReceivingOrder";
 import Section from "@/components/jobs/Section";
 import { ConnectedFocusError } from "focus-formik-error";
 import { usePostData } from "@/hooks/usePostData";
+import MainFormStepOne from "@/components/jobs/MainFormStepOne";
+import MainFormStepTwo from "@/components/jobs/MainFormStepTow";
+import MainFormStepThree from "@/components/jobs/MainFormStepThree";
+import TermsConditionIcon from "@/components/icons/TermsConditionIcon";
 import {
   initialValues,
   validationSchema,
 } from "@/components/jobs/initialValue&Validation";
-import MainFormStepOne from "@/components/jobs/MainFormStepOne";
-import MainFormStepTwo from "@/components/jobs/MainFormStepTow";
-import MainFormStepThree from "@/components/jobs/MainFormStepThree";
 
 function NewJobForm() {
+  const stopJob = true;
   const { postData, isLoading, isSuccess, responseData } =
     usePostData("/candidate");
   const receivingOrderVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
   const handleSubmit = async (values) => {
     const {
       candidate_cv,
@@ -70,36 +71,50 @@ function NewJobForm() {
         ) : (
           <>
             {isLoading && <LoadingOverlay />}
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-            >
-              <Form>
-                <ConnectedFocusError />
-                <Section title="القسم الأول" subtitle="معلوماتي الشخصية">
-                  <MainFormStepOne />
-                </Section>
-                <Line />
-                <Section title="القسم الثاني" subtitle="الأسئلة">
-                  <p className="fw-bold">عرفنا عن نفسك أكثر</p>
-                  <MainFormStepTwo />
-                </Section>
-                <Line />
-                <Section title="القسم الثالث" subtitle="السيرة الذاتية">
-                  <MainFormStepThree />
-                  <div className="my-4">
-                    <Button
-                      color="secondary"
-                      type="submit"
-                      isLoading={isLoading}
-                    >
-                      إرسال
-                    </Button>
-                  </div>
-                </Section>
-              </Form>
-            </Formik>
+            {stopJob ? (
+              <div className="d-flex flex-column align-items-center justify-content-center">
+                <p>
+                  <TermsConditionIcon />
+                </p>
+                <p className="" style={{ fontWeight: "500" }}>
+                  نعتذر منك
+                </p>
+                <p className="" style={{ fontWeight: "500" }}>
+                  تم ايقاف التقديم على الوظائف
+                </p>
+              </div>
+            ) : (
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                <Form>
+                  <ConnectedFocusError />
+                  <Section title="القسم الأول" subtitle="معلوماتي الشخصية">
+                    <MainFormStepOne />
+                  </Section>
+                  <Line />
+                  <Section title="القسم الثاني" subtitle="الأسئلة">
+                    <p className="fw-bold">عرفنا عن نفسك أكثر</p>
+                    <MainFormStepTwo />
+                  </Section>
+                  <Line />
+                  <Section title="القسم الثالث" subtitle="السيرة الذاتية">
+                    <MainFormStepThree />
+                    <div className="my-4">
+                      <Button
+                        color="secondary"
+                        type="submit"
+                        isLoading={isLoading}
+                      >
+                        إرسال
+                      </Button>
+                    </div>
+                  </Section>
+                </Form>
+              </Formik>
+            )}
           </>
         )}
       </div>

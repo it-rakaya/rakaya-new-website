@@ -4,7 +4,7 @@ import Container from "../Container";
 import Header from "./Header";
 import Menu from "./Menu";
 
-function JobsLayout({ children }) {
+function JobsLayout({ children, hiddenMenu }) {
   const description =
     "نبحث عن الشخص الطموح الذي يسعى لتحقيق التميّز والنجاح في بيئة عمل إيجابية ومحفزة، انضم إلينا اليوم وانطلق في رحلة تطور مهني مثيرة!";
 
@@ -19,7 +19,7 @@ function JobsLayout({ children }) {
           image={"/studio/headers-bg/6.webp"}
           location
         />
-        <Menu />
+        {hiddenMenu ? "" : <Menu />}
         <div className="newJob">{children}</div>
       </Container>
     </div>

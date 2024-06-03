@@ -12,12 +12,16 @@ const Button = ({
   className,
   type = "button",
   isLoading = false,
+  disabled,
+  style
 }) => {
   return (
     <button
-      className={`${styles["btn-" + color]} py-2 px-5 rounded  fw-bold`}
+      className={`${styles["btn-" + color]} py-2 px-5 rounded  fw-bold submit_button`}
       type={type}
       onClick={onClick}
+      disabled={disabled}
+      style={style}
     >
       {isLoading ? (
         <div

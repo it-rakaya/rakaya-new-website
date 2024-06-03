@@ -267,11 +267,13 @@ input:-webkit-autofill:active {
    top: 15px !important;
    left: 6px !important;
    width: 8%;
-   
+
 }
-.rakayaStudio{
-   padding:0 39px
+
+.rakayaStudio {
+   padding: 0 39px
 }
+
 @media (max-width:1200px) {
    .imgVision {
       height: 100%;
@@ -314,13 +316,258 @@ input:-webkit-autofill:active {
       width: 100%;
 
    }
-   .patternImage{
+
+   .patternImage {
       top: 4px !important;
       left: 12px !important;
 
    }
-   .rakayaStudio{
+
+   .rakayaStudio {
       padding: 0 20px;
 
+   }
+}
+
+.form-control:disabled {
+   background-color: rgba(146, 146, 146, 0.467)
+}
+
+.date_picker_day {
+   margin: 0 1px;
+   font-size: 10px;
+}
+
+.react-datepicker__day-names {
+   display: none;
+}
+
+.react-datepicker__header {
+   background-color: transparent !important
+}
+
+.react-datepicker-wrapper {
+   width: 100%;
+
+}
+
+.submit_button:disabled {
+   background: #a99898 !important;
+   cursor: not-allowed;
+}
+
+
+.filter-container::-webkit-scrollbar {
+   width: 5px;
+
+}
+
+.filter-container::-webkit-scrollbar-track {
+   // background: #f1f1f1;
+   // border-radius: 2px;
+}
+
+.filter-container::-webkit-scrollbar-thumb {
+   background: rgb(201, 177, 113);
+   // border-radius: 10px;
+}
+
+.filter-container::-webkit-scrollbar-thumb:hover {
+   background: rgb(179, 147, 59)
+}
+
+@keyframes fadeIn {
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+.legend-item {
+   transform: translateX(-20px);
+   opacity: 0;
+}
+
+.dark .navbar-track {
+   background-color: $dark !important;
+}
+
+.dark .navbar-track p {
+   color: white;
+}
+
+.dark .sidebar-track {
+   background-color: $dark !important;
+
+}
+
+.dark .sidebar-track {
+   color: white;
+
+}
+
+.reloadMap:hover {
+   background-color: rgba(201, 177, 113, 0.171);
+
+
+}
+
+.leaflet-popup-content p {
+   margin: 0 !important;
+}
+
+.dark .leaflet-tile {
+   filter: invert(1) !important;
+}
+
+.dark .text_Dark {
+   color: white;
+
+}
+
+.dark .bg-dark {
+   background-color: $dark !important;
+
+}
+
+.track-logos {
+   border-bottom: 5px solid $primary;
+   border-top: 5px solid $primary;
+}
+
+.header_table th {
+   background-color: $primary !important;
+
+}
+
+
+.label_track {
+   color: $primary ;
+}
+
+.dark .optionSelect {
+   color: black;
+
+}
+
+.form-switch .form-check-input:focus {
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e")
+}
+
+.dark .form-switch .form-check-input:focus {
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e")
+}
+
+.leaflet-popup-content {
+   width: 310px !important;
+
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+   left: 9px !important;
+   right: inherit !important;
+   top: 5px !important;
+
+}
+
+.main-sidebar-track {
+   width: 36% !important
+}
+
+.mainMap {
+   width: 74%
+}
+
+.MainFilter {
+   top: 16%;
+   right: 92%;
+   z-Index: 989
+}
+
+.dark .main-sidebar-track,
+.dark .main-sidebar-track-mobile {
+   background-color: $dark;
+}
+
+@media (max-width:1200px) {
+   .main-sidebar-track {
+      width: 0 !important;
+      transition: all 240ms;
+      // transform: translateX(-500px);
+
+   }
+
+
+   .mainMap {
+      width: 100%
+   }
+
+   .main-sidebar-track-mobile {
+      width: 100%;
+      transition: all 240ms;
+      // transform: translateX(0px);
+
+   }
+
+   .navbar-location {
+      display: none !important;
+   }
+
+   .MainFilter {
+      top: 10px;
+      right: 100%;
+      margin: 0 5px;
+
+   }
+
+   .mobile-navbar {
+      // position: absolute;
+      // left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .hide-on-mobile {
+      display: none;
+   }
+
+}
+
+.trackLocation .dropdown-toggle::after {
+   display: none;
+}
+
+.trackLocation .dropdown-item:focus,
+.dropdown-item:hover {
+   background-color: transparent !important
+}
+
+.firstPoint {
+   animation: bounce 1s infinite;
+   animation-delay: 0.1s;
+
+}
+
+.secondPoint {
+   animation: bounce 1s infinite;
+   animation-delay: 0.1s;
+
+}
+
+.threePoint {
+   animation: bounce 1s infinite;
+   animation-delay: 0.1s;
+}
+
+@keyframes bounce {
+
+   0%,
+   100% {
+      transform: translateY(0);
+   }
+
+   50% {
+      transform: translateY(-20px);
    }
 }
