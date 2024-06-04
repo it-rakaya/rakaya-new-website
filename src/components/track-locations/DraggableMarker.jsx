@@ -16,6 +16,7 @@ function DraggableMarker({
   LoadingMentor,
   resetMap,
 }) {
+  console.log("🚀 ~ position:", position)
   const [draggable, setDraggable] = useState(false);
   const markerRef = useRef(null);
   const map = useMap();
@@ -37,7 +38,7 @@ function DraggableMarker({
   );
 
   useEffect(() => {
-    map.setView(position, 30);
+    map.setView(position, 13);
   }, [values?.monitor_id]);
 
   useEffect(() => {

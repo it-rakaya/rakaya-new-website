@@ -72,15 +72,15 @@ function MainMap({ resetMap, mainDataLocation }) {
           mapRef.current = mapInstance;
         }}
       >
-        <TileLayer
-          attribution="Google Maps"
+        {/* <TileLayer
           url="https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}"
-          
-        />
-         {/* <TileLayer
+          attribution="Google Maps"
+          errorTileUrl="/path/to/your/fallback/tile.png"
+        /> */}
+        <TileLayer
              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        /> */}
+        />
         <DraggableMarker
           position={resetMap}
           mentor={null}
