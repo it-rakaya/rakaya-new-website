@@ -46,21 +46,22 @@ const TicketsChartStatus = ({
       },
       legend: {
         display: true,
+        color: isDarkMode ? "#ffffff" : "#000",
         labels: {
           font: {
             size: 12,
             family: "IBM Plex Sans Arabic",
-            color: isDarkMode ? "#ffffff" : "#000",
           },
+          color: isDarkMode ? "white" : "black",
         },
       },
       title: {
         display: true,
         text: "حسب الحالة",
+        color: isDarkMode ? "#ffffff" : "#000",
         font: {
           size: 14,
           family: "IBM Plex Sans Arabic",
-          color: isDarkMode ? "#ffffff" : "#000",
         },
       },
     },

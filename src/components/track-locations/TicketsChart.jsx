@@ -35,8 +35,6 @@ function TicketsChart({ tickets_by_reason }) {
   const colors = labels?.map(() => generateRandomColor());
   const commonColor = "rgb(201, 177, 113)";
 
-  // const colors = labels?.map(() => commonColor);
-
   const totalVotes = dataValues?.reduce((acc, value) => acc + value, 0);
 
   const data = {

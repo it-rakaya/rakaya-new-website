@@ -21,7 +21,11 @@ ChartJS.register(
   Legend
 );
 
-function LineChart({ isDarkMode, supports_food_by_day, supports_water_by_day }) {
+function LineChart({
+  isDarkMode,
+  supports_food_by_day,
+  supports_water_by_day,
+}) {
   const labelsByFood = supports_food_by_day?.map((item) => item.date);
   const dataValuesByFood = supports_food_by_day?.map((item) => item.count);
 
@@ -34,17 +38,18 @@ function LineChart({ isDarkMode, supports_food_by_day, supports_water_by_day }) 
     plugins: {
       legend: {
         position: "top",
+        color: isDarkMode ? "#ffffff" : "#000",
         labels: {
+          color: isDarkMode ? "#ffffff" : "#000",
           font: {
             size: 12,
             family: "IBM Plex Sans Arabic",
-            color: isDarkMode ? "#ffffff" : "#000",
           },
         },
       },
       title: {
         display: true,
-        // text: 'Chart Title',
+        color: isDarkMode ? "#ffffff" : "#000",
         font: {
           size: 16,
           family: "IBM Plex Sans Arabic",
@@ -58,6 +63,7 @@ function LineChart({ isDarkMode, supports_food_by_day, supports_water_by_day }) 
           font: {
             family: "IBM Plex Sans Arabic",
             size: 12,
+            color: isDarkMode ? "#ffffff" : "#000",
           },
         },
       },
@@ -68,13 +74,15 @@ function LineChart({ isDarkMode, supports_food_by_day, supports_water_by_day }) 
           font: {
             family: "IBM Plex Sans Arabic",
             size: 12,
+            color: isDarkMode ? "#ffffff" : "#000",
           },
         },
       },
     },
   };
 
-  const labels = labelsByFood?.length > labelsByWater?.length ? labelsByFood : labelsByWater;
+  const labels =
+    labelsByFood?.length > labelsByWater?.length ? labelsByFood : labelsByWater;
 
   const data = {
     labels,

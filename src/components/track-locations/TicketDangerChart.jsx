@@ -7,6 +7,7 @@ function TicketDangerChart({ isDarkMode, tickets_by_danger }) {
   const labels = tickets_by_danger?.map((item) => item.attribute);
   const dataValues = tickets_by_danger?.map((item) => item.count);
 
+  
   const data = {
     labels: labels,
     datasets: [
