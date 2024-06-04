@@ -27,8 +27,6 @@ export const adminEmail = "admin@admin.com";
 export const ithraaEmail = "ithraa@admin.com";
 export const albeitEmail = "albeit@admin.com";
 export const correctPassword = "password123";
-
-
 export function extractTimeWithAmPm(isoString) {
     let date = new Date(isoString);
     let hours = date.getUTCHours(); 

@@ -6,11 +6,13 @@ import React, { useEffect, useState } from "react";
 import SideItem from "./SideItem";
 import { dataLocation } from "@/fakeData";
 import SpinnerLoading from "../SpinnerLoading";
+
 const MainMap = dynamic(() => import("@/components/track-locations/MainMap"), {
   ssr: false,
+  loading: "isLoading",
 });
 function Main({ isDarkMode, collapsed }) {
-  const { values  , setFieldValue } = useFormikContext();
+  const { values, setFieldValue } = useFormikContext();
   const initialCenter = {
     lat: 21.3666652,
     lng: 40.00166666,
