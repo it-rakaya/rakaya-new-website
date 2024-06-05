@@ -74,7 +74,7 @@ function MainMap({ resetMap, mainDataLocation }) {
       >
         <TileLayer
           attribution="Google Maps"
-          url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AIzaSyCuTilAfnGfkZtIx0T3qf-eOmWZ_N2LpoY`}
+          url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
           errorTileUrl="/path/to/your/fallback/tile.png"
         />
         {/* <TileLayer
