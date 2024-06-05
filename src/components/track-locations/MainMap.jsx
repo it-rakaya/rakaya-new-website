@@ -39,7 +39,7 @@ const albiteGustIcon = new L.Icon({
 function MainMap({ resetMap, mainDataLocation }) {
   const [positions, setPositions] = useState([]);
   const [idMentor, setIdMentor] = useState("");
-  console.log("🚀 ~ MainMap ~ idMentor:", idMentor)
+  console.log("🚀 ~ MainMap ~ idMentor:", idMentor);
   const [idSector, setIdSector] = useState("");
   const mapRef = useRef(null);
 
@@ -73,11 +73,17 @@ function MainMap({ resetMap, mainDataLocation }) {
           mapRef.current = mapInstance;
         }}
       >
-        <TileLayer
+        {/* <TileLayer
           attribution="Google Maps"
           url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
           errorTileUrl="/path/to/your/fallback/tile.png"
+        /> */}
+        <TileLayer
+          attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+          url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
+          errorTileUrl="/path/to/your/fallback/tile.png"
         />
+
         {/* <TileLayer
              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
