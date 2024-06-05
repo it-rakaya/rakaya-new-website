@@ -16,7 +16,6 @@ function DraggableMarker({
   LoadingMentor,
   resetMap,
 }) {
-  console.log("🚀 ~ position:", position)
   const [draggable, setDraggable] = useState(false);
   const markerRef = useRef(null);
   const map = useMap();

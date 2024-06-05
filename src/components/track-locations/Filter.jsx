@@ -86,7 +86,7 @@ function Filter({ setResetMap, mainDataLocation }) {
                       fontWeight: "bold",
                     }}
                   >
-                    تحديث الفلترة
+                     اعادة تعيين
                   </p>
                 </div>
               )}

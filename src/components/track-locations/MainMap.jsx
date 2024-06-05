@@ -39,6 +39,7 @@ const albiteGustIcon = new L.Icon({
 function MainMap({ resetMap, mainDataLocation }) {
   const [positions, setPositions] = useState([]);
   const [idMentor, setIdMentor] = useState("");
+  console.log("🚀 ~ MainMap ~ idMentor:", idMentor)
   const [idSector, setIdSector] = useState("");
   const mapRef = useRef(null);
 
@@ -84,7 +85,7 @@ function MainMap({ resetMap, mainDataLocation }) {
         <DraggableMarker
           position={resetMap}
           mentor={null}
-          id={"default"}
+          // id={"default"}
           icon={defaultIcon}
           setIdMentor={setIdMentor}
           resetMap={resetMap}
