@@ -9,7 +9,7 @@ import SpinnerLoading from "../SpinnerLoading";
 
 const MainMap = dynamic(() => import("@/components/track-locations/MainMap"), {
   ssr: false,
-  loading: () => <SpinnerLoading />,
+  // loading: () => <SpinnerLoading />,
 });
 function Main({ isDarkMode, collapsed }) {
   const { values, setFieldValue } = useFormikContext();

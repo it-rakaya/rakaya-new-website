@@ -50,6 +50,13 @@ export default function MyApp({ Component, pageProps }) {
   });
   useEffect(() => {
     const handleReload = (event) => {
+      // Clear the browser cache
+      if ('caches' in window) {
+        caches.keys().then(function (names) {
+          for (let name of names) caches.delete(name);
+        });
+      }
+
       // Perform a hard refresh
       window.location.reload(true);
     };
@@ -62,7 +69,6 @@ export default function MyApp({ Component, pageProps }) {
       window.removeEventListener('beforeunload', handleReload);
     };
   }, []);
-
   return (
     <I18nextProvider i18n={i18n}>
       {Component.noLayout ? (
