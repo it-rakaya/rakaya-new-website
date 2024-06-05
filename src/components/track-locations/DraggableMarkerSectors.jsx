@@ -106,6 +106,9 @@ function DraggableMarkerSectors({
 
                 <p className="">
                   {DetailsSectorData?.data?.sector?.nationality}
+                  <span className="mx-2">
+                    <Image src={DetailsSectorData?.data?.sector?.flag_icon || ""} alt="" width={15} height={15}/>
+                  </span>
                 </p>
               </div>
               <div className="d-flex align-items-center gap-2 mt-2">
@@ -161,12 +164,12 @@ function DraggableMarkerSectors({
               {DetailsSectorData?.data?.sector?.sight_photo && (
                 <div className="  gap-2 mt-2">
                   <p
-                    className="d-flex align-items-start flex-column"
+                    className="d-flex align-items-center flex-column justify-content-center"
                     style={{ color: "#C9B171" }}
                   >
-                    شاخص منى:
+                    شاخص منى
                   </p>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center mt-2">
                     <Image
                       src={
                         DetailsSectorData?.data?.sector?.sight_photo ||
