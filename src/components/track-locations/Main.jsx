@@ -30,8 +30,12 @@ function Main({ isDarkMode, collapsed }) {
     endpoint: endpoint,
     queryKey: [endpoint],
   });
+
   usePusher("Order-changes", (data) => {
+  console.log("🚀 ~ usePusher ~ data:", data)
   });
+
+  
   useEffect(() => {
     const type = localStorage.getItem("type");
     if (type == "ithraa") {

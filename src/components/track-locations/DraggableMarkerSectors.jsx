@@ -53,8 +53,32 @@ function DraggableMarkerSectors({
           </div>
         ) : (
           <div className="">
-            <div className="d-flex align-items-center justify-content-center text-center gap-2  mt-2">
-              <p className="fw-bolder fs-6 p-2 " style={{ color: "#C9B171" }}>
+            <div className="d-flex justify-content-center">
+              <Image
+                src={
+                  DetailsSectorData?.data?.sector?.organization?.logo ||
+                  ""
+                }
+                width={0}
+                height={80}
+                alt="sight_photo"
+                className="rounded-5 p-1"
+                style={{
+                  // border: "1px solid #C9B171",
+                  // objectFit: "cover",
+                  width:"100%",
+                  objectFit:"contain"
+                }}
+              />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center text-center gap-2  mt-2 rounded-3"
+              style={{
+                backgroundColor:
+                  DetailsSectorData?.data?.sector?.organization?.primary_color,
+              }}
+            >
+              <p className="fw-bolder fs-6 p-2  " style={{ color: "#fff" }}>
                 {DetailsSectorData?.data?.sector?.label} -{" "}
                 {DetailsSectorData?.data?.sector?.facility_name}
               </p>
@@ -107,7 +131,12 @@ function DraggableMarkerSectors({
                 <p className="">
                   {DetailsSectorData?.data?.sector?.nationality}
                   <span className="mx-2">
-                    <Image src={DetailsSectorData?.data?.sector?.flag_icon || ""} alt="" width={15} height={15}/>
+                    <Image
+                      src={DetailsSectorData?.data?.sector?.flag_icon || ""}
+                      alt=""
+                      width={15}
+                      height={15}
+                    />
                   </span>
                 </p>
               </div>
@@ -173,7 +202,7 @@ function DraggableMarkerSectors({
                     <Image
                       src={
                         DetailsSectorData?.data?.sector?.sight_photo ||
-                        "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
+                        ""
                       }
                       width={200}
                       height={200}

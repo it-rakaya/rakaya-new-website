@@ -37,7 +37,6 @@ const albiteGustIcon = new L.Icon({
 });
 
 function MainMap({ resetMap, mainDataLocation }) {
-  console.log("🚀 ~ MainMap ~ mainDataLocation:", mainDataLocation)
   const [positions, setPositions] = useState([]);
   const [idMentor, setIdMentor] = useState("");
   const [idSector, setIdSector] = useState("");
