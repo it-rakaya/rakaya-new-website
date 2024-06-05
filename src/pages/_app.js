@@ -50,23 +50,17 @@ export default function MyApp({ Component, pageProps }) {
   });
   useEffect(() => {
     const handleReload = (event) => {
-      // Clear the browser cache
-      if ('caches' in window) {
+      if ("caches" in window) {
         caches.keys().then(function (names) {
           for (let name of names) caches.delete(name);
         });
       }
-
-      // Perform a hard refresh
       window.location.reload(true);
     };
 
-    // Listen for the page reload event
-    window.addEventListener('beforeunload', handleReload);
-
-    // Clean up the event listener when the component is unmounted
+    window.addEventListener("beforeunload", handleReload);
     return () => {
-      window.removeEventListener('beforeunload', handleReload);
+      window.removeEventListener("beforeunload", handleReload);
     };
   }, []);
   return (
