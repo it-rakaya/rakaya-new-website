@@ -52,69 +52,138 @@ function DraggableMarkerSectors({
             <SpinnerLoading />
           </div>
         ) : (
-          <div className="d-flex flex-column items-center w-100" dir="">
-            <div className="d-flex align-items-center justify-content-center text-center gap-2 mt-2">
-              <p className="fw-bolder fs-6" style={{ color: "#C9B171" }}>
+          <div className="">
+            <div className="d-flex align-items-center justify-content-center text-center gap-2  mt-2">
+              <p className="fw-bolder fs-6 p-2 " style={{ color: "#C9B171" }}>
                 {DetailsSectorData?.data?.sector?.label} -{" "}
                 {DetailsSectorData?.data?.sector?.facility_name}
               </p>
             </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                المنظمة:
-              </p>
+            <div
+              className="d-flex flex-column items-center w-100  mainScroll"
+              style={{ maxHeight: "300px", overflowY: "scroll" }}
+            >
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  المنظمة:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.organization?.name}
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                اسم رئيس المركز:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.organization?.name}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  اسم رئيس المركز:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.manager_id}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                {" "}
-                رئيس جودة وتشغيل:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.manager_id}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  {" "}
+                  رئيس جودة وتشغيل:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.boss_name}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                مشرف جودة وتشغيل:
-              </p>
+                <p className="">{DetailsSectorData?.data?.sector?.boss_name}</p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  مشرف جودة وتشغيل:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.supervisor_name}
-              </p>
-            </div>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.supervisor_name}
+                </p>
+              </div>
 
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                جنسية الحجاج:
-              </p>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  جنسية الحجاج:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.nationality}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                عدد الحجاج:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.nationality}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  عدد الحجاج:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.guest_quantity}
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                رقم الشاخص:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.guest_quantity}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  عدد المطابخ:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.sight}</p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.kitchen_quantity}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  رقم الشاخص:
+                </p>
+
+                <p className="">{DetailsSectorData?.data?.sector?.sight}</p>
+              </div>
+              <div className="d-flex  gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  المراقبين:
+                </p>
+
+                <div
+                  className="d-flex "
+                  style={{ flexWrap: "Wrap", gap: "5px" }}
+                >
+                  {DetailsSectorData?.data?.sector?.monitors.length
+                    ? DetailsSectorData?.data?.sector?.monitors?.map((item) => (
+                        <p
+                          key={item?.id}
+                          className="badge mx-1"
+                          style={{
+                            margin: "0 1px",
+                            backgroundColor: "#C9B171",
+                          }}
+                        >
+                          {item?.name}
+                        </p>
+                      ))
+                    : "لايوجد مراقبين"}
+                </div>
+              </div>
+              {DetailsSectorData?.data?.sector?.sight_photo && (
+                <div className="  gap-2 mt-2">
+                  <p
+                    className="d-flex align-items-start flex-column"
+                    style={{ color: "#C9B171" }}
+                  >
+                    شاخص منى:
+                  </p>
+                  <div className="d-flex justify-content-center">
+                    <Image
+                      src={
+                        DetailsSectorData?.data?.sector?.sight_photo ||
+                        "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
+                      }
+                      width={200}
+                      height={200}
+                      alt="sight_photo"
+                      className="rounded-5 p-1"
+                      style={{
+                        border: "1px solid #C9B171",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

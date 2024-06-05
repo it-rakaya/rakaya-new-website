@@ -362,15 +362,18 @@ input:-webkit-autofill:active {
 
 }
 
-.filter-container::-webkit-scrollbar-track {
-   // background: #f1f1f1;
-   // border-radius: 2px;
-}
-
 .filter-container::-webkit-scrollbar-thumb {
    background: rgb(201, 177, 113);
-   // border-radius: 10px;
 }
+
+.mainScroll::-webkit-scrollbar{
+   width: 2px;
+}
+.mainScroll::-webkit-scrollbar-thumb a{
+   background: rgb(201, 177, 113);
+
+}
+
 
 .filter-container::-webkit-scrollbar-thumb:hover {
    background: rgb(179, 147, 59)

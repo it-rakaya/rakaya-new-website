@@ -14,8 +14,8 @@ const MainMap = dynamic(() => import("@/components/track-locations/MainMap"), {
 function Main({ isDarkMode, collapsed }) {
   const { values, setFieldValue } = useFormikContext();
   const initialCenter = {
-    lat: 21.3666652,
-    lng: 40.00166666,
+    lat:  21.42251,
+    lng: 39.826168,
   };
   const [resetMap, setResetMap] = useState(initialCenter);
   const queryParams = {
@@ -31,7 +31,6 @@ function Main({ isDarkMode, collapsed }) {
     queryKey: [endpoint],
   });
   usePusher("Order-changes", (data) => {
-    console.log("🚀 ~ usePusher ~ data:", data);
   });
   useEffect(() => {
     const type = localStorage.getItem("type");

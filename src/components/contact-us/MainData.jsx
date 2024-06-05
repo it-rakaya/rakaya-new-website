@@ -19,7 +19,7 @@ function MainData({ isLoading, postData }) {
       const response = await postData(values);
       setShowPopup(true);
     } catch (error) {
-      console.error("Error posting data:", error);
+      // console.error("Error posting data:", error);
     }
   };
 

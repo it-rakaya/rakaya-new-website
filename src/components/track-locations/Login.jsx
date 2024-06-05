@@ -10,7 +10,6 @@ import Link from "next/link";
 function Login({ setAuth }) {
   const [error, setError] = useState("");
   const handleSubmit = (values) => {
-    console.log("🚀 ~ handleSubmit ~ values:", values)
     if (values.email == adminEmail && values.password == correctPassword) {
       setAuth(true);
       localStorage.setItem("isAuth", "true");

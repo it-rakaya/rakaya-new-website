@@ -60,6 +60,7 @@ function MainMap({ resetMap, mainDataLocation }) {
   });
 
   const sectorsData = mainDataLocation?.data?.sectors_table;
+  const ArfahData = mainDataLocation?.data?.sectors_table;
 
   return (
     <div>
@@ -88,13 +89,13 @@ function MainMap({ resetMap, mainDataLocation }) {
         /> */}
 
         <TileLayer
-             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <DraggableMarker
           position={resetMap}
           mentor={null}
-          // id={"default"}
+          id={"default"}
           icon={defaultIcon}
           setIdMentor={setIdMentor}
           resetMap={resetMap}
@@ -122,7 +123,7 @@ function MainMap({ resetMap, mainDataLocation }) {
         ))}
         {sectorsData?.map(
           (sector, idx) =>
-            sector.organization_id == 2 && (
+            sector?.organization_id == 2 && (
               <DraggableMarkerSectors
                 key={idx}
                 position={{ lat: sector.longitude, lng: sector.latitude }}
@@ -147,7 +148,7 @@ function MainMap({ resetMap, mainDataLocation }) {
         )}
         {sectorsData?.map(
           (sector, idx) =>
-            sector.organization_id == 1 && (
+            sector?.organization_id == 1 && (
               <DraggableMarkerSectors
                 key={idx}
                 position={{ lat: sector.longitude, lng: sector.latitude }}
@@ -166,6 +167,63 @@ function MainMap({ resetMap, mainDataLocation }) {
                 setIdSector={setIdSector}
                 id={sector.id}
                 icon={albiteGustIcon}
+                LoadingSector={LoadingSector}
+              />
+            )
+        )}
+        {ArfahData?.map(
+          (sector, idx) =>
+            sector?.organization_id == 1 && (
+              <DraggableMarkerSectors
+                key={idx}
+                position={{
+                  lat: sector.arafah_longitude,
+                  lng: sector.arafah_latitude,
+                }}
+                setPosition={(newPos) => {
+                  const updatedSectors = sectorsData.filter(
+                    (sec) => sec.organization_id == 1
+                  );
+                  updatedSectors[idx] = {
+                    ...updatedSectors[idx],
+
+                    lat: newPos.arafah_longitude,
+                    lng: newPos.arafah_latitude,
+                  };
+                  setPositions(updatedSectors);
+                }}
+                DetailsSectorData={DetailsSectorData}
+                setIdSector={setIdSector}
+                id={sector.id}
+                icon={albiteGustIcon}
+                LoadingSector={LoadingSector}
+              />
+            )
+        )}
+        {ArfahData?.map(
+          (sector, idx) =>
+            sector?.organization_id == 2 && (
+              <DraggableMarkerSectors
+                key={idx}
+                position={{
+                  lat: sector.arafah_longitude,
+                  lng: sector.arafah_latitude,
+                }}
+                setPosition={(newPos) => {
+                  const updatedSectors = sectorsData.filter(
+                    (sec) => sec.organization_id == 2
+                  );
+                  updatedSectors[idx] = {
+                    ...updatedSectors[idx],
+                    lat: newPos.arafah_longitude,
+                    lng: newPos.arafah_latitude,
+                  };
+                  setPositions(updatedSectors);
+                }}
+                DetailsSectorData={DetailsSectorData}
+                setIdSector={setIdSector}
+                id={sector.id}
+                icon={ithraaIcon}
                 LoadingSector={LoadingSector}
               />
             )
