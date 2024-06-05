@@ -82,6 +82,10 @@ function MainMap({ resetMap, mainDataLocation }) {
           attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
           url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
           errorTileUrl="/path/to/your/fallback/tile.png"
+          onTileError={(error) => {
+            console.error("Tile loading error:", error);
+            // You can implement retry logic here if needed
+          }}
         />
 
         {/* <TileLayer
