@@ -78,7 +78,7 @@ function MainMap({ resetMap, mainDataLocation }) {
           url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
           errorTileUrl="/path/to/your/fallback/tile.png"
         /> */}
-        <TileLayer
+        {/* <TileLayer
           attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
           url={`https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}&key=AAIzaSyBcCQLlfO8grWwpqZZenQasqV4jFw8dO2I`}
           errorTileUrl="/path/to/your/fallback/tile.png"
@@ -86,12 +86,12 @@ function MainMap({ resetMap, mainDataLocation }) {
             console.error("Tile loading error:", error);
             // You can implement retry logic here if needed
           }}
-        />
+        /> */}
 
-        {/* <TileLayer
+        <TileLayer
              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        /> */}
+        />
         <DraggableMarker
           position={resetMap}
           mentor={null}

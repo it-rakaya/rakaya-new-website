@@ -48,21 +48,7 @@ export default function MyApp({ Component, pageProps }) {
       queries: { refetchOnWindowFocus: false },
     },
   });
-  useEffect(() => {
-    const handleReload = (event) => {
-      if ("caches" in window) {
-        caches.keys().then(function (names) {
-          for (let name of names) caches.delete(name);
-        });
-      }
-      window.location.reload(true);
-    };
 
-    window.addEventListener("beforeunload", handleReload);
-    return () => {
-      window.removeEventListener("beforeunload", handleReload);
-    };
-  }, []);
   return (
     <I18nextProvider i18n={i18n}>
       {Component.noLayout ? (
