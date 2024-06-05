@@ -48,6 +48,20 @@ export default function MyApp({ Component, pageProps }) {
       queries: { refetchOnWindowFocus: false },
     },
   });
+  useEffect(() => {
+    const handleReload = (event) => {
+      // Perform a hard refresh
+      window.location.reload(true);
+    };
+
+    // Listen for the page reload event
+    window.addEventListener('beforeunload', handleReload);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('beforeunload', handleReload);
+    };
+  }, []);
 
   return (
     <I18nextProvider i18n={i18n}>
