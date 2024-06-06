@@ -24,7 +24,6 @@ ChartJS.register(
 function LineChartWaterQuantity({
   isDarkMode,
   supports_water_by_day_quantity,
-  supports_water_by_day,
 }) {
   const labelsByFood = supports_water_by_day_quantity?.map((item) => item.date);
   const dataValuesByFood = supports_water_by_day_quantity?.map(

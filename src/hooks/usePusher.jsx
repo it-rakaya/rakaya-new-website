@@ -36,9 +36,10 @@ const usePusher = ( onEvent) => {
     });
 
     const channel = pusher.subscribe('ModelCRUD-changes');
+    console.log("🚀 ~ useEffect ~ channel:", channel)
     channel.bind('Order-changes', (data) => {
         // Handle the received message
-        console.log("pusher==>",data.message);
+        console.log("pusher==>",data);
     });
 
     return () => {
