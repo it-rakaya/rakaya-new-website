@@ -43,6 +43,8 @@ export default function SideItem({
   const meals_by_status = mainDataLocation?.data?.meals_by_status;
   const monitors_table = mainDataLocation?.data?.monitors_table;
   const sectors_table = mainDataLocation?.data?.sectors_table;
+  const supports_water_by_day_quantity = mainDataLocation?.data?.supports_water_by_day_quantity;
+
 
   return (
     <div className={isLoading ?"hide-on-mobile" :""}>
@@ -52,7 +54,7 @@ export default function SideItem({
         style={{ marginTop: "5px" }}
       >
         <div
-          className={`   d-flex justify-content-between align-items-center track-logos py-3 px-2`}
+          className={`   d-flex justify-content-center align-items-center track-logos py-3 px-2`}
           style={{ backgroundColor: "#E9DFC6" }}
         >
           <div className="px-3 ">
@@ -63,14 +65,14 @@ export default function SideItem({
               alt="logo"
             />
           </div>
-          <div className="px-md-3 ">
+          {/* <div className="px-md-3 ">
             <Image
               src={"/track/HajjLogo.png"}
               width={180}
               height={60}
               alt="logo"
             />
-          </div>
+          </div> */}
         </div>
         {!isLoading ? (
           <div className="">
@@ -89,6 +91,7 @@ export default function SideItem({
               tickets_by_status={tickets_by_status}
               tickets_by_reason={tickets_by_reason}
               isDarkMode={isDarkMode}
+              supports_water_by_day_quantity={supports_water_by_day_quantity}
             />
           </div>
         ) : (

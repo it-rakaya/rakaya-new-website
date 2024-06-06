@@ -11,6 +11,7 @@ import MealsChartByDay from "./MealsChartByDay";
 import TableSectors from "./TableSectors";
 import TableMentor from "./tableMentor";
 import StatisticItem from "./StatisticItem";
+import LineChartWaterQuantity from "./LineChartWaterQuantity";
 
 function MainDataCharts({
   numberOfSectors,
@@ -27,6 +28,7 @@ function MainDataCharts({
   monitors_table,
   tickets_by_reason,
   isDarkMode,
+  supports_water_by_day_quantity
 }) {
   return (
     <>
@@ -101,6 +103,10 @@ function MainDataCharts({
                 isDarkMode={isDarkMode}
                 supports_food_by_day={supports_food_by_day}
                 supports_water_by_day={supports_water_by_day}
+              />
+              <LineChartWaterQuantity
+               isDarkMode={isDarkMode}
+               supports_water_by_day_quantity={supports_water_by_day_quantity}
               />
             </div>
           </div>
