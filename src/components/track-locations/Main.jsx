@@ -8,19 +8,15 @@ import SpinnerLoading from "../SpinnerLoading";
 
 const MainMap = dynamic(() => import("@/components/track-locations/MainMap"), {
   ssr: false,
-  // loading: () => <SpinnerLoading />,
 });
 
+export const initialCenter = {
+  lat: 21.410453961653573,
+  lng: 39.89736663051703,
+};
 function Main({ isDarkMode, collapsed }) {
-  const [modelName, setModelName] = useState("");
   const { values, setFieldValue } = useFormikContext();
-
-  const initialCenter = {
-    lat: 21.42251,
-    lng: 39.826168,
-  };
   const [resetMap, setResetMap] = useState(initialCenter);
-
   const queryParams = {
     monitor_id: values?.monitor_id || "",
     date: values?.date || "",
@@ -59,7 +55,6 @@ function Main({ isDarkMode, collapsed }) {
   }, [isSuccess, values?.modelName, mainDataLocation, values]);
   useEffect(() => {
     refetch();
-    console.log("first");
   }, [refetch, values]);
 
   usePusher("Ticket-changes", (data) => {
@@ -102,6 +97,7 @@ function Main({ isDarkMode, collapsed }) {
       >
         <SideItem
           setResetMap={setResetMap}
+          resetMap={resetMap}
           isDarkMode={isDarkMode}
           mainDataLocation={allData}
           isLoading={isLoading && !allData?.length}

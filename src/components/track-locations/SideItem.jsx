@@ -11,6 +11,7 @@ export default function SideItem({
   mainDataLocation,
   isLoading,
   setCollapsed,
+  resetMap,
 }) {
   React.useEffect(() => {
     const pusher = new Pusher("dd4472371972ca1c31dd", {
@@ -52,7 +53,11 @@ export default function SideItem({
         style={{ marginTop: "5px" }}
       >
         <div
-          className={`   d-flex justify-content-center align-items-center track-logos py-3 px-2`}
+          className={`   d-flex ${
+            localStorage.getItem("type") == "admin"
+              ? "justify-content-center"
+              : "justify-content-between"
+          }  align-items-center track-logos py-3 px-2`}
           style={{ backgroundColor: "#E9DFC6" }}
         >
           <div className="px-3 ">
@@ -63,14 +68,23 @@ export default function SideItem({
               alt="logo"
             />
           </div>
-          {/* <div className="px-md-3 ">
-            <Image
-              src={"/track/HajjLogo.png"}
-              width={180}
-              height={60}
-              alt="logo"
-            />
-          </div> */}
+          <div className="px-md-3 ">
+            {localStorage.getItem("type") !== "admin" && (
+              <Image
+                src={
+                  localStorage.getItem("type") == "ithraa"
+                    ? "https://admin-dev.rmcc.sa/storage/users/1/logo/17176688274352_logo.png"
+                    : localStorage.getItem("type") == "albeit"
+                    ? "https://admin-dev.rmcc.sa/storage/users/1/logo/17176713661424_logo.png"
+                    : ""
+                }
+                width={0}
+                height={0}
+                style={{ width: "100%", height: "70px" }}
+                alt="logo"
+              />
+            )}
+          </div>
         </div>
         {!isLoading ? (
           <div className="">
@@ -105,6 +119,7 @@ export default function SideItem({
         <div className="position-absolute MainFilter">
           <Filter
             setResetMap={setResetMap}
+            resetMap={resetMap}
             mainDataLocation={mainDataLocation}
           />
         </div>

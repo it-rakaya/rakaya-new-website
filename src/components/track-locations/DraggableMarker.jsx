@@ -38,20 +38,20 @@ function DraggableMarker({
     [setPosition, id, setIdMentor]
   );
 
-  // useEffect(() => {
-  //   if (resetMap) {
-  //     map.setView(resetMap, 13);
-  //   }
-  // }, [resetMap, map]);
+  useEffect(() => {
+    if (resetMap) {
+      map.setView(resetMap, 13);
+    }
+  }, [resetMap, map]);
 
-  // useEffect(() => {
-  //   map.setView(position, 13);
-  // }, [values?.monitor_id]);
+  useEffect(() => {
+    map.setView(position, 13);
+  }, [values?.monitor_id]);
 
   useEffect(() => {
     map.setView(position, 13);
   }, [resetMap]);
-
+  
   return (
     <Marker
       draggable={draggable}
@@ -88,6 +88,7 @@ function DraggableMarker({
                   {mentor?.data?.location?.user_info?.name}
                 </p>
               </div>
+
               <div className="d-flex align-items-center gap-2 mt-2">
                 <p className="" style={{ color: "#C9B171" }}>
                   نوع الهاتف:

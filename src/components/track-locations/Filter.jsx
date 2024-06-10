@@ -15,7 +15,7 @@ import { BsCalendar2Date } from "react-icons/bs";
 import { PiMapPinSimpleAreaFill } from "react-icons/pi";
 import FilterRadioInput from "./FilterRadioInput";
 
-function Filter({ setResetMap, mainDataLocation }) {
+function Filter({ setResetMap, mainDataLocation, resetMap }) {
   const monitors_table = mainDataLocation?.data?.monitors_table;
   const sectors_table = mainDataLocation?.data?.sectors_table;
   const { values, setFieldValue } = useFormikContext("");
@@ -98,8 +98,8 @@ function Filter({ setResetMap, mainDataLocation }) {
               style={{ cursor: "pointer" }}
               onClick={() =>
                 setResetMap({
-                  lat: 21.42251,
-                  lng: 39.826168,
+                lat: 21.42251,
+                  lng: 39.826168,  
                 })
               }
             >
@@ -244,4 +244,4 @@ function Filter({ setResetMap, mainDataLocation }) {
   );
 }
 
-export default Filter
+export default Filter;

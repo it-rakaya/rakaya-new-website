@@ -53,7 +53,6 @@ function MainDataCharts({
         </div>
       </div>
       <hr className="m-0" />
-
       <div
         className="filter-container pt-4"
         style={{ height: "calc(100vh - 380px)", overflowY: "scroll" }}

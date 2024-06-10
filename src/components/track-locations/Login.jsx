@@ -40,7 +40,6 @@ function Login({ setAuth }) {
     <div>
       <Formik
         initialValues={{}}
-        // validationSchema={validationSchema}
         onSubmit={(values) => handleSubmit(values)}
       >
         <Form>
