@@ -3,7 +3,7 @@ import Switch from "@/components/form/Switch";
 import DropDownUser from "@/components/track-locations/DropDownUser";
 import Login from "@/components/track-locations/Login";
 import Main from "@/components/track-locations/Main";
-import { adminEmail , ithraaEmail , albeitEmail } from "@/utils/Helpers";
+import { adminEmail, ithraaEmail, albeitEmail } from "@/utils/Helpers";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -54,7 +54,11 @@ function TrackLocation() {
       try {
         const userObject = JSON.parse(storedEmail);
 
-        if (authStatus && userObject.email == adminEmail || ithraaEmail || albeitEmail) {
+        if (
+          (authStatus && userObject.email == adminEmail) ||
+          ithraaEmail ||
+          albeitEmail
+        ) {
           setAuth(true);
         }
       } catch (error) {
@@ -72,7 +76,13 @@ function TrackLocation() {
   return isAuth ? (
     <div className="">
       <Formik
-        initialValues={{ monitor_id: "", sector_id: "", organization_id: "" }}
+        initialValues={{
+          monitor_id: "",
+          sector_id: "",
+          organization_id: "",
+          locationHajj: "All",
+          Actions: "AllActions",
+        }}
         onSubmit={() => {}}
       >
         <Form>

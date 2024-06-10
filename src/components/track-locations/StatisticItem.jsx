@@ -35,8 +35,8 @@ function StatisticItem({ icon, count, label }) {
     <div className="d-flex flex-column align-items-center justify-content-center gap-1">
       <div style={{ color: "#C9B171" }}>{icon}</div>
       <div className="fw-bold">
-        <Counter count={count} />
-        {/* {count} */}
+        {/* <Counter count={count} /> */}
+        {count}
       </div>
       <div style={{ fontSize: "13px" }}>{label}</div>
     </div>

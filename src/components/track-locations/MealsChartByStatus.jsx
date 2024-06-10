@@ -13,8 +13,8 @@ function MealsChartByStatus({ isDarkMode, meals_by_status }) {
       {
         label: "# of Votes",
         data: dataValues,
-        backgroundColor: ["#65cb66", "#399ddd"],
-        borderColor: ["#65cb66", "#399ddd"],
+        backgroundColor: [" #e29697", "#65cb66", "#399ddd"],
+        borderColor: [" #e29697", "#65cb66", "#399ddd"],
         borderWidth: 1,
       },
     ],

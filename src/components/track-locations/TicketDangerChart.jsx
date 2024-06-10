@@ -7,15 +7,14 @@ function TicketDangerChart({ isDarkMode, tickets_by_danger }) {
   const labels = tickets_by_danger?.map((item) => item.attribute);
   const dataValues = tickets_by_danger?.map((item) => item.count);
 
-  
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "# of Votes",
+        label: "# العدد",
         data: dataValues,
-        backgroundColor: ["#EE6363", "#F0A44B", "#2c710e"],
-        borderColor: ["#EE6363", "#F0A44B", "#2c710e"],
+        backgroundColor: ["#f0c24c", "#EE6363", "#F0A44B"],
+        borderColor: ["#f0c24c", "#EE6363", "#F0A44B"],
         borderWidth: 1,
       },
     ],

@@ -34,9 +34,9 @@ function DraggableMarkerSectors({
     [setPosition, id, setIdSector]
   );
 
-  useEffect(() => {
-    map.setView(position, 15);
-  }, [values?.organization_id]);
+  // useEffect(() => {
+  //   map.setView(position, 13);
+  // }, [values?.organization_id]);
 
   return (
     <Marker

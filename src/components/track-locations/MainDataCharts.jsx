@@ -28,7 +28,7 @@ function MainDataCharts({
   monitors_table,
   tickets_by_reason,
   isDarkMode,
-  supports_water_by_day_quantity
+  supports_water_by_day_quantity,
 }) {
   return (
     <>
@@ -74,17 +74,18 @@ function MainDataCharts({
               <h5 style={{ color: "#C9B171" }}>البلاغات</h5>
               <div>
                 <div className="mt-3">
-                  {/* <h6 style={{ color: "#C9B171" }}>حسب الاسباب</h6> */}
+                  {/* حسب الاسباب */}
                   <TicketsChart tickets_by_reason={tickets_by_reason} />
                 </div>
                 <div className="mt-3">
-                  {/* <h6 style={{ color: "#C9B171" }}>حسب الخطورة</h6> */}
+                  {/* حسب الخطورة */}
                   <TicketDangerChart
                     isDarkMode={isDarkMode}
                     tickets_by_danger={tickets_by_danger}
                   />
                 </div>
                 <div className="mt-3">
+                  {/* حسب الحالة */}
                   <TicketsChartStatus
                     isDarkMode={isDarkMode}
                     tickets_by_status={tickets_by_status}
@@ -105,8 +106,8 @@ function MainDataCharts({
                 supports_water_by_day={supports_water_by_day}
               />
               <LineChartWaterQuantity
-               isDarkMode={isDarkMode}
-               supports_water_by_day_quantity={supports_water_by_day_quantity}
+                isDarkMode={isDarkMode}
+                supports_water_by_day_quantity={supports_water_by_day_quantity}
               />
             </div>
           </div>

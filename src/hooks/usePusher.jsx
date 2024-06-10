@@ -1,52 +1,25 @@
 import { useEffect } from "react";
 import Pusher from "pusher-js";
 
-const usePusher = ( onEvent) => {
+const usePusher = (event, onEvent) => {
   const APP_KEY = process.env.NEXT_PUBLIC_YOUR_APP_KEY;
   const APP_CLUSTER = process.env.NEXT_PUBLIC_YOUR_APP_CLUSTER;
+  const APP_CHANEL = process.env.NEXT_PUBLIC_YOUR_APP_CHANEL;
 
-  // useEffect(() => {
-  //   const pusher = new Pusher('dd4472371972ca1c31dd', {
-  //     cluster: 'mt1',
-  //     // authEndpoint:"https://admin-dev.rmcc.sa",
-  //     // auth: {
-  //     //   headers: {
-  //     //     "Access-Control-Allow-Origin":"*",
-  //     //     "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-  //     //     "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
-  //     //   }
-  //     // },
-  //     encrypted: true,
-  //     forceTLS:true,
-  //   });
-
-  //   const channel = pusher.subscribe("ModelCRUD-changes");
-  //   console.log("🚀 ~ useEffect ~ channel:", channel)
-  //   channel.bind('Order-changes', onEvent);
-
-  //   return () => {
-  //     channel.unbind('Order-changes', onEvent);
-  //     pusher.unsubscribe("ModelCRUD-changes");
-  //   };
-  // }, []);
   useEffect(() => {
-    const pusher = new Pusher('dd4472371972ca1c31dd', {
-        cluster: 'mt1',
-        encrypted: true
+    const pusher = new Pusher(APP_KEY, {
+      cluster: APP_CLUSTER,
+      encrypted: true,
     });
 
-    const channel = pusher.subscribe('ModelCRUD-changes');
-    console.log("🚀 ~ useEffect ~ channel:", channel)
-    channel.bind('Order-changes', (data) => {
-        // Handle the received message
-        console.log("pusher==>",data);
-    });
+    const channel = pusher.subscribe(APP_CHANEL);
+    channel.bind(event, onEvent);
 
     return () => {
-        channel.unbind_all();
-        channel.unsubscribe();
+      channel.unbind_all();
+      channel.unsubscribe();
     };
-}, []);
+  }, [event, onEvent]);
 };
 
 export default usePusher;

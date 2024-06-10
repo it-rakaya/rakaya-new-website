@@ -3,7 +3,7 @@ import { useFormikContext } from "formik";
 import React, { useEffect, useState } from "react";
 import SelectComp from "./SelectComp";
 
-function SelectOrganization({ label, required, labelClassName }) {
+function SelectOrganization({ label, required, labelClassName , icon }) {
   const { values, setFieldValue } = useFormikContext();
   const { data } = useFetch({
     endpoint: `organizations`,
@@ -43,6 +43,7 @@ function SelectOrganization({ label, required, labelClassName }) {
         required={required}
         selectedValue={selectedValue}
         disabled={isDisabled}
+        icon={icon}
         isClearable
       />
     </div>

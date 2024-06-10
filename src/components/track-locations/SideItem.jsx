@@ -10,7 +10,7 @@ export default function SideItem({
   isDarkMode,
   mainDataLocation,
   isLoading,
-  setCollapsed
+  setCollapsed,
 }) {
   React.useEffect(() => {
     const pusher = new Pusher("dd4472371972ca1c31dd", {
@@ -29,26 +29,24 @@ export default function SideItem({
   }, []);
   // setChartData(data);
 
-  const numberOfPilgrims = mainDataLocation?.data?.pilgrams;
-  const numberOfMentors = mainDataLocation?.data?.monitors;
-  const numberOfSectors = mainDataLocation?.data?.sectors;
-  const numberOfPilgrimsNationality =
-    mainDataLocation?.data?.pilgrams_nationalities;
-  const tickets_by_reason = mainDataLocation?.data?.tickets_by_reason;
-  const tickets_by_danger = mainDataLocation?.data?.tickets_by_danger;
-  const tickets_by_status = mainDataLocation?.data?.tickets_by_status;
-  const supports_food_by_day = mainDataLocation?.data?.supports_food_by_day;
-  const supports_water_by_day = mainDataLocation?.data?.supports_water_by_day;
-  const meals_by_day = mainDataLocation?.data?.meals_by_day;
-  const meals_by_status = mainDataLocation?.data?.meals_by_status;
-  const monitors_table = mainDataLocation?.data?.monitors_table;
-  const sectors_table = mainDataLocation?.data?.sectors_table;
-  const supports_water_by_day_quantity = mainDataLocation?.data?.supports_water_by_day_quantity;
-
+  const numberOfPilgrims = mainDataLocation?.pilgrams;
+  const numberOfMentors = mainDataLocation?.monitors;
+  const numberOfSectors = mainDataLocation?.sectors;
+  const numberOfPilgrimsNationality = mainDataLocation?.pilgrams_nationalities;
+  const tickets_by_reason = mainDataLocation?.tickets_by_reason;
+  const tickets_by_danger = mainDataLocation?.tickets_by_danger;
+  const tickets_by_status = mainDataLocation?.tickets_by_status;
+  const supports_food_by_day = mainDataLocation?.supports_food_by_day;
+  const supports_water_by_day = mainDataLocation?.supports_water_by_day;
+  const meals_by_day = mainDataLocation?.meals_by_day;
+  const meals_by_status = mainDataLocation?.meals_by_status;
+  const monitors_table = mainDataLocation?.monitors_table;
+  const sectors_table = mainDataLocation?.sectors_table;
+  const supports_water_by_day_quantity =
+    mainDataLocation?.supports_food_by_day_quantity;
 
   return (
-    <div className={isLoading ?"hide-on-mobile" :""}>
-      {/* <PusherComponent onData={setChartData}/> */}
+    <div className={isLoading ? "hide-on-mobile" : ""}>
       <div
         className=" bg-white h-[100vh] position-relative sidebar-track"
         style={{ marginTop: "5px" }}
@@ -104,13 +102,10 @@ export default function SideItem({
             <SpinnerLoading />
           </div>
         )}
-        <div
-          className="position-absolute MainFilter"
-        >
+        <div className="position-absolute MainFilter">
           <Filter
             setResetMap={setResetMap}
             mainDataLocation={mainDataLocation}
-            
           />
         </div>
       </div>
