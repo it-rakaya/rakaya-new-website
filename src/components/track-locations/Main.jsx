@@ -1,5 +1,5 @@
 import useFetch from "@/hooks/useFetch";
-// import usePusher from "@/hooks/usePusher";
+import usePusher from "@/hooks/usePusher";
 import { useFormikContext } from "formik";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
@@ -53,29 +53,29 @@ function Main({ isDarkMode, collapsed }) {
       setShowSpinner(false);
     }
   }, [isSuccess, values?.modelName, mainDataLocation, values]);
-  // useEffect(() => {
-  //   refetch();
-  // }, [refetch, values]);
+  useEffect(() => {
+    refetch();
+  }, [refetch, values]);
 
-  // usePusher("Ticket-changes", (data) => {
-  //   setFieldValue("modelName", data?.model_name);
-  //   refetch();
-  // });
+  usePusher("Ticket-changes", (data) => {
+    setFieldValue("modelName", data?.model_name);
+    refetch();
+  });
 
-  // usePusher("Order-changes", (data) => {
-  //   setFieldValue("modelName", data?.model_name);
-  //   refetch();
-  // });
+  usePusher("Order-changes", (data) => {
+    setFieldValue("modelName", data?.model_name);
+    refetch();
+  });
 
-  // usePusher("Support-changes", (data) => {
-  //   setFieldValue("modelName", data?.model_name);
-  //   refetch();
-  // });
+  usePusher("Support-changes", (data) => {
+    setFieldValue("modelName", data?.model_name);
+    refetch();
+  });
 
-  // usePusher("Meal-changes", (data) => {
-  //   setFieldValue("modelName", data?.model_name);
-  //   refetch();
-  // });
+  usePusher("Meal-changes", (data) => {
+    setFieldValue("modelName", data?.model_name);
+    refetch();
+  });
 
   useEffect(() => {
     const type = localStorage.getItem("type");
