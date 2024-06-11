@@ -488,6 +488,28 @@ export const works = [
 ("/studio");
 export const postsStudio = [
   {
+    headTitle: "إستعدادات ركايا لموسم حج 1445",
+    coverPost: "/studio/studio/haj/2.jpg",
+    showPattern: true,
+    posts: [
+      {
+        image: "/studio/studio/haj/4.jpg",
+        title: "عائلة ركايا",
+        desc: "عائلة ركايا تجتمع لعرض الخطة النهائية لمشاريع حج 1445، حماسنا لا يوصف لخدمة ضيوف الرحمن",
+      },
+      {
+        image: "/studio/studio/haj/3.jpg",
+        title: "م.حاتم باناصر",
+        desc: "جانب من لقاء الرئيس التنفيذي في اجتماع عرض الخطة النهائية لمشاريع حج 1445",
+      },
+      {
+        image: "/studio/studio/haj/1.jpg",
+        title: "آلية استخدام تطبيق منصة ركايا لجودة التشغيل",
+        desc: "تجربة تفاعلية لتطبيق منصة ركايا لجودة التشغيل في دورة آلية استخدام المنصة",
+      },
+    ],
+  },
+  {
     headTitle: "مأدبة فطور رمضان ١٤٤٥ هـ  لفريق ركايا",
     coverPost: "/studio/studio/ramadan-1445/1.webp",
     showPattern: true,
@@ -501,8 +523,7 @@ export const postsStudio = [
         image: "/studio/studio/ramadan-1445/3.webp",
         title: "فريق ركايا",
         desc: "لقطة تجتمع فيها أفراد شركة ركايا بعد إفطار شهي تملؤه روح الأخوة والألفة",
-      }
-
+      },
     ],
   },
   {
@@ -542,7 +563,6 @@ export const postsStudio = [
         title: "ركايا",
         desc: "هدية تذكارية من المهندس حاتم باناصر إلى الاستاذ.أحمد الغريب",
       },
-
     ],
   },
   {
@@ -589,6 +609,3 @@ export const postsStudio = [
     ],
   },
 ];
-
-
-

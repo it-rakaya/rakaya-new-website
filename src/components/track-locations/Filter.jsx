@@ -171,7 +171,7 @@ function Filter({ setResetMap, mainDataLocation, resetMap }) {
                 <FilterRadioInput
                   name="locationHajj"
                   id="Arfa"
-                  label="عرفه"
+                  label="عرفة"
                   onChange={() => setFieldValue("locationHajj", "Arfa")}
                   disabled={values?.Actions === "actionMentors"}
                   labelClassName={"w-100"}
