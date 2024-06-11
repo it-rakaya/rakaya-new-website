@@ -17,7 +17,7 @@ function DraggableMarkerSectors({
   const [draggable, setDraggable] = useState(false);
   const markerRef = useRef(null);
   const map = useMap();
-  const {values} = useFormikContext()
+  const { values } = useFormikContext();
 
   const eventHandlers = useMemo(
     () => ({
@@ -34,10 +34,9 @@ function DraggableMarkerSectors({
     [setPosition, id, setIdSector]
   );
 
- 
-  useEffect(() => {
-    map.setView(position, 15);
-  }, [values?.organization_id]);
+  // useEffect(() => {
+  //   map.setView(position, 13);
+  // }, [values?.organization_id]);
 
   return (
     <Marker
@@ -53,102 +52,170 @@ function DraggableMarkerSectors({
             <SpinnerLoading />
           </div>
         ) : (
-          <div className="d-flex flex-column items-center w-100" dir="">
-            {/* <div className="d-flex align-items-center gap-2 ">
+          <div className="">
+            <div className="d-flex justify-content-center">
               <Image
                 src={
-                  DetailsSectorData?.data?.sector?.boss?.profile_photo ||
-                  "https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_people_person_avatar_white_tone_icon_159363.png"
+                  DetailsSectorData?.data?.sector?.organization?.logo ||
+                  ""
                 }
-                alt="logo"
-                width={50}
-                height={50}
-                loading="lazy"
+                width={0}
+                height={80}
+                alt="sight_photo"
                 className="rounded-5 p-1"
-                style={{ border: "1px solid #C9B171", objectFit: "cover"  ,backgroundColor:"#C9B171" }}
+                style={{
+                  // border: "1px solid #C9B171",
+                  // objectFit: "cover",
+                  width:"100%",
+                  objectFit:"contain"
+                }}
               />
-              <p
-                className="!m-0 text-[16px]"
-                style={{ color: "rgb(201, 177, 113)" }}
-              >
-                {DetailsSectorData?.data?.sector?.boss?.name}
-              </p>
-            </div> */}
-            {/* <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="">  :</p>
-              <p className="">
-                <p className="">
-                  {DetailsSectorData?.data?.sector?.boss?.name}
-                </p>
-              </p>
-            </div> */}
-            <div className="d-flex align-items-center justify-content-center text-center gap-2 mt-2">
-              {/* <p className="fw-bolder fs-6 " style={{ color: "#C9B171" }}>
-                {" "}
-                المركز:
-              </p> */}
-
-              <p className="fw-bolder fs-6" style={{ color: "#C9B171" }}>
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center text-center gap-2  mt-2 rounded-3"
+              style={{
+                backgroundColor:
+                  DetailsSectorData?.data?.sector?.organization?.primary_color,
+              }}
+            >
+              <p className="fw-bolder fs-6 p-2  " style={{ color: "#fff" }}>
                 {DetailsSectorData?.data?.sector?.label} -{" "}
                 {DetailsSectorData?.data?.sector?.facility_name}
               </p>
             </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                المنظمة:
-              </p>
+            <div
+              className="d-flex flex-column items-center w-100  mainScroll"
+              style={{ maxHeight: "300px", overflowY: "scroll" }}
+            >
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  المنظمة:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.organization?.name}
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                اسم رئيس المركز:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.organization?.name}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  اسم رئيس المركز:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.manager_id}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                {" "}
-                رئيس جودة وتشغيل:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.manager_id}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  {" "}
+                  رئيس جودة وتشغيل:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.boss_name}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                مشرف جودة وتشغيل:
-              </p>
+                <p className="">{DetailsSectorData?.data?.sector?.boss_name}</p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  مشرف جودة وتشغيل:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.supervisor_name}
-              </p>
-            </div>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.supervisor_name}
+                </p>
+              </div>
 
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                جنسية الحجاج:
-              </p>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  جنسية الحجاج:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.nationality}</p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                عدد الحجاج:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.nationality}
+                  <span className="mx-2">
+                    <Image
+                      src={DetailsSectorData?.data?.sector?.flag_icon || ""}
+                      alt=""
+                      width={15}
+                      height={15}
+                    />
+                  </span>
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  عدد الحجاج:
+                </p>
 
-              <p className="">
-                {DetailsSectorData?.data?.sector?.guest_quantity}
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2">
-              <p className="" style={{ color: "#C9B171" }}>
-                رقم الشاخص:
-              </p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.guest_quantity}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  عدد المطابخ:
+                </p>
 
-              <p className="">{DetailsSectorData?.data?.sector?.sight}</p>
+                <p className="">
+                  {DetailsSectorData?.data?.sector?.kitchen_quantity}
+                </p>
+              </div>
+              <div className="d-flex align-items-center gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  رقم الشاخص:
+                </p>
+
+                <p className="">{DetailsSectorData?.data?.sector?.sight}</p>
+              </div>
+              <div className="d-flex  gap-2 mt-2">
+                <p className="" style={{ color: "#C9B171" }}>
+                  المراقبين:
+                </p>
+
+                <div
+                  className="d-flex "
+                  style={{ flexWrap: "Wrap", gap: "5px" }}
+                >
+                  {DetailsSectorData?.data?.sector?.monitors.length
+                    ? DetailsSectorData?.data?.sector?.monitors?.map((item) => (
+                        <p
+                          key={item?.id}
+                          className="badge mx-1"
+                          style={{
+                            margin: "0 1px",
+                            backgroundColor: "#C9B171",
+                          }}
+                        >
+                          {item?.name}
+                        </p>
+                      ))
+                    : "لايوجد مراقبين"}
+                </div>
+              </div>
+              {DetailsSectorData?.data?.sector?.sight_photo && (
+                <div className="  gap-2 mt-2">
+                  <p
+                    className="d-flex align-items-center flex-column justify-content-center"
+                    style={{ color: "#C9B171" }}
+                  >
+                    شاخص منى
+                  </p>
+                  <div className="d-flex justify-content-center mt-2">
+                    <Image
+                      src={
+                        DetailsSectorData?.data?.sector?.sight_photo ||
+                        ""
+                      }
+                      width={200}
+                      height={200}
+                      alt="sight_photo"
+                      className="rounded-5 p-1"
+                      style={{
+                        border: "1px solid #C9B171",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

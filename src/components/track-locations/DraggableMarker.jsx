@@ -5,6 +5,7 @@ import { Marker, Popup, useMap } from "react-leaflet";
 import SpinnerLoading from "../SpinnerLoading";
 import { extractTimeWithAmPm } from "@/utils/Helpers";
 import { useFormikContext } from "formik";
+import Link from "next/link";
 
 function DraggableMarker({
   position,
@@ -15,6 +16,7 @@ function DraggableMarker({
   icon,
   LoadingMentor,
   resetMap,
+  disablePopup,
 }) {
   const [draggable, setDraggable] = useState(false);
   const markerRef = useRef(null);
@@ -37,12 +39,19 @@ function DraggableMarker({
   );
 
   useEffect(() => {
-    map.setView(position, 30);
+    if (resetMap) {
+      map.setView(resetMap, 13);
+    }
+  }, [resetMap, map]);
+
+  useEffect(() => {
+    map.setView(position, 13);
   }, [values?.monitor_id]);
 
   useEffect(() => {
     map.setView(position, 13);
   }, [resetMap]);
+  
   return (
     <Marker
       draggable={draggable}
@@ -51,9 +60,9 @@ function DraggableMarker({
       ref={markerRef}
       icon={icon}
     >
-      <Popup minWidth={180}>
-        {mentor ? (
-          LoadingMentor ? (
+      {!disablePopup && (
+        <Popup minWidth={180}>
+          {LoadingMentor ? (
             <div className="d-flex  align-items-center justify-content-center">
               <SpinnerLoading />
             </div>
@@ -90,7 +99,13 @@ function DraggableMarker({
                 <p className="" style={{ color: "#C9B171" }}>
                   رقم الهاتف:
                 </p>
-                <p className="">{mentor?.data?.location?.user_info?.phone}</p>
+                <Link
+                  href={`tel:${mentor?.data?.location?.user_info?.phone}`}
+                  className=""
+                  style={{ color: "#000" }}
+                >
+                  {mentor?.data?.location?.user_info?.phone}
+                </Link>
               </div>
               <div className="d-flex align-items-center gap-2 mt-1">
                 <p className="" style={{ color: "#C9B171" }}>
@@ -118,13 +133,9 @@ function DraggableMarker({
                 <p>{mentor?.data?.location?.action}</p>
               </div>
             </div>
-          )
-        ) : (
-          <p className="d-flex  align-items-center justify-content-center">
-            مركز الخريطة
-          </p>
-        )}
-      </Popup>
+          )}
+        </Popup>
+      )}
     </Marker>
   );
 }

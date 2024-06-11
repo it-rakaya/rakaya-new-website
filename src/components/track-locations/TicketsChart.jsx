@@ -35,8 +35,6 @@ function TicketsChart({ tickets_by_reason }) {
   const colors = labels?.map(() => generateRandomColor());
   const commonColor = "rgb(201, 177, 113)";
 
-  // const colors = labels?.map(() => commonColor);
-
   const totalVotes = dataValues?.reduce((acc, value) => acc + value, 0);
 
   const data = {
@@ -98,8 +96,8 @@ function TicketsChart({ tickets_by_reason }) {
               labels: {
                 generateLabels: (chart) => {
                   const data = chart.data;
-                  if (data.labels.length && data.datasets.length) {
-                    return data.labels.map((label, index) => {
+                  if (data?.labels?.length && data?.datasets?.length) {
+                    return data?.labels?.map((label, index) => {
                       const value = data.datasets[0].data[index];
                       const percentage = ((value / totalVotes) * 100).toFixed(
                         1

@@ -1,14 +1,21 @@
+import { useFormikContext } from "formik";
 import React, { useState } from "react";
-import { IoFilter } from "react-icons/io5";
-import SelectMonitors from "../form/SelectMonitors";
 import { IoMdClose } from "react-icons/io";
-import { IoReload } from "react-icons/io5";
+import { IoFilter, IoReload, IoLocation } from "react-icons/io5";
+import DatePickerComp from "../form/DatePickerComp";
+import Label from "../form/Label";
+import SelectMonitors from "../form/SelectMonitors";
 import SelectOrganization from "../form/SelectOrganization";
 import SelectSector from "../form/SelectSector";
-import DatePickerComp from "../form/DatePickerComp";
-import { useFormikContext } from "formik";
+import SelectTypeActions from "../form/SelectTypeActions";
+import { FaPersonShelter, FaTents } from "react-icons/fa6";
+import { SiGithubactions } from "react-icons/si";
+import { CgOrganisation } from "react-icons/cg";
+import { BsCalendar2Date } from "react-icons/bs";
+import { PiMapPinSimpleAreaFill } from "react-icons/pi";
+import FilterRadioInput from "./FilterRadioInput";
 
-function Filter({ setResetMap, mainDataLocation }) {
+function Filter({ setResetMap, mainDataLocation, resetMap }) {
   const monitors_table = mainDataLocation?.data?.monitors_table;
   const sectors_table = mainDataLocation?.data?.sectors_table;
   const { values, setFieldValue } = useFormikContext("");
@@ -21,32 +28,35 @@ function Filter({ setResetMap, mainDataLocation }) {
     setFieldValue("date", "");
     setFieldValue("sector_id", "");
     setFieldValue("organization_id", "");
+    setFieldValue("locationHajj", "All");
+    setFieldValue("Actions", "AllActions");
+    setFieldValue("type_actions", "");
   };
+
   const showFilter =
     values?.monitor_id ||
     values?.date ||
     values?.sector_id ||
-    values?.organization_id;
+    values?.organization_id ||
+    values?.type_actions;
 
   return (
     <div
-      className=" bg-white rounded-4 bg-dark "
+      className="bg-white rounded-4 bg-dark"
       style={{
         boxShadow: "0 3px 6px rgba(0, 0, 0, 0.19), 0 3px 6px rgba(0, 0, 0, 0)",
-        width: show ? "290px" : "80px",
-        transition: " width 0.3s ease",
+        width: show ? "300px" : "80px",
+        transition: "width 0.3s ease",
       }}
     >
       <div
-        className="d-flex gap-1 align-items-center justify-content-between p-2  "
-        style={{
-          cursor: "pointer",
-        }}
+        className="d-flex gap-1 align-items-center justify-content-between p-2"
+        style={{ cursor: "pointer" }}
       >
         <div
           className={`d-flex gap-1 align-items-center ${
             show ? "justify-content-between" : "m-auto"
-          } `}
+          }`}
           onClick={() => setShow(true)}
         >
           <IoFilter />
@@ -58,98 +68,178 @@ function Filter({ setResetMap, mainDataLocation }) {
           </div>
         )}
       </div>
-      <div
-        className="filter-container"
-        style={{
-          height: show ? "400px" : "0px",
-          padding: "0 10px 0 10px",
-        }}
-      >
-        <div>
-          {show && (
-            <div className="mt-3 mx-2">
-              {showFilter && (
-                <div
-                  className="d-flex align-items-center gap-1 border justify-content-center p-1 rounded-2 m-auto mb-2  reloadMap"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleResetFilters}
-                >
-                  <IoReload
-                    style={{ fontSize: "12px" }}
-                    color="rgb(201, 177, 113)"
-                  />
-                  <p
-                    className="p-0 m-0 "
-                    style={{
-                      fontSize: "12px",
-                      color: "rgb(201, 177, 113)",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    تحديث الفلترة
-                  </p>
-                </div>
-              )}
+      {show && (
+        <div className="mt-3 mb-3">
+          <div className="mx-2">
+            {showFilter && (
               <div
-                className="d-flex align-items-center gap-1 border justify-content-center p-1 rounded-2 m-auto mb-2  reloadMap"
+                className="d-flex align-items-center gap-1 border justify-content-center p-1 rounded-2 m-auto mb-2 reloadMap"
                 style={{ cursor: "pointer" }}
-                onClick={() =>
-                  setResetMap({
-                    lat: 21.42251,
-                    lng: 39.826168,
-                  })
-                }
+                onClick={handleResetFilters}
               >
                 <IoReload
                   style={{ fontSize: "12px" }}
                   color="rgb(201, 177, 113)"
                 />
                 <p
-                  className="p-0 m-0 "
+                  className="p-0 m-0"
                   style={{
                     fontSize: "12px",
                     color: "rgb(201, 177, 113)",
                     fontWeight: "bold",
                   }}
                 >
-                  تحديث الخريطة
+                  اعادة تعيين
                 </p>
               </div>
-              <div className="">
-                <SelectOrganization
-                  key={`organization-${resetKey}`}
-                  label={"اختر المنظمة"}
-                  labelClassName={"label_track"}
+            )}
+            <div
+              className="d-flex align-items-center gap-1 border justify-content-center p-1 rounded-2 m-auto mb-2 reloadMap"
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                setResetMap({
+                lat: 21.42251,
+                  lng: 39.826168,  
+                })
+              }
+            >
+              <IoReload
+                style={{ fontSize: "12px" }}
+                color="rgb(201, 177, 113)"
+              />
+              <p
+                className="p-0 m-0"
+                style={{
+                  fontSize: "12px",
+                  color: "rgb(201, 177, 113)",
+                  fontWeight: "bold",
+                }}
+              >
+                تحديث الخريطة
+              </p>
+            </div>
+          </div>
+          <div
+            className="filter-container"
+            style={{
+              height: "388px",
+              padding: "0 10px 0 10px",
+              overflowY: "scroll",
+            }}
+          >
+            <div>
+              <Label className={"label_track d-flex align-items-center gap-2"}>
+                <PiMapPinSimpleAreaFill className="fs-5" />
+                اختر نوع البيانات
+              </Label>
+              <div className="d-flex justify-content-between gap-2">
+                <FilterRadioInput
+                  name="Actions"
+                  id="AllActions"
+                  label="الكل"
+                  defaultChecked
+                  onChange={() => setFieldValue("Actions", "AllActions")}
+                />
+                <FilterRadioInput
+                  name="Actions"
+                  id="Sectors"
+                  label="المراكز"
+                  onChange={() => setFieldValue("Actions", "Sectors")}
+                />
+                <FilterRadioInput
+                  name="Actions"
+                  id="actionMentors"
+                  label="العمليات التشغيليه"
+                  onChange={() => setFieldValue("Actions", "actionMentors")}
+                  labelClassName={"w-100"}
                 />
               </div>
-              <div className="">
-                <SelectSector
-                  key={`sector-${resetKey}`}
-                  label={"اختر مركز الخدمة"}
-                  labelClassName={"label_track"}
-                  sectors_table={sectors_table}
+              <Label className={"label_track d-flex align-items-center gap-2"}>
+                <IoLocation className="fs-5" />
+                اختر موقع المشاعر
+              </Label>
+              <div className="d-flex justify-content-between gap-2">
+                <FilterRadioInput
+                  name="locationHajj"
+                  id="All"
+                  label="الكل"
+                  defaultChecked
+                  mainDivClass={"w-100"}
+                  onChange={() => setFieldValue("locationHajj", "All")}
+                  labelClassName={"w-100"}
                 />
-              </div>
-              <div className="">
-                <SelectMonitors
-                  key={`monitors-${resetKey}`}
-                  label={"اختر المراقب"}
-                  labelClassName={"label_track"}
-                  monitors_table={monitors_table}
+                <FilterRadioInput
+                  name="locationHajj"
+                  id="Arfa"
+                  label="عرفة"
+                  onChange={() => setFieldValue("locationHajj", "Arfa")}
+                  disabled={values?.Actions === "actionMentors"}
+                  labelClassName={"w-100"}
+                  mainDivClass={"w-100"}
+                  disabledClass={
+                    values?.Actions === "actionMentors" ? "disabled-label" : ""
+                  }
                 />
-              </div>
-              <div>
-                <DatePickerComp
-                  key={`date-${resetKey}`}
-                  label={"التاريخ"}
-                  name={"date"}
-                  labelClassName={"label_track"}
+                <FilterRadioInput
+                  name="locationHajj"
+                  id="Mena"
+                  label="منى"
+                  onChange={() => setFieldValue("locationHajj", "Mena")}
+                  disabled={values?.Actions === "actionMentors"}
+                  labelClassName={"w-100"}
+                  mainDivClass={"w-100"}
+                  disabledClass={
+                    values?.Actions === "actionMentors" ? "disabled-label" : ""
+                  }
                 />
               </div>
             </div>
-          )}
+            <div>
+              <SelectTypeActions
+                key={`organization-${resetKey}`}
+                label={"اختر نوع الحدث"}
+                labelClassName={"label_track d-flex align-items-center gap-2"}
+                icon={<SiGithubactions className="fs-5" />}
+              />
+            </div>
+            <div>
+              <SelectOrganization
+                key={`organization-${resetKey}`}
+                label={"اختر المنظمة"}
+                labelClassName={"label_track d-flex align-items-center gap-2"}
+                icon={<CgOrganisation className="fs-5" />}
+              />
+            </div>
+            <div className="w-100">
+              <SelectSector
+                key={`sector-${resetKey}`}
+                label={"اختر مركز الخدمة"}
+                labelClassName={"label_track d-flex align-items-center gap-2"}
+                sectors_table={sectors_table}
+                icon={<FaTents className="fs-5" />}
+              />
+            </div>
+            <div>
+              <SelectMonitors
+                key={`monitors-${resetKey}`}
+                label={"اختر المراقب"}
+                labelClassName={"label_track d-flex align-items-center gap-2"}
+                monitors_table={monitors_table}
+                icon={<FaPersonShelter className="fs-5" />}
+              />
+            </div>
+            <div className="mb-3">
+              <DatePickerComp
+                key={`date-${resetKey}`}
+                label={"التاريخ"}
+                name={"date"}
+                labelClassName={"label_track d-flex align-items-center gap-2"}
+                icon={<BsCalendar2Date className="fs-5" />}
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
