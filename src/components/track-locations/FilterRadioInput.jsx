@@ -27,7 +27,7 @@ function FilterRadioInput({
         disabled={disabled}
       />
       <label
-        className={`${disabled ? disabledClass : ""} ${labelClassName} btn`}
+        className={`text_Dark ${disabled ? disabledClass : ""} ${labelClassName} btn`}
         htmlFor={id}
         style={{
           border: "1px solid #c9b171",

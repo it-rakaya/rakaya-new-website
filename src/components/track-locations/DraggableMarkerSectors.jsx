@@ -46,7 +46,7 @@ function DraggableMarkerSectors({
       ref={markerRef}
       icon={icon}
     >
-      <Popup minWidth={180}>
+      <Popup minWidth={200}>
         {LoadingSector ? (
           <div className="d-flex  align-items-center justify-content-center">
             <SpinnerLoading />

@@ -1,5 +1,5 @@
 import { useFormikContext } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoFilter, IoReload, IoLocation } from "react-icons/io5";
 import DatePickerComp from "../form/DatePickerComp";
@@ -18,9 +18,16 @@ import FilterRadioInput from "./FilterRadioInput";
 function Filter({ setResetMap, mainDataLocation, resetMap }) {
   const monitors_table = mainDataLocation?.data?.monitors_table;
   const sectors_table = mainDataLocation?.data?.sectors_table;
-  const { values, setFieldValue } = useFormikContext("");
+  const { values, setFieldValue } = useFormikContext();
+  console.log("🚀 ~ Filter ~ values:", values)
   const [show, setShow] = useState(false);
   const [resetKey, setResetKey] = useState(0);
+
+  useEffect(() => {
+    if (values.Actions == "actionMentors") {
+      setFieldValue("locationHajj", "All");
+    }
+  }, [values.Actions, setFieldValue]);
 
   const handleResetFilters = () => {
     setResetKey((prevKey) => prevKey + 1);
@@ -98,8 +105,8 @@ function Filter({ setResetMap, mainDataLocation, resetMap }) {
               style={{ cursor: "pointer" }}
               onClick={() =>
                 setResetMap({
-                lat: 21.42251,
-                  lng: 39.826168,  
+                  lat: 21.42251,
+                  lng: 39.826168,
                 })
               }
             >
@@ -149,50 +156,54 @@ function Filter({ setResetMap, mainDataLocation, resetMap }) {
                 <FilterRadioInput
                   name="Actions"
                   id="actionMentors"
-                  label="العمليات التشغيليه"
+                  label="العمليات التشغيلية"
                   onChange={() => setFieldValue("Actions", "actionMentors")}
                   labelClassName={"w-100"}
                 />
               </div>
-              <Label className={"label_track d-flex align-items-center gap-2"}>
-                <IoLocation className="fs-5" />
-                اختر موقع المشاعر
-              </Label>
-              <div className="d-flex justify-content-between gap-2">
-                <FilterRadioInput
-                  name="locationHajj"
-                  id="All"
-                  label="الكل"
-                  defaultChecked
-                  mainDivClass={"w-100"}
-                  onChange={() => setFieldValue("locationHajj", "All")}
-                  labelClassName={"w-100"}
-                />
-                <FilterRadioInput
-                  name="locationHajj"
-                  id="Arfa"
-                  label="عرفة"
-                  onChange={() => setFieldValue("locationHajj", "Arfa")}
-                  disabled={values?.Actions === "actionMentors"}
-                  labelClassName={"w-100"}
-                  mainDivClass={"w-100"}
-                  disabledClass={
-                    values?.Actions === "actionMentors" ? "disabled-label" : ""
-                  }
-                />
-                <FilterRadioInput
-                  name="locationHajj"
-                  id="Mena"
-                  label="منى"
-                  onChange={() => setFieldValue("locationHajj", "Mena")}
-                  disabled={values?.Actions === "actionMentors"}
-                  labelClassName={"w-100"}
-                  mainDivClass={"w-100"}
-                  disabledClass={
-                    values?.Actions === "actionMentors" ? "disabled-label" : ""
-                  }
-                />
-              </div>
+              {values.Actions !== "actionMentors" && (
+                <>
+                  <Label className={"label_track d-flex align-items-center gap-2"}>
+                    <IoLocation className="fs-5" />
+                    اختر موقع المشاعر
+                  </Label>
+                  <div className="d-flex justify-content-between gap-2">
+                    <FilterRadioInput
+                      name="locationHajj"
+                      id="All"
+                      label="الكل"
+                      defaultChecked
+                      mainDivClass={"w-100"}
+                      onChange={() => setFieldValue("locationHajj", "All")}
+                      labelClassName={"w-100"}
+                    />
+                    <FilterRadioInput
+                      name="locationHajj"
+                      id="Arfa"
+                      label="عرفة"
+                      onChange={() => setFieldValue("locationHajj", "Arfa")}
+                      disabled={values?.Actions === "actionMentors"}
+                      labelClassName={"w-100"}
+                      mainDivClass={"w-100"}
+                      disabledClass={
+                        values?.Actions === "actionMentors" ? "disabled-label" : ""
+                      }
+                    />
+                    <FilterRadioInput
+                      name="locationHajj"
+                      id="Mena"
+                      label="منى"
+                      onChange={() => setFieldValue("locationHajj", "Mena")}
+                      disabled={values?.Actions === "actionMentors"}
+                      labelClassName={"w-100"}
+                      mainDivClass={"w-100"}
+                      disabledClass={
+                        values?.Actions === "actionMentors" ? "disabled-label" : ""
+                      }
+                    />
+                  </div>
+                </>
+             )} 
             </div>
             <div>
               <SelectTypeActions

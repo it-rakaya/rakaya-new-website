@@ -44,9 +44,9 @@ function DraggableMarker({
     }
   }, [resetMap, map]);
 
-  useEffect(() => {
-    map.setView(position, 13);
-  }, [values?.monitor_id]);
+  // useEffect(() => {
+  //   map.setView(position, 13);
+  // }, [values?.monitor_id]);
 
   useEffect(() => {
     map.setView(position, 13);
@@ -61,7 +61,7 @@ function DraggableMarker({
       icon={icon}
     >
       {!disablePopup && (
-        <Popup minWidth={180}>
+        <Popup minWidth={200}>
           {LoadingMentor ? (
             <div className="d-flex  align-items-center justify-content-center">
               <SpinnerLoading />

@@ -13,7 +13,7 @@ function SelectSector({ label, required, labelClassName, icon }) {
 
   const options = data?.data?.sectors?.map((item) => ({
     value: item.id,
-    label: item.label,
+    label: `${item.label} - ${item?.facility_name}`,
   }));
 
   const filteredOptions = data?.data?.sectors

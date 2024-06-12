@@ -32,118 +32,118 @@ function MainDataCharts({
 }) {
   return (
     <>
-      <div className="px-3 pb-4 mt-4">
-        <h5 style={{ color: "#C9B171" }}>الاحصائيات العامة</h5>
-        <div className="row row-cols-3 mt-3">
-          <StatisticItem
-            icon={<FaTents className="fs-3" />}
-            count={numberOfSectors?.toString()}
-            label="عدد المراكز"
-          />
-          <StatisticItem
-            icon={<FaPersonShelter className="fs-3" />}
-            count={numberOfMentors?.toString()}
-            label="عدد المراقبين"
-          />
-          <StatisticItem
-            icon={<IoMdPerson className="fs-3" />}
-            count={numberOfPilgrims?.toString()}
-            label="عدد الحجاج"
-          />
-        </div>
-      </div>
-      <hr className="m-0" />
-      <div
-        className="filter-container pt-4"
-        style={{ height: "calc(100vh - 380px)", overflowY: "scroll" }}
-      >
-        <div>
-          <div className="mb-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>عدد الحجاج حسب الجنسيات</h5>
-              <NationalityChart
-                numberOfPilgrimsNationality={numberOfPilgrimsNationality}
-              />
-            </div>
+        <div className="px-3 pb-4 mt-4">
+          <h5 style={{ color: "#C9B171" }}>الاحصائيات العامة</h5>
+          <div className="row row-cols-3 mt-3">
+            <StatisticItem
+              icon={<FaTents className="fs-3" />}
+              count={numberOfSectors?.toString()}
+              label="عدد المراكز"
+            />
+            <StatisticItem
+              icon={<FaPersonShelter className="fs-3" />}
+              count={numberOfMentors?.toString()}
+              label="عدد المراقبين"
+            />
+            <StatisticItem
+              icon={<IoMdPerson className="fs-3" />}
+              count={numberOfPilgrims?.toString()}
+              label="عدد الحجاج"
+            />
           </div>
+        </div>
+           <hr className="m-0" />
+        <div
+          className="filter-container pt-4"
+          style={{ height: "calc(100vh - 380px)", overflowY: "scroll" }}
+        >
+          <div>
+            <div className="mb-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>عدد الحجاج حسب الجنسيات</h5>
+                <NationalityChart
+                  numberOfPilgrimsNationality={numberOfPilgrimsNationality}
+                />
+              </div>
+            </div>
 
-          <hr className="m-0" />
-          <div className="my-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>البلاغات</h5>
-              <div>
-                <div className="mt-3">
-                  {/* حسب الاسباب */}
-                  <TicketsChart tickets_by_reason={tickets_by_reason} />
-                </div>
-                <div className="mt-3">
-                  {/* حسب الخطورة */}
-                  <TicketDangerChart
-                    isDarkMode={isDarkMode}
-                    tickets_by_danger={tickets_by_danger}
-                  />
-                </div>
-                <div className="mt-3">
-                  {/* حسب الحالة */}
-                  <TicketsChartStatus
-                    isDarkMode={isDarkMode}
-                    tickets_by_status={tickets_by_status}
-                  />
+            <hr className="m-0" />
+            <div className="my-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>البلاغات</h5>
+                <div>
+                  <div className="mt-3">
+                    {/* حسب الاسباب */}
+                    <TicketsChart tickets_by_reason={tickets_by_reason} />
+                  </div>
+                  <div className="mt-3">
+                    {/* حسب الخطورة */}
+                    <TicketDangerChart
+                      isDarkMode={isDarkMode}
+                      tickets_by_danger={tickets_by_danger}
+                    />
+                  </div>
+                  <div className="mt-3">
+                    {/* حسب الحالة */}
+                    <TicketsChartStatus
+                      isDarkMode={isDarkMode}
+                      tickets_by_status={tickets_by_status}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <hr className="m-0" />
+            <hr className="m-0" />
 
-          <div className="my-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>طلبات الاسناد</h5>
-              <LineChart
-                isDarkMode={isDarkMode}
-                supports_food_by_day={supports_food_by_day}
-                supports_water_by_day={supports_water_by_day}
-              />
-              <LineChartWaterQuantity
-                isDarkMode={isDarkMode}
-                supports_water_by_day_quantity={supports_water_by_day_quantity}
-              />
+            <div className="my-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>طلبات الاسناد</h5>
+                <LineChart
+                  isDarkMode={isDarkMode}
+                  supports_food_by_day={supports_food_by_day}
+                  supports_water_by_day={supports_water_by_day}
+                />
+                <LineChartWaterQuantity
+                  isDarkMode={isDarkMode}
+                  supports_water_by_day_quantity={supports_water_by_day_quantity}
+                />
+              </div>
             </div>
-          </div>
-          <hr className="m-0" />
+            <hr className="m-0" />
 
-          <div className="my-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>الوجبات </h5>
-              <MealsChartByStatus
-                isDarkMode={isDarkMode}
-                meals_by_status={meals_by_status}
-              />
+            <div className="my-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>الوجبات </h5>
+                <MealsChartByStatus
+                  isDarkMode={isDarkMode}
+                  meals_by_status={meals_by_status}
+                />
+              </div>
+              <div>
+                <MealsChartByDay
+                  meals_by_day={meals_by_day}
+                  isDarkMode={isDarkMode}
+                />
+              </div>
             </div>
-            <div>
-              <MealsChartByDay
-                meals_by_day={meals_by_day}
-                isDarkMode={isDarkMode}
-              />
+            <hr className="m-0" />
+            <div className="my-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>بيانات مركز الخدمة</h5>
+                <TableSectors sectors_table={sectors_table} />
+              </div>
             </div>
-          </div>
-          <hr className="m-0" />
-          <div className="my-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>بيانات مركز الخدمة</h5>
-              <TableSectors sectors_table={sectors_table} />
-            </div>
-          </div>
 
-          <hr className="m-0" />
-          <div className="my-4">
-            <div className="px-3">
-              <h5 style={{ color: "#C9B171" }}>بيانات المراقبين</h5>
-              <TableMentor monitors_table={monitors_table} />
+            <hr className="m-0" />
+            <div className="my-4">
+              <div className="px-3">
+                <h5 style={{ color: "#C9B171" }}>بيانات المراقبين</h5>
+                <TableMentor monitors_table={monitors_table} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
