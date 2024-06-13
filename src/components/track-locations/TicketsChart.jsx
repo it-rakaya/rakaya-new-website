@@ -20,14 +20,9 @@ ChartJS.register(
   Legend
 );
 
-
 function TicketsChart({ tickets_by_reason }) {
-  const labels = tickets_by_reason?.map(
-    (item) => item.attribute
-  );
-  const dataValues = tickets_by_reason?.map(
-    (item) => item.count
-  );
+  const labels = tickets_by_reason?.map((item) => item.attribute);
+  const dataValues = tickets_by_reason?.map((item) => item.count);
 
   const generateRandomColor = () => {
     return chroma.random().css();
@@ -135,6 +130,21 @@ function TicketsChart({ tickets_by_reason }) {
                 family: "IBM Plex Sans Arabic",
               },
               color: isDarkMode ? "#ffffff" : "#000000",
+            },
+            tooltip: {
+              titleFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              bodyFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              footerFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              titleColor: "#ffffff",
+              bodyColor: "#ffffff",
+              footerColor: "#ffffff",
             },
           },
           maintainAspectRatio: false,

@@ -45,6 +45,8 @@ const index = () => {
                     description={supItem?.desc}
                     footer={"2024 Jan 14"}
                     imgUrl={supItem?.image}
+                    href={supItem?.href}
+
                   />
                 ))}
               </Container>

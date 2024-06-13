@@ -44,7 +44,6 @@ function NationalityChart({ numberOfPilgrimsNationality }) {
         backgroundColor: colors?.map((color) => chroma(color).alpha(0.9).css()),
         borderColor: colors,
         borderWidth: 1,
-        // data:totalVotes
       },
     ],
   };
@@ -126,6 +125,26 @@ function NationalityChart({ numberOfPilgrimsNationality }) {
           family: "IBM Plex Sans Arabic",
         },
         color: isDarkMode ? "#ffffff" : "#000000",
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return context.dataset.label + ': ' + context.raw;
+          }
+        },
+        titleFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        bodyFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        footerFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleColor: '#ffffff',
+        bodyColor: '#ffffff',
+        footerColor: '#ffffff',
       },
     },
     maintainAspectRatio: false,

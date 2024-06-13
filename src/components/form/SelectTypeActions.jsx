@@ -10,7 +10,7 @@ function SelectTypeActions({ label, required, labelClassName , icon }) {
     { value: "Support", label: "طلبات الاسناد" },
     { value: "Assist", label: "الدعم" },
     { value: "SubmittedSection", label: "الاستمارات المسلمة" },
-    // { value: "Fine", label: "المخالفات" },
+    { value: "MealOrganizationStage", label: "الوجبات" },
   ];
   
   const selectedValue = options?.find(

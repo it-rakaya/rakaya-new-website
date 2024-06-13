@@ -85,6 +85,7 @@ function Login({ setAuth }) {
                   name={"password"}
                   label={"كلمة المرور"}
                   placeholder={"********"}
+                  type="password"
                   required
                 />
                 {error && (

@@ -55,6 +55,21 @@ function LineChart({
           family: "IBM Plex Sans Arabic",
         },
       },
+      tooltip: {
+        titleFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        bodyFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        footerFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        footerColor: "#ffffff",
+      },
     },
     scales: {
       x: {
