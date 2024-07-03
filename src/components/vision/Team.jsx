@@ -13,10 +13,8 @@ function Team({ name, position, image, desc }) {
       <div className=" d-flex ">
         <div className="">
           <Image
-            alt={name+" - "+position}
-            src={
-              image || "https://cdn-icons-png.freepik.com/512/5556/5556468.png"
-            }
+            alt={name + " - " + position}
+            src={image}
             width={50}
             height={50}
             className="rounded-5 p-1"
@@ -43,10 +41,8 @@ function Team({ name, position, image, desc }) {
         </div>
         <div className="position-absolute patternTeam">
           <div>
-          <PatternIconTwo className={"img-fluid"} style={{}}/>
-
+            <PatternIconTwo className={"img-fluid"} style={{}} />
           </div>
-
         </div>
       </div>
     </div>

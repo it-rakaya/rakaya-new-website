@@ -8,6 +8,7 @@ import i18n from "../i18n";
 import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { DarkModeProvider } from "@/context/DarkModeContext";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();
@@ -56,9 +57,11 @@ export default function MyApp({ Component, pageProps }) {
           {renderComponent()}
         </QueryClientProvider>
       ) : (
-        <QueryClientProvider client={queryClient}>
-          <Layout>{renderComponent()}</Layout>
-        </QueryClientProvider>
+        <DarkModeProvider>
+          <QueryClientProvider client={queryClient}>
+            <Layout>{renderComponent()}</Layout>
+          </QueryClientProvider>
+        </DarkModeProvider>
       )}
     </I18nextProvider>
   );

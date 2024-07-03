@@ -1,10 +1,13 @@
-import React from "react";
+import { DarkModeContext } from "@/context/DarkModeContext";
+import React, { useContext } from "react";
 
 function LinkedIn() {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   return (
-    <div style={{margin:"-3px"}}>
+    <div style={{ margin: "-3px" }}>
       <svg
-        fill="#000000"
+        fill={isDarkMode ? "#fff" : "#000000"}
         width="16px"
         height="16px"
         viewBox="0 0 1920 1920"

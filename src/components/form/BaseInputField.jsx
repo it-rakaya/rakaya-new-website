@@ -12,7 +12,7 @@ function BaseInputField({
   maxDigits,
   disabled,
   messageInfo,
-  onlyArabic
+  onlyArabic,
 }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
@@ -20,8 +20,8 @@ function BaseInputField({
     let value = e.target.value;
     if (type === "num") {
       value = value.replace(/[^0-9]/g, "").slice(0, maxDigits);
-    }else if (onlyArabic) {  
-      value = value.replace(/[^\u0600-\u06FF\s]/g, "");  
+    } else if (onlyArabic) {
+      value = value.replace(/[^\u0600-\u06FF\s]/g, "");
     }
     setFieldValue(name, value);
   };
@@ -35,7 +35,8 @@ function BaseInputField({
       const isNumber = /^\d$/.test(e.key);
       if (
         !isNumber ||
-        (values[name].length >= maxDigits && e.target.selectionStart === e.target.selectionEnd)
+        (values[name].length >= maxDigits &&
+          e.target.selectionStart === e.target.selectionEnd)
       ) {
         e.preventDefault();
       }
@@ -43,15 +44,15 @@ function BaseInputField({
   };
   return (
     <div>
-      <Label className="text-center">
-          {label}
-          {required && <span className="mx-1 text-danger">*</span>}
-        </Label>
-        <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
-          {messageInfo && <span> {messageInfo}</span>}
-        </p>
+      <Label className="text-center text_Dark">
+        {label}
+        {required && <span className="mx-1 text-danger">*</span>}
+      </Label>
+      <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
+        {messageInfo && <span> {messageInfo}</span>}
+      </p>
       {type == "IBAN" ? (
-        <BaseInputMask  name={name}/>
+        <BaseInputMask name={name} />
       ) : (
         <input
           type={type === "num" ? "text" : type || "text"}

@@ -73,6 +73,45 @@
 }
 
 body {
+   transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+// .dark {
+//    background-color: #121212;
+//    color: #ffffff;
+// }
+
+.text-primary,
+.text-gold,
+.text-secondary,
+.text-third,
+.text-forth,
+.text-gray {
+   transition: color 0.5s ease-in-out;
+}
+
+.bg-primary,
+.bg-secondary,
+.bg-third,
+.bg-forth {
+   transition: background-color 0.5s ease-in-out;
+}
+
+.dark .bg-dark {
+   background-color: $dark !important;
+   transition: background-color 0.5s ease-in-out;
+
+
+}
+
+.bg-dark {
+   background-color: white !important;
+   transition: background-color 0.5s ease-in-out;
+
+}
+
+
+body {
    &::-webkit-scrollbar {
       width: 5px;
       margin-bottom: 10px;
@@ -91,7 +130,10 @@ body {
       margin-top: 500px;
       margin-right: 10px;
    }
+
 }
+
+
 
 .list-item {
    cursor: pointer;
@@ -125,6 +167,10 @@ body {
    background: transparent;
    box-shadow: 0 0 0;
    border: 1px solid #dee2e6;
+}
+
+.dark .form-control:focus {
+   background: white;
 }
 
 .cursor-pointer {
@@ -200,6 +246,10 @@ body {
    animation: pulse-animation 2s infinite;
    color: $secondary;
    padding: 10px;
+}
+
+.dark .custom-pulse {
+   color: $primary
 }
 
 .z-index-high {
@@ -382,6 +432,7 @@ input:-webkit-autofill:active {
    background: rgb(179, 147, 59)
 }
 
+
 @keyframes fadeIn {
    to {
       opacity: 1;
@@ -427,14 +478,10 @@ input:-webkit-autofill:active {
 }
 
 .dark .text_Dark {
-   color: white;
+   color: white !important;
 
 }
 
-.dark .bg-dark {
-   background-color: $dark !important;
-
-}
 
 .track-logos {
    border-bottom: 5px solid $primary;
@@ -588,5 +635,23 @@ input:-webkit-autofill:active {
    background-color: #f0f0f0;
    color: #a0a0a0;
    border-radius: 7px;
- }
- 
+}
+
+.makeStyles-iconContainer-3 {
+   padding-top: 7px !important;
+   background-color: transparent;
+}
+
+.dark .makeStyles-iconContainer-3 {
+   background-color: $dark;
+}
+
+.makeStyles-iconContainer-3 svg {
+   width: 30px;
+   height: 30px;
+   fill: red;
+}
+
+.makeStyles-iconContainer-3 svg circle {
+   fill: #c9b171;
+}

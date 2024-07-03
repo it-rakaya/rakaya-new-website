@@ -21,7 +21,7 @@ function SelectComp({
   return (
     <div>
       {label && (
-        <Label className={labelClassName}>
+        <Label className={`${labelClassName} text_Dark`}>
           {icon}
           {label}
           <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>

@@ -37,7 +37,7 @@ function PhoneInput({ label, required }) {
 
   return (
     <div>
-      <Label>
+      <Label className={"text_Dark"}>
         {label}
         <span className="text-danger mx-1">{required ? "*" : ""}</span>
       </Label>
@@ -63,7 +63,7 @@ function PhoneInput({ label, required }) {
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
         >
-          <span className="text-gray">966+</span>
+          <span className="text-gray text_Dark">966+</span>
         </div>
       </div>
       {touched.phone && errors.phone && (

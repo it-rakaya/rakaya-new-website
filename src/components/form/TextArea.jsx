@@ -7,7 +7,7 @@ function TextArea({ label, required, name, placeholder , rows }) {
     useFormikContext();
   return (
     <div>
-      <Label>
+      <Label className={"text_Dark"}>
         {label}
         <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
       </Label>

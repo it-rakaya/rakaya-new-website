@@ -29,7 +29,7 @@ function Index() {
 
       <Container className="col-lg-6  p-3 p-md-0  mt-5">
         <p
-          className="m-0 p-0"
+          className="m-0 p-0 text_Dark"
           style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2" }}
         >
           تأكيدًا لالتزامنا بتقديم الخدمة الممتازة، في ركايا نعدك كشريك لنا
@@ -38,7 +38,7 @@ function Index() {
           متوفرة على موقعنا.
         </p>
         <p
-          className="m-0 p-0 my-3"
+          className="m-0 p-0 my-3 text_Dark"
           style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2"  }}
         >
           فريقنا يقوم بترتيب اجتماع عن بُعد معك للاستماع إلى متطلباتك وتحديد
@@ -47,7 +47,7 @@ function Index() {
           التطلعات والأولويات لبحث حلول للمشكلات وصياغة الحلول المناسبة.
         </p>
         <p
-          className="m-0 p-0"
+          className="m-0 p-0 text_Dark"
           style={{ textAlign: "justify", fontWeight: "500" , lineHeight:"2"  }}
         >
           نحن نلتزم بتقديم الحلول والتوصيات الملائمة لاحتياجاتك، مع وضع خطط

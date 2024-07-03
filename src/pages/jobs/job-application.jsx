@@ -76,10 +76,10 @@ function NewJobForm() {
                 <p>
                   <TermsConditionIcon />
                 </p>
-                <p className="" style={{ fontWeight: "500" }}>
+                <p className="text_Dark" style={{ fontWeight: "500" }}>
                   نعتذر منك
                 </p>
-                <p className="" style={{ fontWeight: "500" }}>
+                <p className="text_Dark" style={{ fontWeight: "500" }}>
                   تم ايقاف التقديم على الوظائف
                 </p>
               </div>

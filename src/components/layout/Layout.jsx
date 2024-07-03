@@ -9,7 +9,7 @@ const Footer = dynamic(() => import("./Footer"), {
 });
 function Layout({ children }) {
   return (
-    <div className="">
+    <div className="bg-dark">
       <NavBar />
       {children}
       <TOTop />

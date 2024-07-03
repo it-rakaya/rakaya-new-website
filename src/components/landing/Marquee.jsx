@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Container from "../Container";
+import { t } from "i18next";
 
 /**
  * @param {{imgArray:string[]; reverse:boolean;}}
@@ -43,7 +44,7 @@ const images = [
 const MyMarquee = () => {
   return (
     <div className="overflow-hidden">
-      <h2 className="text-center my-3">شركاء النجاح</h2>
+      <h2 className="text-center my-3 text_Dark">{t("common:success_partners")}</h2>
 
       <Container className=" py-3 px-0 overflow-hidden" dir={"ltr"}>
         <Container className="mb-2">

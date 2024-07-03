@@ -32,7 +32,7 @@ const Index = () => {
   );
 };
 const ContentSection = () => (
-  <Container className="me-0 col-lg-12">
+  <Container className="me-0 col-lg-12 text_Dark">
     {contentData.map((section, index) => (
       <React.Fragment key={index
       }>
@@ -44,7 +44,7 @@ const ContentSection = () => (
         <hr />
       </React.Fragment>
     ))}
-    <p className="text-justify mt-4">
+    <p className="text-justify mt-4 text_Dark">
       ركايا بقطاعاتها وأفرادها معك .. من البداية حتى النهاية داعمين و ممكنين
     </p>
   </Container>
@@ -52,8 +52,8 @@ const ContentSection = () => (
 const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
   <div className="row ">
     <div className="col-lg-8">
-      <p className="text-justify p-0 m-0">{textContent}</p>
-      <p className="text-justify m-0 p-0 mt-2">{subtitle}</p>
+      <p className="text-justify p-0 m-0 text_Dark">{textContent}</p>
+      <p className="text-justify m-0 p-0 mt-2 text_Dark">{subtitle}</p>
     </div>
     <Container className="col-lg-4">
       <ImgContainer
@@ -66,7 +66,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
   </div>
 );
 const TeamSection = () => (
-  <div className="col-12 mt-5 m-auto m-md-0 mb-2">
+  <div className="col-12 mt-5 m-auto m-md-0 mb-2 text_Dark">
     <h2>أعضاء ركايا</h2>
     <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
       {TeamData.map((item, index) => (

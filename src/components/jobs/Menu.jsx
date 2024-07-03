@@ -23,7 +23,7 @@ function Menu() {
         <Link to={to} href={href} onClick={onClick}>
           <div className="my-3" style={{ cursor: "pointer" }}>
             <div className="d-flex justify-content-center d-lg-block">
-              <h3 className="fs-5">{children}</h3>
+              <h3 className="fs-5 text_Dark">{children}</h3>
             </div>
             <Separator active={active} />
           </div>

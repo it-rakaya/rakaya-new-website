@@ -20,7 +20,7 @@ const index = () => {
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio">
-        <h1 className="align-self-start">أبطال ركايا في موسم حج ١٤٤٤ هـ</h1>
+        <h1 className="align-self-start text_Dark">أبطال ركايا في موسم حج ١٤٤٤ هـ</h1>
         <Container className="col-lg-11 px-4">
           <iframe
             // width="560"
@@ -35,7 +35,7 @@ const index = () => {
         </Container>
         {postsStudio.map((item, index) => (
           <div key={index} className="col-lg-12 ">
-            <h1 className="align-self-start">{item?.headTitle}</h1>
+            <h1 className="align-self-start text_Dark">{item?.headTitle}</h1>
             <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
               <Container className="col-lg-5">
                 {item?.posts?.map((supItem, index) => (
@@ -46,7 +46,6 @@ const index = () => {
                     footer={"2024 Jan 14"}
                     imgUrl={supItem?.image}
                     href={supItem?.href}
-
                   />
                 ))}
               </Container>

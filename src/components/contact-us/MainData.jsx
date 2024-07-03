@@ -2,7 +2,7 @@ import { isEmail } from "@/utils/Helpers";
 import { ConnectedFocusError } from "focus-formik-error";
 import { Form, Formik } from "formik";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
 import Button from "../Button";
 import LoadingOverlay from "../LoadingOverlay";
@@ -10,9 +10,11 @@ import BaseInputField from "../form/BaseInputField";
 import PhoneInput from "../form/PhoneInput";
 import SelectHelp from "../form/SelectHelp";
 import TextArea from "../form/TextArea";
+import { DarkModeContext } from "@/context/DarkModeContext";
 
 function MainData({ isLoading, postData }) {
   const [showPopup, setShowPopup] = useState(false);
+  const { isDarkMode } = useContext(DarkModeContext);
 
   const handleSubmit = async (values) => {
     try {
@@ -141,7 +143,7 @@ function MainData({ isLoading, postData }) {
             <BaseInputField
               name="name"
               label="الاسم"
-              placeholder=" الاسم الأول والأخير - او الجهة التي تنتمي إليها" 
+              placeholder=" الاسم الأول والأخير - او الجهة التي تنتمي إليها"
             />
 
             <PhoneInput label="رقم الجوال" />
@@ -149,11 +151,15 @@ function MainData({ isLoading, postData }) {
             {/* <SectionTitle text="البريد الإلكتروني" /> */}
             <BaseInputField
               name="email"
-              label="البريد الإلكتروني" 
+              label="البريد الإلكتروني"
               placeholder="email@rakaya.sa"
             />
             <div className="mt-3">
-              <Button color="secondary" className="" type="submit">
+              <Button
+                color={isDarkMode ? "primary" : "secondary"}
+                className=""
+                type="submit"
+              >
                 إرسال
               </Button>
             </div>
@@ -166,7 +172,10 @@ function MainData({ isLoading, postData }) {
 
 // A separate component for section titles to improve readability
 const SectionTitle = ({ text }) => (
-  <h1 className="my-4" style={{ fontSize: "18px", fontWeight: "bold" }}>
+  <h1
+    className="my-4 text_Dark"
+    style={{ fontSize: "18px", fontWeight: "bold" }}
+  >
     {text}
   </h1>
 );

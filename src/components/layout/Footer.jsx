@@ -11,11 +11,9 @@ const LinkedIn = dynamic(() => import("../icons/LinkedIn"), { ssr: false });
 const Footer = () => {
   const footerStyle = "d-flex flex-wrap justify-content-center col-12 col-lg-3";
   return (
-    <footer className="mt-5">
+    <footer className="mt-5 ">
       <Container className="d-flex justify-content-center">
-        <div className="col-lg-1 col-4">
-          {/* <Logo /> */}
-        </div>
+        <div className="col-lg-1 col-4">{/* <Logo /> */}</div>
       </Container>
       <Container className={footerStyle}>
         {routes?.map((item, index) => (
@@ -58,12 +56,15 @@ const Footer = () => {
         </FooterLink>
       </Container>
       <Container className="d-flex justify-content-center pt-3">
-
-        <p className="text-dark fw-bold">جميع الحقوق محفوظة لشركة ركايا</p>
+        <p className="text-dark fw-bold text_Dark">
+          {t("common:footer_desc")}
+        </p>
         <div className="mx-1">
           <Heart />
         </div>
-        <p className="text-dark fw-bold">{new Date().getFullYear()}</p>
+        <p className="text-dark fw-bold text_Dark">
+          {new Date().getFullYear()}
+        </p>
       </Container>
     </footer>
   );

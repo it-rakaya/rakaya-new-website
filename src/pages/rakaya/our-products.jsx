@@ -25,7 +25,7 @@ const Products = () => {
       <Header text={"منتجاتنا"} />
 
       <VisionLayout title="">
-        <Container className="col-lg-10 col-md-10 me-0">
+        <div className="col-lg-10 col-md-10 me-0" >
           {products?.map((item, index) => (
             <Product
               key={index}
@@ -34,7 +34,7 @@ const Products = () => {
               description={item?.description}
             />
           ))}
-        </Container>
+        </div>
       </VisionLayout>
     </>
   );

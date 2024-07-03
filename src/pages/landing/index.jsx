@@ -4,9 +4,10 @@ import Header from "@/components/landing/Header";
 import Marquee from "@/components/landing/Marquee";
 import Stats from "@/components/landing/Stats";
 
-const index = () => {
+const Index = () => {
+
   return (
-    <Container className="mx-0 px-0">
+    <Container className={`mx-0 px-0 bg-dark `}>
       <Header />
       <Stats />
       <Marquee />
@@ -15,4 +16,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

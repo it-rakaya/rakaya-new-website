@@ -19,7 +19,6 @@ function Filter({ setResetMap, mainDataLocation, resetMap }) {
   const monitors_table = mainDataLocation?.data?.monitors_table;
   const sectors_table = mainDataLocation?.data?.sectors_table;
   const { values, setFieldValue } = useFormikContext();
-  console.log("🚀 ~ Filter ~ values:", values)
   const [show, setShow] = useState(false);
   const [resetKey, setResetKey] = useState(0);
 

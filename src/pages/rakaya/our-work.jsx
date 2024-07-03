@@ -14,7 +14,7 @@ const Work = () => (
     <Header text={"كيف تعمل ركايا"} />
 
     <VisionLayout title={"كيف تعمل ركايا"}>
-      <Container className="mt-5 me-0 col-12 col-lg-10">
+      <div className="mt-5 me-0 col-12 col-lg-10"  style={{padding:"0 12px"}}>
         <div className="">
           <p className="text-justify">
             في كل شركة، توجد هيكلة تنظيمية مصممة لتسهيل الحوكمة. الصفحة التالية
@@ -32,7 +32,7 @@ const Work = () => (
           </p>
           {works.map((item, index) => (
             <div key={index}>
-              <h3 className="badge bg-forth border-primary py-2 px-3 text-primary fw-bold fs-5 my-2 headingVision ">
+              <h3 className="badge bg-primary border-primary py-2 px-3 text-white fw-bold fs-5 my-2 headingVision ">
                 {item.title}
               </h3>
 
@@ -40,7 +40,7 @@ const Work = () => (
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </VisionLayout>
   </>
 );

@@ -20,7 +20,7 @@ const Index = () => {
           <FinalSubmit />
         ) : (
           <>
-            <p style={{ lineHeight: "2.2", fontWeight: "500" }}>
+            <p style={{ lineHeight: "2.2", fontWeight: "500" }} className="text_Dark">
               أهلًا، في حال كنت تود التواصل معنا والوصول لنا سريعًا.. يمكنك
               التواصل معنا على بريد أهلًا، وسنقوم بالرد عليك وتوجيهك
               للشخص المطلوب فورًا
