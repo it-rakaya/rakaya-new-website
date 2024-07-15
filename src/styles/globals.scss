@@ -308,6 +308,10 @@ input:-webkit-autofill:active {
    transform: scale(-1);
 }
 
+[dir='ltr'] .patternTeam{
+   left: 9px;
+}
+
 .contentJoin {
    width: 75%;
 

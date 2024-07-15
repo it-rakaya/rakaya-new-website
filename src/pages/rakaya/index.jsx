@@ -34,8 +34,7 @@ const Index = () => {
 const ContentSection = () => (
   <Container className="me-0 col-lg-12 text_Dark">
     {contentData.map((section, index) => (
-      <React.Fragment key={index
-      }>
+      <React.Fragment key={index}>
         <TextImageSection
           textContent={section.textContent}
           imgSrc={section.imgSrc}
@@ -56,10 +55,7 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
       <p className="text-justify m-0 p-0 mt-2 text_Dark">{subtitle}</p>
     </div>
     <Container className="col-lg-4">
-      <ImgContainer
-        className="rounded d-flex align-items-center p-3 my-4 my-md-0 justify-content-center"
-        // style={{ height: "120px" }}
-      >
+      <ImgContainer className="rounded d-flex align-items-center p-3 my-4 my-md-0 justify-content-center">
         <img className="img-fluid rounded imgVision" src={imgSrc} alt="" />
       </ImgContainer>
     </Container>

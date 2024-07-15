@@ -1,8 +1,8 @@
+import Container from "@/components/Container";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import Container from "../Container";
 
 function Menu() {
   const titleVariant = {};
@@ -44,15 +44,17 @@ function Menu() {
   );
 
   const paths = [
-    { title: "تفاصيل العمل", href: "/jobs" },
+    { title: "تفاصيل العمل", href: "/jobs/available_job/[id]" },
     { title: "التقديم", href: "/jobs/job-application" },
-    { title: "الوظائف المتاحة", href: "/jobs/available_job" },
 
   ];
+  console.log("🚀 ~ Menu ~ paths:", paths)
   const { pathname } = useRouter();
+  console.log("🚀 ~ Menu ~ pathname:", pathname)
   const [activeRouteIndex, setActiveRouteIndex] = useState(
     paths.indexOf(paths.find((path) => path.href == pathname))
   );
+  console.log("🚀 ~ Menu ~ activeRouteIndex:", activeRouteIndex)
 
   return (
     <Container

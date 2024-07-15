@@ -6,6 +6,7 @@ import PatternIconTwo from "../icons/PatternIconTwo";
 import { useContext } from "react";
 import { DarkModeContext } from "@/context/DarkModeContext";
 import { t } from "i18next";
+import fetchData from "@/utils/fetchData";
 
 const Header = () => {
   const { isDarkMode } = useContext(DarkModeContext);
@@ -28,13 +29,13 @@ const Header = () => {
             className="fs-1 fw-semibold mw-50 text-center col-lg-5 mb-0 w-100 parMobile text_Dark"
             style={{ maxWidth: "100%" }}
           >
-            مَتَى تَصِلُ العِطَاشُ إِلى ارْتِوَاءٍ
+            {t("common:rakaya_header")}
           </p>
           <p
             className="fs-1 fw-semibold mw-50 text-center col-lg-5 mt-0 pt-0 w-100 parMobile text_Dark"
             style={{ maxWidth: "100%" }}
           >
-            إِذَا اسْتَقَتِ البِحَارُ مِن الرَّكَايَا
+            {t("common:rakaya_header_two")}
           </p>
         </div>
         <p className="fs-5  col-lg-5  text_Dark">{t("common:intro_Header")}</p>
