@@ -5,6 +5,6 @@ export const routes = [
   { name: "Jobs", route: "/jobs/available_job" },
   { name: "Your_Way", route: "/our-way" },
 //   { name: "Achievements", route: "/achievements" },
-//   { name: "Blog", route: "/blog" },
+  { name: "Login", route: "/login" },
   { name: "Contact", route: "/contact-us" },
 ];
