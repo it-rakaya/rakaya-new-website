@@ -20,7 +20,7 @@ function AvailableJobLayout({ children, hiddenMenu }) {
           location
         />
         {hiddenMenu ? "" : <Menu />}
-        <div className="newJob">{children}</div>
+        <div className="newJob mt-5">{children}</div>
       </Container>
     </div>
   );

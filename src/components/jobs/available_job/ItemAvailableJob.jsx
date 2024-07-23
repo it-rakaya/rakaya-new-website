@@ -27,7 +27,11 @@ function ItemAvailableJob() {
     <div className="d-flex justify-content-between mt-3">
       <div>
         <div className="d-flex align-items-center gap-1">
-          <Link href={jobLink} className="p-0 m-0 text-gold fs-5">
+          <Link
+            href={jobLink}
+            className="p-0 m-0 text-gold fs-5 "
+            style={{ fontWeight: "bolder" }}
+          >
             مطور واجهات امامية
           </Link>
           {shared ? (
@@ -45,14 +49,14 @@ function ItemAvailableJob() {
             مكة المكرمة - المملكة العربية السعودية
           </p>
         </div>
-        <div className="d-flex align-items-center gap-1 ">
+        <div className="d-flex align-items-center gap-1 mt-2 ">
           <MdFeaturedPlayList style={{ color: "#6c757d" }} />
           <p className="p-0 m-0 d-flex gap-2" style={{ color: "#6c757d" }}>
             <span className="badge rounded-pill bg-primary">عن بعد</span>
             <span className="badge rounded-pill bg-primary">عن بعد</span>
           </p>
         </div>
-        <div className="d-flex align-items-center gap-1 ">
+        <div className="d-flex align-items-center gap-1 mt-2 ">
           <IoIosTimer style={{ color: "#6c757d" }} />
           <p className="p-0 m-0 text-secondary font-bolder ">منذ 3 ساعات</p>
         </div>

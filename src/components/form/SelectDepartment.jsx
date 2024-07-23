@@ -1,7 +1,7 @@
 import useFetch from "@/hooks/useFetch";
 import React from "react";
 import SelectComp from "./SelectComp";
-
+{""}
 function SelectDepartment({ label, required }) {
   const { data } = useFetch({
     endpoint: `all-departments`,

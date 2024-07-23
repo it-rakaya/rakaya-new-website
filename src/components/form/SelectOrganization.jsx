@@ -9,7 +9,7 @@ function SelectOrganization({ label, required, labelClassName , icon }) {
     endpoint: `organizations`,
     queryKey: [`organizations`],
   });
-
+{""}
   const [isDisabled, setIsDisabled] = useState(false);
 
   const options = data?.data?.organizations?.slice(0, 2)?.map((item) => ({

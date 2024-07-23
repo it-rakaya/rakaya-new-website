@@ -9,6 +9,7 @@ function SelectQualifications({ label, required }) {
     { value: "master", label: t("common:Master") },
     { value: "phd", label: t("common:Ph.D") },
   ];
+  {""}
   return (
     <div>
       <SelectComp

@@ -7,7 +7,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
 import Label from "./Label";
 
-export default function DatePickerComp({ name, name_hj, label, required , labelClassName , icon }) {
+export default function DatePickerComp({
+  name,
+  name_hj,
+  label,
+  required,
+  labelClassName,
+  icon,
+}) {
   const { setFieldValue, values, touched, errors, handleBlur } =
     useFormikContext();
   const [valueHijri, setValueHijri] = useState(values[name_hj]);
@@ -152,7 +159,7 @@ export default function DatePickerComp({ name, name_hj, label, required , labelC
   return (
     <>
       <div className="">
-        <Label  className={labelClassName}>
+        <Label className={labelClassName}>
           {icon}
           {label}
           <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
@@ -172,7 +179,6 @@ export default function DatePickerComp({ name, name_hj, label, required , labelC
             onChange={handleDateChange}
           />
         </div>
-      
       </div>
     </>
   );

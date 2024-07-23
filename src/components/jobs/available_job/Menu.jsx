@@ -48,13 +48,10 @@ function Menu() {
     { title: "التقديم", href: "/jobs/job-application" },
 
   ];
-  console.log("🚀 ~ Menu ~ paths:", paths)
   const { pathname } = useRouter();
-  console.log("🚀 ~ Menu ~ pathname:", pathname)
   const [activeRouteIndex, setActiveRouteIndex] = useState(
     paths.indexOf(paths.find((path) => path.href == pathname))
   );
-  console.log("🚀 ~ Menu ~ activeRouteIndex:", activeRouteIndex)
 
   return (
     <Container

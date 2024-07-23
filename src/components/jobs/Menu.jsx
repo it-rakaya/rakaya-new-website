@@ -46,7 +46,7 @@ function Menu() {
   const paths = [
     { title: "تفاصيل العمل", href: "/jobs" },
     { title: "التقديم", href: "/jobs/job-application" },
-    { title: "الوظائف المتاحة", href: "/jobs/available_job" },
+    // { title: "الوظائف المتاحة", href: "/jobs/available_job" },
 
   ];
   const { pathname } = useRouter();

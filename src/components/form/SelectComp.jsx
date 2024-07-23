@@ -17,7 +17,7 @@ function SelectComp({
   icon,
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
-
+{""}
   return (
     <div>
       {label && (

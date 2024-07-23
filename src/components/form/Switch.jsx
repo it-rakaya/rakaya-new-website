@@ -1,6 +1,7 @@
 import React from "react";
 
 function Switch({ label, isDarkMode }) {
+  {""}
   return (
     <div>
       <div class="form-check form-switch">

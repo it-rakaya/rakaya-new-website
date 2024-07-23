@@ -7,5 +7,5 @@ function Label({ children, className }) {
     </label>
   );
 }
-
+{""}
 export default Label;

@@ -25,6 +25,7 @@ function BaseInputField({
     }
     setFieldValue(name, value);
   };
+  {""}
   const handleKeyPress = (e) => {
     if (onlyArabic) {
       const isArabicOrSpace = /[\u0600-\u06FF\s]/.test(e.key);
@@ -68,6 +69,7 @@ function BaseInputField({
           }`}
           pattern={type === "num" ? "\\d*" : undefined}
         />
+
       )}
       {touched[name] && errors[name] && (
         <div className="text-danger" style={{ fontSize: "12px" }}>

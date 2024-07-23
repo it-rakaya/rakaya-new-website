@@ -102,7 +102,7 @@ function Navbar() {
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}
             </button>
-            <Setting/>
+            {/* <Setting/> */}
             <Button
               color={isDarkMode ? "primary" : "secondary"}
               className="me-3"

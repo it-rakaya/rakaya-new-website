@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
+import AvailableJobLayout from "@/components/jobs/available_job/AvailbleJobLayout";
 import ItemAvailableJob from "@/components/jobs/available_job/ItemAvailableJob";
-import JobsLayout from "@/components/jobs/JobsLayout";
 import { DarkModeContext } from "@/context/DarkModeContext";
 import React, { useContext } from "react";
 
@@ -8,7 +8,7 @@ function AvailableJob() {
   const { isDarkMode } = useContext(DarkModeContext);
   return (
     <>
-      <JobsLayout>
+      <AvailableJobLayout hiddenMenu> 
         <div className="">
           <Container className="m-auto  col-md-7 ">
             <ItemAvailableJob />
@@ -17,7 +17,7 @@ function AvailableJob() {
             <ItemAvailableJob />
           </Container>
         </div>
-      </JobsLayout>
+      </AvailableJobLayout>
     </>
   );
 }
