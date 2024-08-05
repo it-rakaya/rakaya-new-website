@@ -5,7 +5,6 @@ import SelectComp from "./SelectComp";
 
 function SelectBank({ label, required, labelClassName }) {
   const { values } = useFormikContext();
-{""}
   const { data } = useFetch({
     endpoint: `banks`,
     queryKey: [`banks`],

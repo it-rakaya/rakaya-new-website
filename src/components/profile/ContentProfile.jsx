@@ -13,6 +13,7 @@ const ContentProfile = ({ title, children, id }) => {
       });
     }
   }, [router.pathname]);
+  
   return (
     <AnimatePresence mode="wait">
       <Container

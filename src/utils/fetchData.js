@@ -6,14 +6,13 @@ const fetchData = async (endpoint, language) => {
     // },
   };
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-  console.log("🚀 ~ fetchData ~ baseUrl:", baseUrl)
   try {
     const response = await axios.get(`${baseUrl}/${endpoint}`);
     console.log("🚀 ~ fetchData ~ response:", response)
     if (response.status !== 200) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    return response.data;
+    return response?.data;
   } catch (error) {
     throw error;
   }

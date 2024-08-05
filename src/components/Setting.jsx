@@ -5,7 +5,7 @@ import { setCookie } from "cookies-next";
 import { useContext } from "react";
 
 /**
- * @param {{text:string}}
+ * @param {{ :string}}
  */
 function Setting({ text }) {
   const isRTL = useIsRTL();

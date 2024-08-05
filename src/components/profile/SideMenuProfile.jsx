@@ -6,6 +6,7 @@ import Container from "../Container";
 import { MdDashboard } from "react-icons/md";
 import { FaIdCard } from "react-icons/fa6";
 import { IoIosPaper } from "react-icons/io";
+import Image from "next/image";
 
 const titleVariant = {};
 
@@ -61,13 +62,19 @@ const Separator = () => (
 
 const paths = [
   { title: "نظرة عامة", href: "/profile", icon: <MdDashboard /> },
-  { title: "المعلومات الاساسية", href: "/profile", icon: <FaIdCard /> },
+  { title: "البيانات الشخصية", href: "/profile/info", icon: <FaIdCard /> },
   {
     title: "السيرة الذاتية",
     href: "/profile/cv",
     icon: <IoIosPaper />,
   },
+  {
+    title: "توثيق البيانات",
+    href: "/profile/complete",
+    icon: <IoIosPaper />,
+  },
 ];
+
 const SideMenuProfile = () => {
   const { pathname } = useRouter();
   const [activeRouteIndex, setActiveRouteIndex] = useState(
@@ -76,7 +83,7 @@ const SideMenuProfile = () => {
 
   return (
     <Container
-      className="col-lg-2 mx-0  "
+      className="col-lg-2 mx-0 menuProfile "
       style={{
         backgroundColor: "#eee",
         height: "100vh",
@@ -88,10 +95,20 @@ const SideMenuProfile = () => {
     >
       <div
         className="d-flex justify-content-center flex-column align-items-center "
-        style={{ marginTop: "10rem" }}
+        style={{ marginTop: "4rem" }}
       >
-        <h6>عبد الرحمن الشيخ</h6>
-        <p>11100974</p>
+        <div>
+          <Image
+            alt=""
+            src={"/studio/team/man.webp"}
+            width={100}
+            height={100}
+            className="p-1 mb-4 bg-white"
+            style={{ border: "1px solid #C9B171", objectFit: "cover" , borderRadius:"50%" }}
+          />
+        </div>
+        <h6 className="mb-3">عبد الرحمن الشيخ</h6>
+        {/* <p className="fw-bold">Front End Developer</p> */}
       </div>
       {paths.map((path, index) => (
         <ListItem
@@ -110,5 +127,4 @@ const SideMenuProfile = () => {
     </Container>
   );
 };
-
 export default SideMenuProfile;

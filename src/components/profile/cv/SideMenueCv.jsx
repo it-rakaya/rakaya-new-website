@@ -1,12 +1,28 @@
 import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import Education from "./Education";
+import Education from "./Education/Education";
+import Experience from "./Experience/Experience";
+import Skills from "./skills/Skills";
+import Language from "./language/Language";
+import Certificate from "./cirtficate/Certificate";
+import Courses from "./courses/Courses";
 
 const tabs = [
   { id: "v-pills-home", label: "المستوى التعليمي", component: <Education /> },
-  { id: "v-pills-profile", label: "الخبرات التعليمية" },
-  { id: "v-pills-messages", label: "المهارات" },
-  { id: "v-pills-settings", label: "اللغات" },
+  {
+    id: "v-pills-profile",
+    label: "الخبرات التعليمية",
+    component: <Experience />,
+  },
+  { id: "v-pills-messages", label: "المهارات", component: <Skills /> },
+  { id: "v-pills-language", label: "اللغات", component: <Language /> },
+  { id: "v-pills-certificate", label: "الشهادات", component: <Certificate /> },
+  {
+    id: "v-pills-courses",
+    label: "الدورات التدريبية",
+    component: <Courses />,
+  },
+  
 ];
 
 function SideMeneCv() {
@@ -23,14 +39,14 @@ function SideMeneCv() {
   };
 
   return (
-    <div className="d-flex flex-column mt-5" style={{ height: "80vh" }}>
+    <div className="d-flex flex-column mt-5">
       <div className="mx-3 mb-5">
         <h5 className=" text-gold">السيرة الذاتية</h5>
         <p>الانطباع الاول عنك وفرصتك لحصول على مقابلات وظيفية</p>
       </div>
       <div className="row w-100">
         <div
-          className="nav flex-column nav-pills me-3 col-md-3"
+          className="nav flex-column nav-pills me-md-3 col-md-3"
           id="v-pills-tab"
           role="tablist"
           aria-orientation="vertical"
@@ -56,8 +72,9 @@ function SideMeneCv() {
           ))}
         </div>
         <div
-          className="tab-content col-md-8 bg-white mx-2 rounded-3 p-3"
+          className="tab-content col-md-7  bg-white mx-2 rounded-3  profile_content"
           id="v-pills-tabContent"
+          // style={{padding:"30px 120px "}}
         >
           {tabs.map((tab) => (
             <div

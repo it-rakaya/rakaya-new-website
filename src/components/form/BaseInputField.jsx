@@ -25,7 +25,9 @@ function BaseInputField({
     }
     setFieldValue(name, value);
   };
-  {""}
+  {
+    ("");
+  }
   const handleKeyPress = (e) => {
     if (onlyArabic) {
       const isArabicOrSpace = /[\u0600-\u06FF\s]/.test(e.key);
@@ -45,13 +47,17 @@ function BaseInputField({
   };
   return (
     <div>
-      <Label className="text-center text_Dark">
-        {label}
-        {required && <span className="mx-1 text-danger">*</span>}
-      </Label>
-      <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
-        {messageInfo && <span> {messageInfo}</span>}
-      </p>
+      {label && (
+        <Label className="text-center text_Dark">
+          {label}
+          {required && <span className="mx-1 text-danger">*</span>}
+        </Label>
+      )}
+      {messageInfo && (
+        <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
+          <span> {messageInfo}</span>
+        </p>
+      )}
       {type == "IBAN" ? (
         <BaseInputMask name={name} />
       ) : (
@@ -69,7 +75,6 @@ function BaseInputField({
           }`}
           pattern={type === "num" ? "\\d*" : undefined}
         />
-
       )}
       {touched[name] && errors[name] && (
         <div className="text-danger" style={{ fontSize: "12px" }}>

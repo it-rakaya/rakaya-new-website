@@ -1,18 +1,19 @@
 import React from "react";
 import SelectComp from "./SelectComp";
 
-function SelectGpa({ label, required }) {
+function SelectLanguage({ label, required }) {
   const options = [
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "100", label: "100" },
+    { value: "1", label: "العربي" },
+    { value: "2", label: "الانجليزي" },
+
+ 
   ];
   return (
     <div>
       <SelectComp
         label={label}
         name={"years_of_experience"}
-        placeholder="المعدل"
+        placeholder="اختر اللغه"
         options={options}
         required={required}
       />
@@ -20,4 +21,4 @@ function SelectGpa({ label, required }) {
   );
 }
 
-export default SelectGpa;
+export default SelectLanguage;

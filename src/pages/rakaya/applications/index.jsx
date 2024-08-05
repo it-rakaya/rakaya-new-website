@@ -4,6 +4,7 @@ import Header from "@/components/jobs/Header";
 import CardApplication from "@/components/vision/CardApplication";
 import VisionLayout from "@/components/vision/VisionLayout";
 import { program } from "@/data";
+import fetchData from "@/utils/fetchData";
 import Link from "next/link";
 import React from "react";
 const Program = ({ title, description, items, href }) => (
@@ -23,7 +24,8 @@ const Program = ({ title, description, items, href }) => (
   </Container>
 );
 
-const programs = () => {
+const programs = ({data}) => {
+  console.log("🚀 ~ programs ~ data:", data)
   const description = "هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل"
   return (
     <>
@@ -36,13 +38,13 @@ const programs = () => {
         هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل
 
         </p>
-        {program?.map((item, index) => (
+        {data?.programs?.map((item, index) => (
           <Program
             key={index}
-            title={item?.title}
+            title={item?.name}
             description={item?.description}
-            items={item?.items}
-            href={item?.href}
+            // items={item?.description}
+            href={item?.link}
           />
         ))}
 
@@ -53,3 +55,11 @@ const programs = () => {
 };
 
 export default programs;
+export async function getServerSideProps(context) {
+  const programs = await fetchData("programs");
+  return {
+    props: {
+      data: programs,
+    },
+  };
+}

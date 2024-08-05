@@ -31,7 +31,11 @@ const NavBarLink = ({ children, to, onClick }) => {
         className={`${
           isDarkMode ? styles["nav-link-dark"] : styles["nav-link"]
         } fs-5 rounded mx-3 my-2 my-lg-0 text_Dark  ${
-          getActiveLink(to) ? isDarkMode ? styles["nav-link-dark-active"] : styles["nav-link-active"] : ""
+          getActiveLink(to)
+            ? isDarkMode
+              ? styles["nav-link-dark-active"]
+              : styles["nav-link-active"]
+            : ""
         }`}
         aria-current="page"
         href={to}
@@ -47,6 +51,8 @@ function Navbar() {
   const buttonRef = useRef(null);
   const navBarRef = useRef(null);
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
+  const router = useRouter();
 
   return (
     <nav
@@ -98,17 +104,24 @@ function Navbar() {
               className={`btn ${
                 isDarkMode ? "bg-primary" : "bg-secondary"
               }  text-white border-0`}
-              style={{height:"39.98px"}}
+              style={{ height: "39.98px" }}
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}
+              
             </button>
-            {/* <Setting/> */}
+            {/* <Setting /> */}
             <Button
+              color={isDarkMode ? "primary" : "secondary"}
+              onClick={() => router.push("/login")}
+            >
+              {t("common:Login")}
+            </Button>
+            {/* <Button
               color={isDarkMode ? "primary" : "secondary"}
               className="me-3"
             >
               {t("common:join_partner")}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </Container>

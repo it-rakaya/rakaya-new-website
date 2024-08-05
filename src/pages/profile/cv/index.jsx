@@ -7,11 +7,10 @@ function Cv() {
   return (
     <div>
       <ProfileLayout>
-        <h2 className="text-gold mt-4"> الملف الشخصي</h2>
-        <div>
-            <SideMeneCv/>
+        <h2 className="text-gold pt-md-4"> الملف الشخصي</h2>
+        <div className="my-5">
+          <SideMeneCv />
         </div>
-
       </ProfileLayout>
     </div>
   );

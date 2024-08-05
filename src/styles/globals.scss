@@ -308,7 +308,7 @@ input:-webkit-autofill:active {
    transform: scale(-1);
 }
 
-[dir='ltr'] .patternTeam{
+[dir='ltr'] .patternTeam {
    left: 9px;
 }
 
@@ -659,3 +659,126 @@ input:-webkit-autofill:active {
 .makeStyles-iconContainer-3 svg circle {
    fill: #c9b171;
 }
+
+.profile_content {
+   padding: 30px 100px
+}
+
+@media (max-width:660px) {
+   .profile_content {
+      padding: 3px 12px;
+      margin: 0 !important;
+
+
+
+   }
+
+   .menuProfile {
+      height: auto !important;
+      margin-bottom: 20px;
+   }
+
+}
+
+.react-tel-input {
+   direction: ltr !important;
+}
+
+.react-tel-input .form-control {
+   font: inherit;
+   letter-spacing: inherit;
+   color: currentColor;
+   border: 0;
+   box-sizing: border-box;
+   background: none;
+   height: 42.46px !important;
+   margin: 0;
+   -webkit-tap-highlight-color: transparent;
+   display: block;
+   max-width: 100%;
+   width: 100% !important;
+   animation-name: mui-auto-fill-cancel;
+   animation-duration: 10ms;
+   color: black;
+   padding-left: 50px !important;
+   border-radius: 8px;
+   padding: 16.5px 14px;
+   border: 1px solid #d8d8dd !important;
+}
+
+.react-tel-input .selected-flag {
+   outline: none;
+   position: relative;
+   width: 46px !important;
+   height: 100%;
+   padding: 0 0 0 8px;
+   border-radius: 3px 0 0 3px;
+}
+
+.react-tel-input .selected-flag .flag {
+   position: absolute;
+   top: 50%;
+   left: 18px !important;
+   transform: scale(1.4);
+   margin-top: -5px;
+}
+
+.react-tel-input .selected-flag .arrow {
+   position: relative;
+   top: 50%;
+   margin-top: -2px;
+   right: -20px !important;
+   width: 0;
+   height: 0;
+   border-left: 3px solid transparent;
+   border-right: 3px solid transparent;
+   border-top: 4px solid #555;
+}
+
+.react-tel-input .selected-flag .flag {
+   left: 10px !important;
+}
+
+.react-tel-input .country-list {
+   width: 321px !important;
+   // max-height: 250px;
+}
+
+.react-tel-input .country-list .search .search-emoji {
+   display: none;
+}
+
+.mainCardJob:hover {
+   background-color: #cecece3b;
+   cursor: pointer;
+}
+.tooltip-container {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ .tooltip-text {
+   visibility: hidden;
+   width: 120px;
+   background-color: black;
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 5px 0;
+   position: absolute;
+   z-index: 1;
+   bottom: 105%; 
+   left: 50%;
+   margin-left: -60px;
+   opacity: 0;
+   transition: opacity 0.3s;
+ }
+ 
+ .tooltip-container:hover .tooltip-text {
+   visibility: visible;
+   opacity: 1;
+ }
+ .css-1i8dcou-control{
+   min-height: 42.46px !important;
+
+ }

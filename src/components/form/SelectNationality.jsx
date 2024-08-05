@@ -26,7 +26,7 @@ function SelectNationality({ label, required, labelClassName }) {
         name={"nationality"}
         options={options}
         required={required}
-        disabled={values.national_id.startsWith("1")}
+        disabled={values?.national_id?.startsWith("1")}
         selectedValue={selectedValue}
       />
     </div>
