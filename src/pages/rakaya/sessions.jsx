@@ -1,8 +1,7 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import VisionLayout from "@/components/vision/VisionLayout";
-import Card from "@/components/vision/services/Card";
+import Container from "../../components/Container";
+import CustomHead from "../../components/CustomHead";
+import Header from "../../components/jobs/Header";
+import VisionLayout from "../../components/vision/VisionLayout";
 
 const Meetings = () => {
   const description = "تعقد ركايا جلسات مع أعضاء فريقها تشجعهم فيها على الحوار المفتوح و تعزبز الإبداع وتبادل الأفكار"

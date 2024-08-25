@@ -1,4 +1,3 @@
-import { isEmail } from "@/utils/Helpers";
 import { ConnectedFocusError } from "focus-formik-error";
 import { Form, Formik } from "formik";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,7 +9,8 @@ import BaseInputField from "../form/BaseInputField";
 import PhoneInput from "../form/PhoneInput";
 import SelectHelp from "../form/SelectHelp";
 import TextArea from "../form/TextArea";
-import { DarkModeContext } from "@/context/DarkModeContext";
+import { isEmail } from "../../utils/Helpers";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function MainData({ isLoading, postData }) {
   const [showPopup, setShowPopup] = useState(false);

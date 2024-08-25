@@ -1,9 +1,8 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import VisionLayout from "@/components/vision/VisionLayout";
-import { pillarsData } from "@/data";
+import Header from "../../components/jobs/Header";
+import VisionLayout from "../../components/vision/VisionLayout";
+import { pillarsData } from "../../data";
 import React from "react";
+import CustomHead from "../../components/CustomHead";
 
 const PillarHeader = ({ title, icon }) => (
   <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">

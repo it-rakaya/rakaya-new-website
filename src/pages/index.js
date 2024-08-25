@@ -1,10 +1,11 @@
-import Container from "@/components/Container";
 import CustomHead from "@/components/CustomHead";
 import Content from "@/components/landing/Content";
-import Header from "@/components/landing/Header";
-import Marquee from "@/components/landing/Marquee";
-import Stats from "@/components/landing/Stats";
-import fetchData from "@/utils/fetchData";
+// import Header from "@/components/landing/Header";
+import Marquee from "../components/landing/Marquee";
+import Stats from "../components/landing/Stats";
+import Header from "../components/landing/Header";
+import Container from "../components/Container";
+// import fetchData from "@/utils/fetchData";
 
 export default function Home({data}) {
   const description =

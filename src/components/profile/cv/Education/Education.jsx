@@ -3,6 +3,7 @@ import MainData from "./MainData";
 import Button from "@/components/Button";
 import { IoMdAdd } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
+import NoData from "@/components/NoData";
 
 function Education() {
   const [showCard, setShowCard] = useState(true);
@@ -20,7 +21,7 @@ function Education() {
               اضافة مستوى تعليمي
             </Button>
           </div>
-          <div className="shadow p-2 rounded-3  mt-3">
+          {/* <div className="shadow p-2 rounded-3  mt-3">
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">بكالوريوس هندسة اتصالات  </p>
@@ -64,10 +65,11 @@ function Education() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
+          <NoData />
         </div>
       ) : (
-        <MainData setShowCard={setShowCard}/>
+        <MainData setShowCard={setShowCard} />
       )}
     </div>
   );

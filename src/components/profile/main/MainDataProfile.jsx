@@ -7,97 +7,117 @@ import {
   FaTools,
   FaLanguage,
 } from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Accordion from "../../Accordion"
 
 const sections = {
-  بياناتي: [
-    { label: "الاسم كامل بالعربي", value: "عبد الرحمن القصبي ابراهيم" },
-    { label: "الاسم كامل بالانجليزية", value: "Abdulrahman qassbi ebrahim" },
-    { label: "رقم الهاتف", value: "+966541532515" },
-    { label: "الجنسية", value: "مصري" },
-    { label: "دولة الاقامة", value: "مصر" },
-    { label: "الجنس", value: "ذكر" },
-  ],
-  التعليم: [
-    { label: "مستوى التعليم", value: "بكالرويوس" },
-    { label: "التخصص", value: "هندسة اتصالات" },
-    { label: "GPA", value: "3.23" },
-  ],
-  الخبرات: [
-    { label: "الشركة", value: "بكالرويوس" },
-    { label: "الوظيفه", value: "مهندس برمجيات" },
-    { label: "البداية", value: "1/1/2023" },
-    { label: "النهاية", value: "لازلت اعمل" },
-  ],
-  الدورات: [
-    { label: "اسم الدورة", value: "اساسيات البرمجة" },
-    { label: "اسم المنظمة", value: "منظمة 1" },
-    { label: "تاريخ الدورة", value: "1/1/2023" },
-  ],
-  المهارات: [{ value: "HTML" }, { value: "CSS" }, { value: "JS" }],
-  اللغات: [{ value: "العربية" }, { value: "الانجليزية" }],
+  بياناتي: {
+    required: true,
+    items: [
+      { label: "الاسم كامل بالعربي", value: "عبد الرحمن القصبي ابراهيم" },
+      { label: "الاسم كامل بالانجليزية", value: "Abdulrahman qassbi ebrahim" },
+      { label: "رقم الجوال", value: "+966541532515" },
+      { label: "الجنسية", value: "مصري" },
+      { label: "دولة الاقامة", value: "مصر" },
+      { label: "الجنس", value: "ذكر" },
+    ],
+  },
+  التعليم: {
+    required: false,
+    items: [
+      { label: "مستوى التعليم", value: "بكالرويوس" },
+      { label: "التخصص", value: "هندسة اتصالات" },
+      { label: "GPA", value: "3.23" },
+    ],
+  },
+  الخبرات: {
+    required: false,
+    items: [
+      { label: "الشركة", value: "بكالرويوس" },
+      { label: "الوظيفه", value: "مهندس برمجيات" },
+      { label: "البداية", value: "1/1/2023" },
+      { label: "النهاية", value: "لازلت اعمل" },
+    ],
+  },
+  الدورات: {
+    required: false,
+    items: [
+      { label: "اسم الدورة", value: "اساسيات البرمجة" },
+      { label: "اسم المنظمة", value: "منظمة 1" },
+      { label: "تاريخ الدورة", value: "1/1/2023" },
+    ],
+  },
+  المهارات: {
+    required: true,
+    items: [
+      { value: "HTML", badge: true },
+      { value: "CSS", badge: true },
+      { value: "JS", badge: true },
+    ],
+  },
+  اللغات: {
+    required: true,
+    items: [
+      { value: "العربية", badge: true },
+      { value: "الانجليزية", badge: true },
+    ],
+  },
 };
 
 const icons = {
   بياناتي: (
     <FaUser
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
   التعليم: (
     <FaGraduationCap
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
   الخبرات: (
     <FaBriefcase
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
   الدورات: (
     <FaCertificate
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
   المهارات: (
     <FaTools
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
   اللغات: (
     <FaLanguage
-      className="mx-2 text-gold"
-      style={{ width: "24px", height: "24px" }}
+      className="mx-2 text-gold "
+      style={{ width: "22px", height: "22px" }}
     />
   ),
 };
 
 function MainDataProfile() {
   return (
-    <div
-      className="row justify-content-between gap-3 mainScroll"
-      style={{ height: "calc(100vh - 100px)", overflow: "scroll" }}
-    >
-      {Object.entries(sections).map(([sectionTitle, items], sectionIndex) => (
-        <React.Fragment key={sectionIndex}>
-          <div className="col-12 mb-3 p-0">
-            <div className="border-bottom w-50 d-flex align-items-center pb-1">
-              {icons[sectionTitle]}
-              <h4 className="text-gold ">{sectionTitle}</h4>
-            </div>
-          </div>
-          {items.map((item, index) => (
-            <div key={index} className="col-12 col-md-5 border-bottom">
-              <h6 className="text-gold">{item.label}</h6>
-              <p className="bolder">{item.value}</p>
-            </div>
-          ))}
-        </React.Fragment>
-      ))}
+    <div className="accordion border-0" id="accordionExample">
+      {Object.entries(sections).map(
+        ([sectionTitle, sectionData], sectionIndex) => (
+          <Accordion
+            key={sectionIndex}
+            title={sectionTitle}
+            icon={icons[sectionTitle]}
+            items={sectionData.items}
+            isOpenInitially={sectionIndex === 0}
+            required={sectionData.required}
+          />
+        )
+      )}
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "@/styles/vision.module.scss";
+import styles from "../../../styles/vision.module.scss";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import pattern from "assets/patterns/pattern1.svg";
+import pattern from "../../../../assets/patterns/pattern1.svg";
 
 const containerVariant = {
   visible: {

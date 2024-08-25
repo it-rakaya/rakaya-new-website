@@ -6,7 +6,7 @@ import PatternIconTwo from "../icons/PatternIconTwo";
 import { useContext } from "react";
 import { DarkModeContext } from "@/context/DarkModeContext";
 import { t } from "i18next";
-import fetchData from "@/utils/fetchData";
+// import fetchData from "@/utils/fetchData";
 
 const Header = () => {
   const { isDarkMode } = useContext(DarkModeContext);

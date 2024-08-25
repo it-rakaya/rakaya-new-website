@@ -1,8 +1,7 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import VisionLayout from "@/components/vision/VisionLayout";
-import { works } from "@/data";
+import CustomHead from "../../components/CustomHead";
+import Header from "../../components/jobs/Header";
+import VisionLayout from "../../components/vision/VisionLayout";
+import { works } from "../../data";
 import React from "react";
 
 const description =

@@ -97,7 +97,7 @@ function DraggableMarker({
               </div>
               <div className="d-flex align-items-center gap-2 mt-2">
                 <p className="" style={{ color: "#C9B171" }}>
-                  رقم الهاتف:
+                  رقم الجوال:
                 </p>
                 <Link
                   href={`tel:${mentor?.data?.location?.user_info?.phone}`}

@@ -1,12 +1,11 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import CardApplication from "@/components/vision/CardApplication";
-import VisionLayout from "@/components/vision/VisionLayout";
-import { program } from "@/data";
-import fetchData from "@/utils/fetchData";
 import Link from "next/link";
 import React from "react";
+import Container from "../../../components/Container";
+import CustomHead from "../../../components/CustomHead";
+import Header from "../../../components/jobs/Header";
+import CardApplication from "../../../components/vision/CardApplication";
+import VisionLayout from "../../../components/vision/VisionLayout";
+import fetchData from "../../../utils/fetchData";
 const Program = ({ title, description, items, href }) => (
   <Container>
     <div className="d-flex align-items-baseline mb-1 gap-3 text-gold">

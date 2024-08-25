@@ -1,5 +1,6 @@
 import { useFormikContext } from "formik";
 import Label from "./Label";
+import SelectPhoneCode from "./SelectPhoneCode";
 
 function PhoneInput({ label, required }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
@@ -64,7 +65,8 @@ function PhoneInput({ label, required }) {
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
         >
-          <span className="text-gray text_Dark">966+</span>
+          {/* <span className="text-gray text_Dark">966+</span> */}
+          <SelectPhoneCode/>
         </div>
       </div>
       {touched.phone && errors.phone && (

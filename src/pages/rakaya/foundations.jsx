@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import VisionLayout from "@/components/vision/VisionLayout";
-import Card from "@/components/vision/services/Card";
+import Container from "../../components/Container";
+import CustomHead from "../../components/CustomHead";
+import Header from "../../components/jobs/Header";
+import VisionLayout from "../../components/vision/VisionLayout";
 
 const Base = () => {
   const description =

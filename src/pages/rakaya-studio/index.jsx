@@ -1,12 +1,12 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import ImgContainer from "@/components/ImgContainer";
-import PatternImage from "@/components/icons/PatternImage";
-import Header from "@/components/jobs/Header";
-import SmallCard from "@/components/services/SmallCard";
-import { postsStudio } from "@/data";
+import Header from "../../components/jobs/Header";
+import SmallCard from "../../components/services/SmallCard";
+import { postsStudio } from "../../data";
 import Image from "next/image";
 import React from "react";
+import Container from "../../components/Container";
+import CustomHead from "../../components/CustomHead";
+import ImgContainer from "../../components/ImgContainer";
+import PatternImage from "../../components/icons/PatternImage";
 
 const index = () => {
   const description = "جميع أحداث ركايا في مكان واحد";
@@ -20,7 +20,9 @@ const index = () => {
       />
 
       <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio">
-        <h1 className="align-self-start text_Dark">أبطال ركايا في موسم حج ١٤٤٤ هـ</h1>
+        <h1 className="align-self-start text_Dark">
+          أبطال ركايا في موسم حج ١٤٤٤ هـ
+        </h1>
         <Container className="col-lg-11 px-4">
           <iframe
             // width="560"

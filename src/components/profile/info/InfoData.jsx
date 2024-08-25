@@ -1,11 +1,11 @@
 import Button from "@/components/Button";
 import BaseInputField from "@/components/form/BaseInputField";
 import Label from "@/components/form/Label";
-import PhoneInputNew from "@/components/form/PhoneInputNew";
 import RadioButtonGroup from "@/components/form/RadioButton";
 import SelectNationality from "@/components/form/SelectNationality";
 import { Form, Formik } from "formik";
 import React from "react";
+import PhoneInput from "../../form/PhoneInput";
 
 function InfoData() {
   return (
@@ -13,47 +13,57 @@ function InfoData() {
       <Formik initialValues={{}} onSubmit={() => {}}>
         <Form>
           <div>
-            <Label>الاسم كامل بالعربي</Label>
+            <Label required>الاسم كامل بالعربي</Label>
             <div className="row">
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاول"} />
+                <BaseInputField
+                  placeholder={"الاسم الاول"}
+                  name={"first"}
+                  required={true}
+                />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثاني"} />
+                <BaseInputField placeholder={"الاسم الثاني"} name={"first2"} />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثالث"} />
+                <BaseInputField placeholder={"الاسم الثالث"} name={"first3"} />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاخير"} />
+                <BaseInputField placeholder={"الاسم الاخير"} name={"first4"} />
               </div>
             </div>
           </div>
           <div>
-            <Label>الاسم كامل بالانجليزية</Label>
+            <Label required>الاسم كامل بالانجليزية</Label>
             <div className="row">
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاخير"} />
+                <BaseInputField placeholder={"الاسم الاخير"} name={"last"} />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثالث"} />
+                <BaseInputField placeholder={"الاسم الثالث"} name={"last2"} />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثاني"} />
+                <BaseInputField placeholder={"الاسم الثاني"} name={"last4"} />
               </div>
               <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاول"} />
+                <BaseInputField placeholder={"الاسم الاول"} name={"last5"} />
               </div>
             </div>
           </div>
+          <BaseInputField
+            placeholder={" البريد الالكتروني"}
+            label={" البريد الالكتروني"}
+            name={"first"}
+            required={true}
+          />
           {/* <PhoneInput label={"رقم الجوال"} /> */}
-          <PhoneInputNew label={"رقم الهاتف"} />
-          <SelectNationality label={"الجنسية"} />
-          <SelectNationality label={"دولة الاقامة"} />
-          <SelectNationality label={"المدينة"} />
+          <PhoneInput label={"رقم الجوال"} required />
+          <SelectNationality required label={"الجنسية"} />
+          <SelectNationality required label={"دولة الاقامة"} />
+          <SelectNationality required label={"المدينة"} />
 
           <div>
-            <Label>الجنس</Label>
+            <Label required>الجنس</Label>
             <div className="row">
               <RadioButtonGroup
                 options={[
@@ -63,6 +73,7 @@ function InfoData() {
               />
             </div>
           </div>
+       
           <div className="mt-3 d-flex justify-content-between">
             <Button>حفظ</Button>
           </div>

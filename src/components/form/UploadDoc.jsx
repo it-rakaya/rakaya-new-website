@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import PreviewImageLink from "../PreviewImageLink";
 import PreviewPdf from "../PreviewPdf";
 import Label from "./Label";
-import { urlToBlob } from "@/utils/Helpers";
 
 function UploadDoc({
   name,
@@ -72,9 +71,11 @@ function UploadDoc({
           {label}
           {isRequired && <span className="mx-1 text-danger">*</span>}
         </Label>
-        <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
-          {messageInfo && <span> {messageInfo}</span>}
-        </p>
+        {messageInfo && (
+          <p style={{ fontSize: "13px", margin: "0px 0 10px 0" }}>
+            {<span> {messageInfo}</span>}
+          </p>
+        )}
         <div
           className=" border rounded-3 position-relative cursor-pointer uploadDoc"
           style={{ height: isFileLoaded ? "130px" : "120px" }}

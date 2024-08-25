@@ -9,6 +9,7 @@ const ProfileLayout = ({ title, children }) => {
       >
         <SideMenuProfile />
         <ContentProfile title={title} id={"content"}>
+          
           {children}
         </ContentProfile>
       </div>

@@ -20,10 +20,11 @@ function Courses() {
             </Button>
           </div>
           <div className="row gap-4">
-            <div className="shadow p-2 rounded-3  mt-3 col">
+            <div className="shadow p-2 rounded-3  mt-3 col-md-12">
               <div className="d-flex justify-content-between align-items-center  py-3 px-4">
                 <div className=" ">
-                  <p className="m-0 fw-bold">العربي </p>
+                  <p className="m-0 fw-bold">دورة تصميم واجهات امامية </p>
+                  <p className="m-0 "> جامعة ام القرى </p>
                 </div>
                 <div>
                   <RiDeleteBinLine
@@ -32,10 +33,10 @@ function Courses() {
                 </div>
               </div>
             </div>
-            <div className="shadow p-2 rounded-3  mt-3 col">
+            <div className="shadow p-2 rounded-3  mt-3 col-md-12">
               <div className="d-flex justify-content-between align-items-center  py-3 px-4">
                 <div className=" ">
-                  <p className="m-0 fw-bold">الانجليزية </p>
+                  <p className="m-0 fw-bold">دورة واجهات خلفية </p>
                 </div>
                 <div>
                   <RiDeleteBinLine

@@ -1,7 +1,7 @@
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
-import VisionLayout from "@/components/vision/VisionLayout";
-import fetchData from "@/utils/fetchData";
+import CustomHead from "../../components/CustomHead";
+import Header from "../../components/jobs/Header";
+import VisionLayout from "../../components/vision/VisionLayout";
+import fetchData from "../../utils/fetchData";
 import React from "react";
 const impact = ({ data }) => {
   const description = "قَبس .. اقتباسات نعُدها شعلة مضيئة تزيد من توهجنا";

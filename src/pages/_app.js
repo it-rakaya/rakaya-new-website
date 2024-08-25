@@ -9,6 +9,10 @@ import Script from "next/script";
 import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DarkModeProvider } from "@/context/DarkModeContext";
+import Container from "@/components/Container";
+import Heart from "@/components/icons/Heart";
+import { t } from "i18next";
+import FooterAuth from "../components/FooterAuth";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();
@@ -53,9 +57,12 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <I18nextProvider i18n={i18n}>
       {Component.noLayout ? (
-        <QueryClientProvider client={queryClient}>
-          {renderComponent()}
-        </QueryClientProvider>
+        <DarkModeProvider>
+          <QueryClientProvider client={queryClient}>
+            {renderComponent()}
+          </QueryClientProvider>
+          <FooterAuth />
+        </DarkModeProvider>
       ) : (
         <DarkModeProvider>
           <QueryClientProvider client={queryClient}>

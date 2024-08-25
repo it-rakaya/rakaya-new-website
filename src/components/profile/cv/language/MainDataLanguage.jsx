@@ -1,10 +1,9 @@
 import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
 import SelectLanguage from "@/components/form/SelectLanguage";
 import SelectLevel from "@/components/form/SelectLevel";
-import UploadDoc from "@/components/form/UploadDoc";
 import { Form, Formik } from "formik";
 import React from "react";
+import UploadDoc from "../../../form/UploadDoc";
 
 function MainDataLanguage({ setShowSkills }) {
   return (

@@ -1,10 +1,9 @@
+import CustomHead from "../../../components/CustomHead";
+import Header from "../../../components/jobs/Header";
+import fetchData from "../../../utils/fetchData";
 import React from "react";
-import VisionLayout from "../../../components/vision/VisionLayout";
 import Container from "../../../components/Container";
-import Header from "@/components/jobs/Header";
-import { products } from "@/data";
-import CustomHead from "@/components/CustomHead";
-import fetchData from "@/utils/fetchData";
+import VisionLayout from "../../../components/vision/VisionLayout";
 
 const Product = ({ title, description, subTitle }) => (
   <Container>

@@ -4,25 +4,40 @@ import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
 import Skills from "./skills/Skills";
 import Language from "./language/Language";
-import Certificate from "./cirtficate/Certificate";
+import Certificate from "./certificate/Certificate";
 import Courses from "./courses/Courses";
 
 const tabs = [
-  { id: "v-pills-home", label: "المستوى التعليمي", component: <Education /> },
+  {
+    id: "v-pills-home",
+    label: "المستوى التعليمي",
+    component: <Education />,
+    required: "true",
+  },
   {
     id: "v-pills-profile",
-    label: "الخبرات التعليمية",
+    label: "الخبرات العملية",
     component: <Experience />,
   },
-  { id: "v-pills-messages", label: "المهارات", component: <Skills /> },
-  { id: "v-pills-language", label: "اللغات", component: <Language /> },
+  {
+    id: "v-pills-messages",
+    label: "المهارات",
+    component: <Skills />,
+    required: "true",
+  },
+  {
+    id: "v-pills-language",
+    label: "اللغات",
+    component: <Language />,
+
+    required: "true",
+  },
   { id: "v-pills-certificate", label: "الشهادات", component: <Certificate /> },
   {
     id: "v-pills-courses",
     label: "الدورات التدريبية",
     component: <Courses />,
   },
-  
 ];
 
 function SideMeneCv() {
@@ -39,7 +54,7 @@ function SideMeneCv() {
   };
 
   return (
-    <div className="d-flex flex-column mt-5">
+    <div className="d-flex flex-column ">
       <div className="mx-3 mb-5">
         <h5 className=" text-gold">السيرة الذاتية</h5>
         <p>الانطباع الاول عنك وفرصتك لحصول على مقابلات وظيفية</p>
@@ -65,7 +80,34 @@ function SideMeneCv() {
               onClick={() => handleTabClick(tab.id)}
             >
               <div className="d-flex justify-content-between align-items-center py-1">
-                <p className="m-0">{tab.label}</p>
+                <div
+                  className="d-flex items-center gap-2 justify-content-between"
+                  style={{
+                    flex: "1",
+                  }}
+                >
+                  <p className="m-0">{tab.label}</p>
+                  <div>
+                    {tab?.required && (
+                      <div
+                        className="text-danger fs-4 align-items-center justify-content-end"
+                        style={{
+                          display: "flex",
+                          margin: "0 6px",
+                          flex: "1",
+                        }}
+                      >
+                        <span
+                          style={{
+                            height: "20px",
+                          }}
+                        >
+                          *
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <IoIosArrowBack />
               </div>
             </button>

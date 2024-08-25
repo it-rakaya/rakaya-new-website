@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaCheck, FaCheckCircle } from "react-icons/fa";
 
 function RadioButtonGroup({ options, name, onChange }) {
   const [selectedValue, setSelectedValue] = useState();
@@ -13,10 +14,11 @@ function RadioButtonGroup({ options, name, onChange }) {
   return options?.map((option, index) => (
     <div
       key={index}
-      className={` border rounded-3 p-1 m-1 col `}
+      className={`border rounded-3 p-1 m-1 col`}
       style={{
-        backgroundColor: selectedValue === option.value ? "#C9B171 " : "",
+        backgroundColor: selectedValue === option.value ? "#C9B171" : "",
         textAlign: "center",
+        position: "relative",
       }}
     >
       <input
@@ -28,6 +30,7 @@ function RadioButtonGroup({ options, name, onChange }) {
         value={option.value}
         checked={selectedValue === option.value}
         onChange={handleChange}
+        style={{ display: "none" }} 
       />
       <label
         className="btn w-100"
@@ -36,9 +39,17 @@ function RadioButtonGroup({ options, name, onChange }) {
           backgroundColor: "transparent",
           border: "none",
           textAlign: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        {option.label}
+        <span>{option.label}</span>
+        {selectedValue === option.value && (
+          <FaCheckCircle
+            style={{ margin: "0px 8px", color: "#fff", width: "15px" }}
+          />
+        )}
       </label>
     </div>
   ));

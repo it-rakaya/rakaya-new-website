@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Container from "../Container";
-import { MdDashboard } from "react-icons/md";
-import { FaIdCard } from "react-icons/fa6";
+import { MdDashboard, MdLock, MdOutlineDashboard, MdOutlineLock, MdOutlineVerified, MdVerified } from "react-icons/md";
+import { FaIdCard, FaRegAddressCard, FaRegNewspaper } from "react-icons/fa6";
 import { IoIosPaper } from "react-icons/io";
 import Image from "next/image";
+import { IoNewspaperOutline } from "react-icons/io5";
 
 const titleVariant = {};
 
@@ -61,18 +62,41 @@ const Separator = () => (
 );
 
 const paths = [
-  { title: "نظرة عامة", href: "/profile", icon: <MdDashboard /> },
-  { title: "البيانات الشخصية", href: "/profile/info", icon: <FaIdCard /> },
+  {
+    title: "نظرة عامة",
+    href: "/profile",
+    icon: <MdDashboard style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: (
+      <MdOutlineDashboard   style={{ width: "22px", height: "22px" }} />
+    ),
+  },
+  {
+    title: "البيانات الشخصية",
+    href: "/profile/info",
+    icon: <FaIdCard style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: <FaRegAddressCard style={{ width: "22px", height: "22px" }} />,
+  },
   {
     title: "السيرة الذاتية",
     href: "/profile/cv",
-    icon: <IoIosPaper />,
+    icon: <IoIosPaper style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: (
+      <FaRegNewspaper  style={{ width: "22px", height: "22px" }} />
+    ),
   },
   {
     title: "توثيق البيانات",
     href: "/profile/complete",
-    icon: <IoIosPaper />,
+    icon: <MdVerified style={{ width: "22px", height: "22px" }} />,
+    iconOutLine:<MdOutlineVerified  style={{ width: "22px", height: "22px" }} />,
   },
+  {
+    title: "تغيير كلمة المرور",
+    href: "/profile/change-password",
+    icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+    iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+  },
+  
 ];
 
 const SideMenuProfile = () => {
@@ -104,7 +128,11 @@ const SideMenuProfile = () => {
             width={100}
             height={100}
             className="p-1 mb-4 bg-white"
-            style={{ border: "1px solid #C9B171", objectFit: "cover" , borderRadius:"50%" }}
+            style={{
+              border: "1px solid #C9B171",
+              objectFit: "cover",
+              borderRadius: "50%",
+            }}
           />
         </div>
         <h6 className="mb-3">عبد الرحمن الشيخ</h6>
@@ -119,7 +147,7 @@ const SideMenuProfile = () => {
             setActiveRouteIndex(index);
           }}
           href={path.href}
-          icon={path?.icon}
+          icon={activeRouteIndex == index ? path?.iconOutLine : path?.icon}
         >
           {path.title}
         </ListItem>

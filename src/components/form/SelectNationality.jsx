@@ -1,7 +1,7 @@
-import useFetch from "@/hooks/useFetch";
 import { useFormikContext } from "formik";
 import React from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
 {""}
 function SelectNationality({ label, required, labelClassName }) {
   const { values } = useFormikContext();

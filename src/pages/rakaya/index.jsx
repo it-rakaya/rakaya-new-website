@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import ImgContainer from "@/components/ImgContainer";
-import Header from "@/components/jobs/Header";
-import Team from "@/components/vision/Team";
-import VisionLayout from "@/components/vision/VisionLayout";
-import { TeamData, contentData } from "@/data";
+import CustomHead from "../../components/CustomHead";
+import ImgContainer from "../../components/ImgContainer";
+import Header from "../../components/jobs/Header";
+import Team from "../../components/vision/Team";
+import VisionLayout from "../../components/vision/VisionLayout";
+import { TeamData, contentData } from "../../data";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
+import Container from "../../components/Container";
 
 const Index = () => {
   const description =

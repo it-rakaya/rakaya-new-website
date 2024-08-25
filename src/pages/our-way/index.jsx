@@ -1,7 +1,7 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import Header from "@/components/jobs/Header";
+import CustomHead from "../../components/CustomHead";
+import Header from "../../components/jobs/Header";
 import React from "react";
+import Container from "../../components/Container";
 
 const Section = ({ title, children }) => (
   <Container className="m-0 p-0">

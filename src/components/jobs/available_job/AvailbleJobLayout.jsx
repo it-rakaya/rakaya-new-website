@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import CustomHead from "@/components/CustomHead";
 import Container from "@/components/Container";
 import Header from "../Header";
+import SideMenuJob from "./SideMenuJob";
 
 function AvailableJobLayout({ children, hiddenMenu }) {
   const description =
@@ -19,7 +20,8 @@ function AvailableJobLayout({ children, hiddenMenu }) {
           image={"/studio/headers-bg/6.webp"}
           location
         />
-        {hiddenMenu ? "" : <Menu />}
+        {/* {hiddenMenu ? "" : <Menu />} */}
+        {/* <SideMenuJob/> */}
         <div className="newJob mt-5">{children}</div>
       </Container>
     </div>

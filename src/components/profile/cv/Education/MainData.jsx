@@ -3,9 +3,9 @@ import BaseInputField from "@/components/form/BaseInputField";
 import DatePickerComp from "@/components/form/DatePickerComp";
 import SelectEducation from "@/components/form/SelectEducation";
 import SelectGpa from "@/components/form/SelectGpa";
-import SelectNationality from "@/components/form/SelectNationality";
 import { Form, Formik } from "formik";
 import React from "react";
+import SelectNationality from "../../../form/SelectNationality";
 
 function MainData({ setShowCard }) {
   return (

@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import BaseInputField from "@/components/form/BaseInputField";
 import PhoneInput from "@/components/form/PhoneInput";
-import PhoneInputNew from "@/components/form/PhoneInputNew";
 import LoginLayout from "@/components/Login/LoginLayout";
 import { Form, Formik } from "formik";
 import Link from "next/link";
@@ -17,7 +16,7 @@ function Register() {
           <Formik initialValues={{}} onSubmit={() => {}}>
             <Form>
               <div className="row ">
-                <div className="col-md-3">
+                <div className="col-md-3 px-1">
                   <BaseInputField
                     name={""}
                     type={"text"}
@@ -25,15 +24,15 @@ function Register() {
                     placeholder={"الاسم الاول"}
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 px-1">
                   <BaseInputField
                     name={""}
                     type={"text"}
-                    label={"الاسم الثانيي"}
-                    placeholder={"الاسم الثانيي"}
+                    label={"الاسم الثاني"}
+                    placeholder={"الاسم الثايي"}
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 px-1">
                   <BaseInputField
                     name={""}
                     type={"text"}
@@ -41,7 +40,7 @@ function Register() {
                     placeholder={"الاسم الثالث "}
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 px-1">
                   <BaseInputField
                     name={""}
                     type={"text"}
@@ -57,7 +56,7 @@ function Register() {
                 placeholder={"البريد الالكتروني"}
               />
               {/* <PhoneInput /> */}
-              <PhoneInputNew label={"رقم الهاتف"} />
+              <PhoneInput label={"رقم الجوال"} />
               <BaseInputField
                 name={""}
                 label={"كلمة المرور"}
@@ -83,8 +82,13 @@ function Register() {
               </div>
               <div className="d-flex  justify-content-center align-items-center mt-3 gap-2">
                 <p className="m-0 p-0"> لديك حساب بالفعل ؟</p>
-                <Link href={"/login"} className="text-gold ">
+                <Link href={"/login"} className="text-gold fw-bold ">
                   تسجيل الدخول
+                </Link>
+              </div>
+              <div className="d-flex  justify-content-center align-items-center  gap-2">
+                <Link href={"/"} className="text-secondary fw-bold ">
+                  العودة الى الصفحة الرئيسية
                 </Link>
               </div>
             </Form>

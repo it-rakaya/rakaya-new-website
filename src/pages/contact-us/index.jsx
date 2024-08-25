@@ -1,10 +1,10 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import FinalSubmit from "@/components/contact-us/FinalSubmit";
-import MainData from "@/components/contact-us/MainData";
-import Header from "@/components/jobs/Header";
-import { usePostData } from "@/hooks/usePostData";
+import CustomHead from "../../components/CustomHead";
+import FinalSubmit from "../../components/contact-us/FinalSubmit";
+import MainData from "../../components/contact-us/MainData";
+import Header from "../../components/jobs/Header";
 import React from "react";
+import Container from "../../components/Container";
+import { usePostData } from "../../hooks/usePostData";
 
 const Index = () => {
   const { isLoading, postData, isSuccess } = usePostData("/contact-us");

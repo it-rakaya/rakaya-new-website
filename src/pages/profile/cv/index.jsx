@@ -1,7 +1,6 @@
-import Container from "@/components/Container";
-import SideMeneCv from "@/components/profile/cv/SideMenueCv";
 import ProfileLayout from "@/components/profile/ProfileLayout";
 import React from "react";
+import SideMeneCv from "../../../components/profile/cv/SideMenueCv";
 
 function Cv() {
   return (

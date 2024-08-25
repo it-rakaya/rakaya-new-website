@@ -1,8 +1,8 @@
-import { isRTL } from "@/utils/Helpers";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Container from "../Container";
+import { isRTL } from "../../utils/Helpers";
 const ContentProfile = ({ title, children, id }) => {
   const router = useRouter();
   useEffect(() => {
