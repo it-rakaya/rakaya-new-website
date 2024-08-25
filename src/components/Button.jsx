@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/components/Button.module.scss";
+import styles from "../styles/components/Button.module.scss"
 
 /**
  * @typedef {'primary' | 'secondary' | 'third' | 'forth' } color

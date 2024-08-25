@@ -1,7 +1,8 @@
-import Button from "@/components/Button";
-import PhoneInputNew from "@/components/form/PhoneInputNew";
+
 import { Form, Formik } from "formik";
 import React from "react";
+import PhoneInputNew from "../../../form/PhoneInputNew";
+import Button from "../../../Button";
 
 function CheckPhone() {
   return (

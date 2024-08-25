@@ -1,5 +1,5 @@
-import Main from "@/components/profile/completeProfile/Main";
-import ProfileLayout from "@/components/profile/ProfileLayout";
+import Main from "../../../components/profile/completeProfile/Main";
+import ProfileLayout from "../../../components/profile/ProfileLayout";
 import React from "react";
 
 function CompleteProfile() {

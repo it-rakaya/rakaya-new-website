@@ -1,6 +1,6 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
+import Button from "../../../Button";
+import BaseInputField from "../../../form/BaseInputField";
+import DatePickerComp from "../../../form/DatePickerComp";
 import { Form, Formik } from "formik";
 import React from "react";
 import UploadDoc from "../../../form/UploadDoc";

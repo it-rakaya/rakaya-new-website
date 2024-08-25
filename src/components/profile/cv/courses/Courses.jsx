@@ -1,8 +1,8 @@
-import Button from "@/components/Button";
 import React, { useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
 import MainDataCourses from "./MainDataCourses";
+import Button from "../../../Button";
 
 function Courses() {
   const [showSkills, setShowSkills] = useState(true);

@@ -1,5 +1,5 @@
-import { DarkModeContext } from "@/context/DarkModeContext";
 import React, { useContext, useEffect, useState } from "react";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 function TOTop() {
   const [showTopButton, setShowTopButton] = useState(false);

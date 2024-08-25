@@ -1,10 +1,9 @@
-import { routes } from "@/utils/routes";
 import { t } from "i18next";
+import dynamic from "next/dynamic";
 import React from "react";
 import Container from "../Container";
-import Logo from "../Logo";
 import FooterLink from "./FooterLink";
-import dynamic from "next/dynamic";
+import { routes } from "../../utils/routes";
 const Heart = dynamic(() => import("../icons/Heart"), { ssr: false });
 const LinkedIn = dynamic(() => import("../icons/LinkedIn"), { ssr: false });
 

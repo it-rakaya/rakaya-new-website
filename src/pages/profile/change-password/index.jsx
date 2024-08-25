@@ -1,4 +1,4 @@
-import ProfileLayout from "@/components/profile/ProfileLayout";
+import ProfileLayout from "../../../components/profile/ProfileLayout";
 import React from "react";
 import Main from "../../../components/profile/changePassword/Main";
 

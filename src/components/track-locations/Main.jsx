@@ -1,12 +1,12 @@
-import useFetch from "@/hooks/useFetch";
-import usePusher from "@/hooks/usePusher";
+import useFetch from "../../hooks/useFetch";
+import usePusher from ".././hooks/usePusher";
 import { useFormikContext } from "formik";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import SideItem from "./SideItem";
 import SpinnerLoading from "../SpinnerLoading";
 
-const MainMap = dynamic(() => import("@/components/track-locations/MainMap"), {
+const MainMap = dynamic(() => import("../../components/track-locations/MainMap"), {
   ssr: false,
 });
 

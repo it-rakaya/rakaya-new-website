@@ -1,15 +1,8 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
-import Label from "@/components/form/Label";
-import RadioButtonGroup from "@/components/form/RadioButton";
-import SelectJobType from "@/components/form/SelectJobType";
-import TextArea from "@/components/form/TextArea";
-import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import MainData from "./MainData";
+import Button from "../../../Button";
 
 function Experience() {
   const [showCard, setShowCard] = useState(true);

@@ -1,4 +1,4 @@
-import ProfileLayout from "@/components/profile/ProfileLayout";
+import ProfileLayout from "../../../components/profile/ProfileLayout";
 import React from "react";
 import SideMeneCv from "../../../components/profile/cv/SideMenueCv";
 

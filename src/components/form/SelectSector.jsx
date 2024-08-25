@@ -1,7 +1,7 @@
-import useFetch from "@/hooks/useFetch";
 import { useFormikContext } from "formik";
 import React, { useEffect } from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
 
 function SelectSector({ label, required, labelClassName, icon }) {
   const { values, setFieldValue } = useFormikContext();

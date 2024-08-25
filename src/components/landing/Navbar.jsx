@@ -1,8 +1,8 @@
-import { routes } from "@/utils/routes";
 import { useState } from "react";
 import Container from "../Container";
 import Setting from "../Setting";
 import { t } from "i18next";
+import { routes } from "../../utils/routes";
 export const NavLink = ({ children, to }) => {
   return (
     <Container className={"px-0 py-0 fw-semibold"}>

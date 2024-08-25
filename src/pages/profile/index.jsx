@@ -1,7 +1,6 @@
-import AlertIcon from "@/components/icons/AlertIcon";
-import MainDataProfile from "@/components/profile/main/MainDataProfile";
-import ProfileLayout from "@/components/profile/ProfileLayout";
-import StatusCompleteProfile from "@/components/StatusCompleteProfile";
+import MainDataProfile from "../../components/profile/main/MainDataProfile";
+import ProfileLayout from "../../components/profile/ProfileLayout";
+import StatusCompleteProfile from "../../components/StatusCompleteProfile";
 import React from "react";
 import { GoAlert } from "react-icons/go";
 

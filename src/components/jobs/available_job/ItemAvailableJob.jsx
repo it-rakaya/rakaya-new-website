@@ -1,12 +1,10 @@
-import Button from "@/components/Button";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { IoMdShareAlt } from "react-icons/io";
 import { MdFeaturedPlayList } from "react-icons/md";
-import { FaCheck } from "react-icons/fa";
 import { RiCalendarScheduleFill } from "react-icons/ri";
-import { useRouter } from "next/router";
+import Button from "../../Button"
 
 function ItemAvailableJob() {
   const jobLink = "/jobs/available_job/1";

@@ -3,8 +3,8 @@ import Container from "../Container";
 import Button from "../Button";
 import Link from "next/link";
 import Map from "../Map";
-import { DarkModeContext } from "@/context/DarkModeContext";
 import { t } from "i18next";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const Join = () => {
   const { isDarkMode } = useContext(DarkModeContext);

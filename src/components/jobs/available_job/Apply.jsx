@@ -1,5 +1,5 @@
-import BaseInputField from "@/components/form/BaseInputField";
-import Label from "@/components/form/Label";
+import BaseInputField from "../../../components/form/BaseInputField";
+import Label from "../../../components/form/Label";
 import { Formik } from "formik";
 import React from "react";
 import RadioButtonGroup from "../../form/RadioButton";

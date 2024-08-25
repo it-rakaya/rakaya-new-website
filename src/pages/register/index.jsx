@@ -1,7 +1,7 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import PhoneInput from "@/components/form/PhoneInput";
-import LoginLayout from "@/components/Login/LoginLayout";
+import Button from "../../components/Button";
+import BaseInputField from "../../components/form/BaseInputField";
+import PhoneInput from "../../components/form/PhoneInput";
+import LoginLayout from "../../components/Login/LoginLayout";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import React from "react";

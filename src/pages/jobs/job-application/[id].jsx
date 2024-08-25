@@ -1,5 +1,5 @@
-import BaseInputField from "@/components/form/BaseInputField";
-import AvailableJobLayout from "@/components/jobs/available_job/AvailbleJobLayout";
+import BaseInputField from "../../../components/form/BaseInputField";
+import AvailableJobLayout from "../../../components/jobs/available_job/AvailbleJobLayout";
 import { Formik } from "formik";
 import React from "react";
 import { FaTools } from "react-icons/fa";

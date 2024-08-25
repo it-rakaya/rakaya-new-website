@@ -1,5 +1,5 @@
-import Container from "@/components/Container";
-import BlogCard from "@/components/blog/BlogCard";
+import Container from "../../components/Container";
+import BlogCard from "../../components/blog/BlogCard";
 import React from "react";
 
 const index = () => {

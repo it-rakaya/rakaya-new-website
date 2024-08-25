@@ -1,4 +1,4 @@
-import useFetch from "@/hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState, useRef } from "react";

@@ -1,4 +1,4 @@
-import Unauthorized from "@/components/icons/Unauthorized";
+import Unauthorized from "../components/icons/Unauthorized";
 import React from "react";
 
 function Index() {

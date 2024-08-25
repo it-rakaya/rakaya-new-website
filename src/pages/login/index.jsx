@@ -1,6 +1,6 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import LoginLayout from "@/components/Login/LoginLayout";
+import Button from "../../components/Button";
+import BaseInputField from "../../components/form/BaseInputField";
+import LoginLayout from "../../components/Login/LoginLayout";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";

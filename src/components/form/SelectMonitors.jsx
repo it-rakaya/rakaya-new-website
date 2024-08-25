@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import useFetch from "@/hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import SelectComp from "./SelectComp";
 import { useFormikContext } from "formik";
 {""}

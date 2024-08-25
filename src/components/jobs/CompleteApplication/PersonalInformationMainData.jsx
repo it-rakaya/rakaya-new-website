@@ -1,10 +1,11 @@
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
-import PhoneInput from "@/components/form/PhoneInput";
-import SelectNationality from "@/components/form/SelectNationality";
-import SelectSize from "@/components/form/SelectSize";
+import BaseInputField from "../../../components/form/BaseInputField";
+import DatePickerComp from "../../../components/form/DatePickerComp";
+import PhoneInput from "../../../components/form/PhoneInput";
+
 import { useFormikContext } from "formik";
 import React, { useEffect } from "react";
+import SelectNationality from "../../form/SelectNationality";
+import SelectSize from "../../form/SelectSize";
 
 function PersonalInformationMainData() {
   const {values , setFieldValue} = useFormikContext()

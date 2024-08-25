@@ -1,5 +1,5 @@
-import { DarkModeContext } from "@/context/DarkModeContext";
 import React, { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function PatternIconTwo({ className, style }) {
   const { isDarkMode } = useContext(DarkModeContext);

@@ -1,10 +1,10 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
-import SelectJobType from "@/components/form/SelectJobType";
-import TextArea from "@/components/form/TextArea";
+import Button from "../../../Button";
+import BaseInputField from "../../../form/BaseInputField";
+import SelectJobType from "../../../form/SelectJobType";
+import TextArea from "../../../form/TextArea";
 import { Form, Formik } from "formik";
 import React from "react";
+import DatePickerComp from "../../../form/DatePickerComp";
 
 function MainData() {
   const placeOption = [

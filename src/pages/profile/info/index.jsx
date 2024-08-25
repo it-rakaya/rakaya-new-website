@@ -1,5 +1,5 @@
-import InfoData from "@/components/profile/info/InfoData";
-import ProfileLayout from "@/components/profile/ProfileLayout";
+import InfoData from "../../../components/profile/info/InfoData";
+import ProfileLayout from "../../../components/profile/ProfileLayout";
 import React from "react";
 
 function UserInfo() {

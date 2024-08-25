@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./Container";
-import Heart from "@/components/icons/Heart";
 import { t } from "i18next";
+import Heart from "./icons/Heart";
 
 function FooterAuth() {
   return (

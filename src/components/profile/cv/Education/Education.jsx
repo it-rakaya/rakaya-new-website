@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import MainData from "./MainData";
-import Button from "@/components/Button";
 import { IoMdAdd } from "react-icons/io";
-import { RiDeleteBinLine } from "react-icons/ri";
-import NoData from "@/components/NoData";
+import Button from "../../../Button";
+import NoData from "../../../NoData";
+import MainData from "./MainData";
 
 function Education() {
   const [showCard, setShowCard] = useState(true);

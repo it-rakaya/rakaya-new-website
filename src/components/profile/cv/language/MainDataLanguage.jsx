@@ -1,9 +1,9 @@
-import Button from "@/components/Button";
-import SelectLanguage from "@/components/form/SelectLanguage";
-import SelectLevel from "@/components/form/SelectLevel";
 import { Form, Formik } from "formik";
 import React from "react";
 import UploadDoc from "../../../form/UploadDoc";
+import Button from "../../../Button";
+import SelectLanguage from "../../../form/SelectLanguage";
+import SelectLevel from "../../../form/SelectLevel";
 
 function MainDataLanguage({ setShowSkills }) {
   return (

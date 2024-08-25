@@ -1,11 +1,11 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
-import SelectEducation from "@/components/form/SelectEducation";
-import SelectGpa from "@/components/form/SelectGpa";
+import BaseInputField from "../../../form/BaseInputField";
+import DatePickerComp from "../../../form/DatePickerComp";
+import SelectEducation from "../../../form/SelectEducation";
+import SelectGpa from "../../../form/SelectGpa";
 import { Form, Formik } from "formik";
 import React from "react";
 import SelectNationality from "../../../form/SelectNationality";
+import Button from "../../../Button";
 
 function MainData({ setShowCard }) {
   return (

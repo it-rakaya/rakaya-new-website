@@ -1,13 +1,12 @@
-import styles from "@/styles/components/Navbar.module.scss";
-import { routes } from "@/utils/routes";
-import dynamic from "next/dynamic";
 import { t } from "i18next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useRef, useState } from "react";
-import { DarkModeContext } from "@/context/DarkModeContext";
-import { FiSun, FiMoon } from "react-icons/fi"; // استيراد أيقونات للشمس والقمر
-import Setting from "../Setting";
+import { FiMoon, FiSun } from "react-icons/fi"; 
+import styles from "../../styles/components/Navbar.module.scss"
+import { DarkModeContext } from "../../context/DarkModeContext";
+import { routes } from "../../utils/routes";
 
 const Button = dynamic(() => import("../Button"), { ssr: false });
 const Container = dynamic(() => import("../Container"), { ssr: true });

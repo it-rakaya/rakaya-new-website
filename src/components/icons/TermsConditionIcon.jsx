@@ -1,5 +1,5 @@
-import { DarkModeContext } from "@/context/DarkModeContext";
 import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function TermsConditionIcon({ className }) {
   const { isDarkMode } = useContext(DarkModeContext);

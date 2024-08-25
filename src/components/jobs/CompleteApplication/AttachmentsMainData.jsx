@@ -1,4 +1,4 @@
-import UploadDoc from "@/components/form/UploadDoc";
+import UploadDoc from "../../../components/form/UploadDoc";
 import React from "react";
 
 function AttachmentsMainData({ check, setCheck }) {

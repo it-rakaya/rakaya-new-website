@@ -1,9 +1,7 @@
+import { Formik } from "formik";
 import React from "react";
 import { FaTools } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
-import AvailableJobLayout from "./AvailbleJobLayout";
-import { Formik } from "formik";
-import BaseInputField from "@/components/form/BaseInputField";
 
 function OverView() {
   const sections = {

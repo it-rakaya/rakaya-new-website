@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "@/styles/achievements.module.css";
+import styles from "../../styles/achievements.module.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";

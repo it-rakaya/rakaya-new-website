@@ -1,9 +1,9 @@
-import styles from "@/styles/landing.module.scss";
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Container from "../Container";
 import { t } from "i18next";
+import styles from "../../styles/landing.module.scss"
 
 /**
  * @param {{imgArray:string[]; reverse:boolean;}}

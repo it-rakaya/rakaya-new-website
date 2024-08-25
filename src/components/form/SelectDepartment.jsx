@@ -1,6 +1,6 @@
-import useFetch from "@/hooks/useFetch";
 import React from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
 {""}
 function SelectDepartment({ label, required }) {
   const { data } = useFetch({

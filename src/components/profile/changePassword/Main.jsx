@@ -1,7 +1,7 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
 import { Form, Formik } from "formik";
 import React from "react";
+import Button from "../../Button"
+import BaseInputField from "../../form/BaseInputField";
 
 function Main() {
   return (

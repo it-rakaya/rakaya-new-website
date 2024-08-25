@@ -3,22 +3,23 @@ import { Formik, Form } from "formik";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Button from "@/components/Button";
-import Line from "@/components/Line";
-import LoadingOverlay from "@/components/LoadingOverlay";
-import JobsLayout from "@/components/jobs/JobsLayout";
-import ReceivingOrder from "@/components/jobs/ReceivingOrder";
-import Section from "@/components/jobs/Section";
+
+import LoadingOverlay from "../../components/LoadingOverlay";
+import JobsLayout from "../../components/jobs/JobsLayout";
+import ReceivingOrder from "../../components/jobs/ReceivingOrder";
+import Section from "../../components/jobs/Section";
 import { ConnectedFocusError } from "focus-formik-error";
-import { usePostData } from "@/hooks/usePostData";
-import MainFormStepOne from "@/components/jobs/MainFormStepOne";
-import MainFormStepTwo from "@/components/jobs/MainFormStepTow";
-import MainFormStepThree from "@/components/jobs/MainFormStepThree";
-import TermsConditionIcon from "@/components/icons/TermsConditionIcon";
+import { usePostData } from "../../hooks/usePostData";
+import MainFormStepOne from "../../components/jobs/MainFormStepOne";
+import MainFormStepTwo from "../../components/jobs/MainFormStepTow";
+import MainFormStepThree from "../../components/jobs/MainFormStepThree";
+import TermsConditionIcon from "../../components/icons/TermsConditionIcon";
 import {
   initialValues,
   validationSchema,
-} from "@/components/jobs/initialValue&Validation";
+} from "../../components/jobs/initialValue&Validation";
+import Line from "../../components/Line";
+import Button from "../../components/Button";
 
 function NewJobForm() {
   const stopJob = true;

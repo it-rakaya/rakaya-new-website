@@ -1,12 +1,12 @@
-import Container from "@/components/Container";
-import CustomHead from "@/components/CustomHead";
-import LoadingOverlay from "@/components/LoadingOverlay";
-import Main from "@/components/jobs/CompleteApplication/Main";
-import FailedRequestJob from "@/components/jobs/FailedRequestJob";
-import Header from "@/components/jobs/Header";
-import ReceivingOrder from "@/components/jobs/ReceivingOrder";
-import useFetch from "@/hooks/useFetch";
-import { useMutate } from "@/hooks/useMutate";
+import Container from "../../components/Container";
+import CustomHead from "../../components/CustomHead";
+import LoadingOverlay from "../../components/LoadingOverlay";
+import Main from "../../components/jobs/CompleteApplication/Main";
+import FailedRequestJob from "../../components/jobs/FailedRequestJob";
+import Header from "../../components/jobs/Header";
+import useFetch from "../../hooks/useFetch";
+import { useMutate } from "../../hooks/useMutate";
+import ReceivingOrder from "../../components/jobs/ReceivingOrder";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 

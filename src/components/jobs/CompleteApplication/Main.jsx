@@ -5,8 +5,8 @@ import { ConnectedFocusError } from "focus-formik-error";
 import PersonalInformationMainData from "./PersonalInformationMainData";
 import BankInformationMainData from "./BankInformationMainData";
 import AttachmentsMainData from "./AttachmentsMainData";
-import Button from "@/components/Button";
 import { validationSchemaCompleteApplication } from "../initialValue&Validation";
+import Button from "../../Button"
 
 function Main({ dataCandidate, loadingData, updateData }) {
   const [check, setCheck] = useState(false);

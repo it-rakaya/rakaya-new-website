@@ -1,8 +1,8 @@
-import { DarkModeContext } from "@/context/DarkModeContext";
-import { useIsRTL } from "@/hooks/useIsRTL";
-import i18n from "@/i18n";
+import i18n from "../i18n";
 import { setCookie } from "cookies-next";
 import { useContext } from "react";
+import { DarkModeContext } from "../context/DarkModeContext";
+import { useIsRTL } from "../hooks/useIsRTL";
 
 /**
  * @param {{ :string}}

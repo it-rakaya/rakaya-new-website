@@ -1,18 +1,16 @@
-import Layout from "@/components/layout/Layout";
-import { useIsRTL } from "@/hooks/useIsRTL";
+
+import "../styles/globals.scss";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "@/styles/globals.scss";
+import Script from "next/script";
 import { useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
-import i18n from "../i18n";
-import Script from "next/script";
 import { ToastContainer } from "react-toastify";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { DarkModeProvider } from "@/context/DarkModeContext";
-import Container from "@/components/Container";
-import Heart from "@/components/icons/Heart";
-import { t } from "i18next";
 import FooterAuth from "../components/FooterAuth";
+import i18n from "../i18n";
+import Layout from "../components/layout/Layout";
+import { DarkModeProvider } from "../context/DarkModeContext";
+import { useIsRTL } from "../hooks/useIsRTL";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();

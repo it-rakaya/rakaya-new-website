@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import Container from "../Container";
-import { DarkModeContext } from "@/context/DarkModeContext";
 import { t } from "i18next";
+import { DarkModeContext } from "../../context/DarkModeContext";
 let currentCount = 0;
 
 const StyledHeader = styled.h1`

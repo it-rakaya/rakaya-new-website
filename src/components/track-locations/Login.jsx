@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import BaseInputField from "../form/BaseInputField";
 import LoginIcon from "./LoginIcon";
 import Button from "../Button";
-import { adminEmail, albeitEmail, correctPassword, ithraaEmail } from "@/utils/Helpers";
+import { adminEmail, albeitEmail, correctPassword, ithraaEmail } from "../../utils/Helpers";
 import Image from "next/image";
 import Link from "next/link";
 

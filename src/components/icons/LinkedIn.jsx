@@ -1,5 +1,5 @@
-import { DarkModeContext } from "@/context/DarkModeContext";
 import React, { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function LinkedIn() {
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);

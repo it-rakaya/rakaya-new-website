@@ -1,13 +1,8 @@
-import Button from "@/components/Button";
-import Container from "@/components/Container";
-import BaseInputField from "@/components/form/BaseInputField";
-import AvailableJobLayout from "@/components/jobs/available_job/AvailbleJobLayout";
-import SideMenuJob from "@/components/jobs/available_job/SideMenuJob";
-import { DarkModeContext } from "@/context/DarkModeContext";
-import { Formik } from "formik";
-import Link from "next/link";
+import AvailableJobLayout from "../../../components/jobs/available_job/AvailbleJobLayout";
+import SideMenuJob from "../../../components/jobs/available_job/SideMenuJob";
 import React, { useContext } from "react";
 import { FaTools, FaUser } from "react-icons/fa";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 function DetailsJob() {
   const { isDarkMode } = useContext(DarkModeContext);

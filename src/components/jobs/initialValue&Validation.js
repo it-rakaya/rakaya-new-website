@@ -1,4 +1,4 @@
-import { isEmail } from "@/utils/Helpers";
+import { isEmail } from "../../utils/Helpers";
 import { isValidSaudiID } from "saudi-id-validator";
 import * as Yup from "yup";
 

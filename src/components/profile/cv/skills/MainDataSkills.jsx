@@ -1,11 +1,10 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import SelectExperienceYears from "@/components/form/SelectExperienceYears";
-import SelectLevel from "@/components/form/SelectLevel";
-import SelectSkills from "@/components/form/SelectSkills";
+
 import { Form, Formik } from "formik";
 import React from "react";
-
+import Button from "../../../Button"
+import SelectSkills from "../../../form/SelectSkills";
+import SelectExperienceYears from "../../../form/SelectExperienceYears";
+import SelectLevel from "../../../form/SelectLevel";
 function MainDataSkills({ setShowSkills }) {
   return (
     <div>

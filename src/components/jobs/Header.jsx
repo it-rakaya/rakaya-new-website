@@ -4,8 +4,8 @@ import Container from "../Container";
 import PatternIcon from "../icons/PatternIcon";
 import Map from "../icons/Map";
 import Image from "next/image";
-import { DarkModeContext } from "@/context/DarkModeContext";
-import { useIsRTL } from "@/hooks/useIsRTL";
+import { DarkModeContext } from "../../context/DarkModeContext";
+import { useIsRTL } from "../../hooks/useIsRTL";
 
 const Pattern = ({ rotate = false, isRTL }) => (
   <motion.div

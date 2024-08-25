@@ -1,9 +1,7 @@
 import React from "react";
-import Menu from "./Menu";
-import CustomHead from "@/components/CustomHead";
-import Container from "@/components/Container";
+import Container from "../../../components/Container";
+import CustomHead from "../../../components/CustomHead";
 import Header from "../Header";
-import SideMenuJob from "./SideMenuJob";
 
 function AvailableJobLayout({ children, hiddenMenu }) {
   const description =

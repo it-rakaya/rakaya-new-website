@@ -1,11 +1,11 @@
-import Button from "@/components/Button";
-import BaseInputField from "@/components/form/BaseInputField";
-import Label from "@/components/form/Label";
-import RadioButtonGroup from "@/components/form/RadioButton";
-import SelectNationality from "@/components/form/SelectNationality";
+import BaseInputField from "../../form/BaseInputField";
+import Label from "../../form/Label";
+import RadioButtonGroup from "../../form/RadioButton";
 import { Form, Formik } from "formik";
 import React from "react";
 import PhoneInput from "../../form/PhoneInput";
+import Button from "../../Button";
+import SelectNationality from "../../form/SelectNationality";
 
 function InfoData() {
   return (

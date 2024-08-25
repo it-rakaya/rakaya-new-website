@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../Container";
-import styles from "@/styles/jobs.module.scss";
+import styles from "../../styles/jobs.module.scss";
 
 const Title = ({ title }) => (
   <Container className="position-relative mx-0 px-0">

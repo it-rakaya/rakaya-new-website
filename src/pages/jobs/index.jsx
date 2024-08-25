@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import Button from "@/components/Button";
-import Container from "@/components/Container";
-import JobsLayout from "@/components/jobs/JobsLayout";
-import { DarkModeContext } from "@/context/DarkModeContext";
+import Button from "../../components/Button";
+import Container from "../../components/Container";
+import JobsLayout from "../../components/jobs/JobsLayout";
 import Link from "next/link";
 import React, { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const Jobs = () => {
   const { isDarkMode } = useContext(DarkModeContext);

@@ -1,5 +1,5 @@
-import BaseInputField from "@/components/form/BaseInputField";
-import SelectBank from "@/components/form/SelectBank";
+import BaseInputField from "../../../components/form/BaseInputField";
+import SelectBank from "../../../components/form/SelectBank";
 import React from "react";
 
 function BankInformationMainData() {
