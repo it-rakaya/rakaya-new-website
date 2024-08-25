@@ -1,4 +1,4 @@
-import NotFound from '@/components/icons/NotFound'
+import NotFound from '../components/icons/NotFound'
 import React from 'react'
 
 function Index() {

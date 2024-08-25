@@ -1,7 +1,7 @@
 
-import "../styles/globals.scss";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.scss";
 import Script from "next/script";
 import { useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
