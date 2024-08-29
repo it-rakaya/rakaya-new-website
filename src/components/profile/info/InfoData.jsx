@@ -6,6 +6,8 @@ import React from "react";
 import PhoneInput from "../../form/PhoneInput";
 import Button from "../../Button";
 import SelectNationality from "../../form/SelectNationality";
+import UploadDoc from "../../form/UploadDoc";
+import SelectCities from "../../form/SelectCities";
 
 function InfoData() {
   return (
@@ -60,7 +62,7 @@ function InfoData() {
           <PhoneInput label={"رقم الجوال"} required />
           <SelectNationality required label={"الجنسية"} />
           <SelectNationality required label={"دولة الاقامة"} />
-          <SelectNationality required label={"المدينة"} />
+          <SelectCities required label={"المدينة"} />
 
           <div>
             <Label required>الجنس</Label>
@@ -73,7 +75,8 @@ function InfoData() {
               />
             </div>
           </div>
-       
+
+          <UploadDoc label={"الصورة الشخصية"} />
           <div className="mt-3 d-flex justify-content-between">
             <Button>حفظ</Button>
           </div>

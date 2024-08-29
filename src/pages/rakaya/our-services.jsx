@@ -4,8 +4,10 @@ import Header from "../../components/jobs/Header";
 import VisionLayout from "../../components/vision/VisionLayout";
 import Card from "../../components/vision/services/Card";
 import { services } from "../../data";
+import fetchData from "../../utils/fetchData";
 
-const Services = () => {
+const Services = ({data}) => {
+  console.log("🚀 ~ Services ~ services:", data)
   const description = "نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها وترسّخ علاقتنا بعملائنا "
   return (
     <>
@@ -19,14 +21,13 @@ const Services = () => {
           وترسّخ علاقتنا بعملائنا 
         </p>
         <Container className="row ">
-          {services?.map((item, index) => (
-            <Card title={item?.title} key={index}>
+          {data?.services?.map((item, index) => (
+            <Card title={item?.name} key={index}>
               <p className="mb-1 my-2 text-justify">{item?.subTitle}</p>
-              {item?.items.map((point, index) => (
-                <p className="my-1 text-justify" key={index}>
-                  - {point?.item}
-                </p>
-              ))}
+              <p className="my-1 text-justify" key={index} dangerouslySetInnerHTML={{ __html: item?.description }} />  
+             
+              {/* {item?.items.map((point, index) => (
+              ))} */}
             </Card>
           ))}
         </Container>
@@ -36,3 +37,11 @@ const Services = () => {
 };
 
 export default Services;
+export async function getServerSideProps(context) {
+  const services = await fetchData("services");
+  return {
+    props: {
+       data:services,
+    },
+  };
+}

@@ -3,6 +3,8 @@ import SelectComp from "./SelectComp";
 
 function SelectLevel({ label, required }) {
   const options = [
+    { value: "main", label: "اللغة الام" },
+
     { value: "beginner", label: "مبتدئ" },
     { value: "intermediate", label: "متوسط" },
     { value: "advance", label: "متقدم" },

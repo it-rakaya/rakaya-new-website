@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import Container from "../Container";
-import LoginIcon from "../icons/LoginIcon";
+import Container from "../../Container";
+import LoginIcon from "../../icons/LoginIcon";
 
 function LoginLayout({ children }) {
   return (

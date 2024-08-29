@@ -2,15 +2,14 @@ import { useFormikContext } from "formik";
 import React from "react";
 import SelectComp from "./SelectComp";
 import useFetch from "../../hooks/useFetch";
-
-function SelectSkills({ label, required }) {
+{""}
+function SelectCities({ label, required, labelClassName }) {
   const { values } = useFormikContext();
   const { data } = useFetch({
-     queryKey: [`skills`],
-    endpoint: `skills`,
+    endpoint: `cities`,
+    queryKey: [`cities`],
   });
-  
-  const options = data?.data?.skills?.map((item) => ({
+  const options = data?.data?.cities?.map((item) => ({
     value: item.id,
     label: item.name_ar,
   }));
@@ -18,18 +17,20 @@ function SelectSkills({ label, required }) {
   const selectedValue = options?.find(
     (option) => option?.value == values.nationality
   );
+
   return (
     <div>
       <SelectComp
         label={label}
-        name={"scrub_size"}
-        placeholder="اختر المهارة"   
+        labelClassName={labelClassName}
+        name={"nationality"}
         options={options}
         required={required}
+        disabled={values?.national_id?.startsWith("1")}
         selectedValue={selectedValue}
       />
     </div>
   );
 }
 
-export default SelectSkills;
+export default SelectCities;

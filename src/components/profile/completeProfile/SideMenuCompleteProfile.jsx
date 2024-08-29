@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import CheckEmail from "./checkEmail/CheckEmail";
 import CheckPhone from "./checkPhone/CheckPhone";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 const tabs = [
   { id: "v-pills-home", label: "البريد الالكتروني", component: <CheckEmail /> },
@@ -14,6 +15,7 @@ const tabs = [
 
 function SideMenuCompleteProfile() {
   const [activeTab, setActiveTab] = useState("v-pills-home");
+  const { isDarkMode } = useContext(DarkModeContext);
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -59,7 +61,7 @@ function SideMenuCompleteProfile() {
           ))}
         </div>
         <div
-          className="tab-content col-md-7  bg-white mx-2 rounded-3  profile_content"
+          className={`tab-content col-md-7  ${isDarkMode ? "bg-dark" : "bg-white"} mx-2 rounded-3  profile_content`}
           id="v-pills-tabContent"
           // style={{padding:"30px 120px "}}
         >

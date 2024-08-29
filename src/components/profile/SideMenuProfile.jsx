@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "../Container";
 import { MdDashboard, MdLock, MdOutlineDashboard, MdOutlineLock, MdOutlineVerified, MdVerified } from "react-icons/md";
 import { FaIdCard, FaRegAddressCard, FaRegNewspaper } from "react-icons/fa6";
 import { IoIosPaper } from "react-icons/io";
 import Image from "next/image";
 import { IoNewspaperOutline } from "react-icons/io5";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const titleVariant = {};
 
@@ -36,7 +37,7 @@ const ListItem = ({
       <Link to={to} href={href} onClick={onClick}>
         <div className="my-1 w-100" style={{ cursor: "pointer" }}>
           <div
-            className={`d-flex justify-content-start gap-2 border  rounded-3 p-2 w-100 ${
+            className={`d-flex justify-content-start gap-2 border  text-dark  rounded-3 p-2 w-100 ${
               active ? "bg-primary text-white" : "bg-white"
             }   align-items-center `}
           >
@@ -95,6 +96,11 @@ const paths = [
     href: "/profile/change-password",
     icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
     iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+  },{
+    title: "المعلومات البنكية",
+    href: "/profile/bank-information",
+    icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+    iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
   },
   
 ];
@@ -104,10 +110,11 @@ const SideMenuProfile = () => {
   const [activeRouteIndex, setActiveRouteIndex] = useState(
     paths.indexOf(paths.find((path) => path.href == pathname))
   );
+  const { isDarkMode } = useContext(DarkModeContext);
 
   return (
     <Container
-      className="col-lg-2 mx-0 menuProfile "
+      className={`col-lg-2 mx-0 menuProfile    ${isDarkMode ? "bg-dark" : ""}`}
       style={{
         backgroundColor: "#eee",
         height: "100vh",

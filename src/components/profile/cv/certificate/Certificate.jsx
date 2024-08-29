@@ -28,6 +28,7 @@ function Certificate() {
                 <div>
                   <RiDeleteBinLine
                     style={{ fontSize: "20px", color: "#0000007a" }}
+                    className="text_Dark"
                   />
                 </div>
               </div>
@@ -40,6 +41,7 @@ function Certificate() {
                 <div>
                   <RiDeleteBinLine
                     style={{ fontSize: "20px", color: "#0000007a" }}
+                    className="text_Dark"
                   />
                 </div>
               </div>

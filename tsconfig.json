@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Accordion.jsx", "src/components/contact-us/FinalSubmit.jsx"  ],
+, "src/components/Accordion.jsx", "src/components/contact-us/FinalSubmit.jsx", "src/components/layout/CustomLayout.jsx"  ],
   "exclude": [
     "node_modules"
   ]

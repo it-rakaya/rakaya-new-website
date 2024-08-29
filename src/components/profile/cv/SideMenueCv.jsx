@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
@@ -6,6 +6,7 @@ import Skills from "./skills/Skills";
 import Language from "./language/Language";
 import Certificate from "./certificate/Certificate";
 import Courses from "./courses/Courses";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 const tabs = [
   {
@@ -42,6 +43,7 @@ const tabs = [
 
 function SideMeneCv() {
   const [activeTab, setActiveTab] = useState("v-pills-home");
+  const { isDarkMode } = useContext(DarkModeContext);
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -54,7 +56,7 @@ function SideMeneCv() {
   };
 
   return (
-    <div className="d-flex flex-column ">
+    <div className={`d-flex flex-column  `}>
       <div className="mx-3 mb-5">
         <h5 className=" text-gold">السيرة الذاتية</h5>
         <p>الانطباع الاول عنك وفرصتك لحصول على مقابلات وظيفية</p>
@@ -114,7 +116,7 @@ function SideMeneCv() {
           ))}
         </div>
         <div
-          className="tab-content col-md-7  bg-white mx-2 rounded-3  profile_content"
+          className={`tab-content col-md-7  bg-white mx-2 rounded-3  profile_content ${isDarkMode ? "bg-dark" : ""} text_dark `}
           id="v-pills-tabContent"
           // style={{padding:"30px 120px "}}
         >

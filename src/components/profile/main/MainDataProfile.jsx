@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Accordion from "../../Accordion"
+import TestIcons from "../../icons/TestIcons";
 
 const sections = {
   بياناتي: {
@@ -105,7 +106,7 @@ const icons = {
 
 function MainDataProfile() {
   return (
-    <div className="accordion border-0" id="accordionExample">
+    <div className="accordion border-0 " id="accordionExample">
       {Object.entries(sections).map(
         ([sectionTitle, sectionData], sectionIndex) => (
           <Accordion
@@ -118,6 +119,7 @@ function MainDataProfile() {
           />
         )
       )}
+        {/* <TestIcons/> */}
     </div>
   );
 }

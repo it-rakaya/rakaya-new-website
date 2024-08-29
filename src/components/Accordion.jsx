@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { FaCheck } from "react-icons/fa6";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 function Accordion({ title, icon, items, isOpenInitially = false, required }) {
+  const { isDarkMode } = useContext(DarkModeContext);
+
   return (
-    <div className="accordion-item border-0 border-bottom ">
+    <div className={`accordion-item border-0 border-bottom`}>
       <h2 className="accordion-header">
         <button
-          className={`accordion-button px-1 ${
+          className={`accordion-button text_Dark  ${isDarkMode ? "bg-dark" : "bg-white"}  px-1 ${
             !isOpenInitially ? "collapsed" : ""
           }`}
           type="button"
@@ -21,9 +26,10 @@ function Accordion({ title, icon, items, isOpenInitially = false, required }) {
               {title}
             </span>
           </div>
-          {required && (
+          {required ? (
+            
             <div
-              className="text-danger fs-3 align-items-center justify-content-end"
+              className="text-danger fs-4 align-items-center justify-content-end"
               style={{
                 display: "flex",
                 margin: "0 10px",
@@ -32,10 +38,29 @@ function Accordion({ title, icon, items, isOpenInitially = false, required }) {
             >
               <span
                 style={{
-                  height: "20px",
+                  height: "29px",
                 }}
               >
-                *
+                <IoIosInformationCircleOutline />
+              
+              </span>
+              
+            </div>
+          ) : (
+            <div
+              className="text-success fs-5 align-items-center justify-content-end"
+              style={{
+                display: "flex",
+                margin: "0 10px",
+                flex: "1",
+              }}
+            >
+              <span
+                style={{
+                  height: "29px",
+                }}
+              >
+                <FaCheck />
               </span>
             </div>
           )}

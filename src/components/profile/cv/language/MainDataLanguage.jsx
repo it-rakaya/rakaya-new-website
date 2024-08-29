@@ -12,7 +12,7 @@ function MainDataLanguage({ setShowSkills }) {
         <Form>
           <div className="my-4">
             <SelectLanguage label={"اللغات"} />
-            <div class="form-check-reverse my-3">
+            {/* <div class="form-check-reverse my-3">
             <input
               class="form-check-input"
               type="checkbox"
@@ -28,7 +28,7 @@ function MainDataLanguage({ setShowSkills }) {
             >
               اللغه الأم
             </label>
-          </div>
+          </div> */}
 
             <SelectLevel label={"المستوى"} />
             <UploadDoc label={""} />

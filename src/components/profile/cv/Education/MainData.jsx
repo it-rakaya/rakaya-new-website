@@ -6,6 +6,8 @@ import { Form, Formik } from "formik";
 import React from "react";
 import SelectNationality from "../../../form/SelectNationality";
 import Button from "../../../Button";
+import SelectUniversities from "../../../SelectUniversities";
+import SelectMajors from "../../../form/SelectMajors";
 
 function MainData({ setShowCard }) {
   return (
@@ -14,18 +16,18 @@ function MainData({ setShowCard }) {
         <Form>
           <SelectEducation label={"مستوى التعليم"} />
           <SelectNationality label={"الدولة"} />
-          <SelectNationality label={"الكلية"} />
-          <SelectNationality label={"التخصص"} />
+          <SelectUniversities label={"الكلية"} />
+          <SelectMajors label={"التخصص"} />
 
           <div className="d-flex gap-2 mt-3">
             <div className="w-25">
-              <BaseInputField label={"المعدل"} disabled />
+              <BaseInputField label={"المعدل"} disabled name={"rate"} />
             </div>
             <div className="w-75 ">
               <SelectGpa label={"من"} />
             </div>
           </div>
-          <DatePickerComp label={"سنة الالتحاق (ميلادي)"} />
+          <DatePickerComp label={"سنة الالتحاق (ميلادي)"}  name={""}/>
           <div class="form-check-reverse my-3">
             <input
               class="form-check-input"

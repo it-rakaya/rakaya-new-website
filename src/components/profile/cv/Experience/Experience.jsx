@@ -24,12 +24,13 @@ function Experience() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">بكالوريوس هندسة اتصالات </p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   جامعة ام القرى
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
+                className="text_Dark"
                   style={{ fontSize: "20px", color: "#0000007a" }}
                 />
               </div>
@@ -39,12 +40,13 @@ function Experience() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">بكالوريوس حاسبات ومعلومات</p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   جامعة ام القرى
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
+                className="text_Dark"
                   style={{ fontSize: "20px", color: "#0000007a" }}
                 />
               </div>
@@ -54,12 +56,13 @@ function Experience() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">بكالوريوس حاسبات ومعلومات</p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   جامعة ام القرى
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
+                className="text_Dark"
                   style={{ fontSize: "20px", color: "#0000007a" }}
                 />
               </div>

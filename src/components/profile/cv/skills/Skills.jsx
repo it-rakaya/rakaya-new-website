@@ -23,13 +23,14 @@ function Skills() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">Front End Developer</p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   1-2 سنوات
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
                   style={{ fontSize: "20px", color: "#0000007a" }}
+                  className="text_Dark"
                 />
               </div>
             </div>
@@ -38,13 +39,14 @@ function Skills() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">Front End Developer</p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   1-2 سنوات
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
                   style={{ fontSize: "20px", color: "#0000007a" }}
+                  className="text_Dark"
                 />
               </div>
             </div>
@@ -53,13 +55,14 @@ function Skills() {
             <div className="d-flex justify-content-between align-items-center  py-3 px-4">
               <div className=" ">
                 <p className="m-0 fw-bold">Front End Developer</p>
-                <p className="m-0" style={{ color: "#0000007a" }}>
+                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
                   1-2 سنوات
                 </p>
               </div>
               <div>
                 <RiDeleteBinLine
                   style={{ fontSize: "20px", color: "#0000007a" }}
+                  className="text_Dark"
                 />
               </div>
             </div>

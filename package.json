@@ -25,6 +25,7 @@
     "focus-formik-error": "^1.1.0",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.5",
+    "heroicons": "^2.1.5",
     "hijri-converter": "^1.1.1",
     "i18next": "^23.7.18",
     "i18next-browser-languagedetector": "^7.2.0",

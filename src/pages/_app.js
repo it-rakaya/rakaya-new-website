@@ -1,4 +1,3 @@
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.scss";
@@ -9,8 +8,11 @@ import { ToastContainer } from "react-toastify";
 import FooterAuth from "../components/FooterAuth";
 import i18n from "../i18n";
 import Layout from "../components/layout/Layout";
+import CustomLayout from "../components/layout/CustomLayout";
+
 import { DarkModeProvider } from "../context/DarkModeContext";
 import { useIsRTL } from "../hooks/useIsRTL";
+import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();
@@ -20,7 +22,7 @@ export default function MyApp({ Component, pageProps }) {
     document.documentElement.lang = isRTL ? "ar" : "en";
   }, [isRTL]);
 
-  // Wrap the component with the Layout if noLayout is not true
+  const route = useRouter();
   const renderComponent = () => (
     <>
       <Script
@@ -54,20 +56,26 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <I18nextProvider i18n={i18n}>
-      {Component.noLayout ? (
-        <DarkModeProvider>
-          <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        {Component.noLayout ? (
+          <DarkModeProvider>
             {renderComponent()}
-          </QueryClientProvider>
-          <FooterAuth />
-        </DarkModeProvider>
-      ) : (
-        <DarkModeProvider>
-          <QueryClientProvider client={queryClient}>
+
+            <FooterAuth />
+          </DarkModeProvider>
+        ) : route?.asPath.startsWith("/profile") ? (
+          <DarkModeProvider>
+            <CustomLayout>
+              {renderComponent()}
+              <FooterAuth />
+            </CustomLayout>
+          </DarkModeProvider>
+        ) : (
+          <DarkModeProvider>
             <Layout>{renderComponent()}</Layout>
-          </QueryClientProvider>
-        </DarkModeProvider>
-      )}
+          </DarkModeProvider>
+        )}
+      </QueryClientProvider>
     </I18nextProvider>
   );
 }

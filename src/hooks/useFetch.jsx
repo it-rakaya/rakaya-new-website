@@ -6,6 +6,9 @@ function useFetch({ endpoint, enabled, select, queryKey, onError, onSuccess }) {
   const config = {
     headers: {
       // Authorization: authorizationHeader,
+      // Accept:"*/*",
+      // "allow-Access-control-Allow-origin":"*/*"
+      
     },
   };
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -17,7 +20,7 @@ function useFetch({ endpoint, enabled, select, queryKey, onError, onSuccess }) {
     select,
     onError: (error) => {
       if (error.message === "unauthenticated") {
-        console.log("🚀 ~ error.message:", error.message);
+        console.log("🚀 ~ error.message:", error);
       }
       if (onError) {
         onError(error);

@@ -883,3 +883,23 @@ input:-webkit-autofill:active {
     transform: translateX(-2px)
   }
 }
+.navbar_profile .dropdown-toggle::after{
+display: none;
+}
+
+.navbar_profile .dropdown-menu li:hover {
+   background-color: $primary; 
+   cursor: pointer; 
+ }
+ 
+.navbar_profile .dropdown-menu li:hover .dropdown-item {
+   color: white; 
+ }
+ 
+
+.dark .accordion-button::after{
+   background-color: white;
+   border-radius: 4px;
+   padding: 5px;
+
+ }

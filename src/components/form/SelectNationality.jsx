@@ -11,7 +11,7 @@ function SelectNationality({ label, required, labelClassName }) {
   });
   const options = data?.data?.countries?.map((item) => ({
     value: item.id,
-    label: item.name_ar,
+    label: item.name,
   }));
 
   const selectedValue = options?.find(
