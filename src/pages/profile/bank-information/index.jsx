@@ -3,7 +3,7 @@ import ProfileLayout from "../../../components/profile/ProfileLayout";
 import Main from "../../../components/profile/bankInformation/Main";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 
-function index() {
+function Index() {
   const { isDarkMode } = useContext(DarkModeContext);
 
   return (
@@ -18,4 +18,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
