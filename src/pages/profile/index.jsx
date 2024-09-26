@@ -4,6 +4,7 @@ import StatusCompleteProfile from "../../components/StatusCompleteProfile";
 import React, { useContext } from "react";
 import { GoAlert } from "react-icons/go";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import useFetch from "../../hooks/useFetch";
 
 function Profile() {
   const { isDarkMode } = useContext(DarkModeContext);

@@ -1,23 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import { UseLocalStorage } from "hooks/useLocalStorage";
 import Cookies from "js-cookie";
 import { createContext, useCallback, useContext, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { UseLocalStorage } from "../../hooks/useLocalStorage";
+import { useRouter } from "next/router";
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = UseLocalStorage("user");
   const [token, setToken] = UseLocalStorage("token", null);
 
-  const navigate = useNavigate();
+  const router = useRouter();
   const login = useCallback(
     async (data) => {
       if (setUser) setUser(data);
       Cookies.set("token", data.token);
       setToken(data?.token);
-      navigate("/", { replace: true });
+      router.push("/");
     },
-    [navigate, setUser]
+    [setUser]
   );
 
   const logout = useCallback(async () => {
@@ -27,8 +27,8 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     Cookies.remove("token");
     // window.location.reload();
-    navigate("/", { replace: true });
-  }, [setUser, navigate]);
+    router.push("/");
+  }, [setUser]);
 
   const value = useMemo(
     () => ({

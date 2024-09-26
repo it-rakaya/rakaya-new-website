@@ -1,9 +1,9 @@
 import Button from "../../components/Button";
 import BaseInputField from "../../components/form/BaseInputField";
-import LoginLayout from "../../components/Login/LoginLayout";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import React from "react";
+import LoginLayout from "../../components/form/Login/LoginLayout";
 
 function ResetPassword() {
   return (
@@ -11,7 +11,6 @@ function ResetPassword() {
       <LoginLayout>
         <div className="">
           <h2 className="fw-bolder">اعادة تعيين كلمة المرور</h2>
-          {/* <p>تسجيل حساب في موقع شركة ركايا للاستشارات الأدارية</p> */}
           <Formik initialValues={{}} onSubmit={() => {}}>
             <Form>
               <BaseInputField

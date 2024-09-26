@@ -1,23 +1,32 @@
-import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
-import Cookies from 'js-cookie';
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 export function useMutate({
   endpoint,
-  mutationKey,
+mutationKey,
   onError,
   onSuccess,
   formData,
   onMutate,
-  method = 'post',
+  method = "post",
 }) {
-  const [uploadProgress, setUploadProgress] = useState(0); 
-  const user_token = Cookies.get('token');
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const user_token = Cookies.get("token");
   const token = user_token;
+  const authorizationHeader = `Bearer ${token}`;
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  const { data, isLoading, isSuccess, mutate, failureReason, isError, isPending } = useMutation({
+  const {
+    data,
+    isLoading,
+    isSuccess,
+    mutate,
+    failureReason,
+    isError,
+    isPending,
+  } = useMutation({
     mutationKey,
     mutationFn: (values) => {
       const requestConfig = {
@@ -26,18 +35,23 @@ export function useMutate({
         data: values,
         headers: formData
           ? {
-              'Content-Type': 'multipart/form-data',
+              "Content-Type": "multipart/form-data",
               // Authorization: authorizationHeader,
               // 'Accept-Language': isRTL ? 'ar' : 'en',
+              // Accept: "*/*",
+              "Accept-Language": "ar",
             }
           : {
-              'Content-Type': 'application/json; charset=utf-8',
+              "Content-Type": "application/json; charset=utf-8",
               // Authorization: authorizationHeader,
-              // 'Accept-Language': isRTL ? 'ar' : 'en',
+              "Accept-Language": "ar",
+              // Accept: "*/*",
             },
         onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-          setUploadProgress(percentCompleted); // Update upload progress state
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted); 
         },
       };
 
@@ -56,6 +70,6 @@ export function useMutate({
     failureReason,
     isError,
     isPending,
-    uploadProgress, 
+    uploadProgress,
   };
 }

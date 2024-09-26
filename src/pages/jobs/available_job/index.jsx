@@ -7,17 +7,21 @@ import BaseInputField from "../../../components/form/BaseInputField";
 import AvailableJobLayout from "../../../components/jobs/available_job/AvailbleJobLayout";
 import ItemAvailableJob from "../../../components/jobs/available_job/ItemAvailableJob";
 import ModalComp from "../../../components/ModalComp";
+import fetchData from "../../../utils/fetchData";
 
-function AvailableJob() {
+function AvailableJob({ jobs }) {
+  console.log("🚀 ~ AvailableJob ~ jobs:", jobs);
   return (
     <>
       <AvailableJobLayout hiddenMenu>
         <div className="">
           <Container className="m-auto  col-md-7 ">
-            <ItemAvailableJob />
-            <ItemAvailableJob />
-
-            <ItemAvailableJob />
+            {jobs?.vacancies?.map(
+              (item) =>
+                !item?.is_visible && (
+                  <ItemAvailableJob item={item} key={item?.id} />
+                )
+            )}
           </Container>
         </div>
 
@@ -25,17 +29,8 @@ function AvailableJob() {
           isOpen={false}
           header={"الرجاء تسجيل الدخول اولًا "}
           alert={true}
-
-          // Footer={
-          //   <div className="d-flex justify-content-between ">
-          //     {/* <Button>الملف الشخصي</Button> */}
-          //     {/* <Button color="secondary">الرجوع</Button> */}
-          //   </div>
-          // }
         >
           <div className="">
-            {/* <h2 className="fw-bolder">تسجيل الدخول</h2> */}
-            {/* <p>تسجيل الدخول لموقع شركة ركايا للاستشارات الأدارية</p> */}
             <Formik initialValues={{}} onSubmit={() => {}}>
               <Form>
                 <BaseInputField name={""} label={"البريد الالكتروني"} />
@@ -77,3 +72,11 @@ function AvailableJob() {
 }
 
 export default AvailableJob;
+export async function getServerSideProps(context) {
+  const jobs = await fetchData("vacancies");
+  return {
+    props: {
+      jobs,
+    },
+  };
+}

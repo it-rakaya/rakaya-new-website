@@ -9,10 +9,12 @@ import FooterAuth from "../components/FooterAuth";
 import i18n from "../i18n";
 import Layout from "../components/layout/Layout";
 import CustomLayout from "../components/layout/CustomLayout";
-
 import { DarkModeProvider } from "../context/DarkModeContext";
 import { useIsRTL } from "../hooks/useIsRTL";
 import { useRouter } from "next/router";
+import { AuthProvider } from "../context/auth/AuthProvider";
+import "react-toastify/dist/ReactToastify.css";
+import ContactUs from "../components/ContactUs";
 
 export default function MyApp({ Component, pageProps }) {
   const isRTL = useIsRTL();
@@ -44,7 +46,7 @@ export default function MyApp({ Component, pageProps }) {
       `}
       </Script>
       <Component {...pageProps} />
-      <ToastContainer />
+     
     </>
   );
 
@@ -57,24 +59,30 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <I18nextProvider i18n={i18n}>
       <QueryClientProvider client={queryClient}>
-        {Component.noLayout ? (
-          <DarkModeProvider>
-            {renderComponent()}
-
-            <FooterAuth />
-          </DarkModeProvider>
-        ) : route?.asPath.startsWith("/profile") ? (
-          <DarkModeProvider>
-            <CustomLayout>
+        <AuthProvider>
+          {Component.noLayout ? (
+            <DarkModeProvider>
               {renderComponent()}
+
               <FooterAuth />
-            </CustomLayout>
-          </DarkModeProvider>
-        ) : (
-          <DarkModeProvider>
-            <Layout>{renderComponent()}</Layout>
-          </DarkModeProvider>
-        )}
+            </DarkModeProvider>
+          ) : route?.asPath.startsWith("/profile") ? (
+            <DarkModeProvider>
+              <CustomLayout>
+                {renderComponent()}
+                <FooterAuth />
+              </CustomLayout>
+            </DarkModeProvider>
+          ) : (
+            <DarkModeProvider>
+              <Layout>{renderComponent()}</Layout>
+            </DarkModeProvider>
+          )}
+          <div>
+            <ContactUs/>
+          </div>
+        </AuthProvider>
+        <ToastContainer isRTL={true} />
       </QueryClientProvider>
     </I18nextProvider>
   );

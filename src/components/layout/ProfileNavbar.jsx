@@ -2,14 +2,11 @@ import { t } from "i18next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
-import styles from "../../styles/components/Navbar.module.scss";
 import { DarkModeContext } from "../../context/DarkModeContext";
-import { routes } from "../../utils/routes";
-import Image from "next/image";
-import { IoMdHome, IoMdLogOut, IoMdPerson } from "react-icons/io";
-
+import styles from "../../styles/components/Navbar.module.scss";
+import MenuUser from "../MenuUser";
 const Button = dynamic(() => import("../Button"), { ssr: false });
 const Container = dynamic(() => import("../Container"), { ssr: true });
 const Logo = dynamic(() => import("../Logo"), { ssr: true });
@@ -116,58 +113,8 @@ function ProfileNavbar() {
             >
               {t("common:Jobs")}
             </Button>
-            <div class="dropdown">
-              <button
-                className=" dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style={{
-                  backgroundColor: "transparent",
-                }}
-              >
-                <div>
-                  <Image
-                    alt=""
-                    src={"/studio/team/man.webp"}
-                    width={50}
-                    height={50}
-                    className="p-1 bg-white"
-                    style={{
-                      border: "1px solid #C9B171",
-                      objectFit: "cover",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </div>
-              </button>
-              <ul className="dropdown-menu text-end">
-                <li className="">
-                  <Link className="dropdown-item" href="/">
-                    <span className="mx-2">
-                      <IoMdHome className="fs-4" />
-                    </span>
-                    <span>الصفحة الرئيسية</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/profile">
-                    <span className="mx-2">
-                      <IoMdPerson className="fs-4" />
-                    </span>
-                    <span>الملف الشخصي</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/login">
-                    <span className="mx-2">
-                      <IoMdLogOut className="fs-4" />
-                    </span>
-                    <span>تسجيل الخروج</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+
+            <MenuUser />
           </div>
         </div>
       </Container>

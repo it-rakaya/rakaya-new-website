@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import ContentProfile from "./ContentProfile";
 import SideMenuProfile from "./SideMenuProfile";
-import { DarkModeContext } from "../../context/DarkModeContext";
 const ProfileLayout = ({ title, children }) => {
-
   return (
     <>
       <div
@@ -12,7 +9,6 @@ const ProfileLayout = ({ title, children }) => {
       >
         <SideMenuProfile />
         <ContentProfile title={title} id={"content"}>
-          
           {children}
         </ContentProfile>
       </div>

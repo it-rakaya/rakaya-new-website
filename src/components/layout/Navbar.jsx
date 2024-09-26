@@ -3,10 +3,12 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useRef, useState } from "react";
-import { FiMoon, FiSun } from "react-icons/fi"; 
-import styles from "../../styles/components/Navbar.module.scss"
+import { FiMoon, FiSun } from "react-icons/fi";
+import styles from "../../styles/components/Navbar.module.scss";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import { routes } from "../../utils/routes";
+import MenuUser from "../MenuUser";
+import { useAuth } from "../../context/auth/AuthProvider";
 
 const Button = dynamic(() => import("../Button"), { ssr: false });
 const Container = dynamic(() => import("../Container"), { ssr: true });
@@ -52,6 +54,7 @@ function Navbar() {
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const router = useRouter();
+  const { user } = useAuth();
 
   return (
     <nav
@@ -97,7 +100,7 @@ function Navbar() {
               </NavBarLink>
             ))}
           </ul>
-          <div className="d-flex justify-content-center align-items-center mt-4 mt-lg-0 gap-3">
+          <div className="d-flex justify-content-center align-items-center mt-4 mt-lg-0 gap-3 navbar_profile">
             <button
               onClick={toggleDarkMode}
               className={`btn ${
@@ -106,21 +109,18 @@ function Navbar() {
               style={{ height: "39.98px" }}
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}
-              
             </button>
             {/* <Setting /> */}
-            <Button
-              color={isDarkMode ? "primary" : "secondary"}
-              onClick={() => router.push("/login")}
-            >
-              {t("common:Login")}
-            </Button>
-            {/* <Button
-              color={isDarkMode ? "primary" : "secondary"}
-              className="me-3"
-            >
-              {t("common:join_partner")}
-            </Button> */}
+            {user ? (
+              <MenuUser />
+            ) : (
+              <Button
+                color={isDarkMode ? "primary" : "secondary"}
+                onClick={() => router.push("/login")}
+              >
+                {t("common:Login")}
+              </Button>
+            )}
           </div>
         </div>
       </Container>

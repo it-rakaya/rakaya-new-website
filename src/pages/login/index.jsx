@@ -1,27 +1,61 @@
 import Button from "../../components/Button";
 import BaseInputField from "../../components/form/BaseInputField";
-import LoginLayout from "../../components/Login/LoginLayout";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import LoginLayout from "../../components/form/Login/LoginLayout";
+import MainData from "../../components/login/MainData";
+import { useMutate } from "../../hooks/useMutate";
+import { useAuth } from "../../context/auth/AuthProvider";
+import { isEmail } from "../../utils/Helpers";
+import * as Yup from "yup";
+import { notify } from "../../utils/toast";
 
 function LoginPage() {
   const router = useRouter();
+  const { login, setUser } = useAuth();
+  const { mutate: loginPost, isPending: loadingLogin } = useMutate({
+    mutationKey: [`login`],
+    endpoint: `login`,
+    onSuccess: (data) => {
+      notify("success", "مرحبا بك");
+      login(data?.data);
+      setUser(data?.data?.candidate);
+    },
+    formData: true,
+  });
+
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
+      .required("البريد الإلكتروني مطلوب"),
+
+    password: Yup.string()
+      .min(8, "كلمة المرور يجب أن تكون على الأقل 8 أحرف")
+      .required("كلمة المرور مطلوبة"),
+  });
+
   return (
     <>
       <LoginLayout>
         <div className="">
           <h2 className="fw-bolder">تسجيل الدخول</h2>
           <p>تسجيل الدخول لموقع شركة ركايا للاستشارات الأدارية</p>
-          <Formik initialValues={{}} onSubmit={() => {}}>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={(values) => {
+              loginPost(values);
+            }}
+          >
             <Form>
-              <BaseInputField name={""} label={"البريد الالكتروني"} />
-              <BaseInputField
-                name={""}
-                label={"كلمة المرور"}
-                type={"password"}
-              />
+              <MainData loadingLogin={loadingLogin} />
               <p
                 className=""
                 style={{ cursor: "pointer", margin: "20px 0 0 0" }}
@@ -33,7 +67,7 @@ function LoginPage() {
                 <Button
                   color="secondary"
                   type="submit"
-                  isLoading={false}
+                  isLoading={loadingLogin}
                   style={{ width: "100%" }}
                 >
                   تسجيل الدخول

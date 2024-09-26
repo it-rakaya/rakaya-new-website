@@ -2,22 +2,23 @@ import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import OverView from "./OverView";
 import Apply from "./Apply";
+import { useIsRTL } from "../../../hooks/useIsRTL";
 
 const tabs = [
   { id: "v-pills-home", label: "النظرة العامة", component: <OverView /> },
   {
     id: "v-pills-profile",
     label: "التقديم",
-    component: <Apply/>,
+    component: <Apply />,
   },
 ];
 
-function SideMenuJob() {
+function SideMenuJob({ DetailsJob }) {
   const [activeTab, setActiveTab] = useState("v-pills-home");
-
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
+  const isRTL = useIsRTL();
 
   const getButtonClass = (tabId) => {
     return activeTab === tabId
@@ -27,26 +28,36 @@ function SideMenuJob() {
 
   return (
     <div className="d-flex flex-column mt-5">
-        <div
-          className="mx-3 mb-5   rounded-5 p-2 px-4 col-md-10"
-          // style={{
-          // //   border: "1px solid #C9B171",
-          // // }}
-        >
-          <div className="d-flex align-items-center gap-2 my-3 ">
-            <h5 className="m-0">مطور واجهات امامية</h5>
-            <p className="badge bg-primary m-0">عن بعد</p>
-            <p className="badge bg-primary m-0">دوام كامل </p>
-          </div>
-          <h5 className=" text-gold">وصف الوظيفة</h5>
-          <p>
-            في ركايا، نتعهد بتقديم مجموعة من المزايا الوظيفية التي تتيح لك
-            الحرية في اختيار مكان وزمان عملك. لا نفرض عليك الحاجة للعمل من مقرنا
-            الرئيسي في مكة المكرمة أو التقيد بجدول زمني صارم، بل نركز على تقديم
-            مزايا تنافسية لضمان توفير بيئة عمل محفزة ومرنة. للمزيد من المعلومات
-            حول هذه المزايا وكيفية الاستفادة منها، يرجى الرجوع إلى
+      <div
+        className="mx-3 mb-5   rounded-5 p-2 px-4 col-md-10"
+        // style={{
+        // //   border: "1px solid #C9B171",
+        // // }}
+      >
+        <div className="d-flex align-items-center gap-2 my-3 ">
+          <h5 className="m-0">
+            {" "}
+            {isRTL
+              ? DetailsJob?.DetailsJob?.vacancy?.name_ar
+              : DetailsJob?.DetailsJob?.vacancy?.name_en}
+          </h5>
+          <p className="badge bg-primary m-0">
+            {DetailsJob?.DetailsJob?.vacancy?.location_type}
+          </p>
+          <p className="badge bg-primary m-0">
+            {" "}
+            {DetailsJob?.DetailsJob?.vacancy?.work_type}
           </p>
         </div>
+        <h5 className=" text-gold">وصف الوظيفة</h5>
+        <p>
+        {
+        isRTL ? 
+        DetailsJob?.DetailsJob?.vacancy?.description_ar : 
+        DetailsJob?.DetailsJob?.vacancy?.description_en
+        }
+        </p>
+      </div>
       <div className="row w-100">
         <div
           className="nav flex-column nav-pills me-md-3 col-md-3"

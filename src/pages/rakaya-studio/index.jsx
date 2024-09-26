@@ -7,8 +7,10 @@ import Container from "../../components/Container";
 import CustomHead from "../../components/CustomHead";
 import ImgContainer from "../../components/ImgContainer";
 import PatternImage from "../../components/icons/PatternImage";
+import fetchData from "../../utils/fetchData";
 
-const index = () => {
+const index = (events) => {
+  console.log("🚀 ~ index ~ events:", events?.data?.events)
   const description = "جميع أحداث ركايا في مكان واحد";
   return (
     <>
@@ -35,19 +37,19 @@ const index = () => {
             className="w-100 rounded my-3 mb-4"
           ></iframe>
         </Container>
-        {postsStudio.map((item, index) => (
+        {events?.data?.events.map((item, index) => (
           <div key={index} className="col-lg-12 ">
-            <h1 className="align-self-start text_Dark">{item?.headTitle}</h1>
+            <h1 className="align-self-start text_Dark">{item?.title}</h1>
             <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
               <Container className="col-lg-5">
                 {item?.posts?.map((supItem, index) => (
                   <SmallCard
                     key={index}
                     title={supItem?.title}
-                    description={supItem?.desc}
+                    description={supItem?.content}
                     footer={"2024 Jan 14"}
-                    imgUrl={supItem?.image}
-                    href={supItem?.href}
+                    imgUrl={supItem?.attachment_url}
+                    href={supItem?.link}
                   />
                 ))}
               </Container>
@@ -58,7 +60,7 @@ const index = () => {
                 >
                   <Image
                     className="img-fluid rounded"
-                    src={item?.coverPost}
+                    // src={item?.attachment_url}
                     alt=""
                     srcSet=""
                     width={0}
@@ -86,3 +88,12 @@ const index = () => {
 };
 
 export default index;
+
+export async function getServerSideProps(context) {
+  const events = await fetchData("events");
+  return {
+    props: {
+      data: events,
+    },
+  };
+}

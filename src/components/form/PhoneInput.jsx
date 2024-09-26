@@ -33,7 +33,7 @@ function PhoneInput({ label, required }) {
     const formatted = formatPhoneNumber(e.target.value);
     e.target.value = formatted;
     setFieldValue("phone", formatted.replace(/\s+/g, ""));
-    setFieldValue("phone_code", "966");
+    // setFieldValue("phone_code", "966");
   };
 
   return (
@@ -52,6 +52,7 @@ function PhoneInput({ label, required }) {
             onChange={handlePhoneChange}
             onBlur={handleBlur}
             inputMode="numeric"
+            autoComplete="false"
             name="phone"
             className={`form-control ${
               errors.phone && touched.phone ? "border-danger" : ""
@@ -65,8 +66,7 @@ function PhoneInput({ label, required }) {
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
         >
-          {/* <span className="text-gray text_Dark">966+</span> */}
-          <SelectPhoneCode/>
+          <SelectPhoneCode name={"phone_code"}  />
         </div>
       </div>
       {touched.phone && errors.phone && (

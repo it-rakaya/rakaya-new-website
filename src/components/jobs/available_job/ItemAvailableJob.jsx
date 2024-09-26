@@ -4,13 +4,15 @@ import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdFeaturedPlayList } from "react-icons/md";
 import { RiCalendarScheduleFill } from "react-icons/ri";
-import Button from "../../Button"
+import Button from "../../Button";
+import { useIsRTL } from "../../../hooks/useIsRTL";
 
-function ItemAvailableJob() {
+function ItemAvailableJob({ item }) {
   const jobLink = "/jobs/available_job/1";
   const [shared, setShared] = useState(false);
   const [clicked, setClicked] = useState(false);
   const router = useRouter();
+  const isRTL = useIsRTL();
 
   const handleShareClick = () => {
     navigator.clipboard
@@ -45,7 +47,7 @@ function ItemAvailableJob() {
             className="p-0 m-0 text-gold fs-5"
             style={{ fontWeight: "bolder" }}
           >
-            مطور واجهات امامية
+            {isRTL ? item?.name_ar : item?.name_en}
           </Link>
           {/* {shared ? (
             <FaCheck style={{ color: "#6c757d" }} />
@@ -69,11 +71,11 @@ function ItemAvailableJob() {
           <MdFeaturedPlayList style={{ color: "#6c757d" }} />
           <p className="p-0 m-0 d-flex gap-2" style={{ color: "#6c757d" }}>
             <span className="badge rounded-3 bg-secondary px-2 py-2">
-              عن بعد
+              {item?.work_type}
             </span>
             -
             <span className="badge rounded-3 bg-secondary px-2 py-2">
-              دوام كامل
+            {item?.location_type}
             </span>
           </p>
         </div>

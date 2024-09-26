@@ -8,8 +8,10 @@ import { TeamData, contentData } from "../../data";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import Container from "../../components/Container";
+import fetchData from "../../utils/fetchData";
 
-const Index = () => {
+const Index = (members) => {
+  console.log("🚀 ~ Index ~ members:", members);
   const description =
     "ركايا هي أرض خصبة للأفكار الإبداعية والحلول اللامتناهية وأساليب العمل الإحترافية";
   return (
@@ -25,7 +27,7 @@ const Index = () => {
         />
         <VisionLayout title="عن ركايا البديعة">
           <ContentSection />
-          <TeamSection />
+          <TeamSection members={members} />
         </VisionLayout>
       </AnimatePresence>
     </>
@@ -61,21 +63,38 @@ const TextImageSection = ({ textContent, imgSrc, subtitle }) => (
     </Container>
   </div>
 );
-const TeamSection = () => (
-  <div className="col-12 mt-5 m-auto m-md-0 mb-2 text_Dark">
-    <h2>أعضاء ركايا</h2>
-    <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 ">
-      {TeamData.map((item, index) => (
-        <div className=" " key={`team-member-${index}`}>
-          <Team
-            name={item.name}
-            position={item.position}
-            image={item?.image}
-            desc={item?.desc}
-          />
-        </div>
-      ))}
+const TeamSection = ({ members }) => {
+  // Sort members based on the arrangement property
+  const sortedMembers = members?.data?.members?.sort(
+    (a, b) => a?.arrangement - b?.arrangement
+  );
+
+  return (
+    <div className="col-12 mt-5 m-auto m-md-0 mb-2 text_Dark">
+      <h2>أعضاء ركايا</h2>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3">
+        {sortedMembers?.map((item, index) => (
+          <div className=" " key={`team-member-${index}`}>
+            <Team
+              name={item?.name}
+              position={item?.position}
+              image={"/studio/team/man.webp"}
+              desc={item?.description}
+              linked_in={item?.linked_in}
+            />
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 export default Index;
+export async function getServerSideProps(context) {
+  const members = await fetchData("members");
+  return {
+    props: {
+      data: members,
+    },
+  };
+}

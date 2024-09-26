@@ -41,10 +41,10 @@ function SelectPhoneCode({ label, required, name }) {
           }),
           menu: (provided) => ({
             ...provided,
-            minHeight: "200px",
+            minHeight: "150px",
             // overflowY: "scroll",
             minWidth: "100px",
-            zIndex: "999",
+            zIndex: "99999",
           }),
           menuList: (provided) => ({
             ...provided,
