@@ -23,19 +23,20 @@ const Program = ({ title, description, items, href }) => (
   </Container>
 );
 
-const programs = ({data}) => {
-  console.log("🚀 ~ programs ~ data:", data)
-  const description = "هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل"
+const programs = ({ data }) => {
+  console.log("🚀 ~ programs ~ data:", data);
+  const description =
+    "هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل";
   return (
     <>
-      <CustomHead title={"برامج نستخدمها"}description={description} />
+      <CustomHead title={"برامج نستخدمها"} description={description} />
 
       <Header text={"برامج نستخدمها"} />
 
       <VisionLayout>
         <p>
-        هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا نعمل بشكل أمثل
-
+          هنا نبذة عن البرامج التي تسهّل عملنا بشكل أفضل، و تجعلنا
+          نعمل بشكل أمثل
         </p>
         {data?.programs?.map((item, index) => (
           <Program
@@ -46,8 +47,13 @@ const programs = ({data}) => {
             href={item?.link}
           />
         ))}
-
-        <CardApplication />
+        {data?.programs?.map((item, index) => (
+          <CardApplication
+            image={item?.attachment_url}
+            key={item?.id}
+            link={item?.link}
+          />
+        ))}
       </VisionLayout>
     </>
   );

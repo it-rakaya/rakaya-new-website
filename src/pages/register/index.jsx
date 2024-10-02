@@ -6,7 +6,7 @@ import { useMutate } from "../../hooks/useMutate";
 import * as Yup from "yup";
 import { isEmail } from "../../utils/Helpers";
 import { useAuth } from "../../context/auth/AuthProvider";
-import { notify } from "../../utils/toast";
+import { notify } from "../../utils/notify";
 
 function Register() {
   const { login, setUser } = useAuth();
@@ -31,7 +31,7 @@ function Register() {
     t_name_en: "",
     l_name_en: "",
     email: "",
-    phone_code: "",
+    phone_code: "+966",
     phone: "",
     password: "",
     confirm_password: "",
@@ -50,8 +50,8 @@ function Register() {
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),
     phone_code: Yup.string().required("رمز الاتصال مطلوب"),
-    phone: Yup.string()
-      .matches(/^[0-9]{9}$/, "رقم الجوال يجب أن يكون مكونًا من 9 أرقام")
+    phone:
+      Yup.string()
       .required("رقم الجوال مطلوب"),
     password: Yup.string()
       .min(8, "كلمة المرور يجب أن تكون على الأقل 8 أحرف")

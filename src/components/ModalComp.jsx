@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { IoMdClose } from "react-icons/io";
 import AlertIcon from "./icons/AlertIcon";
 import { CiCircleAlert } from "react-icons/ci";
+import { GoAlert } from "react-icons/go";
 
 const customStyles = {
   content: {
@@ -20,7 +21,15 @@ const customStyles = {
   },
 };
 
-function ModalComp({ isOpen, closeModal, children, header, alert, Footer }) {
+function ModalComp({
+  isOpen,
+  closeModal,
+  children,
+  header,
+  alert,
+  Footer,
+  alertTwo,
+}) {
   return (
     <div
       style={{
@@ -46,14 +55,22 @@ function ModalComp({ isOpen, closeModal, children, header, alert, Footer }) {
           <IoMdClose className="fs-5 text-secondary" />
         </button>
         <div className="text-center fw-bolder">
-          {/* {alert ? <AlertIcon /> : ""} */}
-          <CiCircleAlert
-            className="text-secondary"
-            style={{
-              width: "58px",
-              height: "57px",
-            }}
-          />
+          {alert ? (
+            <CiCircleAlert
+              className="text-secondary"
+              style={{
+                width: "58px",
+                height: "57px",
+              }}
+            />
+          ) : alertTwo ? (
+            <GoAlert
+              className="text-danger"
+              style={{ width: "58px", height: "57px" }}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <div className="pt-3 text-center fw-bolder">{header}</div>
         <div className="pt-3">{children}</div>

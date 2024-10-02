@@ -1,36 +1,35 @@
-import { useFormikContext } from "formik";
 import React from "react";
 import SelectComp from "./SelectComp";
+import { useFormikContext } from "formik";
 import useFetch from "../../hooks/useFetch";
-{""}
-function SelectNationality({ label, required, labelClassName , name }) {
+
+function SelectLanguageLevel({ label, required, name }) {
   const { values } = useFormikContext();
   const { data } = useFetch({
-    endpoint: `countries`,
-    queryKey: [`countries`],
+     queryKey: [`language-levels`],
+    endpoint: `language-levels`,
   });
-  const options = data?.data?.countries?.map((item) => ({
-    value: item.id,
-    label: item.name,
+  
+  const options = data?.data?.language_levels?.map((item) => ({
+    value: item.key,
+    label: item.display,
   }));
 
   const selectedValue = options?.find(
     (option) => option?.value == values[name]
   );
-
   return (
     <div>
       <SelectComp
         label={label}
-        labelClassName={labelClassName}
         name={name}
+        placeholder="اختر اللغه"
         options={options}
         required={required}
-        disabled={values?.national_id?.startsWith("1")}
         selectedValue={selectedValue}
       />
     </div>
   );
 }
 
-export default SelectNationality;
+export default SelectLanguageLevel;

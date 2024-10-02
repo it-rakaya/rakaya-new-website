@@ -1,0 +1,58 @@
+import React, { useState } from "react";
+import { RiDeleteBinLine } from "react-icons/ri";
+import DeleteMain from "./DeleteMain";
+import { FiEdit } from "react-icons/fi";
+
+function CardProfile({
+  title,
+  subTitle,
+  id,
+  refetch,
+  endpointDelete,
+  setShowCard,
+}) {
+  const [isOpen, setOpen] = useState(false);
+  return (
+    <div className="shadow p-2 rounded-3  mt-3 col-md-12">
+      <div className="d-flex justify-content-between align-items-center  py-3 px-4">
+        <div className=" ">
+          <p className="m-0 fw-bold">{title}</p>
+          <p className="m-0 "> {subTitle} </p>
+        </div>
+        <div className="d-flex gap-2 align-items-center ">
+          <div
+            onClick={() => setOpen(true)}
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            <RiDeleteBinLine
+              style={{ fontSize: "20px", color: "#0000007a" }}
+              className="text_Dark"
+            />
+          </div>
+          <div
+            onClick={() => setShowCard(false)}
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            <FiEdit
+              style={{ fontSize: "20px", color: "#0000007a" }}
+              className="text_Dark"
+            />
+          </div>
+        </div>
+      </div>
+      <DeleteMain
+        close={() => setOpen(false)}
+        isOpen={isOpen}
+        id={id}
+        refetch={refetch}
+        endpointDelete={endpointDelete}
+      />
+    </div>
+  );
+}
+
+export default CardProfile;

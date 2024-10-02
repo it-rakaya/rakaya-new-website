@@ -8,23 +8,16 @@ import UploadDoc from "../../../form/UploadDoc";
 function MainDataCertificate({ setShowSkills }) {
   return (
     <div>
-      <Formik initialValues={{}} onSubmit={() => {}}>
-        <Form>
-          <div className="my-4">
-            <BaseInputField label={"اسم الشهادة"} placeholder={"اسم الشهادة"} />
-            <DatePickerComp label={"تاريخ الشهادة"} />
+      <div className="my-4">
+        <BaseInputField
+          label={"اسم الشهادة"}
+          placeholder={"اسم الشهادة"}
+          name={"certificate_name"}
+        />
+        <DatePickerComp label={"تاريخ الشهادة"} name={"date"} />
 
-            <UploadDoc label={"ارفاق الشهادة"} />
-          </div>
-          <div className="mt-3 d-flex justify-content-between">
-            <Button>حفظ</Button>
-
-            <Button color="secondary" onClick={() => setShowSkills(true)}>
-              الرجوع
-            </Button>
-          </div>
-        </Form>
-      </Formik>
+        <UploadDoc label={"ارفاق الشهادة"} name={"attachment"} />
+      </div>
     </div>
   );
 }

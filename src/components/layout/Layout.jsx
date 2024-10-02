@@ -8,6 +8,7 @@ const Footer = dynamic(() => import("./Footer"), {
   ssr: false,
 });
 function Layout({ children }) {
+  
   return (
     <div className="bg-dark">
       <NavBar />

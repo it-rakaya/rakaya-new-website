@@ -6,6 +6,7 @@ import { useAuth } from "../context/auth/AuthProvider";
 
 function MenuUser() {
   const { logout } = useAuth();
+  const {user} = useAuth()
   return (
     <div>
       <div class="dropdown">
@@ -21,7 +22,7 @@ function MenuUser() {
           <div>
             <Image
               alt=""
-              src={"/studio/team/man.webp"}
+              src={user?.profile_attachment || "/studio/team/man.webp"}
               width={50}
               height={50}
               className="p-1 bg-white"

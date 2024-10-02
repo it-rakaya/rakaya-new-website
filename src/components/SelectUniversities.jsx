@@ -3,7 +3,7 @@ import React from "react";
 import SelectComp from "./form/SelectComp";
 import useFetch from "../hooks/useFetch";
 
-function SelectUniversities({ label, required, labelClassName }) {
+function SelectUniversities({ label, required, labelClassName , name }) {
   const { values } = useFormikContext();
   const { data } = useFetch({
      queryKey: [`universities`],
@@ -16,7 +16,7 @@ function SelectUniversities({ label, required, labelClassName }) {
   }));
 
   const selectedValue = options?.find(
-    (option) => option?.value == values.nationality
+    (option) => option?.value == values[name]
   );
 
   return (
@@ -24,7 +24,7 @@ function SelectUniversities({ label, required, labelClassName }) {
       <SelectComp
         label={label}
         labelClassName={labelClassName}
-        name={"nationality"}
+        name={name}
         options={options}
         required={required}
         disabled={values?.national_id?.startsWith("1")}

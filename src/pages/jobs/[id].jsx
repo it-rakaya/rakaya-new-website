@@ -1,10 +1,9 @@
 import React from "react";
-import AvailableJobLayout from "../../../components/jobs/available_job/AvailbleJobLayout";
-import SideMenuJob from "../../../components/jobs/available_job/SideMenuJob";
-import fetchData from "../../../utils/fetchData";
+import AvailableJobLayout from "../../components/jobs/available_job/AvailbleJobLayout";
+import SideMenuJob from "../../components/jobs/available_job/SideMenuJob";
+import fetchData from "../../utils/fetchData";
 
 function DetailsJob(DetailsJob) {
-  console.log("🚀 ~ DetailsJob ~ DetailsJob:", DetailsJob)
   return (
     <div style={{ backgroundColor: "#e3e3e35e", height: "100%" }} className="">
       <AvailableJobLayout>

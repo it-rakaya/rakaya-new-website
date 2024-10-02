@@ -10,7 +10,6 @@ import PatternImage from "../../components/icons/PatternImage";
 import fetchData from "../../utils/fetchData";
 
 const index = (events) => {
-  console.log("🚀 ~ index ~ events:", events?.data?.events)
   const description = "جميع أحداث ركايا في مكان واحد";
   return (
     <>
@@ -37,51 +36,56 @@ const index = (events) => {
             className="w-100 rounded my-3 mb-4"
           ></iframe>
         </Container>
-        {events?.data?.events.map((item, index) => (
-          <div key={index} className="col-lg-12 ">
-            <h1 className="align-self-start text_Dark">{item?.title}</h1>
-            <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
-              <Container className="col-lg-5">
-                {item?.posts?.map((supItem, index) => (
-                  <SmallCard
-                    key={index}
-                    title={supItem?.title}
-                    description={supItem?.content}
-                    footer={"2024 Jan 14"}
-                    imgUrl={supItem?.attachment_url}
-                    href={supItem?.link}
-                  />
-                ))}
-              </Container>
-              <Container className="col-lg-5  ">
-                <ImgContainer
-                  className="rounded coverImageStudio position-relative "
-                  style={{ height: "300px" }}
-                >
-                  <Image
-                    className="img-fluid rounded"
-                    // src={item?.attachment_url}
-                    alt=""
-                    srcSet=""
-                    width={0}
-                    height={0}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                  {item?.showPattern && (
-                    <div className="position-absolute patternImage">
-                      <PatternImage className={"w-100 h-100"} />
-                    </div>
-                  )}
-                </ImgContainer>
-              </Container>
-            </Container>
-            {index !== postsStudio.length - 1 && <hr className="col-12 my-5" />}
-          </div>
-        ))}
+        {events?.data?.events.map(
+          (item, index) =>
+            !!item?.posts?.length && (
+              <div key={index} className="col-lg-12 ">
+                <h1 className="align-self-start text_Dark">{item?.title}</h1>
+                <Container className="d-flex align-items-center flex-lg-row flex-column-reverse gap-3 gap-lg-0">
+                  <Container className="col-lg-5">
+                    {item?.posts?.map((supItem, index) => (
+                      <SmallCard
+                        key={index}
+                        title={supItem?.title}
+                        description={supItem?.content}
+                        footer={"2024 Jan 14"}
+                        imgUrl={supItem?.attachment_url}
+                        href={supItem?.link}
+                      />
+                    ))}
+                  </Container>
+                  <Container className="col-lg-5  ">
+                    <ImgContainer
+                      className="rounded coverImageStudio position-relative "
+                      style={{ height: "300px" }}
+                    >
+                      <Image
+                        className="img-fluid rounded"
+                        src={item?.attachment_url || ""}
+                        alt=""
+                        srcSet=""
+                        width={0}
+                        height={0}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      {item?.showPattern && (
+                        <div className="position-absolute patternImage">
+                          <PatternImage className={"w-100 h-100"} />
+                        </div>
+                      )}
+                    </ImgContainer>
+                  </Container>
+                </Container>
+                {index !== postsStudio.length - 1 && (
+                  <hr className="col-12 my-5" />
+                )}
+              </div>
+            )
+        )}
       </Container>
     </>
   );

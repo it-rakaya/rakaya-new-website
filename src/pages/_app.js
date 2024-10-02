@@ -46,7 +46,6 @@ export default function MyApp({ Component, pageProps }) {
       `}
       </Script>
       <Component {...pageProps} />
-     
     </>
   );
 
@@ -79,7 +78,7 @@ export default function MyApp({ Component, pageProps }) {
             </DarkModeProvider>
           )}
           <div>
-            <ContactUs/>
+            <ContactUs />
           </div>
         </AuthProvider>
         <ToastContainer isRTL={true} />

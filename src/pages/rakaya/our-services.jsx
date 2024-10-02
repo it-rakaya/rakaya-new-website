@@ -6,9 +6,10 @@ import Card from "../../components/vision/services/Card";
 import { services } from "../../data";
 import fetchData from "../../utils/fetchData";
 
-const Services = ({data}) => {
-  console.log("🚀 ~ Services ~ services:", data)
-  const description = "نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها وترسّخ علاقتنا بعملائنا "
+const Services = ({ data }) => {
+  console.log("🚀 ~ Services ~ services:", data);
+  const description =
+    "نؤمن بأن كل عمل لا يتم بإتقان من غير أسس أخلاقية مهنية نسترشد بها وترسّخ علاقتنا بعملائنا ";
   return (
     <>
       <CustomHead title={"خدماتنا"} description={description} />
@@ -23,11 +24,12 @@ const Services = ({data}) => {
         <Container className="row ">
           {data?.services?.map((item, index) => (
             <Card title={item?.name} key={index}>
-              <p className="mb-1 my-2 text-justify">{item?.subTitle}</p>
-              <p className="my-1 text-justify" key={index} dangerouslySetInnerHTML={{ __html: item?.description }} />  
-             
-              {/* {item?.items.map((point, index) => (
-              ))} */}
+              <p className="mb-1 my-2 text-justify ">{item?.subTitle}</p>
+              {item?.description?.split("\n").map((line, idx) => (
+                <p className="my-1 text-justify px-2" key={idx}>
+                  {line}
+                </p>
+              ))}
             </Card>
           ))}
         </Container>
@@ -41,7 +43,7 @@ export async function getServerSideProps(context) {
   const services = await fetchData("services");
   return {
     props: {
-       data:services,
+      data: services,
     },
   };
 }

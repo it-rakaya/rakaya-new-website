@@ -5,12 +5,19 @@ import JobsLayout from "../../components/jobs/JobsLayout";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import AvailableJobLayout from "../../components/jobs/available_job/AvailbleJobLayout";
+import ItemAvailableJob from "../../components/jobs/available_job/ItemAvailableJob";
+import NoData from "../../components/NoData";
+import ModalComp from "../../components/ModalComp";
+import { Form, Formik } from "formik";
+import BaseInputField from "../../components/form/BaseInputField";
+import fetchData from "../../utils/fetchData";
 
-const Jobs = () => {
+const Jobs = ({jobs}) => {
   const { isDarkMode } = useContext(DarkModeContext);
   return (
     <>
-      <JobsLayout>
+      {/* <JobsLayout>
         <div className="">
           <Container className="m-auto  col-md-7 ">
             <h2 className="text_Dark">عن العمل في ركايا</h2>
@@ -93,9 +100,37 @@ const Jobs = () => {
             </Link>
           </Container>
         </div>
-      </JobsLayout>
+      </JobsLayout> */}
+      <>
+        <AvailableJobLayout hiddenMenu>
+          <div className="">
+            <Container className="m-auto  col-md-7 ">
+              {jobs?.vacancies?.length ? (
+                jobs?.vacancies?.map(
+                  (item) =>
+                    !!item?.is_visible && (
+                      <ItemAvailableJob item={item} key={item?.id} />
+                    )
+                )
+              ) : (
+                <NoData message={"لايوجد وظائف متاحة الان"} />
+              )}
+            </Container>
+          </div>
+
+      
+        </AvailableJobLayout>
+      </>
     </>
   );
 };
 
 export default Jobs;
+export async function getServerSideProps(context) {
+  const jobs = await fetchData("vacancies");
+  return {
+    props: {
+      jobs,
+    },
+  };
+}

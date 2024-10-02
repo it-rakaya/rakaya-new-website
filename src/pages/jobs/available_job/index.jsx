@@ -8,19 +8,23 @@ import AvailableJobLayout from "../../../components/jobs/available_job/AvailbleJ
 import ItemAvailableJob from "../../../components/jobs/available_job/ItemAvailableJob";
 import ModalComp from "../../../components/ModalComp";
 import fetchData from "../../../utils/fetchData";
+import NoData from "../../../components/NoData";
 
 function AvailableJob({ jobs }) {
-  console.log("🚀 ~ AvailableJob ~ jobs:", jobs);
   return (
     <>
       <AvailableJobLayout hiddenMenu>
         <div className="">
           <Container className="m-auto  col-md-7 ">
-            {jobs?.vacancies?.map(
-              (item) =>
-                !item?.is_visible && (
-                  <ItemAvailableJob item={item} key={item?.id} />
-                )
+            {jobs?.vacancies?.length ? (
+              jobs?.vacancies?.map(
+                (item) =>
+                  !!item?.is_visible && (
+                    <ItemAvailableJob item={item} key={item?.id} />
+                  )
+              )
+            ) : (
+              <NoData message={"لايوجد وظائف متاحة الان"} />
             )}
           </Container>
         </div>

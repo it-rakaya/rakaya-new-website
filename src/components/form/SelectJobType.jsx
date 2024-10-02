@@ -1,40 +1,29 @@
 import React from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
+import { useFormikContext } from "formik";
 
-function SelectJobType({ label, required }) {
-  const options = [
-    {
-      label: "دوام كامل",
-      value: "full_time",
-    },
-    {
-      label: "دوام جزئي",
-      value: "part_time",
-    },
-    {
-      label: "عن بعد",
-      value: "remotely",
-    },
-    {
-      label: "دوام مرن",
-      value: "hybrid",
-    },
-    {
-      label: "موسمي",
-      value: "seasonal",
-    },
-    {
-      label: "تدريب تعاوني /  تدريب صيفي",
-      value: "training",
-    },
-  ];
+function SelectJobType({ label, required, name }) {
+  const {values} = useFormikContext()
+  const { data } = useFetch({
+    endpoint: `work-types`,
+    queryKey: [`work-types`],
+  });
+  const options = data?.data?.work_types?.map((item) => ({
+    value: item.id,
+    label: item.name_ar,
+  }));
+  const selectedValue = options?.find(
+    (option) => option?.value == values[name]
+  );
   return (
     <div>
       <SelectComp
         label={label}
-        name={"years_of_experience"}
+        name={name}
         placeholder="نوع الوظيفة"
         options={options}
+        selectedValue={selectedValue}
         required={required}
       />
     </div>

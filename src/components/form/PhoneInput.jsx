@@ -1,39 +1,37 @@
 import { useFormikContext } from "formik";
 import Label from "./Label";
 import SelectPhoneCode from "./SelectPhoneCode";
+import { CountryCode } from "../../../public/countryCode";
 
 function PhoneInput({ label, required }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
-
-  const formatPhoneNumber = (inputValue) => {
+  const selectedCountry =
+    CountryCode.find((country) => country.value === values.phone_code) ||
+    CountryCode.find((country) => country.value === "+966");
+  const formatPhoneNumber = (inputValue, selectedCountry) => {
     inputValue = inputValue.replace(/[^0-9]/g, "");
-    if (inputValue.startsWith("5")) {
-      inputValue = inputValue.slice(0, 9);
-    } else {
-      return "";
-    }
+    if (!inputValue) return "";
+    const maxLength = selectedCountry?.maxLength - 1 || inputValue.length;
+    inputValue = inputValue.slice(0, maxLength);
     let formattedInput = "";
-    if (inputValue.length > 2) {
-      formattedInput += inputValue.substring(0, 2) + " ";
-      if (inputValue.length > 5) {
-        formattedInput += inputValue.substring(2, 5) + " ";
-        formattedInput += inputValue.substring(5);
-      } else {
-        formattedInput += inputValue.substring(2);
+    let maskIndex = 0;
+    for (let i = 0; i < inputValue.length; i++) {
+      if (selectedCountry?.mask[maskIndex] === " ") {
+        formattedInput += " ";
+        maskIndex++;
       }
-    } else {
-      formattedInput = inputValue;
+      formattedInput += inputValue[i];
+      maskIndex++;
     }
 
     return formattedInput.trim();
   };
 
   const handlePhoneChange = (e) => {
-    const formatted = formatPhoneNumber(e.target.value);
-    e.target.value = formatted;
+    const formatted = formatPhoneNumber(e.target.value, selectedCountry);
+
     setFieldValue("phone", formatted.replace(/\s+/g, ""));
-    // setFieldValue("phone_code", "966");
   };
 
   return (
@@ -46,27 +44,29 @@ function PhoneInput({ label, required }) {
         <div className="w-75">
           <input
             type="text"
-            placeholder="xx xxx xxxx"
+            placeholder={selectedCountry?.mask || "xx xxx xxxx"}
             dir="ltr"
-            value={values.phone ? formatPhoneNumber(values.phone) : ""}
+            value={
+              values.phone
+                ? formatPhoneNumber(values.phone, selectedCountry)
+                : ""
+            }
             onChange={handlePhoneChange}
             onBlur={handleBlur}
             inputMode="numeric"
-            autoComplete="false"
+            autoComplete="off"
             name="phone"
             className={`form-control ${
               errors.phone && touched.phone ? "border-danger" : ""
             }`}
-            maxLength="13"
           />
-          {""}
         </div>
         <div
           className={`border w-25 d-flex align-items-center justify-content-center rounded-2 ${
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
         >
-          <SelectPhoneCode name={"phone_code"}  />
+          <SelectPhoneCode name={"phone_code"} />
         </div>
       </div>
       {touched.phone && errors.phone && (

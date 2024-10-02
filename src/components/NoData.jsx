@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoData() {
+function NoData({message}) {
   return (
     <div
       className=" p-2 rounded-3  mt-3 "
@@ -16,7 +16,7 @@ function NoData() {
             className="m-0 text-center fw-bolder text_Dark"
             style={{ fontSize: "17px", color: "#0000007a" }}
           >
-            لايوجد مستوى تعليمي لديك
+            {message}
           </p>
         </div>
       </div>

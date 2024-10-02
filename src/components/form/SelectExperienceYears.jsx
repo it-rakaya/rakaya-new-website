@@ -1,24 +1,32 @@
 import React from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
+import { useFormikContext } from "formik";
 
-function SelectExperienceYears({ label, required }) {
-  const options = [
-    { value: "1", label: " 1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-    { value: "+6", label: "6 سنوات واكثر" },
-    { value: "+10", label: "10 سنوات وأكثر " },
-  ];
+function SelectExperienceYears({ label, required, name }) {
+  const { values } = useFormikContext();
+  const { data } = useFetch({
+    queryKey: [`skill-experiences`],
+    endpoint: `skill-experiences`,
+  });
+
+  const options = data?.data?.skill_experiences?.map((item) => ({
+    value: item.key,
+    label: item.display,
+  }));
+
+  const selectedValue = options?.find(
+    (option) => option?.value == values[name]
+  );
   return (
     <div>
       <SelectComp
         label={label}
-        name={"years_of_experience"}
+        name={name}
         placeholder="اختر عدد سنوات الخبرة"
         options={options}
         required={required}
+        selectedValue={selectedValue}
       />
     </div>
   );

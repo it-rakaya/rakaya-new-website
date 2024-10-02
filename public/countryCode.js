@@ -5,7 +5,7 @@ export const CountryCode = [
   { value: "+44", label: t("+44"), mask: "**** *** ***", maxLength: 10 },
   { value: "+91", label: t("+91"), mask: "***** *****", maxLength: 10 },
   { value: "+966", label: t("+966"), mask: "*** *** ****", maxLength: 10 },
-  { value: "+20", label: t("+20"), mask: "*** *** ****", maxLength: 10 },
+  { value: "+20", label: t("+20"), mask: "*** *** ****", maxLength: 11 },
   { value: "+964", label: t("+964"), mask: "*** *** ****", maxLength: 10 },
   { value: "+61", label: t("+61"), mask: "**** *** ***", maxLength: 9 },
   { value: "+33", label: t("+33"), mask: "**** *** ***", maxLength: 9 },

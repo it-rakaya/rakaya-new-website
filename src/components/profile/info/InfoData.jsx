@@ -1,88 +1,79 @@
-import BaseInputField from "../../form/BaseInputField";
-import Label from "../../form/Label";
-import RadioButtonGroup from "../../form/RadioButton";
 import { Form, Formik } from "formik";
 import React from "react";
-import PhoneInput from "../../form/PhoneInput";
 import Button from "../../Button";
-import SelectNationality from "../../form/SelectNationality";
-import UploadDoc from "../../form/UploadDoc";
-import SelectCities from "../../form/SelectCities";
+import MainData from "./MainData";
+import { useAuth } from "../../../context/auth/AuthProvider";
+import { useMutate } from "../../../hooks/useMutate";
+import { notify } from "../../../utils/notify";
+import { getModifiedValues } from "../../../utils/Helpers";
 
 function InfoData() {
+  const { user  ,setUser  } = useAuth();
+  const initialValues = {
+    f_name_ar: user?.f_name_ar || "",
+    s_name_ar: user?.s_name_ar || "",
+    t_name_ar: user?.t_name_ar || "",
+    l_name_ar: user?.l_name_ar || "",
+    f_name_en: user?.f_name_en || "",
+    s_name_en: user?.s_name_en || "",
+    t_name_en: user?.t_name_en || "",
+    l_name_en: user?.l_name_en || "",
+    email: user?.email || "",
+    phone_code: "+966",
+    phone: user?.phone || "",
+    nationality_id: user?.nationality_id || "",
+    country_of_residence: user?.country_of_residence_id || "",
+    city: user?.city || "",
+    gender: user?.gender || "",
+    cv_attachment: {value:user?.cv_attachment} || "",
+    profile_attachment: {value:user?.profile_attachment}  || "",
+  };
+  
+  const endpoint = `candidate-profile`;
+  const { mutate: updateProfile, isPending } = useMutate({
+    mutationKey: [endpoint],
+    endpoint: endpoint,
+    onSuccess: (data) => {
+      notify("success", "تم تعديل البيانات بنجاح");
+      console.log("🚀 ~ InfoData ~ data:", data);
+      setUser(data?.data?.candidate)
+    },
+    onError: (e) => {
+      notify("error", e.response?.data?.message);
+    },
+    formData: true,
+  });
+
+  // const getModifiedValues = (initialValues, values) => {
+  //   const modifiedValues = {};
+  //   Object.keys(values).forEach((key) => {
+  //     if (values[key] !== initialValues[key]) {
+  //       modifiedValues[key] = values[key];
+  //     }
+  //   });
+  //   return modifiedValues;
+  // };
+
   return (
     <div>
-      <Formik initialValues={{}} onSubmit={() => {}}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={(values) => {
+          const modifiedValues = getModifiedValues(initialValues, values);
+          updateProfile(modifiedValues); 
+        }}
+      >
         <Form>
-          <div>
-            <Label required>الاسم كامل بالعربي</Label>
-            <div className="row">
-              <div className="col-md-3">
-                <BaseInputField
-                  placeholder={"الاسم الاول"}
-                  name={"first"}
-                  required={true}
-                />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثاني"} name={"first2"} />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثالث"} name={"first3"} />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاخير"} name={"first4"} />
-              </div>
-            </div>
-          </div>
-          <div>
-            <Label required>الاسم كامل بالانجليزية</Label>
-            <div className="row">
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاخير"} name={"last"} />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثالث"} name={"last2"} />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الثاني"} name={"last4"} />
-              </div>
-              <div className="col-md-3">
-                <BaseInputField placeholder={"الاسم الاول"} name={"last5"} />
-              </div>
-            </div>
-          </div>
-          <BaseInputField
-            placeholder={" البريد الالكتروني"}
-            label={" البريد الالكتروني"}
-            name={"first"}
-            required={true}
-          />
-          {/* <PhoneInput label={"رقم الجوال"} /> */}
-          <PhoneInput label={"رقم الجوال"} required />
-          <SelectNationality required label={"الجنسية"} />
-          <SelectNationality required label={"دولة الاقامة"} />
-          <SelectCities required label={"المدينة"} />
-
-          <div>
-            <Label required>الجنس</Label>
-            <div className="row">
-              <RadioButtonGroup
-                options={[
-                  { label: "ذكر", value: "1" },
-                  { label: "انثى", value: "2" },
-                ]}
-              />
-            </div>
-          </div>
-
-          <UploadDoc label={"الصورة الشخصية"} />
+          <MainData />
           <div className="mt-3 d-flex justify-content-between">
-            <Button>حفظ</Button>
+            <Button type="submit" isLoading={isPending}>
+              حفظ
+            </Button>
           </div>
         </Form>
       </Formik>
     </div>
   );
 }
+
 export default InfoData;

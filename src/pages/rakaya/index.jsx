@@ -1,17 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
+import { AnimatePresence } from "framer-motion";
+import React from "react";
+import Container from "../../components/Container";
 import CustomHead from "../../components/CustomHead";
 import ImgContainer from "../../components/ImgContainer";
 import Header from "../../components/jobs/Header";
 import Team from "../../components/vision/Team";
 import VisionLayout from "../../components/vision/VisionLayout";
-import { TeamData, contentData } from "../../data";
-import { AnimatePresence } from "framer-motion";
-import React from "react";
-import Container from "../../components/Container";
+import { contentData } from "../../data";
 import fetchData from "../../utils/fetchData";
 
 const Index = (members) => {
-  console.log("🚀 ~ Index ~ members:", members);
   const description =
     "ركايا هي أرض خصبة للأفكار الإبداعية والحلول اللامتناهية وأساليب العمل الإحترافية";
   return (
@@ -78,7 +77,7 @@ const TeamSection = ({ members }) => {
             <Team
               name={item?.name}
               position={item?.position}
-              image={"/studio/team/man.webp"}
+              image={item?.profile_attachment_url || "/studio/team/man.webp"}
               desc={item?.description}
               linked_in={item?.linked_in}
             />

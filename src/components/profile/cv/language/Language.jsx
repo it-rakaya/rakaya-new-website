@@ -1,55 +1,67 @@
 import React, { useState } from "react";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
-import MainDataLanguage from "./MainDataLanguage";
+import { RiDeleteBinLine } from "react-icons/ri";
 import Button from "../../../Button";
+import Main from "./Main";
+import useFetch from "../../../../hooks/useFetch";
+import SpinnerLoading from "../../../SpinnerLoading";
+import NoData from "../../../NoData";
+import CardProfile from "../../CardProfile";
 
 function Language() {
-  const [showSkills, setShowSkills] = useState(true);
+  const [showCard, setShowCard] = useState(true);
+  const [mainData, setMainData] = useState({});
+
+  const { data, isLoading, refetch } = useFetch({
+    queryKey: [`candidate-languages`],
+    endpoint: `candidate-languages`,
+  });
   return (
     <div>
-      {showSkills ? (
+      {showCard ? (
         <>
           <div className="d-flex justify-content-between">
             <Button
               className="d-flex align-items-center gap-2"
-              onClick={() => setShowSkills(false)}
+              onClick={() => {
+                setShowCard(false);
+                setMainData({});
+              }}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة لغة
             </Button>
           </div>
           <div className="row gap-4">
-            <div className="shadow p-2 rounded-3  mt-3 col">
-              <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-                <div className=" ">
-                  <p className="m-0 fw-bold">العربي </p>
-                </div>
-                <div>
-                  <RiDeleteBinLine
-                    style={{ fontSize: "20px", color: "#0000007a" }}
-                    className="text_Dark"
+            {isLoading ? (
+              <div
+                className="d-flex justify-content-between align-items-center "
+                style={{
+                  height: "27vh",
+                }}
+              >
+                <SpinnerLoading />
+              </div>
+            ) : data?.data?.languages?.length ? (
+              data?.data?.languages?.map((item) => (
+                <div onClick={() => setMainData(item)} key={item?.id}>
+                  <CardProfile
+                    key={item?.id}
+                    title={item?.language}
+                    endpointDelete={"candidate-languages"}
+                    id={item?.id}
+                    refetch={refetch}
+                    setShowCard={setShowCard}
                   />
                 </div>
-              </div>
-            </div>
-            <div className="shadow p-2 rounded-3  mt-3 col">
-              <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-                <div className=" ">
-                  <p className="m-0 fw-bold">الانجليزية </p>
-                </div>
-                <div>
-                  <RiDeleteBinLine
-                    style={{ fontSize: "20px", color: "#0000007a" }}
-                    className="text_Dark"
-                  />
-                </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <NoData message={"لايوجد لغات لديك"} />
+            )}
           </div>
         </>
       ) : (
-        <MainDataLanguage setShowSkills={setShowSkills} />
+        <Main setShowCard={setShowCard} refetch={refetch} mainData={mainData} />
       )}
     </div>
   );

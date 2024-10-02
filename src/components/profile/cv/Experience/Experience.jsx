@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
-import MainData from "./MainData";
+import Main from "./Main";
 import Button from "../../../Button";
+import useFetch from "../../../../hooks/useFetch";
+import NoData from "../../../NoData";
+import SpinnerLoading from "../../../SpinnerLoading";
+import CardProfile from "../../CardProfile";
 
 function Experience() {
   const [showCard, setShowCard] = useState(true);
+  const [mainData, setMainData] = useState({});
+
+  const { data, isLoading, refetch } = useFetch({
+    queryKey: [`candidate-experiences`],
+    endpoint: `candidate-experiences`,
+  });
 
   return (
     <div className="">
@@ -14,63 +24,44 @@ function Experience() {
           <div className="d-flex justify-content-between">
             <Button
               className="d-flex align-items-center gap-2 "
-              onClick={() => setShowCard(false)}
+              onClick={() => {
+                setShowCard(false);
+
+                setMainData({});
+              }}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة خبرة
             </Button>
           </div>
-          <div className="shadow p-2 rounded-3  mt-3">
-            <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-              <div className=" ">
-                <p className="m-0 fw-bold">بكالوريوس هندسة اتصالات </p>
-                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
-                  جامعة ام القرى
-                </p>
-              </div>
-              <div>
-                <RiDeleteBinLine
-                className="text_Dark"
-                  style={{ fontSize: "20px", color: "#0000007a" }}
+          {isLoading ? (
+            <div
+              className="d-flex justify-content-between align-items-center "
+              style={{
+                height: "27vh",
+              }}
+            >
+              <SpinnerLoading />
+            </div>
+          ) : data?.data?.experiences?.length ? (
+            data?.data?.experiences?.map((item) => (
+              <div onClick={() => setMainData(item)} key={item?.id}>
+                <CardProfile
+                  title={item?.position}
+                  subTitle={item?.employer}
+                  endpointDelete={"candidate-experiences"}
+                  id={item?.id}
+                  refetch={refetch}
+                  setShowCard={setShowCard}
                 />
               </div>
-            </div>
-          </div>
-          <div className="shadow p-2 rounded-3  mt-3">
-            <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-              <div className=" ">
-                <p className="m-0 fw-bold">بكالوريوس حاسبات ومعلومات</p>
-                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
-                  جامعة ام القرى
-                </p>
-              </div>
-              <div>
-                <RiDeleteBinLine
-                className="text_Dark"
-                  style={{ fontSize: "20px", color: "#0000007a" }}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="shadow p-2 rounded-3  mt-3">
-            <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-              <div className=" ">
-                <p className="m-0 fw-bold">بكالوريوس حاسبات ومعلومات</p>
-                <p className="m-0 text_Dark" style={{ color: "#0000007a" }}>
-                  جامعة ام القرى
-                </p>
-              </div>
-              <div>
-                <RiDeleteBinLine
-                className="text_Dark"
-                  style={{ fontSize: "20px", color: "#0000007a" }}
-                />
-              </div>
-            </div>
-          </div>
+            ))
+          ) : (
+            <NoData message={"لايوجد خبرات لديك"} />
+          )}
         </div>
       ) : (
-        <MainData setShowCard={setShowCard} />
+        <Main setShowCard={setShowCard} refetch={refetch} mainData={mainData} />
       )}
     </div>
   );

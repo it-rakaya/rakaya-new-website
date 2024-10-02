@@ -1,60 +1,93 @@
+import { useFormikContext } from "formik";
+import { useEffect } from "react";
+import SelectUniversities from "../../../SelectUniversities";
 import BaseInputField from "../../../form/BaseInputField";
 import DatePickerComp from "../../../form/DatePickerComp";
 import SelectEducation from "../../../form/SelectEducation";
 import SelectGpa from "../../../form/SelectGpa";
-import { Form, Formik } from "formik";
-import React from "react";
-import SelectNationality from "../../../form/SelectNationality";
-import Button from "../../../Button";
-import SelectUniversities from "../../../SelectUniversities";
 import SelectMajors from "../../../form/SelectMajors";
+import SelectNationality from "../../../form/SelectNationality";
 
-function MainData({ setShowCard }) {
+function MainData() {
+  const { values, setFieldValue } = useFormikContext();
+
+  useEffect(() => {
+    if ([1, 2, 3].includes(values?.education_level_id)) {
+      setFieldValue("gpa_from", "100");
+      //  console.log("Ddd");
+    }
+  }, [setFieldValue, values?.education_level_id]);
+
+  const isUniversitySelectVisible =
+    values?.country_id == 189 &&
+    [7, 6, 5, 4].includes(values?.education_level_id);
+
+  const isMajorSelectVisible = [7, 6, 5, 4].includes(
+    values?.education_level_id
+  );
+
+  const isGpaDisabled = [1, 2, 3].includes(values?.education_level_id);
+
   return (
     <div>
-      <Formik initialValues={{}} onSubmit={() => {}}>
-        <Form>
-          <SelectEducation label={"مستوى التعليم"} />
-          <SelectNationality label={"الدولة"} />
-          <SelectUniversities label={"الكلية"} />
-          <SelectMajors label={"التخصص"} />
+      <SelectEducation label="مستوى التعليم" name="education_level_id" />
+      <SelectNationality label="الدولة" name="country_id" />
 
-          <div className="d-flex gap-2 mt-3">
-            <div className="w-25">
-              <BaseInputField label={"المعدل"} disabled name={"rate"} />
-            </div>
-            <div className="w-75 ">
-              <SelectGpa label={"من"} />
-            </div>
-          </div>
-          <DatePickerComp label={"سنة الالتحاق (ميلادي)"}  name={""}/>
-          <div class="form-check-reverse my-3">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexRadioDefault1"
-              //   checked={check}
-              //   onChange={() => setCheck(!check)}
-            />
-            <label
-              class="form-check-label"
-              for="flexRadioDefault1"
-              style={{ cursor: "pointer" }}
-            >
-              لازلت ادرس
-            </label>
-          </div>
-          <DatePickerComp label={"سنة التخرج (ميلادي)"} />
-          <div className="mt-3 d-flex justify-content-between">
-            <Button>حفظ</Button>
+      {isUniversitySelectVisible ? (
+        <SelectUniversities label="الكلية" name="university" />
+      ) : (
+        [7, 6, 5, 4].includes(values?.education_level_id) && (
+          <BaseInputField
+            label="الكية"
+            name="university"
+            placeholder="الكية"
+            type="text"
+          />
+        )
+      )}
 
-            <Button color="secondary" onClick={() => setShowCard(true)}>
-              الرجوع
-            </Button>
-          </div>
-        </Form>
-      </Formik>
+      {isMajorSelectVisible && <SelectMajors label="التخصص" name="major" />}
+
+      <div className="d-flex gap-2 mt-3">
+        <div className="w-25">
+          <BaseInputField
+            label="المعدل"
+            disabled={!values?.gpa_from}
+            name="gpa"
+            maxDigits={values?.gpa_from}
+          />
+        </div>
+        <div className="w-75">
+          <SelectGpa label="من" name="gpa_from" disabled={isGpaDisabled} />
+        </div>
+      </div>
+
+      <DatePickerComp label="سنة الالتحاق (ميلادي)" name="start_date" />
+
+      <div className="form-check-reverse my-3">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          id="flexRadioDefault1"
+          name="still_studying"
+          onChange={(e) =>
+            setFieldValue("still_studying", e.target.checked ? 1 : 0)
+          }
+        />
+        <label
+          className="form-check-label"
+          htmlFor="flexRadioDefault1"
+          style={{ cursor: "pointer" }}
+        >
+          لازلت ادرس
+        </label>
+      </div>
+
+      <DatePickerComp
+        label="سنة التخرج (ميلادي)"
+        name="graduation_date"
+        disabled={values?.still_studying == 1}
+      />
     </div>
   );
 }

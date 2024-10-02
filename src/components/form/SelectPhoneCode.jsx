@@ -1,18 +1,12 @@
-import { t } from "i18next";
-import React from "react";
-import SelectComp from "./SelectComp";
-import SelectItem from "../SelectItem";
-import Select from "react-select";
 import { useFormikContext } from "formik";
+import Select from "react-select";
 import { CountryCode } from "../../../public/countryCode";
 
 function SelectPhoneCode({ label, required, name }) {
   const { setFieldValue, errors, touched } = useFormikContext();
 
   const options = CountryCode;
-  {
-    ("");
-  }
+
   return (
     <div>
       <Select
@@ -59,7 +53,10 @@ function SelectPhoneCode({ label, required, name }) {
           autoComplete: "off",
         }}
         // value={selectedValue}
-        onChange={(option) => setFieldValue(name, option?.value)}
+        onChange={(option) => {
+          setFieldValue("phone_code", option.value);
+          setFieldValue("phone", ""); 
+        }}
         noOptionsMessage={() => "لايوجد بيانات"}
       />
     </div>

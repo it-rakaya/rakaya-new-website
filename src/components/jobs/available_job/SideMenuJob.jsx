@@ -4,16 +4,18 @@ import OverView from "./OverView";
 import Apply from "./Apply";
 import { useIsRTL } from "../../../hooks/useIsRTL";
 
-const tabs = [
-  { id: "v-pills-home", label: "النظرة العامة", component: <OverView /> },
-  {
-    id: "v-pills-profile",
-    label: "التقديم",
-    component: <Apply />,
-  },
-];
+
 
 function SideMenuJob({ DetailsJob }) {
+  const tabs = [
+    { id: "v-pills-home", label: "النظرة العامة", component: <OverView DetailsJob={DetailsJob} /> },
+    {
+      id: "v-pills-profile",
+      label: "التقديم",
+      component: <Apply />,
+    },
+  ];
+  console.log("🚀 ~ SideMenuJob ~ DetailsJob:", DetailsJob)
   const [activeTab, setActiveTab] = useState("v-pills-home");
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -30,9 +32,7 @@ function SideMenuJob({ DetailsJob }) {
     <div className="d-flex flex-column mt-5">
       <div
         className="mx-3 mb-5   rounded-5 p-2 px-4 col-md-10"
-        // style={{
-        // //   border: "1px solid #C9B171",
-        // // }}
+      
       >
         <div className="d-flex align-items-center gap-2 my-3 ">
           <h5 className="m-0">

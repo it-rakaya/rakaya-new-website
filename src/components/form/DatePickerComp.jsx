@@ -14,6 +14,7 @@ export default function DatePickerComp({
   required,
   labelClassName,
   icon,
+  disabled
 }) {
   const { setFieldValue, values, touched, errors, handleBlur } =
     useFormikContext();
@@ -171,6 +172,7 @@ export default function DatePickerComp({
             onBlur={(e) => {
               handleBlur(e);
             }}
+            disabled={disabled}
             placeholderText="MM/DD/YYYY"
             renderCustomHeader={CustomHeader}
             className={`form-control p-2 ${

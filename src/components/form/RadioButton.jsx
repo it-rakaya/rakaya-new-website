@@ -1,8 +1,10 @@
+import { useFormikContext } from "formik";
 import React, { useState } from "react";
 import { FaCheck, FaCheckCircle } from "react-icons/fa";
 
 function RadioButtonGroup({ options, name, onChange }) {
-  const [selectedValue, setSelectedValue] = useState();
+  const {values} = useFormikContext()
+  const [selectedValue, setSelectedValue] = useState(values[name]);
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);

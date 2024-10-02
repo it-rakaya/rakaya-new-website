@@ -1,13 +1,19 @@
 import { t } from "i18next";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import React from "react";
+import useFetch from "../../hooks/useFetch";
+import { routes } from "../../utils/routes";
 import Container from "../Container";
 import FooterLink from "./FooterLink";
-import { routes } from "../../utils/routes";
 const Heart = dynamic(() => import("../icons/Heart"), { ssr: false });
 const LinkedIn = dynamic(() => import("../icons/LinkedIn"), { ssr: false });
 
 const Footer = () => {
+  const { data: socialData } = useFetch({
+    queryKey: [`socials`],
+    endpoint: `socials`,
+  });
   const footerStyle = "d-flex flex-wrap justify-content-center col-12 col-lg-3";
   return (
     <footer className="mt-5 ">
@@ -22,14 +28,22 @@ const Footer = () => {
         ))}
       </Container>
       <Container className={`${footerStyle} gap-3`}>
-        <FooterLink
-          href="https://twitter.com/rakayaco/"
-          ariaLabel="Follow us on Twitter"
-        >
-          <i className="bi bi-twitter"></i>
-        </FooterLink>
+        {socialData?.data?.socials?.map((item) => (
+          <FooterLink
+            href={item?.link}
+            ariaLabel="Follow us on Twitter"
+            key={item?.id}
+          >
+            <Image
+              width={20}
+              height={20}
+              alt={item?.name_ar}
+              src={item?.attachment_url}
+            />
+          </FooterLink>
+        ))}
 
-        <FooterLink
+        {/* <FooterLink
           href="https://www.instagram.com/rakayaco/"
           ariaLabel="Follow us on Instagram"
         >
@@ -52,12 +66,10 @@ const Footer = () => {
           ariaLabel="Connect with us on LinkedIn"
         >
           <LinkedIn />
-        </FooterLink>
+        </FooterLink> */}
       </Container>
       <Container className="d-flex justify-content-center pt-3">
-        <p className="text-dark fw-bold text_Dark">
-          {t("common:footer_desc")}
-        </p>
+        <p className="text-dark fw-bold text_Dark">{t("common:footer_desc")}</p>
         <div className="mx-1">
           <Heart />
         </div>

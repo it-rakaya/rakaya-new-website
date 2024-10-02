@@ -6,7 +6,7 @@ import img4 from "../../../assets/Applications/trello.png";
 import Image from "next/image";
 import Link from "next/link";
 
-function CardApplication() {
+function CardApplication({image , link}) {
   // const images = [img1, img2, img3, img4];
   const images = [
     {
@@ -30,10 +30,10 @@ function CardApplication() {
 
   return (
     <div className="row row-cols-2 row-cols-md-4 mx-md-1  gap-2 justify-content-center justify-content-md-start  align-items-between mb-5 over_margin">
-      {images?.map((item, index) => (
+      {/* {images?.map((item, index) => ( */}
         <Link
-          href={`${item?.link}`}
-          key={index}
+          href={`${link}`}
+          // key={index}
           target="_blank"
           className="teamShadow rounded-4 d-flex align-items-center carApp justify-content-center"
         >
@@ -41,15 +41,15 @@ function CardApplication() {
             <div className="">
               <Image
                 alt="image"
-                src={item?.image}
-                width={item?.width || 0}
+                src={image}
+                width={0}
                 height={0}
-                className="w-auto"
+                className="w-100 h-100"
               />
             </div>
           </div>
         </Link>
-      ))}
+      {/* ))} */}
     </div>
   );
 }

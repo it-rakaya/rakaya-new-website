@@ -36,15 +36,15 @@ mutationKey,
         headers: formData
           ? {
               "Content-Type": "multipart/form-data",
-              // Authorization: authorizationHeader,
+              Authorization: authorizationHeader,
               // 'Accept-Language': isRTL ? 'ar' : 'en',
               // Accept: "*/*",
-              "Accept-Language": "ar",
+              // "Accept-Language": "ar",
             }
           : {
               "Content-Type": "application/json; charset=utf-8",
-              // Authorization: authorizationHeader,
-              "Accept-Language": "ar",
+              Authorization: authorizationHeader,
+              // "Accept-Language": "ar",
               // Accept: "*/*",
             },
         onUploadProgress: (progressEvent) => {

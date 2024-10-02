@@ -1,56 +1,69 @@
 import React, { useState } from "react";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
-import MainDataCourses from "./MainDataCourses";
+import { RiDeleteBinLine } from "react-icons/ri";
+import useFetch from "../../../../hooks/useFetch";
 import Button from "../../../Button";
+import Main from "./Main";
+import SpinnerLoading from "../../../SpinnerLoading";
+import NoData from "../../../NoData";
+import CardProfile from "../../CardProfile";
 
 function Courses() {
-  const [showSkills, setShowSkills] = useState(true);
+  const [showCard, setShowCard] = useState(true);
+  const [mainData, setMainData] = useState({});
+
+  const { data, isLoading, refetch } = useFetch({
+    queryKey: [`candidate-courses`],
+    endpoint: `candidate-courses`,
+  });
   return (
     <div>
-      {showSkills ? (
+      {showCard ? (
         <>
           <div className="d-flex justify-content-between">
             <Button
               className="d-flex align-items-center gap-2"
-              onClick={() => setShowSkills(false)}
+              onClick={() => {
+                setShowCard(false);
+
+                setMainData({});
+              }}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة دورة تدريبية
             </Button>
           </div>
           <div className="row gap-4">
-            <div className="shadow p-2 rounded-3  mt-3 col-md-12">
-              <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-                <div className=" ">
-                  <p className="m-0 fw-bold">دورة تصميم واجهات امامية </p>
-                  <p className="m-0 "> جامعة ام القرى </p>
-                </div>
-                <div>
-                  <RiDeleteBinLine
-                    style={{ fontSize: "20px", color: "#0000007a" }}
-                    className="text_Dark"
+            {isLoading ? (
+              <div
+                className="d-flex justify-content-between align-items-center "
+                style={{
+                  height: "27vh",
+                }}
+              >
+                <SpinnerLoading />
+              </div>
+            ) : data?.data?.courses?.length ? (
+              data?.data?.courses?.map((item) => (
+                <div onClick={() => setMainData(item)} key={item?.id}>
+                  <CardProfile
+                    key={item?.id}
+                    title={item?.course_name}
+                    subTitle={item?.organization_name}
+                    endpointDelete={"candidate-courses"}
+                    id={item?.id}
+                    refetch={refetch}
+                    setShowCard={setShowCard}
                   />
                 </div>
-              </div>
-            </div>
-            <div className="shadow p-2 rounded-3  mt-3 col-md-12">
-              <div className="d-flex justify-content-between align-items-center  py-3 px-4">
-                <div className=" ">
-                  <p className="m-0 fw-bold">دورة واجهات خلفية </p>
-                </div>
-                <div>
-                  <RiDeleteBinLine
-                    style={{ fontSize: "20px", color: "#0000007a" }}
-                    className="text_Dark"
-                  />
-                </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <NoData message={" لايوجد شهادات لديك"} />
+            )}
           </div>
         </>
       ) : (
-        <MainDataCourses setShowSkills={setShowSkills} />
+        <Main setShowCard={setShowCard} refetch={refetch} mainData={mainData} />
       )}
     </div>
   );

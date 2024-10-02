@@ -1,24 +1,30 @@
 import React from "react";
 import SelectComp from "./SelectComp";
+import useFetch from "../../hooks/useFetch";
+import { useFormikContext } from "formik";
 
-function SelectEducation({ label, required }) {
-  const options = [
-    { value: "1", label: "الدكتوراه" },
-    { value: "2", label: "البكالوريوس" },
-    { value: "3", label: "الدبلوم" },
-    { value: "4", label: "ابتدائي" },
-    { value: "5", label: "الماجستير" },
-    { value: "+6", label: "متوسط" },
-    { value: "+10", label: "ثانوي" },
-  ];
+function SelectEducation({ label, required, name }) {
+  const { values } = useFormikContext();
+  const { data } = useFetch({
+    endpoint: `education-levels`,
+    queryKey: [`education-levels`],
+  });
+  const options = data?.data?.education_levels?.map((item) => ({
+    value: item.id,
+    label: item.name_ar,
+  }));
+  const selectedValue = options?.find(
+    (option) => option?.value == values[name]
+  );
   return (
     <div>
       <SelectComp
         label={label}
-        name={"years_of_experience"}
+        name={name}
         placeholder="مستوى التعليم"
         options={options}
         required={required}
+        selectedValue={selectedValue}
       />
     </div>
   );

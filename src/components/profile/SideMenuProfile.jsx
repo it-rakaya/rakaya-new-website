@@ -3,12 +3,20 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
 import Container from "../Container";
-import { MdDashboard, MdLock, MdOutlineDashboard, MdOutlineLock, MdOutlineVerified, MdVerified } from "react-icons/md";
+import {
+  MdDashboard,
+  MdLock,
+  MdOutlineDashboard,
+  MdOutlineLock,
+  MdOutlineVerified,
+  MdVerified,
+} from "react-icons/md";
 import { FaIdCard, FaRegAddressCard, FaRegNewspaper } from "react-icons/fa6";
 import { IoIosPaper } from "react-icons/io";
 import Image from "next/image";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import { useAuth } from "../../context/auth/AuthProvider";
 
 const titleVariant = {};
 
@@ -68,7 +76,7 @@ const paths = [
     href: "/profile",
     icon: <MdDashboard style={{ width: "22px", height: "22px" }} />,
     iconOutLine: (
-      <MdOutlineDashboard   style={{ width: "22px", height: "22px" }} />
+      <MdOutlineDashboard style={{ width: "22px", height: "22px" }} />
     ),
   },
   {
@@ -81,32 +89,33 @@ const paths = [
     title: "السيرة الذاتية",
     href: "/profile/cv",
     icon: <IoIosPaper style={{ width: "22px", height: "22px" }} />,
-    iconOutLine: (
-      <FaRegNewspaper  style={{ width: "22px", height: "22px" }} />
-    ),
+    iconOutLine: <FaRegNewspaper style={{ width: "22px", height: "22px" }} />,
   },
   {
     title: "توثيق البيانات",
     href: "/profile/complete",
     icon: <MdVerified style={{ width: "22px", height: "22px" }} />,
-    iconOutLine:<MdOutlineVerified  style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: (
+      <MdOutlineVerified style={{ width: "22px", height: "22px" }} />
+    ),
   },
   {
     title: "تغيير كلمة المرور",
     href: "/profile/change-password",
     icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
     iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
-  },{
+  },
+  {
     title: "المعلومات البنكية",
     href: "/profile/bank-information",
     icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
     iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
   },
-  
 ];
 
 const SideMenuProfile = () => {
   const { pathname } = useRouter();
+  const { user } = useAuth();
   const [activeRouteIndex, setActiveRouteIndex] = useState(
     paths.indexOf(paths.find((path) => path.href == pathname))
   );
@@ -131,7 +140,7 @@ const SideMenuProfile = () => {
         <div>
           <Image
             alt=""
-            src={"/studio/team/man.webp"}
+            src={user?.profile_attachment || "/studio/team/man.webp"}
             width={100}
             height={100}
             className="p-1 mb-4 bg-white"
@@ -142,7 +151,7 @@ const SideMenuProfile = () => {
             }}
           />
         </div>
-        <h6 className="mb-3">عبد الرحمن الشيخ</h6>
+        <h6 className="mb-3">{`${user?.f_name_ar} ${user?.l_name_ar}`}</h6>
         {/* <p className="fw-bold">Front End Developer</p> */}
       </div>
       {paths.map((path, index) => (

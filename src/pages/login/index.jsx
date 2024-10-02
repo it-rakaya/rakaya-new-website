@@ -10,7 +10,7 @@ import { useMutate } from "../../hooks/useMutate";
 import { useAuth } from "../../context/auth/AuthProvider";
 import { isEmail } from "../../utils/Helpers";
 import * as Yup from "yup";
-import { notify } from "../../utils/toast";
+import { notify } from "../../utils/notify";
 
 function LoginPage() {
   const router = useRouter();

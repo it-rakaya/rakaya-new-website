@@ -11,7 +11,7 @@ function SelectHelp({ label, required, labelClassName }) {
     value: item.id,
     label: item.name_ar,
   }));
-{""}
+
   return (
     <div>
       <SelectComp

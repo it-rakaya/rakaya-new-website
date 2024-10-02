@@ -2,9 +2,12 @@ import { useFormikContext } from "formik";
 import React from "react";
 import SelectComp from "./SelectComp";
 import useFetch from "../../hooks/useFetch";
-{""}
-function SelectCities({ label, required, labelClassName }) {
+{
+  ("");
+}
+function SelectCities({ label, required, labelClassName, name }) {
   const { values } = useFormikContext();
+  console.log("🚀 ~ SelectCities ~ values:", values);
   const { data } = useFetch({
     endpoint: `cities`,
     queryKey: [`cities`],
@@ -15,7 +18,7 @@ function SelectCities({ label, required, labelClassName }) {
   }));
 
   const selectedValue = options?.find(
-    (option) => option?.value == values.nationality
+    (option) => option?.value == values[name]
   );
 
   return (
@@ -23,10 +26,10 @@ function SelectCities({ label, required, labelClassName }) {
       <SelectComp
         label={label}
         labelClassName={labelClassName}
-        name={"nationality"}
+        name={name}
         options={options}
         required={required}
-        disabled={values?.national_id?.startsWith("1")}
+        disabled={values?.nationality_id != 189}
         selectedValue={selectedValue}
       />
     </div>

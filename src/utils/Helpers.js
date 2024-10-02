@@ -39,3 +39,13 @@ export function extractTimeWithAmPm(isoString) {
   let extractedTime = hours + ":" + minutes + ":" + seconds + " " + ampm;
   return extractedTime;
 }
+
+export const getModifiedValues = (initialValues, values) => {
+  const modifiedValues = {};
+  Object.keys(values).forEach((key) => {
+    if (values[key] !== initialValues[key]) {
+      modifiedValues[key] = values[key];
+    }
+  });
+  return modifiedValues;
+};

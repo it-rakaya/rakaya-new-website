@@ -15,9 +15,10 @@ function SelectComp({
   disabled,
   isClearable,
   icon,
+  onChange
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
-{""}
+
   return (
     <div>
       {label && (
@@ -69,7 +70,7 @@ function SelectComp({
           },
           MenuList: ({ children }) => <div className="m-0 p-0">{children}</div>,
         }}
-        onChange={(option) => setFieldValue(name, option?.value)}
+        onChange={onChange ? onChange :(option) => setFieldValue(name, option?.value)}
         noOptionsMessage={() => "لايوجد بيانات"}
       />
       {touched[name] && errors[name] && (
