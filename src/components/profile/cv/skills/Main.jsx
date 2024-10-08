@@ -7,6 +7,7 @@ import Button from "../../../Button";
 import MainDataSkills from "./MainDataSkills";
 
 function Main({ setShowCard, refetch, mainData }) {
+  console.log("🚀 ~ Main ~ mainData:", mainData)
   const endpoint = mainData?.id
     ? `candidate-skills/${mainData?.id}`
     : `candidate-skills`;

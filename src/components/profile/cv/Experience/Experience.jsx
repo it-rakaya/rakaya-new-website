@@ -7,10 +7,14 @@ import useFetch from "../../../../hooks/useFetch";
 import NoData from "../../../NoData";
 import SpinnerLoading from "../../../SpinnerLoading";
 import CardProfile from "../../CardProfile";
+import ButtonUpdateCv from "../../ButtonUpdateCv";
+import { useAuth } from "../../../../context/auth/AuthProvider";
 
 function Experience() {
   const [showCard, setShowCard] = useState(true);
   const [mainData, setMainData] = useState({});
+  const {user} = useAuth()
+  console.log("🚀 ~ Experience ~ user:", user)
 
   const { data, isLoading, refetch } = useFetch({
     queryKey: [`candidate-experiences`],
@@ -29,10 +33,19 @@ function Experience() {
 
                 setMainData({});
               }}
+              disabled={user?.has_experiences == 0}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة خبرة
             </Button>
+            {!data?.data?.experiences?.length && (
+              <ButtonUpdateCv
+                label={"لايوجد لدي خبرات"}
+                value={user?.has_experiences}
+                name='has_experiences'
+                checked={user?.has_experiences == 0}
+              />
+            )}
           </div>
           {isLoading ? (
             <div

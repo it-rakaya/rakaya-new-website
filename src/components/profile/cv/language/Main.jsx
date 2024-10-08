@@ -30,7 +30,7 @@ function Main({ setShowCard, refetch, mainData }) {
   const initialValues = {
     language_id: mainData?.language_id || "",
     level: mainData?.level || "",
-    attachment_url: { value: mainData.attachment_url } || "",
+    attachment_url:mainData.attachment_url ?  { value: mainData.attachment_url } : "",
   };
   const validationSchema = Yup.object({
     education_level_id: Yup.string().required("مستوى التعليم مطلوب"),

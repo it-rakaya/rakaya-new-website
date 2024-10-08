@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
-import Container from "../Container";
+import { FaIdCard, FaRegAddressCard, FaRegNewspaper } from "react-icons/fa6";
+import { IoIosPaper } from "react-icons/io";
 import {
   MdDashboard,
   MdLock,
@@ -11,12 +13,11 @@ import {
   MdOutlineVerified,
   MdVerified,
 } from "react-icons/md";
-import { FaIdCard, FaRegAddressCard, FaRegNewspaper } from "react-icons/fa6";
-import { IoIosPaper } from "react-icons/io";
-import Image from "next/image";
-import { IoNewspaperOutline } from "react-icons/io5";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import { useAuth } from "../../context/auth/AuthProvider";
+import Container from "../Container";
+import { BiSolidBank } from "react-icons/bi";
+import { RiBankLine } from "react-icons/ri";
 
 const titleVariant = {};
 
@@ -33,6 +34,7 @@ const ListItem = ({
   href,
   to,
   icon,
+  hidden,
 }) => {
   return (
     <motion.div
@@ -102,14 +104,15 @@ const paths = [
   {
     title: "تغيير كلمة المرور",
     href: "/profile/change-password",
-    icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
-    iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+    icon: <MdLock style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />,
   },
   {
     title: "المعلومات البنكية",
     href: "/profile/bank-information",
-    icon: <MdLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
-    iconOutLine: <MdOutlineLock style={{ width: "22px", height: "22px" }} />, // أيقونة جديدة هنا
+    // hidden: false,
+    icon: <BiSolidBank style={{ width: "22px", height: "22px" }} />,
+    iconOutLine: <RiBankLine style={{ width: "22px", height: "22px" }} />,
   },
 ];
 
@@ -154,20 +157,22 @@ const SideMenuProfile = () => {
         <h6 className="mb-3">{`${user?.f_name_ar} ${user?.l_name_ar}`}</h6>
         {/* <p className="fw-bold">Front End Developer</p> */}
       </div>
-      {paths.map((path, index) => (
-        <ListItem
-          key={index}
-          active={activeRouteIndex == index}
-          last={index == paths.length - 1}
-          onClick={() => {
-            setActiveRouteIndex(index);
-          }}
-          href={path.href}
-          icon={activeRouteIndex == index ? path?.iconOutLine : path?.icon}
-        >
-          {path.title}
-        </ListItem>
-      ))}
+      {paths
+        .filter((path) => !path.hidden)
+        .map((path, index) => (
+          <ListItem
+            key={index}
+            active={activeRouteIndex == index}
+            last={index == paths.length - 1}
+            onClick={() => {
+              setActiveRouteIndex(index);
+            }}
+            href={path.href}
+            icon={activeRouteIndex == index ? path?.iconOutLine : path?.icon}
+          >
+            {path.title}
+          </ListItem>
+        ))}
     </Container>
   );
 };

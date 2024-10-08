@@ -10,20 +10,20 @@ function MainData({loadingRegister}) {
       <div>
         <Label required>الاسم كامل بالعربي</Label>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField
               placeholder={"الاسم الاول"}
               name={"f_name_ar"}
               required={true}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الثاني"} name={"s_name_ar"} />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الثالث"} name={"t_name_ar"} />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الاخير"} name={"l_name_ar"} />
           </div>
         </div>
@@ -31,16 +31,16 @@ function MainData({loadingRegister}) {
       <div>
         <Label required>الاسم كامل بالانجليزية</Label>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الاخير"} name={"l_name_en"} />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الثالث"} name={"t_name_en"} />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الثاني"} name={"s_name_en"} />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الاول"} name={"f_name_en"} />
           </div>
         </div>

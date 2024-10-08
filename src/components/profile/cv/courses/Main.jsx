@@ -32,7 +32,7 @@ function Main({ setShowCard, refetch, mainData }) {
     date: mainData?.date || "",
     major: mainData?.major || "",
     duration: mainData?.duration || "",
-    attachment: { value: mainData?.attachment_url } || "",
+    attachment:mainData?.attachment_url ?  { value: mainData?.attachment_url } : "",
   };
   const validationSchema = Yup.object({
     education_level_id: Yup.string().required("مستوى التعليم مطلوب"),

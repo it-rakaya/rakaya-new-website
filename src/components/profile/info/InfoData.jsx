@@ -8,7 +8,7 @@ import { notify } from "../../../utils/notify";
 import { getModifiedValues } from "../../../utils/Helpers";
 
 function InfoData() {
-  const { user  ,setUser  } = useAuth();
+  const { user, setUser } = useAuth();
   const initialValues = {
     f_name_ar: user?.f_name_ar || "",
     s_name_ar: user?.s_name_ar || "",
@@ -25,18 +25,19 @@ function InfoData() {
     country_of_residence: user?.country_of_residence_id || "",
     city: user?.city || "",
     gender: user?.gender || "",
-    cv_attachment: {value:user?.cv_attachment} || "",
-    profile_attachment: {value:user?.profile_attachment}  || "",
+    cv_attachment: user?.cv_attachment ? { value: user?.cv_attachment } : "",
+    profile_attachment: user?.profile_attachment
+      ? { value: user?.profile_attachment }
+      : "",
   };
-  
+
   const endpoint = `candidate-profile`;
   const { mutate: updateProfile, isPending } = useMutate({
     mutationKey: [endpoint],
     endpoint: endpoint,
     onSuccess: (data) => {
       notify("success", "تم تعديل البيانات بنجاح");
-      console.log("🚀 ~ InfoData ~ data:", data);
-      setUser(data?.data?.candidate)
+      setUser(data?.data?.candidate);
     },
     onError: (e) => {
       notify("error", e.response?.data?.message);
@@ -44,15 +45,7 @@ function InfoData() {
     formData: true,
   });
 
-  // const getModifiedValues = (initialValues, values) => {
-  //   const modifiedValues = {};
-  //   Object.keys(values).forEach((key) => {
-  //     if (values[key] !== initialValues[key]) {
-  //       modifiedValues[key] = values[key];
-  //     }
-  //   });
-  //   return modifiedValues;
-  // };
+
 
   return (
     <div>
@@ -60,7 +53,7 @@ function InfoData() {
         initialValues={initialValues}
         onSubmit={(values) => {
           const modifiedValues = getModifiedValues(initialValues, values);
-          updateProfile(modifiedValues); 
+          updateProfile(modifiedValues);
         }}
       >
         <Form>

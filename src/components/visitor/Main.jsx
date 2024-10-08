@@ -1,9 +1,9 @@
 import { Form, Formik } from "formik";
 import React from "react";
-import MainData from "./MainData";
 import { useMutate } from "../../hooks/useMutate";
 import Button from "../Button";
-import { notify } from "../../utils/toast";
+import MainData from "./MianData";
+import { notify } from "../../utils/notify";
 
 function Main() {
   const { mutate: postData, isPending: loading } = useMutate({

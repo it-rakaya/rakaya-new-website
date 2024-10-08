@@ -7,10 +7,13 @@ import Main from "./Main";
 import SpinnerLoading from "../../../SpinnerLoading";
 import NoData from "../../../NoData";
 import CardProfile from "../../CardProfile";
+import ButtonUpdateCv from "../../ButtonUpdateCv";
+import { useAuth } from "../../../../context/auth/AuthProvider";
 
 function Courses() {
   const [showCard, setShowCard] = useState(true);
   const [mainData, setMainData] = useState({});
+  const { user } = useAuth();
 
   const { data, isLoading, refetch } = useFetch({
     queryKey: [`candidate-courses`],
@@ -28,10 +31,19 @@ function Courses() {
 
                 setMainData({});
               }}
+              disabled={user?.has_courses == 0}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة دورة تدريبية
             </Button>
+            {!data?.data?.courses?.length && (
+              <ButtonUpdateCv
+                label={"لايوجد لدي دورات تدريبية"}
+                value={user?.has_courses}
+                name="has_courses"
+                checked={user?.has_courses == 0}
+              />
+            )}
           </div>
           <div className="row gap-4">
             {isLoading ? (

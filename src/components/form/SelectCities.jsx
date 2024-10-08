@@ -7,7 +7,6 @@ import useFetch from "../../hooks/useFetch";
 }
 function SelectCities({ label, required, labelClassName, name }) {
   const { values } = useFormikContext();
-  console.log("🚀 ~ SelectCities ~ values:", values);
   const { data } = useFetch({
     endpoint: `cities`,
     queryKey: [`cities`],
@@ -29,7 +28,7 @@ function SelectCities({ label, required, labelClassName, name }) {
         name={name}
         options={options}
         required={required}
-        disabled={values?.nationality_id != 189}
+        disabled={values?.country_of_residence != 189}
         selectedValue={selectedValue}
       />
     </div>

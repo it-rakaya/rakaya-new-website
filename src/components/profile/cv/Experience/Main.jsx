@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import Button from "../../../Button";
 
 function Main({ setShowCard, refetch, mainData }) {
-  console.log("🚀 ~ Main ~ mainData:", mainData)
   const endpoint = mainData?.id
     ? `candidate-experiences/${mainData?.id}`
     : "candidate-experiences";

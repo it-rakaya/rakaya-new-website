@@ -6,10 +6,13 @@ import NoData from "../../../NoData";
 import SpinnerLoading from "../../../SpinnerLoading";
 import CardProfile from "../../CardProfile";
 import Main from "./Main";
+import ButtonUpdateCv from "../../ButtonUpdateCv";
+import { useAuth } from "../../../../context/auth/AuthProvider";
 
 function Certificate() {
   const [showCard, setShowCard] = useState(true);
   const [mainData, setMainData] = useState({});
+  const { user } = useAuth();
 
   const { data, isLoading, refetch } = useFetch({
     queryKey: [`candidate-certificates`],
@@ -26,10 +29,19 @@ function Certificate() {
                 setShowCard(false);
                 setMainData({});
               }}
+              disabled={user?.has_certificates == 0}
             >
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة شهادة
             </Button>
+            {!data?.data?.courses?.length && (
+              <ButtonUpdateCv
+                label={"لايوجد لدي شهادات"}
+                value={user?.has_certificates}
+                name="has_certificates"
+                checked={user?.has_certificates == 0}
+              />
+            )}
           </div>
           <div className="row gap-4">
             {isLoading ? (
@@ -52,7 +64,6 @@ function Certificate() {
                     refetch={refetch}
                     setShowCard={setShowCard}
                   />
-
                 </div>
               ))
             ) : (
@@ -61,7 +72,7 @@ function Certificate() {
           </div>
         </>
       ) : (
-        <Main setShowCard={setShowCard}  mainData={mainData} refetch={refetch}/>
+        <Main setShowCard={setShowCard} mainData={mainData} refetch={refetch} />
       )}
     </div>
   );

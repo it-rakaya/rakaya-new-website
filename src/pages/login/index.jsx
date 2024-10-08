@@ -23,6 +23,11 @@ function LoginPage() {
       login(data?.data);
       setUser(data?.data?.candidate);
     },
+    onError:(err) => {
+      notify("error", err.response?.data?.message
+      );
+    
+    },
     formData: true,
   });
 

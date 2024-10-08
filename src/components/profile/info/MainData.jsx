@@ -67,7 +67,17 @@ function MainData() {
         label={"دولة الاقامة"}
         name={"country_of_residence"}
       />
-      <SelectCities required label={"المدينة"} name="city" />
+
+      {values?.country_of_residence != 189 ? (
+        <BaseInputField
+          placeholder={"المدينة"}
+          label={"المدينة"}
+          name={"city"}
+          
+        />
+      ) : (
+        <SelectCities required label={"المدينة"} name="city" />
+      )}
 
       <div>
         <Label required>الجنس</Label>

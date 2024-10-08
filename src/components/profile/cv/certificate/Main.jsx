@@ -31,7 +31,7 @@ function Main({ setShowCard, refetch, mainData }) {
   const initialValues = {
     certificate_name: mainData?.certificate_name || "",
     date: mainData?.date || "",
-    attachment: {value:mainData?.attachment_url }|| "",
+    attachment:mainData?.attachment_url ?  {value:mainData?.attachment_url }: "",
   };
   const validationSchema = Yup.object({
     certificate_name: Yup.string().required("مستوى التعليم مطلوب"),

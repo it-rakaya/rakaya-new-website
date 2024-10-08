@@ -1,7 +1,6 @@
 import React from "react";
 
-function Switch({ label, isDarkMode }) {
-  {""}
+function Switch({ label, checked , onChange }) {
   return (
     <div>
       <div class="form-check form-switch">
@@ -9,8 +8,9 @@ function Switch({ label, isDarkMode }) {
           class="form-check-input"
           type="checkbox"
           role="switch"
-          checked={isDarkMode}
+          checked={checked}
           id="flexSwitchCheckDefault"
+          onChange={onChange}
           style={{ marginTop: "7px" }}
         />
         <label
