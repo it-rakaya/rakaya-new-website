@@ -17,7 +17,12 @@ function Accordion({
   const { isDarkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={`accordion-item border-0 border-bottom`}>
+    <div className={`accordion-item border-0 border-bottom `}
+    style={{
+      backgroundColor: isDarkMode &&"#e3e3e35e"
+    }}
+    
+    >
       <h2 className="accordion-header">
         <button
           className={`accordion-button text_Dark  ${
@@ -74,13 +79,13 @@ function Accordion({
       </h2>
       <div
         id={`collapse${title}`}
-        className={`accordion-collapse collapse ${
+        className={`accordion-collapse collapse  ${
           isOpenInitially ? "show" : ""
         }`}
         data-bs-parent="#accordionExample"
       >
         <div
-          className="accordion-body row justify-content-between "
+          className="accordion-body row justify-content-between bg-dark text_Dark "
           // style={{
           //   margin: "1px 18px",
           // }}

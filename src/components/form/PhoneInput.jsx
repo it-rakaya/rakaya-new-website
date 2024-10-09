@@ -2,6 +2,8 @@ import { useFormikContext } from "formik";
 import Label from "./Label";
 import SelectPhoneCode from "./SelectPhoneCode";
 import { CountryCode } from "../../../public/countryCode";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function PhoneInput({ label, required }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
@@ -30,9 +32,9 @@ function PhoneInput({ label, required }) {
 
   const handlePhoneChange = (e) => {
     const formatted = formatPhoneNumber(e.target.value, selectedCountry);
-
     setFieldValue("phone", formatted.replace(/\s+/g, ""));
   };
+  const { isDarkMode } = useContext(DarkModeContext);
 
   return (
     <div>
@@ -65,6 +67,9 @@ function PhoneInput({ label, required }) {
           className={`border w-25 d-flex align-items-center justify-content-center rounded-2 ${
             errors.phone && touched.phone ? "border-danger" : ""
           }`}
+          style={{
+            backgroundColor: isDarkMode && "#e3e3e35e",
+          }}
         >
           <SelectPhoneCode name={"phone_code"} />
         </div>

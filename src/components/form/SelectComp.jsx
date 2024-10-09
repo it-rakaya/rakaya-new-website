@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Label from "./Label";
 import Select from "react-select";
 import SelectItem from "../SelectItem";
 import { useFormikContext } from "formik";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function SelectComp({
   labelClassName,
@@ -15,9 +16,10 @@ function SelectComp({
   disabled,
   isClearable,
   icon,
-  onChange
+  onChange,
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
+  const { isDarkMode } = useContext(DarkModeContext);
 
   return (
     <div>
@@ -42,6 +44,8 @@ function SelectComp({
                 : "1px solid #ced4da",
             boxShadow: "0 !important",
             "&:hover": {},
+            backgroundColor: isDarkMode && "#e3e3e35e",
+            color: isDarkMode && "white",
           }),
           dropdownIndicator: (base, state) => ({
             ...base,
@@ -52,9 +56,14 @@ function SelectComp({
             ...provided,
             maxHeight: "200px",
             overflowY: "scroll",
+            backgroundColor: isDarkMode ? "#ced4da" : "white",
           }),
           menuList: (provided) => ({
             ...provided,
+          }),
+          singleValue: (provided) => ({
+            ...provided,
+            color: isDarkMode ? "white" : "black", 
           }),
         }}
         value={selectedValue}
@@ -70,7 +79,9 @@ function SelectComp({
           },
           MenuList: ({ children }) => <div className="m-0 p-0">{children}</div>,
         }}
-        onChange={onChange ? onChange :(option) => setFieldValue(name, option?.value)}
+        onChange={
+          onChange ? onChange : (option) => setFieldValue(name, option?.value)
+        }
         noOptionsMessage={() => "لايوجد بيانات"}
       />
       {touched[name] && errors[name] && (

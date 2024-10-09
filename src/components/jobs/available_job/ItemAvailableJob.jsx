@@ -96,12 +96,14 @@ function ItemAvailableJob({ item }) {
           </div>
           <div className="d-flex align-items-center gap-2 mt-2 ">
             <RiCalendarScheduleFill style={{ color: "#6c757d" }} />
-            <p className="p-0 m-0 text-secondary font-bolder">منذ 3 ساعات</p>
+            <p className="p-0 m-0  text-secondary text_Dark font-bolder ">منذ 3 ساعات</p>
           </div>
         </div>
 
         <div className="d-flex align-items-center gap-2">
-          <Button onClick={handelApplyJob}>التقديم الان</Button>
+          <Button disabled={item?.is_open == 0} onClick={handelApplyJob}>
+            التقديم الان
+          </Button>
         </div>
       </div>
       <ModalComp

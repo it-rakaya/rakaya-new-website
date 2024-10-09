@@ -1,9 +1,12 @@
 import { useFormikContext } from "formik";
 import Select from "react-select";
 import { CountryCode } from "../../../public/countryCode";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function SelectPhoneCode({ label, required, name }) {
   const { setFieldValue, errors, touched } = useFormikContext();
+  const { isDarkMode } = useContext(DarkModeContext);
 
   const options = CountryCode;
 
@@ -22,6 +25,8 @@ function SelectPhoneCode({ label, required, name }) {
             minHeight: "30px",
             height: "30px",
             "&:hover": {},
+            backgroundColor: isDarkMode && "transparent",
+            color: isDarkMode && "white",
           }),
           dropdownIndicator: (base, state) => ({
             ...base,
@@ -37,11 +42,17 @@ function SelectPhoneCode({ label, required, name }) {
             ...provided,
             minHeight: "150px",
             // overflowY: "scroll",
+            backgroundColor: isDarkMode ? "#212529" :"white",
+
             minWidth: "100px",
             zIndex: "99999",
           }),
           menuList: (provided) => ({
             ...provided,
+          }),
+          singleValue: (provided) => ({
+            ...provided,
+            color: isDarkMode ? "white" : "black", 
           }),
         }}
         defaultValue={{
@@ -55,7 +66,7 @@ function SelectPhoneCode({ label, required, name }) {
         // value={selectedValue}
         onChange={(option) => {
           setFieldValue("phone_code", option.value);
-          setFieldValue("phone", ""); 
+          setFieldValue("phone", "");
         }}
         noOptionsMessage={() => "لايوجد بيانات"}
       />

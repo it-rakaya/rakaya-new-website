@@ -1,9 +1,10 @@
 import CustomHead from "../../../components/CustomHead";
 import Header from "../../../components/jobs/Header";
 import fetchData from "../../../utils/fetchData";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../../../components/Container";
 import VisionLayout from "../../../components/vision/VisionLayout";
+import Loading from "../../../components/Loading";
 
 const Product = ({ title, description, subTitle }) => (
   <Container>
@@ -22,7 +23,22 @@ const Product = ({ title, description, subTitle }) => (
   </Container>
 );
 
-const Index = ({ data }) => {
+const Index = ({ initialData }) => {
+  const [data, setData] = useState(initialData);
+  const [loading, setLoading] = useState(!initialData);
+  useEffect(() => {
+    if (!initialData) {
+      const fetchDataAsync = async () => {
+        setLoading(true); 
+        const products = await fetchData("products");
+        setData(products);
+        setLoading(false); 
+      };
+
+      fetchDataAsync();
+    }
+  }, [initialData]);
+
   const description = "منتجات نفخر بها ";
   return (
     <>
@@ -32,14 +48,18 @@ const Index = ({ data }) => {
 
       <VisionLayout title="">
         <div className="col-lg-10 col-md-10 me-0">
-          {data?.products?.map((item, index) => (
-            <Product
-              key={index}
-              title={item?.name}
-              subTitle={item?.subTitle}
-              description={item?.description}
-            />
-          ))}
+          {loading ? ( 
+            <Loading/>
+          ) : (
+            data?.products?.map((item, index) => (
+              <Product
+                key={index}
+                title={item?.name}
+                subTitle={item?.subTitle}
+                description={item?.description}
+              />
+            ))
+          )}
         </div>
       </VisionLayout>
     </>
@@ -47,11 +67,12 @@ const Index = ({ data }) => {
 };
 
 export default Index;
+
 export async function getServerSideProps(context) {
   const products = await fetchData("products");
   return {
     props: {
-      data: products,
+      initialData: products || null,
     },
   };
 }

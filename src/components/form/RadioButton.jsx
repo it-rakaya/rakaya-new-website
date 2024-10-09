@@ -1,10 +1,12 @@
 import { useFormikContext } from "formik";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 function RadioButtonGroup({ options, name, onChange }) {
   const {values} = useFormikContext()
   const [selectedValue, setSelectedValue] = useState(values[name]);
+  const { isDarkMode } = useContext(DarkModeContext);
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -18,7 +20,7 @@ function RadioButtonGroup({ options, name, onChange }) {
       key={index}
       className={`border rounded-3 p-1 m-1 col`}
       style={{
-        backgroundColor: selectedValue === option.value ? "#C9B171" : "",
+        backgroundColor: selectedValue === option.value ?  "#C9B171" : "",
         textAlign: "center",
         position: "relative",
       }}
@@ -44,6 +46,7 @@ function RadioButtonGroup({ options, name, onChange }) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          color:isDarkMode  && "white"
         }}
       >
         <span>{option.label}</span>

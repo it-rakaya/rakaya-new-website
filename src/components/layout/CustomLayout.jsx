@@ -4,7 +4,14 @@ function CustomLayout({children}) {
   return (
     <div>
       <ProfileNavbar/>
+      <div
+      style={{
+        minHeight:"100vh"
+      }}
+      >
         {children}
+
+      </div>
     </div>
   )
 }

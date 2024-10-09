@@ -17,7 +17,7 @@ function BaseInputField({
 }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
-  const [showPassword, setShowPassword] = useState(false); // حالة رؤية كلمة المرور
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleChange = (e) => {
     let value = e.target.value;
@@ -48,7 +48,7 @@ function BaseInputField({
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword); // عكس حالة رؤية كلمة المرور
+    setShowPassword(!showPassword); 
   };
 
   return (
@@ -77,7 +77,7 @@ function BaseInputField({
             onBlur={handleBlur}
             disabled={disabled}
             onKeyPress={handleKeyPress}
-            className={`form-control p-2 ${
+            className={`form-control p-2  ${
               errors[name] && touched[name] ? "border-danger" : ""
             }`}
             pattern={type === "num" ? "\\d*" : undefined}

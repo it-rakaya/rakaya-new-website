@@ -8,11 +8,16 @@ const Footer = dynamic(() => import("./Footer"), {
   ssr: false,
 });
 function Layout({ children }) {
-  
   return (
     <div className="bg-dark">
       <NavBar />
-      {children}
+      <div
+        style={{
+          minHeight: "100vh",
+        }}
+      >
+        {children}
+      </div>
       <TOTop />
       <Footer />
     </div>

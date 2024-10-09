@@ -7,30 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 function CardApplication({image , link}) {
-  // const images = [img1, img2, img3, img4];
-  const images = [
-    {
-      image: img1,
-      link: "https://www.figma.com/",
-    },
-    {
-      image: img2,
-      link: "https://www.jisr.net/ar/about-jisr",
-    },
-    {
-      image: img3,
-      link: "https://www.google.com/",
-      width: "45",
-    },
-    {
-      image: img4,
-      link: "https://trello.com/",
-    },
-  ];
+
 
   return (
     <div className="row row-cols-2 row-cols-md-4 mx-md-1  gap-2 justify-content-center justify-content-md-start  align-items-between mb-5 over_margin">
-      {/* {images?.map((item, index) => ( */}
+      
         <Link
           href={`${link}`}
           // key={index}
@@ -49,7 +30,7 @@ function CardApplication({image , link}) {
             </div>
           </div>
         </Link>
-      {/* ))} */}
+
     </div>
   );
 }

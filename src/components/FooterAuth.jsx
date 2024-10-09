@@ -6,7 +6,7 @@ import Heart from "./icons/Heart";
 function FooterAuth() {
   return (
     <div>
-      <Container className="d-flex justify-content-center pt-3">
+      <Container className="d-flex justify-content-center pt-3 bg-dark">
         <p className="text-dark fw-bold text_Dark">{t("common:footer_desc")}</p>
         <div className="mx-1">
           <Heart />

@@ -9,7 +9,6 @@ import fetchData from "../../utils/fetchData";
 
 const Jobs = ({ jobs }) => {
   const { isDarkMode } = useContext(DarkModeContext);
-
   const visibleJobs = jobs?.vacancies?.filter(item => !!item?.is_visible);
 
   return (
