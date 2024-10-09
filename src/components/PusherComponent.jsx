@@ -9,10 +9,8 @@ const PusherComponent = ({ onData }) => {
     const pusher = new Pusher(APP_KEY, {
       cluster: APP_CLUSTER,
     });
-    console.log("pusher",pusher)
 
     const channel = pusher.subscribe("your-channel");
-    console.log("🚀 ~ useEffect ~ channel:", channel)
     channel.bind("your-event", (data) => {
       onData(data?.segments);
     });

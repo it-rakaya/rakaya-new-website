@@ -3,7 +3,7 @@ import { useFormikContext } from "formik";
 import React, { useEffect } from "react";
 import SelectComp from "./SelectComp";
 
-function SelectSector({ label, required, labelClassName, sectors_table }) {
+function SelectSector({ label, required, labelClassName, icon }) {
   const { values, setFieldValue } = useFormikContext();
   const { data } = useFetch({
     endpoint: `sectors`,
@@ -13,7 +13,7 @@ function SelectSector({ label, required, labelClassName, sectors_table }) {
 
   const options = data?.data?.sectors?.map((item) => ({
     value: item.id,
-    label: item.label,
+    label: `${item.label} - ${item?.facility_name}`,
   }));
 
   const filteredOptions = data?.data?.sectors
@@ -31,6 +31,7 @@ function SelectSector({ label, required, labelClassName, sectors_table }) {
   return (
     <div>
       <SelectComp
+      icon={icon}
         label={label}
         labelClassName={labelClassName}
         name={"sector_id"}

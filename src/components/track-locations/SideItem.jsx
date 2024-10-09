@@ -10,7 +10,8 @@ export default function SideItem({
   isDarkMode,
   mainDataLocation,
   isLoading,
-  setCollapsed
+  setCollapsed,
+  resetMap,
 }) {
   React.useEffect(() => {
     const pusher = new Pusher("dd4472371972ca1c31dd", {
@@ -29,30 +30,34 @@ export default function SideItem({
   }, []);
   // setChartData(data);
 
-  const numberOfPilgrims = mainDataLocation?.data?.pilgrams;
-  const numberOfMentors = mainDataLocation?.data?.monitors;
-  const numberOfSectors = mainDataLocation?.data?.sectors;
-  const numberOfPilgrimsNationality =
-    mainDataLocation?.data?.pilgrams_nationalities;
-  const tickets_by_reason = mainDataLocation?.data?.tickets_by_reason;
-  const tickets_by_danger = mainDataLocation?.data?.tickets_by_danger;
-  const tickets_by_status = mainDataLocation?.data?.tickets_by_status;
-  const supports_food_by_day = mainDataLocation?.data?.supports_food_by_day;
-  const supports_water_by_day = mainDataLocation?.data?.supports_water_by_day;
-  const meals_by_day = mainDataLocation?.data?.meals_by_day;
-  const meals_by_status = mainDataLocation?.data?.meals_by_status;
-  const monitors_table = mainDataLocation?.data?.monitors_table;
-  const sectors_table = mainDataLocation?.data?.sectors_table;
+  const numberOfPilgrims = mainDataLocation?.pilgrams;
+  const numberOfMentors = mainDataLocation?.monitors;
+  const numberOfSectors = mainDataLocation?.sectors;
+  const numberOfPilgrimsNationality = mainDataLocation?.pilgrams_nationalities;
+  const tickets_by_reason = mainDataLocation?.tickets_by_reason;
+  const tickets_by_danger = mainDataLocation?.tickets_by_danger;
+  const tickets_by_status = mainDataLocation?.tickets_by_status;
+  const supports_food_by_day = mainDataLocation?.supports_food_by_day;
+  const supports_water_by_day = mainDataLocation?.supports_water_by_day;
+  const meals_by_day = mainDataLocation?.meals_by_day;
+  const meals_by_status = mainDataLocation?.meals_by_status;
+  const monitors_table = mainDataLocation?.monitors_table;
+  const sectors_table = mainDataLocation?.sectors_table;
+  const supports_water_by_day_quantity =
+    mainDataLocation?.supports_food_by_day_quantity;
 
   return (
-    <div className={isLoading ?"hide-on-mobile" :""}>
-      {/* <PusherComponent onData={setChartData}/> */}
+    <div className={isLoading ? "hide-on-mobile" : ""}>
       <div
         className=" bg-white h-[100vh] position-relative sidebar-track"
         style={{ marginTop: "5px" }}
       >
         <div
-          className={`   d-flex justify-content-between align-items-center track-logos py-3 px-2`}
+          className={`   d-flex ${
+            localStorage.getItem("type") == "admin"
+              ? "justify-content-center"
+              : "justify-content-between"
+          }  align-items-center track-logos py-3 px-2`}
           style={{ backgroundColor: "#E9DFC6" }}
         >
           <div className="px-3 ">
@@ -64,12 +69,21 @@ export default function SideItem({
             />
           </div>
           <div className="px-md-3 ">
-            <Image
-              src={"/track/HajjLogo.png"}
-              width={180}
-              height={60}
-              alt="logo"
-            />
+            {localStorage.getItem("type") !== "admin" && (
+              <Image
+                src={
+                  localStorage.getItem("type") == "ithraa"
+                    ? "https://admin-dev.rmcc.sa/storage/users/1/logo/17176688274352_logo.png"
+                    : localStorage.getItem("type") == "albeit"
+                    ? "https://admin-dev.rmcc.sa/storage/users/1/logo/17176713661424_logo.png"
+                    : ""
+                }
+                width={0}
+                height={0}
+                style={{ width: "100%", height: "70px" }}
+                alt="logo"
+              />
+            )}
           </div>
         </div>
         {!isLoading ? (
@@ -89,6 +103,7 @@ export default function SideItem({
               tickets_by_status={tickets_by_status}
               tickets_by_reason={tickets_by_reason}
               isDarkMode={isDarkMode}
+              supports_water_by_day_quantity={supports_water_by_day_quantity}
             />
           </div>
         ) : (
@@ -101,13 +116,11 @@ export default function SideItem({
             <SpinnerLoading />
           </div>
         )}
-        <div
-          className="position-absolute MainFilter"
-        >
+        <div className="position-absolute MainFilter">
           <Filter
             setResetMap={setResetMap}
+            resetMap={resetMap}
             mainDataLocation={mainDataLocation}
-            
           />
         </div>
       </div>

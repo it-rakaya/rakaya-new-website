@@ -11,10 +11,10 @@ function MealsChartByStatus({ isDarkMode, meals_by_status }) {
     labels: labels,
     datasets: [
       {
-        label: "# of Votes",
+        label: "# العدد",
         data: dataValues,
-        backgroundColor: ["#65cb66", "#399ddd"],
-        borderColor: ["#65cb66", "#399ddd"],
+        backgroundColor: ["#e29697", "#65cb66", "#399ddd"],
+        borderColor: ["#e29697", "#65cb66", "#399ddd"],
         borderWidth: 1,
       },
     ],
@@ -26,7 +26,7 @@ function MealsChartByStatus({ isDarkMode, meals_by_status }) {
         position: "top",
         align: "center",
         labels: {
-          color: isDarkMode ? "white" : "black",
+          color: isDarkMode ? "#ffffff" : "#000",
           font: {
             family: "IBM Plex Sans Arabic",
           },
@@ -35,10 +35,37 @@ function MealsChartByStatus({ isDarkMode, meals_by_status }) {
       title: {
         display: true,
         text: "حسب الحالة",
-        color: isDarkMode ? "white" : "black",
+        color: isDarkMode ? "#ffffff" : "#000",
         font: {
           family: "IBM Plex Sans Arabic",
           size: 14,
+        },
+      },
+      tooltip: {
+        titleFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        bodyFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        footerFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleColor: '#ffffff',
+        bodyColor: '#ffffff',
+        footerColor: '#ffffff',
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: isDarkMode ? "#ffffff" : "#000",
+        },
+      },
+      y: {
+        ticks: {
+          color: isDarkMode ? "#ffffff" : "#000",
         },
       },
     },

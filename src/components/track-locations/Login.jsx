@@ -10,7 +10,6 @@ import Link from "next/link";
 function Login({ setAuth }) {
   const [error, setError] = useState("");
   const handleSubmit = (values) => {
-    console.log("🚀 ~ handleSubmit ~ values:", values)
     if (values.email == adminEmail && values.password == correctPassword) {
       setAuth(true);
       localStorage.setItem("isAuth", "true");
@@ -41,7 +40,6 @@ function Login({ setAuth }) {
     <div>
       <Formik
         initialValues={{}}
-        // validationSchema={validationSchema}
         onSubmit={(values) => handleSubmit(values)}
       >
         <Form>
@@ -87,6 +85,7 @@ function Login({ setAuth }) {
                   name={"password"}
                   label={"كلمة المرور"}
                   placeholder={"********"}
+                  type="password"
                   required
                 />
                 {error && (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +9,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import chroma from "chroma-js";
 
 ChartJS.register(
   CategoryScale,
@@ -20,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-function MealsChartByDay({ meals_by_day , isDarkMode }) {
+function MealsChartByDay({ meals_by_day, isDarkMode }) {
   const labels = meals_by_day?.map((item) => item.date);
   const dataValues = meals_by_day?.map((item) => item.count);
 
@@ -30,19 +29,46 @@ function MealsChartByDay({ meals_by_day , isDarkMode }) {
       legend: {
         position: "top",
         labels: {
-          color: isDarkMode ? "white" : "black", 
+          color: isDarkMode ? "#ffffff" : "#000",
           font: {
-            family: "IBM Plex Sans Arabic", 
+            family: "IBM Plex Sans Arabic",
           },
         },
       },
       title: {
         display: true,
         text: "حسب اليوم",
-        color: isDarkMode ? "white" : "black",
+        color: isDarkMode ? "#ffffff" : "#000",
         font: {
           family: "IBM Plex Sans Arabic",
-          size: 14, 
+          size: 14,
+        },
+      },
+      tooltip: {
+        titleFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        bodyFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        footerFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleColor: '#ffffff',
+        bodyColor: '#ffffff',
+        footerColor: '#ffffff',
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: isDarkMode ? "#ffffff" : "#000",
+        },
+      },
+      y: {
+        ticks: {
+          color: isDarkMode ? "#ffffff" : "#000",
         },
       },
     },
@@ -56,11 +82,6 @@ function MealsChartByDay({ meals_by_day , isDarkMode }) {
         data: dataValues,
         backgroundColor: "#C9B171",
       },
-    //   {
-    //     label: "Dataset 2",
-    //     data: dataValues,
-    //     backgroundColor: "rgba(53, 162, 235, 0.5)",
-    //   },
     ],
   };
 

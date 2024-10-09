@@ -8,7 +8,7 @@ export default function SelectMonitors({
   className,
   required,
   labelClassName,
-  monitors_table,
+  icon,
 }) {
   const { values } = useFormikContext();
   const { data } = useFetch({
@@ -35,6 +35,7 @@ export default function SelectMonitors({
     <div className={`${className} `}>
       <SelectComp
         label={label}
+        icon={icon}
         labelClassName={labelClassName}
         name={"monitor_id"}
         options={options}

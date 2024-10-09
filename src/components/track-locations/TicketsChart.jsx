@@ -20,22 +20,15 @@ ChartJS.register(
   Legend
 );
 
-
 function TicketsChart({ tickets_by_reason }) {
-  const labels = tickets_by_reason?.map(
-    (item) => item.attribute
-  );
-  const dataValues = tickets_by_reason?.map(
-    (item) => item.count
-  );
+  const labels = tickets_by_reason?.map((item) => item.attribute);
+  const dataValues = tickets_by_reason?.map((item) => item.count);
 
   const generateRandomColor = () => {
     return chroma.random().css();
   };
   const colors = labels?.map(() => generateRandomColor());
   const commonColor = "rgb(201, 177, 113)";
-
-  // const colors = labels?.map(() => commonColor);
 
   const totalVotes = dataValues?.reduce((acc, value) => acc + value, 0);
 
@@ -98,8 +91,8 @@ function TicketsChart({ tickets_by_reason }) {
               labels: {
                 generateLabels: (chart) => {
                   const data = chart.data;
-                  if (data.labels.length && data.datasets.length) {
-                    return data.labels.map((label, index) => {
+                  if (data?.labels?.length && data?.datasets?.length) {
+                    return data?.labels?.map((label, index) => {
                       const value = data.datasets[0].data[index];
                       const percentage = ((value / totalVotes) * 100).toFixed(
                         1
@@ -137,6 +130,21 @@ function TicketsChart({ tickets_by_reason }) {
                 family: "IBM Plex Sans Arabic",
               },
               color: isDarkMode ? "#ffffff" : "#000000",
+            },
+            tooltip: {
+              titleFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              bodyFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              footerFont: {
+                family: "IBM Plex Sans Arabic",
+              },
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              titleColor: "#ffffff",
+              bodyColor: "#ffffff",
+              footerColor: "#ffffff",
             },
           },
           maintainAspectRatio: false,

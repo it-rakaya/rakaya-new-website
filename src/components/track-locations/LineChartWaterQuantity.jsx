@@ -21,16 +21,14 @@ ChartJS.register(
   Legend
 );
 
-function LineChart({
+function LineChartWaterQuantity({
   isDarkMode,
-  supports_food_by_day,
-  supports_water_by_day,
+  supports_water_by_day_quantity,
 }) {
-  const labelsByFood = supports_food_by_day?.map((item) => item.date);
-  const dataValuesByFood = supports_food_by_day?.map((item) => item.count);
-
-  const labelsByWater = supports_water_by_day?.map((item) => item.date);
-  const dataValuesByWater = supports_water_by_day?.map((item) => item.count);
+  const labelsByFood = supports_water_by_day_quantity?.map((item) => item.date);
+  const dataValuesByFood = supports_water_by_day_quantity?.map(
+    (item) => item.sum
+  );
 
   const options = {
     responsive: true,
@@ -96,23 +94,16 @@ function LineChart({
     },
   };
 
-  const labels =
-    labelsByFood?.length > labelsByWater?.length ? labelsByFood : labelsByWater;
+  const labels = labelsByFood;
 
   const data = {
     labels,
     datasets: [
       {
-        label: "الوجبات",
+        label: "عدد الوجبات المسلمة من الاسناد",
         data: dataValuesByFood,
         borderColor: "rgb(201, 177, 113)",
         backgroundColor: "rgb(201, 177, 113)",
-      },
-      {
-        label: "المياه",
-        data: dataValuesByWater,
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };
@@ -124,4 +115,4 @@ function LineChart({
   );
 }
 
-export default LineChart;
+export default LineChartWaterQuantity;

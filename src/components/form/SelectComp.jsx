@@ -14,6 +14,7 @@ function SelectComp({
   name,
   disabled,
   isClearable,
+  icon,
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
 
@@ -21,6 +22,7 @@ function SelectComp({
     <div>
       {label && (
         <Label className={labelClassName}>
+          {icon}
           {label}
           <span className="text-danger mx-1">{required == "1" ? "*" : ""}</span>
         </Label>

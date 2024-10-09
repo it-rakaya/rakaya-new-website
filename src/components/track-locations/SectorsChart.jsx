@@ -5,7 +5,6 @@ import { Pie } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function SectorsChart({ orderSector }) {
-  console.log("🚀 ~ SectorsChart ~ orderSector:", orderSector);
   const labels = orderSector.map(sector => sector.order_sector_name);
 
   const data = {

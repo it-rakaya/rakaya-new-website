@@ -14,16 +14,16 @@ const test = [
 const TicketsChartStatus = ({
   segments = test,
   isDarkMode,
-  tickets_by_status,
+  tickets_by_status = [],
 }) => {
-  const labels = tickets_by_status?.map((item) => item.attribute);
-  const dataValues = tickets_by_status?.map((item) => item?.count);
+  const labels = tickets_by_status.map((item) => item.attribute) || [];
+  const dataValues = tickets_by_status.map((item) => item.count) || [];
 
   const data = {
     labels: labels,
     datasets: [
       {
-        data: dataValues || 0,
+        data: dataValues,
         backgroundColor: segments.map((segment) => segment.color),
         borderWidth: 0,
       },
@@ -50,24 +50,39 @@ const TicketsChartStatus = ({
           font: {
             size: 12,
             family: "IBM Plex Sans Arabic",
-            color: isDarkMode ? "#ffffff" : "#000",
           },
+          color: isDarkMode ? "white" : "black",
         },
       },
       title: {
         display: true,
         text: "حسب الحالة",
+        color: isDarkMode ? "#ffffff" : "#000",
         font: {
           size: 14,
           family: "IBM Plex Sans Arabic",
-          color: isDarkMode ? "#ffffff" : "#000",
         },
+      },
+      tooltip: {
+        titleFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        bodyFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        footerFont: {
+          family: "IBM Plex Sans Arabic",
+        },
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        footerColor: "#ffffff",
       },
     },
   };
 
-  const minValue = Math?.min(...dataValues);
-  const maxValue = Math?.max(...dataValues);
+  const minValue = Math.min(...dataValues);
+  const maxValue = Math.max(...dataValues);
 
   return (
     <div
@@ -92,7 +107,7 @@ const TicketsChartStatus = ({
         }}
         className="text_Dark "
       >
-        {minValue == "Infinity" ? "0" : minValue}
+        {minValue === Infinity ? "0" : minValue}
       </div>
       <div
         style={{
@@ -105,8 +120,7 @@ const TicketsChartStatus = ({
         }}
         className="text_Dark "
       >
-        {/* {maxValue || 0} */}
-        {maxValue == "-Infinity" ? "0" : maxValue}
+        {maxValue === -Infinity ? "0" : maxValue}
       </div>
     </div>
   );
