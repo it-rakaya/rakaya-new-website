@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "../styles/components/Button.module.scss"
+import styles from "../styles/components/Button.module.scss";
+import SpinnerLoading from "./SpinnerLoading";
 
 /**
  * @typedef {'primary' | 'secondary' | 'third' | 'forth' } color
@@ -13,11 +14,13 @@ const Button = ({
   type = "button",
   isLoading = false,
   disabled,
-  style
+  style,
 }) => {
   return (
     <button
-      className={`${styles["btn-" + color]} py-2 px-5 rounded  fw-bold submit_button`}
+      className={`${
+        styles["btn-" + color]
+      } py-2 px-5 rounded  fw-bold submit_button`}
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -25,12 +28,16 @@ const Button = ({
     >
       {isLoading ? (
         <div
-          className="spinner-grow text-white "
-          role="status"
-          style={{ width: "10px", height: "10px" }}
+        // className="text-white "
+        // role="status"
         >
-            <span className="visually-hidden">Loading...</span>
-
+          <div
+            class="spinner-border text-white fs-6 d-flex align-items-center justify-content-center"
+            role="status"
+            style={{ width: "25px", height: "25px" }}
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
       ) : (
         <div className={className}>{children}</div>

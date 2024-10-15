@@ -5,6 +5,7 @@ import { useMutate } from "../../../../hooks/useMutate";
 import { notify } from "../../../../utils/notify";
 import Button from "../../../Button";
 import MainDataCourses from "./MainDataCourses";
+import { getModifiedValues } from "../../../../utils/Helpers";
 
 function Main({ setShowCard, refetch, mainData }) {
   const endpoint = mainData?.id
@@ -26,32 +27,35 @@ function Main({ setShowCard, refetch, mainData }) {
     },
     formData: true,
   });
+
   const initialValues = {
     course_name: mainData?.course_name || "",
     organization_name: mainData?.organization_name || "",
     date: mainData?.date || "",
-    major: mainData?.major || "",
     duration: mainData?.duration || "",
-    attachment:mainData?.attachment_url ?  { value: mainData?.attachment_url } : "",
+    attachment: mainData?.attachment_url
+      ? { value: mainData?.attachment_url }
+      : "",
   };
   const validationSchema = Yup.object({
-    education_level_id: Yup.string().required("مستوى التعليم مطلوب"),
-    country_id: Yup.string().required(" اسم الدولة  مطلوب"),
-    gpa: Yup.string().required("المعدل مطلوب"),
-    gpa_from: Yup.string().required("المعدل مطلوب"),
-    start_date: Yup.string().required("سنة الالتحاق  مطلوب"),
+    course_name: Yup.string().required("اسم الدورة مطلوب"),
+    organization_name: Yup.string().required("اسم المنظمة مطلوب"),
+    date: Yup.date().required("تاريخ الدورة مطلوب"),
+    duration: Yup.string().required("مدة الدورة مطلوبة"),
+    attachment:mainData?.attachment_url ? "" : Yup.string().required("المرفق مطلوب"),
   });
 
   return (
     <div>
       <Formik
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         initialValues={initialValues}
-        onSubmit={(values) =>
+        onSubmit={(values) => {
+          const modifiedValues = getModifiedValues(initialValues, values);
           mainData?.id
-            ? postData({ ...values, _method: "PUT" })
-            : postData(values)
-        }
+            ? postData({ ...modifiedValues, _method: "PUT" })
+            : postData(values);
+        }}
       >
         <Form>
           <MainDataCourses />

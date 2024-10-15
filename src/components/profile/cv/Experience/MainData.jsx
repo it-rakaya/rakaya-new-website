@@ -7,7 +7,7 @@ import SelectJobLocation from "../../../form/SelectJobLocation";
 import TextArea from "../../../form/TextArea";
 
 function MainData() {
-  const { setFieldValue , values } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext();
   return (
     <div>
       <BaseInputField
@@ -31,7 +31,7 @@ function MainData() {
           type="checkbox"
           name="still_working"
           id="flexRadioDefault1"
-            checked={values?.still_working == 1}
+          checked={values?.still_working == 1}
           onChange={(e) =>
             setFieldValue("still_working", e.target.checked ? 1 : 0)
           }
@@ -44,8 +44,10 @@ function MainData() {
           لازلت اعمل في هذه الجهة
         </label>
       </div>
-      <DatePickerComp label={"نهاية الفترة"} name={"end_date"} 
-      disabled={values?.still_working == 1}
+      <DatePickerComp
+        label={"نهاية الفترة"}
+        name={"end_date"}
+        disabled={values?.still_working == 1}
       />
       <TextArea label={"تفاصيل مهام عملك"} rows={6} name={"details"} />
     </div>

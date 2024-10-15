@@ -22,7 +22,7 @@ function Certificate() {
     <div>
       {showCard ? (
         <>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <Button
               className="d-flex align-items-center gap-2"
               onClick={() => {
@@ -63,6 +63,8 @@ function Certificate() {
                     id={item?.id}
                     refetch={refetch}
                     setShowCard={setShowCard}
+                    urlCertificate={item?.attachment_url}
+                    showCertificate={!!item?.attachment_url}
                   />
                 </div>
               ))

@@ -51,6 +51,7 @@ const index = (events) => {
                         footer={"2024 Jan 14"}
                         imgUrl={supItem?.attachment_url}
                         href={supItem?.link}
+                        id={item?.id}
                       />
                     ))}
                   </Container>

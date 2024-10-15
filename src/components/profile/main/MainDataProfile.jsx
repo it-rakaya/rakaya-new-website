@@ -10,6 +10,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Accordion from "../../Accordion";
 import useFetch from "../../../hooks/useFetch";
+import SpinnerLoading from "../../SpinnerLoading";
 
 const icons = {
   بياناتي: (
@@ -59,7 +60,6 @@ const getLatestItem = (data, dateField = "start_date") => {
 };
 
 function MainDataProfile({ mainProfile, isLoading }) {
-  console.log("🚀 ~ MainDataProfile ~ mainProfile:", mainProfile)
   const { data: mainEducation, isLoading: loadingEducation } = useFetch({
     endpoint: "candidate-education",
     queryKey: ["candidate-education"],
@@ -185,7 +185,16 @@ function MainDataProfile({ mainProfile, isLoading }) {
     },
   };
 
-  return (
+  return isLoading ? (
+    <div
+      className="d-flex justify-content-center align-content-center "
+      style={{
+        height: "50vh",
+      }}
+    >
+      <SpinnerLoading />
+    </div>
+  ) : (
     <div className="accordion border-0" id="accordionExample">
       {Object.entries(sections).map(
         ([sectionTitle, sectionData], sectionIndex) => (

@@ -43,7 +43,9 @@ function Profile() {
             </div>
           )}
           <MainDataProfile mainProfile={mainProfile} isLoading={isLoading} />
-          <StatusCompleteProfile mainProfile={mainProfile} />
+          {mainProfile?.data?.candidate && (
+            <StatusCompleteProfile mainProfile={mainProfile} />
+          )}
         </div>
       </ProfileLayout>
     </div>

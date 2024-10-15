@@ -25,7 +25,7 @@ function Experience() {
     <div className="">
       {showCard ? (
         <div>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <Button
               className="d-flex align-items-center gap-2 "
               onClick={() => {

@@ -5,6 +5,7 @@ import { useMutate } from "../../../../hooks/useMutate";
 import { notify } from "../../../../utils/notify";
 import Button from "../../../Button";
 import MainDataCertificate from "./MainDataCertificate";
+import { getModifiedValues } from "../../../../utils/Helpers";
 
 function Main({ setShowCard, refetch, mainData }) {
   console.log("🚀 ~ Main ~ mainData:", mainData);
@@ -31,21 +32,28 @@ function Main({ setShowCard, refetch, mainData }) {
   const initialValues = {
     certificate_name: mainData?.certificate_name || "",
     date: mainData?.date || "",
-    attachment:mainData?.attachment_url ?  {value:mainData?.attachment_url }: "",
+    attachment: mainData?.attachment_url
+      ? { value: mainData?.attachment_url }
+      : "",
   };
   const validationSchema = Yup.object({
-    certificate_name: Yup.string().required("مستوى التعليم مطلوب"),
+    certificate_name: Yup.string().required(" اسم الشهادة مطلوبة"),
+    date: Yup.string().required("  تاريخ الشهادة مطلوبة"),
+    attachment:mainData?.attachment_url  ? "":Yup.string().required("   صورة الشهادة مطلوبة"),
   });
 
   return (
     <div>
       <Formik
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         initialValues={initialValues}
-        onSubmit={(values) =>
+        onSubmit={(values) =>{
+          const modifiedValues = getModifiedValues(initialValues, values);
           mainData?.id
-            ? postData({ ...values, _method: "PUT" })
+            ? postData({ ...modifiedValues, _method: "PUT" })
             : postData(values)
+        }
+          
         }
       >
         <Form>

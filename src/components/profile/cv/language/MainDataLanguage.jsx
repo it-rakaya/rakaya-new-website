@@ -10,7 +10,7 @@ function MainDataLanguage() {
         <SelectLanguage label={"اللغات"} name={"language_id"} />
 
         <SelectLanguageLevel label={"المستوى"} name={"level"} />
-        <UploadDoc label={""}  name={"attachment_url"}/>
+        <UploadDoc label={"ارفاق الشهادة"}  name={"attachment_url"}/>
       </div>
     </div>
   );

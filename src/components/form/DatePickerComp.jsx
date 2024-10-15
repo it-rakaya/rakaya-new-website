@@ -179,8 +179,14 @@ export default function DatePickerComp({
               errors[name] && touched[name] ? "border-danger" : ""
             }`}
             onChange={handleDateChange}
+            
           />
         </div>
+        {touched[name] && errors[name] && (
+        <div className="text-danger" style={{ fontSize: "12px" }}>
+          {errors[name]}
+        </div>
+      )}
       </div>
     </>
   );

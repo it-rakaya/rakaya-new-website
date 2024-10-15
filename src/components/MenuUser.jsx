@@ -6,36 +6,33 @@ import { useAuth } from "../context/auth/AuthProvider";
 import { DarkModeContext } from "../context/DarkModeContext";
 
 function MenuUser() {
-  const { logout } = useAuth();
-  const { user } = useAuth();
+  const { logout, user } = useAuth(); // Combined useAuth destructuring
   const { isDarkMode } = useContext(DarkModeContext);
+
+  const profileImage = user?.profile_attachment || "/studio/team/man.webp"; // Simplified user image logic
 
   return (
     <div>
-      <div class="dropdown">
+      <div className="dropdown">
         <button
-          className=" dropdown-toggle"
+          className="dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-          style={{
-            backgroundColor: "transparent",
-          }}
+          style={{ backgroundColor: "transparent" }}
         >
-          <div>
-            <Image
-              alt=""
-              src={user?.profile_attachment || "/studio/team/man.webp"}
-              width={50}
-              height={50}
-              className="p-1 bg-white"
-              style={{
-                border: "1px solid #C9B171",
-                objectFit: "cover",
-                borderRadius: "50%",
-              }}
-            />
-          </div>
+          <Image
+            alt="User profile"
+            src={profileImage}
+            width={50}
+            height={50}
+            className="p-1 bg-white"
+            style={{
+              border: "1px solid #C9B171",
+              objectFit: "cover",
+              borderRadius: "50%",
+            }}
+          />
         </button>
         <ul
           className="dropdown-menu text-end"
@@ -43,27 +40,33 @@ function MenuUser() {
             backgroundColor: isDarkMode ? "#2B2B2B" : "",
           }}
         >
-          <li className="">
+          <li>
             <Link className="dropdown-item text_Dark" href="/">
-              <span className="mx-2">
-                <IoMdHome className="fs-4" />
-              </span>
+              <IoMdHome className="fs-4 mx-2" />
               <span>الصفحة الرئيسية</span>
             </Link>
           </li>
+          <hr
+            className="m-1"
+            style={{
+              color: "#b9b8b8",
+            }}
+          />
           <li>
             <Link className="dropdown-item text_Dark" href="/profile">
-              <span className="mx-2">
-                <IoMdPerson className="fs-4" />
-              </span>
+              <IoMdPerson className="fs-4 mx-2" />
               <span>الملف الشخصي</span>
             </Link>
           </li>
+          <hr
+            className="m-1"
+            style={{
+              color: "#b9b8b8",
+            }}
+          />
           <li>
-            <p className="dropdown-item text_Dark" onClick={() => logout()}>
-              <span className="mx-2">
-                <IoMdLogOut className="fs-4" />
-              </span>
+            <p className="dropdown-item text_Dark  m-0" onClick={logout}>
+              <IoMdLogOut className="fs-4 mx-2" />
               <span>تسجيل الخروج</span>
             </p>
           </li>

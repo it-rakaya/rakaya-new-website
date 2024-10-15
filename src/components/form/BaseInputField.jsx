@@ -2,7 +2,7 @@ import { useFormikContext } from "formik";
 import React, { useState } from "react";
 import Label from "./Label";
 import BaseInputMask from "./BaseInputMask";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // أيقونات العين
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function BaseInputField({
   name,
@@ -10,22 +10,32 @@ function BaseInputField({
   label,
   required,
   type,
-  maxDigits,
+  maxValue, // الخاصية الجديدة
   disabled,
   messageInfo,
   onlyArabic,
 }) {
   const { values, setFieldValue, errors, touched, handleBlur } =
     useFormikContext();
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     let value = e.target.value;
-    if (type === "num") {
-      value = value.replace(/[^0-9]/g, "").slice(0, maxDigits);
+    
+    if (type === "numeric") {
+      value = value.replace(/[^0-9,.]/g, ""); 
+      if (maxValue && Number(value.replace(/,/g, '')) > maxValue) {
+        value = maxValue.toString();
+      }
+    } else if (type === "num") {
+      value = value.replace(/[^0-9]/g, "");
+      if (maxValue && Number(value) > maxValue) {
+        value = maxValue.toString();
+      }
     } else if (onlyArabic) {
       value = value.replace(/[^\u0600-\u06FF\s]/g, "");
     }
+
     setFieldValue(name, value);
   };
 
@@ -37,18 +47,19 @@ function BaseInputField({
       }
     } else if (type === "num") {
       const isNumber = /^\d$/.test(e.key);
-      if (
-        !isNumber ||
-        (values[name].length >= maxDigits &&
-          e.target.selectionStart === e.target.selectionEnd)
-      ) {
+      if (!isNumber) {
         e.preventDefault();
+      }
+    } else if (type === "numeric") {
+      const isNumericOrComma = /[0-9,.]/.test(e.key);
+      if (!isNumericOrComma) {
+        e.preventDefault(); 
       }
     }
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword); 
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -80,7 +91,7 @@ function BaseInputField({
             className={`form-control p-2  ${
               errors[name] && touched[name] ? "border-danger" : ""
             }`}
-            pattern={type === "num" ? "\\d*" : undefined}
+            pattern={type === "num" || type === "numeric" ? "[0-9,.]*" : undefined}
             autoComplete="false"
           />
           {type === "password" && (

@@ -33,17 +33,16 @@ function Main({ setShowCard, refetch, mainData }) {
     attachment_url:mainData.attachment_url ?  { value: mainData.attachment_url } : "",
   };
   const validationSchema = Yup.object({
-    education_level_id: Yup.string().required("مستوى التعليم مطلوب"),
-    country_id: Yup.string().required(" اسم الدولة  مطلوب"),
-    gpa: Yup.string().required("المعدل مطلوب"),
-    gpa_from: Yup.string().required("المعدل مطلوب"),
-    start_date: Yup.string().required("سنة الالتحاق  مطلوب"),
+    language_id: Yup.string().required(" اللغة مطلوب"),
+    level: Yup.string().required("  المستوى  مطلوب"),
+    // attachment_url: Yup.string().required("الش مطلوب"),
+
   });
 
   return (
     <div>
       <Formik
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         initialValues={initialValues}
         onSubmit={(values) =>
           mainData?.id

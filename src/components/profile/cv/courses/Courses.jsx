@@ -23,7 +23,7 @@ function Courses() {
     <div>
       {showCard ? (
         <>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center ">
             <Button
               className="d-flex align-items-center gap-2"
               onClick={() => {
@@ -36,9 +36,10 @@ function Courses() {
               <IoMdAdd style={{ fontSize: "20px", color: "white" }} />
               اضافة دورة تدريبية
             </Button>
+
             {!data?.data?.courses?.length && (
               <ButtonUpdateCv
-                label={"لايوجد لدي دورات تدريبية"}
+                label={"لايوجد  دورات تدريبية"}
                 value={user?.has_courses}
                 name="has_courses"
                 checked={user?.has_courses == 0}
@@ -66,11 +67,13 @@ function Courses() {
                     id={item?.id}
                     refetch={refetch}
                     setShowCard={setShowCard}
+                    urlCertificate={item?.attachment_url}
+                    showCertificate={!!item?.attachment_url}
                   />
                 </div>
               ))
             ) : (
-              <NoData message={" لايوجد شهادات لديك"} />
+              <NoData message={" لايوجد دورات تدريبية لديك"} />
             )}
           </div>
         </>

@@ -95,7 +95,7 @@ function ContactUs() {
             }}
             className="p-0 m-0"
           >
-            تلفون
+            جوال
           </p>
         </div>
       </div>

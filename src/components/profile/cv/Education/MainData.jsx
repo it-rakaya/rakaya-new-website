@@ -52,9 +52,10 @@ function MainData() {
         <div className="w-25">
           <BaseInputField
             label="المعدل"
+            type={"numeric"}
             disabled={!values?.gpa_from}
             name="gpa"
-            maxDigits={values?.gpa_from}
+            maxValue={+values?.gpa_from}
           />
         </div>
         <div className="w-75">

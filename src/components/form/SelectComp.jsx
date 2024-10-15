@@ -39,7 +39,7 @@ function SelectComp({
           control: (base) => ({
             ...base,
             border:
-              errors.bank_id && touched.bank_id
+              errors[name] && touched[name]
                 ? "1px solid red"
                 : "1px solid #ced4da",
             boxShadow: "0 !important",

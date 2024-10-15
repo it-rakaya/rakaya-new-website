@@ -12,7 +12,6 @@ function useFetch({ endpoint, enabled, select, queryKey, onError, onSuccess }) {
       // Accept: "*/*",
       // "allow-Access-control-Allow-origin":"*/*",
       "Accept-Language": "ar",
-
     },
   };
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;

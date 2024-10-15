@@ -7,7 +7,6 @@ import Button from "../../../Button";
 import MainDataSkills from "./MainDataSkills";
 
 function Main({ setShowCard, refetch, mainData }) {
-  console.log("🚀 ~ Main ~ mainData:", mainData)
   const endpoint = mainData?.id
     ? `candidate-skills/${mainData?.id}`
     : `candidate-skills`;
@@ -34,17 +33,23 @@ function Main({ setShowCard, refetch, mainData }) {
     level: mainData?.level || "",
   };
   const validationSchema = Yup.object({
-    education_level_id: Yup.string().required("مستوى التعليم مطلوب"),
-    country_id: Yup.string().required(" اسم الدولة  مطلوب"),
-    gpa: Yup.string().required("المعدل مطلوب"),
-    gpa_from: Yup.string().required("المعدل مطلوب"),
-    start_date: Yup.string().required("سنة الالتحاق  مطلوب"),
+    skill_id: Yup.string().required("اسم المهارة  مطلوب"),
+    years_of_experience: Yup.lazy((value, { parent }) => {
+      return parent.typeSkills == "technical"
+        ? Yup.string().required("عدد سنوات الخبرة مطلوب")
+        : Yup.string().nullable();
+    }),
+    level: Yup.lazy((value, { parent }) => {
+      return parent.typeSkills == "technical"
+        ? Yup.string().required("  المستوى مطلوب")
+        : Yup.string().nullable();
+    }),
   });
 
   return (
     <div>
       <Formik
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         initialValues={initialValues}
         onSubmit={(values) =>
           mainData?.id

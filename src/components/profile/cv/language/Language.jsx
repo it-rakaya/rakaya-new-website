@@ -52,6 +52,8 @@ function Language() {
                     id={item?.id}
                     refetch={refetch}
                     setShowCard={setShowCard}
+                    urlCertificate={item?.attachment_url}
+                    showCertificate={!!item?.attachment_url}
                   />
                 </div>
               ))

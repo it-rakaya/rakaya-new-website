@@ -37,19 +37,33 @@ function Main({ setShowCard, refetch, mainData }) {
     end_date: mainData?.end_date || "",
     details: mainData?.details || "",
   };
-  const validationSchema = Yup.object({
-    education_level_id: Yup.string().required("مستوى التعليم مطلوب"),
-    country_id: Yup.string().required(" اسم الدولة  مطلوب"),
-    gpa: Yup.string().required("المعدل مطلوب"),
-    gpa_from: Yup.string().required("المعدل مطلوب"),
-    start_date: Yup.string().required("سنة الالتحاق  مطلوب"),
-  });
 
+
+  const today = new Date();
+  const validationSchema = Yup.object({
+    employer: Yup.string().required("اسم الشركة مطلوب"),
+    position: Yup.string().required("المسمى الوظيفي مطلوب"),
+    location_type_id: Yup.string().required("نوع المكان مطلوب"),
+    work_type_id: Yup.string().required("نوع العمل مطلوب"),
+    start_date: Yup.date()
+      .max(today, "تاريخ البدء يجب أن يكون قبل أو يساوي اليوم")
+      .required("تاريخ البدء مطلوب"),
+    still_working: Yup.boolean(),
+    end_date: Yup.lazy((value, { parent }) => {
+      return parent.still_working
+        ? Yup.date().nullable() 
+        : Yup.date()
+            .max(today, "تاريخ الانتهاء يجب أن يكون قبل أو يساوي اليوم")
+            .required("تاريخ الانتهاء مطلوب");
+    }),
+    details: Yup.string().required("تفاصيل العمل مطلوبة"),
+  });
+  
   return (
     <div>
       <Formik
-        // validationSchema={validationSchema}
         initialValues={initialValues}
+        validationSchema={validationSchema}
         onSubmit={(values) =>
           mainData?.id
             ? postData({ ...values, _method: "PUT" })
@@ -67,6 +81,15 @@ function Main({ setShowCard, refetch, mainData }) {
               الرجوع
             </Button>
           </div>
+
+          {/* Display validation errors */}
+          {/* {errors && touched && (
+              <div className="text-danger">
+                {Object.keys(errors).map((key) => (
+                  <div key={key}>{errors[key]}</div>
+                ))}
+              </div>
+            )} */}
         </Form>
       </Formik>
     </div>

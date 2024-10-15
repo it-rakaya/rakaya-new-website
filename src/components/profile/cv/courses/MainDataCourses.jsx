@@ -3,7 +3,7 @@ import BaseInputField from "../../../form/BaseInputField";
 import DatePickerComp from "../../../form/DatePickerComp";
 import UploadDoc from "../../../form/UploadDoc";
 
-function MainDataCourses({ setShowSkills }) {
+function MainDataCourses() {
   return (
     <div>
       <div className="my-4">

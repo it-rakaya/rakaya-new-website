@@ -31,7 +31,7 @@ function Main({ setShowCard, refetch, mainData }) {
   const initialValues = {
     education_level_id: mainData?.education_level_id || "",
     country_id: mainData?.country_id || "",
-    university: mainData?.university_id || mainData?.university  || "",
+    university: mainData?.university_id || mainData?.university || "",
     major: mainData?.major_id || "",
     gpa: mainData?.gpa || "",
     gpa_from: mainData?.gpa_from || "",
@@ -39,12 +39,22 @@ function Main({ setShowCard, refetch, mainData }) {
     still_studying: mainData?.still_studying || 0,
     graduation_date: mainData?.graduation_date || "",
   };
+  const today = new Date();
   const validationSchema = Yup.object({
     education_level_id: Yup.string().required("مستوى التعليم مطلوب"),
     country_id: Yup.string().required(" اسم الدولة  مطلوب"),
     gpa: Yup.string().required("المعدل مطلوب"),
     gpa_from: Yup.string().required("المعدل مطلوب"),
-    start_date: Yup.string().required("سنة الالتحاق  مطلوب"),
+    start_date: Yup.date()
+      .max(today, "تاريخ البدء يجب أن يكون قبل أو يساوي اليوم")
+      .required("سنة الالتحاق  مطلوب"),
+    graduation_date: Yup.lazy((value, { parent }) => {
+      return parent.still_studying
+        ? Yup.date().nullable()
+        : Yup.date()
+            .max(today, "سنة التخرج يجب أن يكون قبل أو يساوي اليوم")
+            .required("سنة التخرج مطلوب");
+    }),
   });
 
   return (

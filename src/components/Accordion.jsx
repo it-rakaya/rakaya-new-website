@@ -17,11 +17,12 @@ function Accordion({
   const { isDarkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={`accordion-item border-0 border-bottom `}
-    style={{
-      backgroundColor: isDarkMode &&"#e3e3e35e"
-    }}
     
+    <div
+      className={`accordion-item border-0 border-bottom `}
+      style={{
+        backgroundColor: isDarkMode && "#e3e3e35e",
+      }}
     >
       <h2 className="accordion-header">
         <button
