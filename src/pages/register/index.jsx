@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import React from "react";
-import MainData from "../../components/register/MainData";
+import MainData from "../../components/auth/register/MainData";
 import LoginLayout from "../../components/form/Login/LoginLayout";
 import { useMutate } from "../../hooks/useMutate";
 import * as Yup from "yup";
