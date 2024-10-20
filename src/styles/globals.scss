@@ -182,6 +182,7 @@ body {
    position: absolute;
    left: 0;
    top: 50px;
+   z-index: 10;
 
 }
 
@@ -189,6 +190,8 @@ body {
    position: absolute;
    right: 0;
    bottom: 100px;
+   z-index: 10;
+
 }
 
 .mainBoxBLog {
@@ -1043,3 +1046,40 @@ input:-webkit-autofill:active {
    }
  }
  
+ .video-background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 1; 
+ }
+ 
+ .video-iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   pointer-events: none;
+   object-fit: cover;
+ }
+  .video-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(255 255 255 / 85%); 
+   z-index: 1;
+ }
+ .dark .video-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(43 43 43 / 89%); 
+   z-index: 1;
+ }
