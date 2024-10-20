@@ -15,10 +15,13 @@ const Jobs = ({ jobs }) => {
     <>
       <AvailableJobLayout hiddenMenu>
         <div className="">
-          <Container className="m-auto col-md-7">
+          <Container className="m-auto col-md-12 mx-5 ">
             {visibleJobs?.length ? (
               visibleJobs.map(item => (
-                <ItemAvailableJob item={item} key={item?.id} />
+                <div className="row  justify-content-between  " key={item?.id}>
+                  <ItemAvailableJob item={item} key={item?.id} />
+
+                </div>
               ))
             ) : (
               <NoData message={"لايوجد وظائف متاحة الان"} />

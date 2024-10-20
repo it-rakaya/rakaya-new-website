@@ -6,10 +6,10 @@ import { useAuth } from "../context/auth/AuthProvider";
 import { DarkModeContext } from "../context/DarkModeContext";
 
 function MenuUser() {
-  const { logout, user } = useAuth(); // Combined useAuth destructuring
+  const { logout, user } = useAuth();
   const { isDarkMode } = useContext(DarkModeContext);
 
-  const profileImage = user?.profile_attachment || "/studio/team/man.webp"; // Simplified user image logic
+  const profileImage = user?.profile_attachment || "/studio/team/man.webp"; 
 
   return (
     <div>
@@ -24,13 +24,13 @@ function MenuUser() {
           <Image
             alt="User profile"
             src={profileImage}
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             className="p-1 bg-white"
             style={{
               border: "1px solid #C9B171",
               objectFit: "cover",
-              borderRadius: "50%",
+              borderRadius: "6px",
             }}
           />
         </button>

@@ -109,7 +109,7 @@ function ProfileNavbar() {
             {/* <Setting /> */}
             <Button
               color={isDarkMode ? "primary" : "secondary"}
-              onClick={() => router.push("/jobs/available_job")}
+              onClick={() => router.push("/jobs")}
             >
               {t("common:Jobs")}
             </Button>

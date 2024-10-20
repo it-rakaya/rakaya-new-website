@@ -32,7 +32,7 @@ const Button = ({
         // role="status"
         >
           <div
-            class="spinner-border text-white fs-6 d-flex align-items-center justify-content-center"
+            class="spinner-border text-white fs-6 d-flex align-items-center justify-content-center m-auto"
             role="status"
             style={{ width: "25px", height: "25px" }}
           >

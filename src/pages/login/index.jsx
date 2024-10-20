@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import LoginLayout from "../../components/form/Login/LoginLayout";
-import MainData from "../../components/login/MainData";
+import MainData from "../../components/auth/login/MainData";
 import { useMutate } from "../../hooks/useMutate";
 import { useAuth } from "../../context/auth/AuthProvider";
 import { isEmail } from "../../utils/Helpers";
@@ -19,9 +19,9 @@ function LoginPage() {
     mutationKey: [`login`],
     endpoint: `login`,
     onSuccess: (data) => {
-      notify("success", "مرحبا بك");
       login(data?.data);
       setUser(data?.data?.candidate);
+      notify("success", "مرحبا بك");
     },
     onError:(err) => {
       notify("error", err.response?.data?.message

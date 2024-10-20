@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 export function useMutate({
   endpoint,
-mutationKey,
+  mutationKey,
   onError,
   onSuccess,
   formData,
@@ -13,6 +13,7 @@ mutationKey,
   method = "post",
 }) {
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [errorMessage, setErrorMessage] = useState(""); // حالة لتخزين رسالة الخطأ
   const user_token = Cookies.get("token");
   const token = user_token;
   const authorizationHeader = `Bearer ${token}`;
@@ -37,15 +38,10 @@ mutationKey,
           ? {
               "Content-Type": "multipart/form-data",
               Authorization: authorizationHeader,
-              // 'Accept-Language': isRTL ? 'ar' : 'en',
-              // Accept: "*/*",
-              // "Accept-Language": "ar",
             }
           : {
               "Content-Type": "application/json; charset=utf-8",
               Authorization: authorizationHeader,
-              // "Accept-Language": "ar",
-              // Accept: "*/*",
             },
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round(
@@ -58,7 +54,10 @@ mutationKey,
       return axios(requestConfig);
     },
     onSuccess,
-    onError,
+    onError: (error) => {
+      setErrorMessage(error.response?.data?.message);
+      if (onError) onError(error);
+    },
     onMutate,
   });
 
@@ -71,5 +70,6 @@ mutationKey,
     isError,
     isPending,
     uploadProgress,
+    errorMessage,
   };
 }

@@ -6,6 +6,7 @@ import OTPInput from "../../../form/OTPInput";
 import { useMutate } from "../../../../hooks/useMutate";
 import { notify } from "../../../../utils/notify";
 import { MdVerified } from "react-icons/md";
+import Image from "next/image";
 
 function CheckPhone() {
   const [otp, setOtp] = useState("");
@@ -43,26 +44,42 @@ function CheckPhone() {
     <div>
       <Formik initialValues={{}} onSubmit={() => {}}>
         <Form>
+          <div className="d-flex justify-content-center ">
+            <Image
+              src={"/Two factor authentication-rafiki (1).png"}
+              alt=""
+              width={0}
+              height={0}
+              className=" "
+              style={{
+                height: "220px",
+                width: "300px",
+                objectFit: "contain",
+              }}
+            />
+          </div>
           {showOTP ? (
-            <div className="d-flex justify-content-center flex-column align-items-center">
-              <OTPInput setOtp={setOtp} otp={otp} />
-              <div className="mt-3 d-flex justify-content-between gap-4">
-                <Button
-                  onClick={() =>
-                    verifyPhone({
-                      value: otp,
-                    })
-                  }
-                  isLoading={pendingVerify}
-                  disabled={otp.length != 4}
-                >
-                  تحقق
-                </Button>
-                <Button onClick={() => setShowOTP(false)} color="secondary">
-                  الغاء
-                </Button>
+            <>
+              <div className="d-flex justify-content-center flex-column align-items-center">
+                <OTPInput setOtp={setOtp} otp={otp} />
+                <div className="mt-3 d-flex justify-content-between gap-4">
+                  <Button
+                    onClick={() =>
+                      verifyPhone({
+                        value: otp,
+                      })
+                    }
+                    isLoading={pendingVerify}
+                    disabled={otp.length != 4}
+                  >
+                    تحقق
+                  </Button>
+                  <Button onClick={() => setShowOTP(false)} color="secondary">
+                    الغاء
+                  </Button>
+                </div>
               </div>
-            </div>
+            </>
           ) : (
             <div className="d-flex justify-content-center m-4">
               <Button

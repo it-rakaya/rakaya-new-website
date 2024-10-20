@@ -22,14 +22,14 @@ function Register() {
   });
 
   const initialValues = {
-    f_name_ar: "",
-    s_name_ar: "",
-    t_name_ar: "",
-    l_name_ar: "",
-    f_name_en: "",
-    s_name_en: "",
-    t_name_en: "",
-    l_name_en: "",
+    first_name_ar: "",
+    second_name_ar: "",
+    third_name_ar: "",
+    last_name_ar: "",
+    first_name_en: "",
+    second_name_en: "",
+    third_name_en: "",
+    last_name_en: "",
     email: "",
     phone_code: "+966",
     phone: "",
@@ -38,14 +38,14 @@ function Register() {
   };
 
   const validationSchema = Yup.object({
-    f_name_ar: Yup.string().required("الاسم الأول مطلوب"),
-    s_name_ar: Yup.string().required("اسم الثاني مطلوب"),
-    t_name_ar: Yup.string().required("اسم الثالث مطلوب"),
-    l_name_ar: Yup.string().required("اسم الاخير مطلوب"),
-    f_name_en: Yup.string().required("الاسم الأول بالإنجليزية مطلوب"),
-    s_name_en: Yup.string().required("اسم الثاني بالإنجليزية مطلوب"),
-    t_name_en: Yup.string().required("اسم الثالث بالإنجليزية مطلوب"),
-    l_name_en: Yup.string().required("اسم الاخير بالإنجليزية مطلوب"),
+    first_name_ar: Yup.string().required("الاسم الأول مطلوب"),
+    second_name_ar: Yup.string().required("اسم الثاني مطلوب"),
+    third_name_ar: Yup.string().required("اسم الثالث مطلوب"),
+    last_name_ar: Yup.string().required("اسم الاخير مطلوب"),
+    first_name_en: Yup.string().required("الاسم الأول بالإنجليزية مطلوب"),
+    second_name_en: Yup.string().required("اسم الثاني بالإنجليزية مطلوب"),
+    third_name_en: Yup.string().required("اسم الثالث بالإنجليزية مطلوب"),
+    last_name_en: Yup.string().required("اسم الاخير بالإنجليزية مطلوب"),
     email: Yup.string()
       .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
       .required("البريد الإلكتروني مطلوب"),

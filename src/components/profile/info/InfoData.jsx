@@ -10,14 +10,14 @@ import { getModifiedValues } from "../../../utils/Helpers";
 function InfoData() {
   const { user, setUser } = useAuth();
   const initialValues = {
-    f_name_ar: user?.f_name_ar || "",
-    s_name_ar: user?.s_name_ar || "",
-    t_name_ar: user?.t_name_ar || "",
-    l_name_ar: user?.l_name_ar || "",
-    f_name_en: user?.f_name_en || "",
-    s_name_en: user?.s_name_en || "",
-    t_name_en: user?.t_name_en || "",
-    l_name_en: user?.l_name_en || "",
+    first_name_ar: user?.first_name_ar || "",
+    second_name_ar: user?.second_name_ar || "",
+    third_name_ar: user?.third_name_ar || "",
+    last_name_ar: user?.last_name_ar || "",
+    first_name_en: user?.first_name_en || "",
+    second_name_en: user?.second_name_en || "",
+    third_name_en: user?.third_name_en || "",
+    last_name_en: user?.last_name_en || "",
     email: user?.email || "",
     phone_code: "+966",
     phone: user?.phone || "",

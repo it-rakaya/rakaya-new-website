@@ -1,9 +1,9 @@
 import React from "react";
-import Button from "../../components/Button";
-import BaseInputField from "../../components/form/BaseInputField";
-import PhoneInput from "../../components/form/PhoneInput";
+import Button from "../../Button";
+import BaseInputField from "../../form/BaseInputField";
+import PhoneInput from "../../form/PhoneInput";
 import Link from "next/link";
-import Label from "../form/Label";
+import Label from "../../form/Label";
 function MainData({loadingRegister}) {
   return (
     <div>
@@ -13,18 +13,18 @@ function MainData({loadingRegister}) {
           <div className="col-md-3 px-1">
             <BaseInputField
               placeholder={"الاسم الاول"}
-              name={"f_name_ar"}
+              name={"first_name_ar"}
               required={true}
             />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الثاني"} name={"s_name_ar"} />
+            <BaseInputField placeholder={"الاسم الثاني"} name={"second_name_ar"} />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الثالث"} name={"t_name_ar"} />
+            <BaseInputField placeholder={"الاسم الثالث"} name={"third_name_ar"} />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الاخير"} name={"l_name_ar"} />
+            <BaseInputField placeholder={"الاسم الاخير"} name={"last_name_ar"} />
           </div>
         </div>
       </div>
@@ -32,16 +32,16 @@ function MainData({loadingRegister}) {
         <Label required>الاسم كامل بالانجليزية</Label>
         <div className="row">
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الاخير"} name={"l_name_en"} />
+            <BaseInputField placeholder={"الاسم الاخير"} name={"last_name_en"} />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الثالث"} name={"t_name_en"} />
+            <BaseInputField placeholder={"الاسم الثالث"} name={"third_name_en"} />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الثاني"} name={"s_name_en"} />
+            <BaseInputField placeholder={"الاسم الثاني"} name={"second_name_en"} />
           </div>
           <div className="col-md-3 px-1">
-            <BaseInputField placeholder={"الاسم الاول"} name={"f_name_en"} />
+            <BaseInputField placeholder={"الاسم الاول"} name={"first_name_en"} />
           </div>
         </div>
       </div>

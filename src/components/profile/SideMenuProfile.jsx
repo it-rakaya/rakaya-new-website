@@ -154,7 +154,7 @@ const SideMenuProfile = () => {
             }}
           />
         </div>
-        <h6 className="mb-3">{`${user?.f_name_ar} ${user?.l_name_ar}`}</h6>
+        <h6 className="mb-3">{`${user?.first_name_ar} ${user?.last_name_ar}`}</h6>
         {/* <p className="fw-bold">Front End Developer</p> */}
       </div>
       {paths

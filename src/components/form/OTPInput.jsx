@@ -1,5 +1,4 @@
-import { useFormikContext } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import OtpInput from "react-otp-input";
 
 function OTPInput({ setOtp, otp }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import BaseInputField from "../form/BaseInputField";
+import BaseInputField from "../../form/BaseInputField";
 
 function MainData() {
   return (
