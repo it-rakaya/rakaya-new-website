@@ -15,7 +15,7 @@ const Header = () => {
     <Container
       className={`w-100 p-md-5 position-relative d-flex flex-column align-content-center justify-content-center`}
       style={{
-        height: "calc(100vh - 4rem)",
+        height: "calc(100vh)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -53,20 +53,20 @@ const Header = () => {
 
         <div>
           <p
-            className="fs-1 fw-semibold mw-50 text-center col-lg-5 mb-0 w-100  parMobile text_Dark"
+            className="fs-1 fw-semibold mw-50 text-center col-lg-5 mb-0 w-100  parMobile text-white text_Dark"
             style={{ maxWidth: "100%" }}
           >
             {t("common:rakaya_header")}
           </p>
           <p
-            className="fs-1 fw-semibold mw-50 text-center col-lg-5 mt-0 pt-0 w-100  parMobile text_Dark"
+            className="fs-1 fw-semibold mw-50 text-center col-lg-5 mt-0 pt-0 w-100  parMobile text-white text_Dark"
             style={{ maxWidth: "100%" }}
           >
             {t("common:rakaya_header_two")}
           </p>
         </div>
 
-        <p className="fs-5 col-lg-5  text_Dark">{t("common:intro_Header")}</p>
+        <p className="fs-5 col-lg-5  text-white text_Dark">{t("common:intro_Header")}</p>
         <Link href={"/rakaya"}>
           <Button color={isDarkMode ? "primary" : "secondary"}>
             {t("common:info_rakaya")}

@@ -45,6 +45,16 @@ export default function MyApp({ Component, pageProps }) {
         gtag('config', 'G-WK6D3JZL9S');
       `}
       </Script>
+      <Script id="clarity" strategy="afterInteractive">
+        {`
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ollxmn2q1n");
+  `}
+      </Script>
+
       <Component {...pageProps} />
     </>
   );
@@ -54,6 +64,22 @@ export default function MyApp({ Component, pageProps }) {
       queries: { refetchOnWindowFocus: false },
     },
   });
+  // fetch('http://ip-api.com/json')
+  // .then((response) => response.json())
+  // .then((data) => {
+  //   console.log('IP Address: ' + data.query);
+  //   console.log('Location: ' + data.city + ', ' + data.regionName + ', ' + data.country);
+  //   console.log('Coordinates: ' + data.lat + ', ' + data.lon);
+
+  //   if (data.countryCode === 'EG') {
+  //     console.log('The user is in Egypt.');
+  //   } else {
+  //     console.log('The user is not in Egypt. Current location: ' + data.country);
+  //   }
+  // })
+  // .catch((error) => {
+  //   console.error('Error fetching the IP information:', error);
+  // });
 
   return (
     <I18nextProvider i18n={i18n}>

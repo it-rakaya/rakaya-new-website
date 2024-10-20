@@ -63,7 +63,7 @@ const Stats = () => {
       }}
     >
       <div
-        className={"row d-flex  justify-content-center m-auto py-5 my-5 w-100 "}
+        className={"row d-flex  justify-content-center m-auto py-5 mb-5 w-100 "}
       >
         <Stat count={"+3,000,000"} text={"Meal"} />
         <Stat count={"+800"} text={"interested"} />

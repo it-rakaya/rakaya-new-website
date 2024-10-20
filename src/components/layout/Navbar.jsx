@@ -2,7 +2,7 @@ import { t } from "i18next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import styles from "../../styles/components/Navbar.module.scss";
 import { DarkModeContext } from "../../context/DarkModeContext";
@@ -49,6 +49,7 @@ const NavBarLink = ({ children, to, onClick }) => {
 
 function Navbar() {
   const [show, setShow] = useState(false);
+  const [isFixed, setIsFixed] = useState(true);
   const buttonRef = useRef(null);
   const navBarRef = useRef(null);
   const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -56,9 +57,30 @@ function Navbar() {
   const router = useRouter();
   const { user } = useAuth();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsFixed(false);
+      } else {
+        setIsFixed(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const bgFixedDark = !isFixed && isDarkMode;
+  const bgFixedLight = !isFixed && !isDarkMode;
+
   return (
     <nav
-      className={`navbar navbar-expand-lg py-2 ${isDarkMode ? "bg-dark" : ""}`}
+      className={`navbar navbar-expand-lg py-2 fixed-top  ${bgFixedDark && "bg-dark"} ${bgFixedLight && "bg-white"}`}
+      style={{
+        zIndex: "1000",
+        transition: "0.3s",
+      }}
     >
       <Container className="col-lg-10 align-items-center">
         <Link className="navbar-brand fw-semibold col-lg-1 col-2 mx-3" href="/">

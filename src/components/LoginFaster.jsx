@@ -23,6 +23,10 @@ function LoginFaster({ setOpen }) {
       Cookies.set("token", data?.data?.token);
       setOpen(false);
     },
+    onError:(err) => {
+      notify("error", err.response?.data?.message);
+
+    },
     formData: true,
   });
 
