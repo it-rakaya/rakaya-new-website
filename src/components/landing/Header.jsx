@@ -3,14 +3,29 @@ import Button from "../Button";
 import Container from "../Container";
 import Logo from "../Logo";
 import PatternIconTwo from "../icons/PatternIconTwo";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { t } from "i18next";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import Image from "next/image";
 
 const Header = () => {
   const { isDarkMode } = useContext(DarkModeContext);
+  const [headerLogo, setIsHeaderLogo] = useState(true);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsHeaderLogo(false);
+      } else {
+        setIsHeaderLogo(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Container
       className={`w-100 p-md-5 position-relative d-flex flex-column align-content-center justify-content-center`}
@@ -29,7 +44,7 @@ const Header = () => {
           muted
           controls={false}
         ></video> */}
-          <Image
+        <Image
           className="video-iframe"
           src="rakaya-bg.gif"
           alt=""
@@ -47,7 +62,11 @@ const Header = () => {
           zIndex: "1",
         }}
       >
-        <div className="col-lg-2 col-8 my- py-2">
+        <div
+          className={`col-lg-2 col-8 my- py-2 logo-container ${
+            !headerLogo ? "hidden" : ""
+          }`}
+        >
           <Logo />
         </div>
 
@@ -66,7 +85,9 @@ const Header = () => {
           </p>
         </div>
 
-        <p className="fs-5 col-lg-5  text-white text_Dark">{t("common:intro_Header")}</p>
+        <p className="fs-5 col-lg-5  text-white text_Dark">
+          {t("common:intro_Header")}
+        </p>
         <Link href={"/rakaya"}>
           <Button color={isDarkMode ? "primary" : "secondary"}>
             {t("common:info_rakaya")}

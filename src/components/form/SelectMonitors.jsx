@@ -11,7 +11,7 @@ export default function SelectMonitors({
   icon,
 }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `monitors`,
     queryKey: [`monitors`],
   });
@@ -42,6 +42,7 @@ export default function SelectMonitors({
         required={required}
         selectedValue={selectedValue}
         isClearable
+        isLoading={isLoading}
       />
     </div>
   );

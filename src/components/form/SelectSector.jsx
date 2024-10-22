@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 function SelectSector({ label, required, labelClassName, icon }) {
   const { values, setFieldValue } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `sectors`,
     queryKey: [`sectors`],
   });
@@ -40,6 +40,7 @@ function SelectSector({ label, required, labelClassName, icon }) {
         required={required}
         isClearable
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

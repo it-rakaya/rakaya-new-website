@@ -56,7 +56,7 @@ function ItemAvailableJob({ item }) {
     <>
       <div className="col-md-6  ">
         <div
-          className={`d-flex justify-content-between align-items-center   shadow p-3 rounded-4  mt-3   mb-4  mx-2 `}
+          className={`d-flex justify-content-between align-items-center flex-column flex-md-row   shadow p-3 rounded-4  mt-3   mb-4  mx-2 `}
         >
           <div
             className={` tooltip-container  ${clicked ? "card-clicked" : ""}`}
@@ -103,69 +103,20 @@ function ItemAvailableJob({ item }) {
               </p>
             </div>
           </div>
-          <div className="d-flex align-items-center gap-2">
-            <Button disabled={item?.is_open == 0} onClick={handelApplyJob}>
+          <div className="d-flex align-items-center gap-2 mt-4 mt-md-0 main_button_card_job  ">
+            <Button
+              disabled={item?.is_open == 0}
+              onClick={handelApplyJob}
+              style={{
+                width: "100%",
+              }}
+            >
               التقديم الان
             </Button>
           </div>
         </div>
       </div>
-      <div className="col-md-6  ">
-        <div
-          className={`d-flex justify-content-between align-items-center   shadow p-3 rounded-4  mt-3   mb-4  mx-2 `}
-        >
-          <div
-            className={` tooltip-container  ${clicked ? "card-clicked" : ""}`}
-            onClick={handleCardClick}
-            style={{
-              flex: "1",
-            }}
-          >
-            <div className="tooltip-text">
-              {clicked ? "تم النسخ" : "نسخ الوظيفة"}
-            </div>
-            <div className="d-flex align-items-center gap-1">
-              <Link
-                href={jobLink}
-                className="p-0 m-0 text-gold fs-5"
-                style={{ fontWeight: "bolder" }}
-              >
-                {isRTL ? item?.name_ar : item?.name_en}
-              </Link>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2 ">
-              <FaMapMarkerAlt style={{ color: "#6c757d" }} />
-              <p className="p-0 m-0" style={{ color: "#6c757d" }}>
-                مكة المكرمة - المملكة العربية السعودية
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2 ">
-              <MdFeaturedPlayList style={{ color: "#6c757d" }} />
-              <p className="p-0 m-0 d-flex gap-2" style={{ color: "#6c757d" }}>
-                <span className="badge rounded-3 bg-secondary px-2 py-2">
-                  {item?.work_type}
-                </span>
-                -
-                <span className="badge rounded-3 bg-secondary px-2 py-2">
-                  {item?.location_type}
-                </span>
-              </p>
-            </div>
-            <div className="d-flex align-items-center gap-2 mt-2 ">
-              <RiCalendarScheduleFill style={{ color: "#6c757d" }} />
-              <p className="p-0 m-0  text-secondary text_Dark font-bolder ">
-                {" "}
-                {item?.created_since}
-              </p>
-            </div>
-          </div>
-          <div className="d-flex align-items-center gap-2">
-            <Button disabled={item?.is_open == 0} onClick={handelApplyJob}>
-              التقديم الان
-            </Button>
-          </div>
-        </div>
-      </div>
+
       <ModalComp
         isOpen={open}
         header={"الرجاء تسجيل الدخول اولًا "}

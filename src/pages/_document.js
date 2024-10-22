@@ -21,7 +21,7 @@ export default function Document() {
     })(window, document, "clarity", "script", "oly0zjsgbl");
   `}
         </Script> */}
-        <script
+        {/* <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -32,7 +32,7 @@ export default function Document() {
             })(window, document, "clarity", "script", "oly0zjsgbl");
             `,
           }}
-        />
+        /> */}
       </Head>
       <body>
         <Main />

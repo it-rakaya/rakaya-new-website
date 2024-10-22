@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 function SelectSkills({ label, required, name }) {
   const { values, setFieldValue } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     queryKey: [`skills`],
     endpoint: `skills`,
   });
@@ -32,6 +32,7 @@ function SelectSkills({ label, required, name }) {
           setFieldValue(name, option.value);
           setFieldValue("typeSkills", option.type);
         }}
+        isLoading={isLoading}
       />
     </div>
   );

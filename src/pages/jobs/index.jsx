@@ -15,7 +15,7 @@ const Jobs = ({ jobs }) => {
     <>
       <AvailableJobLayout hiddenMenu>
         <div className="">
-          <Container className="m-auto col-md-12 mx-5 ">
+          <Container className="m-auto col-md-12 mx-md-5 ">
             {visibleJobs?.length ? (
               visibleJobs.map(item => (
                 <div className="row  justify-content-between  " key={item?.id}>

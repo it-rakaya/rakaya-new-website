@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 
 function SelectExperienceYears({ label, required, name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data  , isLoading} = useFetch({
     queryKey: [`skill-experiences`],
     endpoint: `skill-experiences`,
   });
@@ -27,6 +27,7 @@ function SelectExperienceYears({ label, required, name }) {
         options={options}
         required={required}
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

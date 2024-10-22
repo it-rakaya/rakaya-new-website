@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 function SelectBank({ label, required, labelClassName , name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `banks`,
     queryKey: [`banks`],
   });
@@ -26,6 +26,8 @@ function SelectBank({ label, required, labelClassName , name }) {
         options={options}
         required={required}
         selectedValue={selectedValue}
+        isLoading={isLoading}
+
       />
     </div>
   );

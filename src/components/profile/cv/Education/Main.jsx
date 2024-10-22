@@ -5,8 +5,9 @@ import Button from "../../../Button";
 import { useMutate } from "../../../../hooks/useMutate";
 import { notify } from "../../../../utils/notify";
 import * as Yup from "yup";
+import SpinnerLoading from "../../../SpinnerLoading";
 
-function Main({ setShowCard, refetch, mainData }) {
+function Main({ setShowCard, refetch, mainData, isLoading }) {
   const endpoint = mainData?.id
     ? `candidate-education/${mainData?.id}`
     : `candidate-education`;
@@ -57,7 +58,12 @@ function Main({ setShowCard, refetch, mainData }) {
     }),
   });
 
-  return (
+  return isLoading ? (
+    <div className="d-flex align-items-center h-100">
+      <SpinnerLoading />
+
+    </div>
+  ) : (
     <div>
       <Formik
         validationSchema={validationSchema}

@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 
 function SelectLevel({ label, required , name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     queryKey: [`skill-levels`],
     endpoint: `skill-levels`,
   });
@@ -27,6 +27,7 @@ function SelectLevel({ label, required , name }) {
         options={options}
         required={required}
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

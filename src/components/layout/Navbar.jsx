@@ -71,21 +71,32 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const bgFixedDark = !isFixed && isDarkMode;
-  const bgFixedLight = !isFixed && !isDarkMode;
+  const bgFixedDark = !isFixed && isDarkMode && router?.pathname == "/";
+  const bgFixedLight = !isFixed && !isDarkMode && router?.pathname == "/";
 
   return (
     <nav
-      className={`navbar navbar-expand-lg py-2 fixed-top  ${bgFixedDark && "bg-dark"} ${bgFixedLight && "bg-white"}`}
+      className={`navbar navbar-expand-lg py-2 fixed-top
+        
+        ${
+          router?.pathname != "/" && isDarkMode
+            ? "bg-dark"
+            : router?.pathname != "/" && !isDarkMode
+            ? "bg-white"
+            : ""
+        }
+        ${bgFixedDark && "bg-dark"} ${bgFixedLight && "bg-white"}`}
       style={{
         zIndex: "1000",
         transition: "0.3s",
+        height: "80px",
       }}
     >
       <Container className="col-lg-10 align-items-center">
         <Link className="navbar-brand fw-semibold col-lg-1 col-2 mx-3" href="/">
           <div className="col-lg-8 col-12">
-            <Logo />
+            {router?.pathname == "/" && !isFixed && <Logo />}
+            {router?.pathname !== "/" && <Logo />}
           </div>
         </Link>
         <button

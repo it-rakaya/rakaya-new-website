@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 
 function SelectJobType({ label, required, name }) {
   const {values} = useFormikContext()
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `work-types`,
     queryKey: [`work-types`],
   });
@@ -25,6 +25,7 @@ function SelectJobType({ label, required, name }) {
         options={options}
         selectedValue={selectedValue}
         required={required}
+        isLoading={isLoading}
       />
     </div>
   );

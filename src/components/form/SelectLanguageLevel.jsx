@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 function SelectLanguageLevel({ label, required, name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
      queryKey: [`language-levels`],
     endpoint: `language-levels`,
   });
@@ -27,6 +27,7 @@ function SelectLanguageLevel({ label, required, name }) {
         options={options}
         required={required}
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

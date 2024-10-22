@@ -3,7 +3,7 @@ import SelectComp from "./SelectComp";
 import useFetch from "../../hooks/useFetch";
 {""}
 function SelectDepartment({ label, required }) {
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `all-departments`,
     queryKey: [`all-departments`],
   });
@@ -19,6 +19,7 @@ function SelectDepartment({ label, required }) {
         name={"department_id"}
         options={options}
         required={required}
+        isLoading={isLoading}
       />
     </div>
   );

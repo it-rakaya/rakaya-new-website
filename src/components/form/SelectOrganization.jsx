@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 
 function SelectOrganization({ label, required, labelClassName , icon }) {
   const { values, setFieldValue } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `organizations`,
     queryKey: [`organizations`],
   });
@@ -45,6 +45,7 @@ function SelectOrganization({ label, required, labelClassName , icon }) {
         disabled={isDisabled}
         icon={icon}
         isClearable
+        isLoading={isLoading}
       />
     </div>
   );

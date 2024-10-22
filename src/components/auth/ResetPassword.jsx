@@ -47,7 +47,7 @@ function ResetPassword() {
             }}
           />
         </div>
-        <h2 className="fw-bolder mt-3"> ادخل كلمة المرور الجديدة </h2>
+        <h2 className="fw-bolder mt-3 text_Dark"> ادخل كلمة المرور الجديدة </h2>
       </div>
       <Formik
         validationSchema={validationSchema}

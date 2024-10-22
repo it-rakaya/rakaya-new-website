@@ -26,6 +26,7 @@ const Program = ({ title, description, items, href }) => (
 );
 
 const Programs = ({ initialData }) => {
+  console.log("🚀 ~ Programs ~ initialData:", initialData)
   const [data, setData] = useState(initialData);
   const [loading, setLoading] = useState(!initialData); 
 
@@ -88,10 +89,10 @@ const Programs = ({ initialData }) => {
 export default Programs;
 
 export async function getServerSideProps(context) {
-  const programs = await fetchData("programs");
+  const programs = await fetchData("tools");
   return {
     props: {
-      initialData: programs || null,
+      initialData: programs ,
     },
   };
 }

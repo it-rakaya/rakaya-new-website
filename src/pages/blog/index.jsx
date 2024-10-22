@@ -36,9 +36,9 @@ const Blogs = ({ initialData }) => {
         image={"/studio/headers-bg/4.webp"}
       />
 
-      <Container className="col-lg-10 d-flex flex-column align-items-center py-4 rakayaStudio">
+      <Container className="col-lg-12 d-flex flex-column align-items-center py-4 rakayaStudio mx-md-4">
         {/* <h1 className="align-self-start text_Dark">المدونة</h1> */}
-        <Container className="col-lg-8 d-flex flex-wrap mt-3">
+        <Container className="col-12 d-flex flex-wrap mt-3 ">
           {loading ? (
             <div className="w-100 d-flex justify-content-center"> 
               <Loading />

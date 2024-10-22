@@ -65,8 +65,8 @@ function Register() {
     <div>
       <LoginLayout>
         <div className="">
-          <h2 className="fw-bolder">تسجيل حساب جديد</h2>
-          <p>تسجيل حساب في موقع شركة ركايا للاستشارات الأدارية</p>
+          <h2 className="fw-bolder text_Dark">تسجيل حساب جديد</h2>
+          <p className="text_Dark">تسجيل حساب في موقع شركة ركايا للاستشارات الأدارية</p>
           <Formik
             initialValues={initialValues}
             onSubmit={(values) => {

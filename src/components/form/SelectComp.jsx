@@ -17,6 +17,7 @@ function SelectComp({
   isClearable,
   icon,
   onChange,
+  isLoading
 }) {
   const { setFieldValue, errors, touched } = useFormikContext();
   const { isDarkMode } = useContext(DarkModeContext);
@@ -35,6 +36,7 @@ function SelectComp({
         options={options}
         placeholder={placeholder ? placeholder : "اختر"}
         isClearable={isClearable}
+        isLoading={isLoading}
         styles={{
           control: (base) => ({
             ...base,

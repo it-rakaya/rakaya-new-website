@@ -8,7 +8,7 @@ function MainData({loadingRegister}) {
   return (
     <div>
       <div>
-        <Label required>الاسم كامل بالعربي</Label>
+        <Label required className={"text_Dark"}>الاسم كامل بالعربي</Label>
         <div className="row">
           <div className="col-md-3 px-1">
             <BaseInputField
@@ -29,7 +29,7 @@ function MainData({loadingRegister}) {
         </div>
       </div>
       <div>
-        <Label required>الاسم كامل بالانجليزية</Label>
+        <Label required className={"text_Dark"}>الاسم كامل بالانجليزية</Label>
         <div className="row">
           <div className="col-md-3 px-1">
             <BaseInputField placeholder={"الاسم الاخير"} name={"last_name_en"} />
@@ -77,13 +77,13 @@ function MainData({loadingRegister}) {
         </Button>
       </div>
       <div className="d-flex  justify-content-center align-items-center mt-3 gap-2">
-        <p className="m-0 p-0"> لديك حساب بالفعل ؟</p>
+        <p className="m-0 p-0 text_Dark"> لديك حساب بالفعل ؟</p>
         <Link href={"/login"} className="text-gold fw-bold ">
           تسجيل الدخول
         </Link>
       </div>
       <div className="d-flex  justify-content-center align-items-center  gap-2">
-        <Link href={"/"} className="text-secondary fw-bold ">
+        <Link href={"/"} className="text-secondary fw-bold text_Dark ">
           العودة الى الصفحة الرئيسية
         </Link>
       </div>

@@ -3,7 +3,7 @@ import SelectComp from "./SelectComp";
 import useFetch from "../../hooks/useFetch";
 
 function SelectHelp({ label, required, labelClassName }) {
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `all-subjects`,
     queryKey: [`all-subjects`],
   });
@@ -20,6 +20,7 @@ function SelectHelp({ label, required, labelClassName }) {
         name={"subject_id"}
         options={options}
         required={required}
+        isLoading={isLoading}
       />
     </div>
   );

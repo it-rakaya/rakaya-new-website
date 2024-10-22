@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 {""}
 function SelectNationality({ label, required, labelClassName , name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `countries`,
     queryKey: [`countries`],
   });
@@ -28,6 +28,7 @@ function SelectNationality({ label, required, labelClassName , name }) {
         required={required}
         disabled={values?.national_id?.startsWith("1")}
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

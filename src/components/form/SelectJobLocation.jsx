@@ -5,7 +5,7 @@ import { useFormikContext } from "formik";
 
 function SelectJobLocation({ label, required, name }) {
   const { values } = useFormikContext();
-  const { data } = useFetch({
+  const { data , isLoading } = useFetch({
     endpoint: `location-types`,
     queryKey: [`location-types`],
   });
@@ -26,6 +26,7 @@ function SelectJobLocation({ label, required, name }) {
         options={options}
         required={required}
         selectedValue={selectedValue}
+        isLoading={isLoading}
       />
     </div>
   );

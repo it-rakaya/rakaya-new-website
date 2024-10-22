@@ -50,8 +50,8 @@ function LoginPage() {
     <>
       <LoginLayout>
         <div className="">
-          <h2 className="fw-bolder">تسجيل الدخول</h2>
-          <p>تسجيل الدخول لموقع شركة ركايا للاستشارات الأدارية</p>
+          <h2 className="fw-bolder text_Dark">تسجيل الدخول</h2>
+          <p className="text_Dark">تسجيل الدخول لموقع شركة ركايا للاستشارات الأدارية</p>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -62,7 +62,7 @@ function LoginPage() {
             <Form>
               <MainData loadingLogin={loadingLogin} />
               <p
-                className=""
+                className="text_Dark"
                 style={{ cursor: "pointer", margin: "20px 0 0 0" }}
                 onClick={() => router.push("/reset-password")}
               >
@@ -79,7 +79,7 @@ function LoginPage() {
                 </Button>
               </div>
               <div className="d-flex  justify-content-center align-items-center mt-3 gap-2">
-                <p className="m-0 p-0">ليس لديك حساب ؟</p>
+                <p className="m-0 p-0 text_Dark">ليس لديك حساب ؟</p>
                 <Link href={"/register"} className="text-gold ">
                   سجل الان
                 </Link>

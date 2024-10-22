@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
+import useFetch from "../../../../hooks/useFetch";
 import Button from "../../../Button";
 import NoData from "../../../NoData";
-import Main from "./Main";
-import { RiDeleteBinLine } from "react-icons/ri";
-import useFetch from "../../../../hooks/useFetch";
 import SpinnerLoading from "../../../SpinnerLoading";
 import CardProfile from "../../CardProfile";
+import Main from "./Main";
 
 function Education() {
   const [showCard, setShowCard] = useState(true);
@@ -52,6 +51,7 @@ function Education() {
                     refetch={refetch}
                     endpointDelete={"candidate-education"}
                     setShowCard={setShowCard}
+                    
                   />
                 </div>
               ))
@@ -61,7 +61,7 @@ function Education() {
           </div>
         </div>
       ) : (
-        <Main setShowCard={setShowCard} refetch={refetch} mainData={mainData} />
+        <Main setShowCard={setShowCard} isLoading={isLoading} refetch={refetch} mainData={mainData} />
       )}
     </div>
   );
