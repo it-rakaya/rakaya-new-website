@@ -13,7 +13,9 @@ export const initialValues = {
   resident_status: "",
   salary_expectation: "",
   availability_to_start: "",
-  candidate_cv: null,
+  candidate_cv_ar: null,
+  candidate_cv_en: null,
+
   candidate_portfolio: null,
   candidate_personal_picture: null,
   gender: "",
@@ -21,12 +23,15 @@ export const initialValues = {
   job_category: "",
   marital_status: "",
   years_of_experience: "",
-  has_relative:"",
-  previously_work_at_rakaya:""
-};
+  has_relative: "",
+  previously_work_at_rakaya: "",
+}
 export const validationSchema = Yup.object({
   name: Yup.string()
-    .matches(/^[^\s][\u0600-\u06FF\s]*$/, "يجب أن يبدأ الاسم بحرف عربي وأن يكون الاسم باللغة العربية فقط")  // Regex checks that the string starts with a non-space character, and only contains Arabic characters and spaces
+    .matches(
+      /^[^\s][\u0600-\u06FF\s]*$/,
+      "يجب أن يبدأ الاسم بحرف عربي وأن يكون الاسم باللغة العربية فقط"
+    ) // Regex checks that the string starts with a non-space character, and only contains Arabic characters and spaces
     .required("الاسم الكامل مطلوب"),
   email: Yup.string()
     .matches(isEmail, "يجب أن يكون بريدًا إلكترونيًا صالحًا")
@@ -46,10 +51,11 @@ export const validationSchema = Yup.object({
   previously_work_at_rakaya: Yup.string().required("هذا الحقل مطلوب"),
 
   job_category: Yup.string().required("نوع الوظيفة مطلوب"),
-  candidate_cv: Yup.mixed().required("السيرة الذاتية مطلوبة"),
+  candidate_cv_ar: Yup.mixed().required("السيرة الذاتية مطلوبة"),
+  candidate_cv_en: Yup.mixed().required("السيرة الذاتية مطلوبة"),
   candidate_personal_picture: Yup.mixed().required(" الصورة الشخصية مطلوبة"),
   years_of_experience: Yup.mixed().required("عدد سنوات الخبرة مطلوب"),
-});
+})
 
 export const validationSchemaCompleteApplication = Yup.object({
   name: Yup.string()
@@ -91,8 +97,8 @@ export const validationSchemaCompleteApplication = Yup.object({
     .trim()
     .required("حقل الايبان مطلوب")
     .length(24, "حقل الايبان يجب ان يحتوي على 22 رقم"),
-  // candidate_national_id: Yup.mixed().required("صورة الهوية مطلوبة"),
-  candidate_iban: Yup.mixed().required("   شهادة الايبان مطلوبة "),
+  candidate_national_id: Yup.mixed().required("صورة الهوية مطلوبة"),
+  candidate_iban: Yup.mixed().required("شهادة الايبان مطلوبة "),
   // candidate_portfolio: Yup.mixed().required("الصورة الشخصية مطلوبة"),
 
 });

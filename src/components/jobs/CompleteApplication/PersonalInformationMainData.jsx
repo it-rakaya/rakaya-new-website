@@ -1,20 +1,20 @@
-import BaseInputField from "@/components/form/BaseInputField";
-import DatePickerComp from "@/components/form/DatePickerComp";
-import PhoneInput from "@/components/form/PhoneInput";
-import SelectNationality from "@/components/form/SelectNationality";
-import SelectSize from "@/components/form/SelectSize";
-import { useFormikContext } from "formik";
-import React, { useEffect } from "react";
+import BaseInputField from "@/components/form/BaseInputField"
+import DatePickerComp from "@/components/form/DatePickerComp"
+import PhoneInput from "@/components/form/PhoneInput"
+import SelectNationality from "@/components/form/SelectNationality"
+import SelectSize from "@/components/form/SelectSize"
+import { useFormikContext } from "formik"
+import React, { useEffect } from "react"
 
 function PersonalInformationMainData() {
-  const {values , setFieldValue} = useFormikContext()
+  const { values, setFieldValue } = useFormikContext()
   useEffect(() => {
     if (values.national_id.startsWith("1")) {
-      setFieldValue("nationality", "192");
+      setFieldValue("nationality", "192")
     } else {
-      setFieldValue("nationality",values.nationality ||  "");
+      setFieldValue("nationality", values.nationality || "")
     }
-  }, [setFieldValue, values.national_id, values.nationality]);
+  }, [setFieldValue, values.national_id, values.nationality])
   return (
     <div>
       {" "}
@@ -42,7 +42,7 @@ function PersonalInformationMainData() {
         }
         required
       />
-      <PhoneInput label={"رقم الجوال"} required />
+      <PhoneInput label={"رقم الجوال الرسمي (المسجل بنظام أبشر)"} required />
       <BaseInputField
         name={"national_id"}
         label={"رقم الهوية"}
@@ -66,7 +66,7 @@ function PersonalInformationMainData() {
       <SelectNationality label={"الجنسية"} required />
       <SelectSize label={"مقاس الزي الصحي"} required />
     </div>
-  );
+  )
 }
 
-export default PersonalInformationMainData;
+export default PersonalInformationMainData

@@ -29,7 +29,7 @@ function Main({ dataCandidate, loadingData, updateData }) {
     owner_national_id: dataCandidate?.bank_information?.owner_national_id || "",
     candidate_portfolio: dataCandidate?.attachment_candidate_profile_personal,
     candidate_iban: dataCandidate?.attachment_candidate_iban,
-    // candidate_national_id: dataCandidate?.attachment_candidate_national_id,
+    candidate_national_id: dataCandidate?.attachment_candidate_national_id,
   };
   const handelSubmit = (values) => {
     const {
@@ -44,10 +44,9 @@ function Main({ dataCandidate, loadingData, updateData }) {
       ...(candidate_portfolio?.type
         ? { "attachments[33]": candidate_portfolio }
         : {}),
-      // ...(candidate_national_id?.type
-      //   ? { "attachments[46]": candidate_national_id }
-      //   : {}),
-
+      ...(candidate_national_id?.type
+        ? { "attachments[46]": candidate_national_id }
+        : {}),
       ...(candidate_iban?.type ? { "attachments[45]": candidate_iban } : {}),
     };
     updateData(submissionValues);
