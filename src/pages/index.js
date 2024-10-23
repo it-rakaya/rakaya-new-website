@@ -4,6 +4,7 @@ import Header from "../components/landing/Header";
 import Container from "../components/Container";
 import CustomHead from "../components/CustomHead";
 import Content from "../components/vision/Content";
+import AudioPlayer from "../components/AudioPlayer";
 
 export default function Home({data}) {
   const description =
@@ -12,6 +13,7 @@ export default function Home({data}) {
     <>
       <CustomHead customTitle={"ركايا البديعة"} description={description} />
       <Container className="mx-0 px-0">
+      <AudioPlayer/>
         <Header />
         <Stats />
         <Marquee />
