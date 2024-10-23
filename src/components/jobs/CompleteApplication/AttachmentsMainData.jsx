@@ -1,7 +1,9 @@
-import UploadDoc from "@/components/form/UploadDoc";
-import React from "react";
+import UploadDoc from "@/components/form/UploadDoc"
+import { useFormikContext } from "formik"
+import React from "react"
 
 function AttachmentsMainData({ check, setCheck }) {
+  const { values } = useFormikContext()
   return (
     <div>
       <UploadDoc
@@ -10,12 +12,34 @@ function AttachmentsMainData({ check, setCheck }) {
         messageInfo={"يرجى رفع صورة شخصية مناسبة لبطاقة العمل"}
         accept={"image/jpeg,image/png,image/jpg"}
       />
-      {/* <UploadDoc
+      <UploadDoc
         name="candidate_national_id"
         label={"بطاقة الهوية"}
         isRequired
-      /> */}
+      />
+      <UploadDoc
+        name="Passport_photo"
+        label={"صورة الجواز"}
+        isRequired={!values.national_id.startsWith("1")}
+      />
       <UploadDoc name="candidate_iban" label={"شهادة الايبان"} isRequired />
+
+      <UploadDoc
+        name="last_certificate"
+        label={" نسخة من شهادة  لآخر مؤھل دراسي"}
+        isRequired
+      />
+      <UploadDoc
+        name="courses_certificate"
+        label={"نسخة من شھادة الدورات التدریبة أن وجدت"}
+      />
+      <UploadDoc
+        name="experience_certificate"
+        label={"نسخة من شھادة الخبرات السابقة أن وجدت"}
+      />
+      <UploadDoc name="driving_license_photo" label={"صورة رخصة القیادة"} />
+      <UploadDoc name="national_address" label={"صورة  العنوان الوطني "} />
+
       <div class="form-check-reverse my-3">
         <input
           class="form-check-input"
@@ -37,7 +61,7 @@ function AttachmentsMainData({ check, setCheck }) {
         </label>
       </div>
     </div>
-  );
+  )
 }
 
-export default AttachmentsMainData;
+export default AttachmentsMainData

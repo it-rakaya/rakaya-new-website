@@ -5,9 +5,14 @@ function MainFormStepThree() {
   return (
     <div>
       <UploadDoc
-        name="candidate_cv"
+        name="candidate_cv_ar"
         isRequired
-        label={" الرجاء رفع سيرتك الذاتية هنا"}
+        label={" الرجاء رفع سيرتك الذاتية محدثة  باللغة العربي"}
+      />
+      <UploadDoc
+        name="candidate_cv_en"
+        isRequired
+        label={" الرجاء رفع سيرتك الذاتية محدثة باللغة الانجليزية"}
       />
       <UploadDoc
         name="candidate_personal_picture"
@@ -21,7 +26,7 @@ function MainFormStepThree() {
         label={"ارفع ملف لأهم أعمالك «إن وجد»"}
       />
     </div>
-  );
+  )
 }
 
 export default MainFormStepThree;

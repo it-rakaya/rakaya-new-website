@@ -38,7 +38,6 @@ function CompleteApplication({ description }) {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
   return (
     <div>
       <CustomHead title={"اكمال البيانات المطلوبة"} description={description} />

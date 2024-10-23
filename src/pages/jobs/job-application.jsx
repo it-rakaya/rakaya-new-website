@@ -30,17 +30,19 @@ function NewJobForm() {
   };
   const handleSubmit = async (values) => {
     const {
-      candidate_cv,
+      candidate_cv_ar,
+      candidate_cv_en,
       candidate_portfolio,
       candidate_personal_picture,
       ...rest
-    } = values;
+    } = values
     const submissionValues = {
       ...rest,
-      "attachments[31]": candidate_cv,
+      "attachments[31]": candidate_cv_ar,
+      "attachments[51]": candidate_cv_en,
       "attachments[32]": candidate_portfolio,
       "attachments[33]": candidate_personal_picture,
-    };
+    }
 
     try {
       await postData(submissionValues);

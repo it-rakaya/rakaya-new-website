@@ -1,24 +1,24 @@
-import { useFormikContext } from "formik";
-import React from "react";
-import BaseInputField from "../form/BaseInputField";
-import Label from "../form/Label";
-import PhoneInput from "../form/PhoneInput";
-import RadioButtonGroup from "../form/RadioButtonGroup";
-import SelectQualifications from "../form/SelectQualifications";
+import { useFormikContext } from "formik"
+import React from "react"
+import BaseInputField from "../form/BaseInputField"
+import Label from "../form/Label"
+import PhoneInput from "../form/PhoneInput"
+import RadioButtonGroup from "../form/RadioButtonGroup"
+import SelectQualifications from "../form/SelectQualifications"
 import {
   genderOption,
   has_relativeOption,
   maritalStatus,
   previously_work_in_rakayaOptions,
   residencyStatusOptions,
-} from "./data";
+} from "./data"
 
 function MainFormStepOne() {
-  const { setFieldValue, values } = useFormikContext();
+  const { setFieldValue, values } = useFormikContext()
 
   const handleRadioButtonChange = (name, value) => {
-    setFieldValue(name, value);
-  };
+    setFieldValue(name, value)
+  }
 
   return (
     <div className="my-">
@@ -39,7 +39,10 @@ function MainFormStepOne() {
       {values?.resident_status == "other" ? (
         ""
       ) : (
-        <PhoneInput label={"رقم الجوال"} required />
+        <PhoneInput
+          label={" تسجيل رقم الجوال الرسمي (المسجل بنظام أبشر) "}
+          required
+        />
       )}
 
       <SelectQualifications label={"المؤهل"} required />
@@ -117,7 +120,7 @@ function MainFormStepOne() {
         />
       </div>
     </div>
-  );
+  )
 }
 
-export default MainFormStepOne;
+export default MainFormStepOne
