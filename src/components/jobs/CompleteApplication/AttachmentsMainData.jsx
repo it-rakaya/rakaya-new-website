@@ -10,11 +10,11 @@ function AttachmentsMainData({ check, setCheck }) {
         messageInfo={"يرجى رفع صورة شخصية مناسبة لبطاقة العمل"}
         accept={"image/jpeg,image/png,image/jpg"}
       />
-      <UploadDoc
+      {/* <UploadDoc
         name="candidate_national_id"
         label={"بطاقة الهوية"}
         isRequired
-      />
+      /> */}
       <UploadDoc name="candidate_iban" label={"شهادة الايبان"} isRequired />
       <div class="form-check-reverse my-3">
         <input

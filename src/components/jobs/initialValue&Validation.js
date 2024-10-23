@@ -91,7 +91,7 @@ export const validationSchemaCompleteApplication = Yup.object({
     .trim()
     .required("حقل الايبان مطلوب")
     .length(24, "حقل الايبان يجب ان يحتوي على 22 رقم"),
-  candidate_national_id: Yup.mixed().required("صورة الهوية مطلوبة"),
+  // candidate_national_id: Yup.mixed().required("صورة الهوية مطلوبة"),
   candidate_iban: Yup.mixed().required("   شهادة الايبان مطلوبة "),
   // candidate_portfolio: Yup.mixed().required("الصورة الشخصية مطلوبة"),
 

@@ -21,7 +21,7 @@ import {
 } from "@/components/jobs/initialValue&Validation";
 
 function NewJobForm() {
-  const stopJob = true;
+  const stopJob = false;
   const { postData, isLoading, isSuccess, responseData } =
     usePostData("/candidate");
   const receivingOrderVariants = {
