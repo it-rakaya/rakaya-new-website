@@ -1,20 +1,26 @@
+import React, { useEffect, useState } from "react"
 import BaseInputField from "@/components/form/BaseInputField"
 import DatePickerComp from "@/components/form/DatePickerComp"
 import PhoneInput from "@/components/form/PhoneInput"
 import SelectNationality from "@/components/form/SelectNationality"
 import SelectSize from "@/components/form/SelectSize"
 import { useFormikContext } from "formik"
-import React, { useEffect } from "react"
 
 function PersonalInformationMainData() {
   const { values, setFieldValue } = useFormikContext()
+  const [previousNationalId, setPreviousNationalId] = useState(
+    values.national_id
+  )
+
   useEffect(() => {
     if (values.national_id.startsWith("1")) {
       setFieldValue("nationality", "192")
-    } else {
-      setFieldValue("nationality", values.nationality || "")
+    } else if (previousNationalId !== values.national_id) {
+      setFieldValue("nationality", "")
     }
-  }, [setFieldValue, values.national_id, values.nationality])
+    setPreviousNationalId(values.national_id)
+  }, [setFieldValue, values.national_id, previousNationalId])
+
   return (
     <div>
       {" "}
@@ -54,7 +60,7 @@ function PersonalInformationMainData() {
       <BaseInputField
         name={"address"}
         label={"العنوان"}
-        placeholder={"المدينة - الحي - الشارع"}
+        placeholder={"المدينة - الحي - الشارع"}
         required
       />
       <DatePickerComp

@@ -1,6 +1,6 @@
-import { isEmail } from "@/utils/Helpers";
-import { isValidSaudiID } from "saudi-id-validator";
-import * as Yup from "yup";
+import { isEmail } from "@/utils/Helpers"
+import { isValidSaudiID } from "saudi-id-validator"
+import * as Yup from "yup"
 
 export const initialValues = {
   name: "",
@@ -100,11 +100,11 @@ export const validationSchemaCompleteApplication = Yup.object({
   candidate_national_id: Yup.mixed().required("صورة الهوية مطلوبة"),
   candidate_iban: Yup.mixed().required("شهادة الايبان مطلوبة "),
   last_certificate: Yup.mixed().required("شهادة اخر مؤهل دراسي مطلوبة "),
-  Passport_photo: Yup.mixed().when("national_id", {
-    is: (national_id) => national_id && national_id.startsWith("1"),
-    then: Yup.mixed().required(
-      "شهادة اخر مؤهل دراسي مطلوبة في حالة ان رقم الهوية يبدأ بـ 1"
-    ),
-    otherwise: Yup.mixed().notRequired(),
+  national_address: Yup.mixed().required("صورة العنوان الوطني مطلوبة"),
+
+  Passport_photo: Yup.lazy((value, { parent }) => {
+    return parent.national_id && parent.national_id.startsWith("1")
+      ? Yup.mixed().nullable()
+      : Yup.mixed().required("صورة جواز السفر مطلوبة")
   }),
 })

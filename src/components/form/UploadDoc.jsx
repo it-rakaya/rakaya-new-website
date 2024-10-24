@@ -12,7 +12,7 @@ function UploadDoc({
   accept,
   textAccept,
   messageInfo,
-}) {
+} ) {
   const { setFieldValue, errors, touched, handleBlur, values } =
     useFormikContext();
   const updateData = values[name];
